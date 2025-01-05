@@ -25,3 +25,21 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   generate: true
+  assets:
+    - assets/logo/
+    - assets/providers/
+
+spider:
+  generate_tests: true
+  no_comments: true
+  export: true
+  use_part_of: true
+  use_references_list: false
+  package: resources
+  groups:
+    - path: assets/logo
+      class_name: AppLogoImages
+      types: [ .png ]
+    - path: assets/providers
+      class_name: ProvidersIconImages
+      types: [ .svg ]
