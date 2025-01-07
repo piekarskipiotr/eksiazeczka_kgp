@@ -1,8 +1,7 @@
-import 'package:eksiazeczka_kgp/data/enums/app_navigation.dart';
+import 'package:eksiazeczka_kgp/data/enums/enums.dart';
 import 'package:eksiazeczka_kgp/designSystem/design_system.dart';
 import 'package:eksiazeczka_kgp/l10n/l10n.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 
@@ -56,10 +55,9 @@ class RootBottomNavigationBar extends StatelessWidget {
     final isActive = tabIndex == currentIndex;
     return GButton(
       text: appNavigation.getLabel(l10n),
-      leading: SvgPicture.asset(
-        width: 24,
+      leading: AppIcon(
         isActive ? appNavigation.activeIcon : appNavigation.icon,
-        colorFilter: const ColorFilter.mode(AppColors.white, BlendMode.srcIn),
+        color: AppColors.white,
       ),
 
       // Limitation of GButton doesn't allow to set icon to null

@@ -25,7 +25,7 @@ class AppCircleAvatar extends StatelessWidget {
       child: Container(
         height: imageSize,
         width: imageSize,
-        color: Theme.of(context).primaryColor,
+        color: Theme.of(context).colorScheme.secondary,
         child: _image(context, url: url, localPath: localPath),
       ),
     );

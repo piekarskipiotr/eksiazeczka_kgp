@@ -28,7 +28,7 @@ class RootAppBarPeaksCounter extends StatelessWidget {
         child: Text(
           l10n.conqueredPeaks(count, total),
           style: AppTextStyles.h9(
-            color: Theme.of(context).primaryColor,
+            color: Theme.of(context).colorScheme.secondary,
             fontWeight: FontWeight.w500,
           ),
         ),
