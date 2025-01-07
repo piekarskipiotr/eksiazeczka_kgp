@@ -2,5 +2,28 @@
   "@@locale": "pl",
   "peaks": "Szczyty",
   "medals": "Medale",
-  "more": "Więcej"
+  "more": "Więcej",
+  "hello": "Witaj, {name}",
+  "@hello": {
+    "placeholders": {
+      "name": {
+        "type": "String",
+        "example": "Piotr"
+      }
+    }
+  },
+  "helloTraveler": "Witaj podróżniku!",
+  "conqueredPeaks": "Zdobyto {count} z {total}",
+  "@conqueredPeaks": {
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "2"
+      },
+      "total": {
+        "type": "int",
+        "example": "28"
+      }
+    }
+  }
 }
