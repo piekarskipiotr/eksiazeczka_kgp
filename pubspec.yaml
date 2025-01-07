@@ -13,6 +13,10 @@ dependencies:
   flutter_bloc: ^8.1.6
   flutter_localizations:
     sdk: flutter
+  flutter_svg: ^2.0.16
+  go_router: ^14.6.3
+  google_fonts: ^6.2.1
+  google_nav_bar: ^5.0.7
   intl: ^0.19.0
 
 dev_dependencies:
@@ -27,6 +31,7 @@ flutter:
   generate: true
   assets:
     - assets/images/avatars/
+    - assets/images/icons/
     - assets/images/logos/
     - assets/images/peaks/
     - assets/images/providers/
@@ -43,6 +48,9 @@ spider:
     - path: assets/images/avatars
       class_name: AvatarImages
       types: [ .png ]
+    - path: assets/images/icons
+      class_name: IconsImages
+      types: [ .svg ]
     - path: assets/images/logos
       class_name: LogoImages
       types: [ .png ]

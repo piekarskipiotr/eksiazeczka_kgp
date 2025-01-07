@@ -1,3 +1,6 @@
 {
-  "@@locale": "pl"
+  "@@locale": "pl",
+  "peaks": "Szczyty",
+  "medals": "Medale",
+  "more": "Więcej"
 }

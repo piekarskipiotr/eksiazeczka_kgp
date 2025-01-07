@@ -1,3 +1,6 @@
 {
-  "@@locale": "en"
+  "@@locale": "en",
+  "peaks": "Peaks",
+  "medals": "Medals",
+  "more": "More"
 }
