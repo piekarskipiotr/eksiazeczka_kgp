@@ -1,0 +1,478 @@
+[
+  {
+    "name": "Rysy",
+    "location": "Zakopane",
+    "coordinates": {
+      "lat": 49.1794,
+      "lng": 20.0883
+    },
+    "mountain_range": "Tatry Wysokie",
+    "height": 2500,
+    "difficulty_level": "HARD",
+    "average_ascent_time": 6,
+    "popularity": "HIGH",
+    "description": {
+      "pl": "Rysy to najwyższy szczyt Polski, położony na granicy polsko-słowackiej w Tatrach Wysokich. Szczyt posiada trzy wierzchołki, z których najwyższy osiąga 2500 m n.p.m. i znajduje się po stronie słowackiej, natomiast najwyższy punkt Polski to wierzchołek północno-zachodni o wysokości 2499 m n.p.m. Wejście na Rysy od strony polskiej rozpoczyna się przy Morskim Oku i prowadzi przez Czarny Staw pod Rysami, oferując spektakularne widoki na tatrzańskie krajobrazy. Trasa jest wymagająca, z licznymi stromymi podejściami i miejscami zabezpieczonymi łańcuchami, co czyni ją odpowiednią dla doświadczonych turystów. Ze szczytu rozpościera się panoramiczny widok na Tatry, a przy sprzyjających warunkach można dostrzec nawet odległe pasma górskie. Ze względu na popularność szczytu, w sezonie letnim na szlaku można spotkać wielu turystów, co może wpływać na czas przejścia i komfort wędrówki.",
+      "en": "Rysy is the highest peak in Poland, located on the Polish-Slovak border in the High Tatras. The summit has three peaks, with the highest reaching 2500 meters above sea level, located on the Slovak side, while the highest point in Poland is the northwestern peak, at 2499 meters above sea level. The Polish side route to Rysy starts at Morskie Oko and leads through Czarny Staw pod Rysami, offering spectacular views of the Tatra landscapes. The route is demanding, with numerous steep ascents and sections secured with chains, making it suitable for experienced hikers. From the summit, a panoramic view of the Tatras unfolds, and in favorable conditions, distant mountain ranges can be seen. Due to the peak's popularity, the trail is often crowded during the summer season, which can affect travel time and hiking comfort."
+    }
+  },
+  {
+    "name": "Babia Góra",
+    "location": "Zawoja",
+    "coordinates": {
+      "lat": 49.5972,
+      "lng": 19.5500
+    },
+    "mountain_range": "Beskid Żywiecki",
+    "height": 1725,
+    "difficulty_level": "HARD",
+    "average_ascent_time": 5,
+    "popularity": "HIGH",
+    "description": {
+      "pl": "Babia Góra to jeden z najwyższych szczytów w Polsce, znajdujący się w Beskidzie Żywieckim. Jest znana ze swojego specyficznego mikroklimatu oraz trudnych warunków, które mogą wystąpić na szczycie, szczególnie w zimie i wczesną wiosną. Na szczycie Babiej Góry znajduje się charakterystyczny kamienny obelisk. Wędrówka na Babia Górę jest dość wymagająca, szczególnie od strony południowej, gdzie szlak wiedzie przez strome podejścia. Z wierzchołka roztacza się wspaniały widok na całe Pasmo Beskidu Żywieckiego oraz Tatry. Jest to popularny szczyt wśród turystów, szczególnie w sezonie letnim, co może sprawiać, że na szlaku spotyka się wiele osób. Dzięki swoim malowniczym widokom i specyficznemu charakterowi Babia Góra cieszy się dużym zainteresowaniem wśród miłośników górskich wędrówek.",
+      "en": "Babia Góra is one of the highest peaks in Poland, located in the Żywiec Beskids. It is known for its unique microclimate and challenging conditions that can occur at the summit, particularly in winter and early spring. At the top of Babia Góra stands a characteristic stone obelisk. Hiking to Babia Góra is quite demanding, especially from the southern side, where the trail leads through steep ascents. From the summit, there is a magnificent view of the entire Żywiec Beskids range and the Tatras. It is a popular peak among tourists, especially during the summer season, which can make the trail crowded. Due to its picturesque views and unique character, Babia Góra is highly popular among mountain hiking enthusiasts."
+    }
+  },
+  {
+    "name": "Śnieżka",
+    "location": "Karpacz",
+    "coordinates": {
+      "lat": 50.7345,
+      "lng": 15.7345
+    },
+    "mountain_range": "Karkonosze",
+    "height": 1603,
+    "difficulty_level": "NORMAL",
+    "average_ascent_time": 4,
+    "popularity": "HIGH",
+    "description": {
+      "pl": "Śnieżka to najwyższy szczyt Karkonoszy, położony na granicy Polski i Czech. Jest to jeden z najbardziej popularnych celów turystycznych w Polsce, ze względu na łatwy dostęp zarówno od strony polskiej, jak i czeskiej. Na szczycie znajduje się obserwatorium meteorologiczne, które jest jedną z najbardziej rozpoznawalnych budowli w regionie. Wędrówka na Śnieżkę jest stosunkowo łatwa, a sam szlak prowadzi przez malownicze tereny Karkonoszy, oferując przepiękne widoki na okoliczne pasma górskie. Choć trasa nie jest bardzo wymagająca, warto pamiętać, że pogoda na szczycie potrafi zmieniać się bardzo szybko, szczególnie w zimie. Śnieżka cieszy się dużą popularnością, zwłaszcza w sezonie letnim, kiedy to turystyka jest na najwyższym poziomie.",
+      "en": "Śnieżka is the highest peak of the Karkonosze Mountains, located on the border between Poland and the Czech Republic. It is one of the most popular tourist destinations in Poland due to its easy accessibility from both the Polish and Czech sides. At the summit, there is a meteorological observatory, which is one of the most recognizable structures in the region. The hike to Śnieżka is relatively easy, and the trail passes through the picturesque Karkonosze region, offering beautiful views of the surrounding mountain ranges. Although the trail is not very demanding, it is important to remember that the weather at the summit can change very quickly, especially in winter. Śnieżka is very popular, particularly during the summer season when tourism is at its peak."
+    }
+  },
+  {
+    "name": "Śnieżnik",
+    "location": "Międzygórze",
+    "coordinates": {
+      "lat": 50.1944,
+      "lng": 16.8875
+    },
+    "mountain_range": "Masyw Śnieżnika",
+    "height": 1425,
+    "difficulty_level": "NORMAL",
+    "average_ascent_time": 3,
+    "popularity": "MEDIUM",
+    "description": {
+      "pl": "Śnieżnik to najwyższy szczyt Masywu Śnieżnika, położony na granicy Polski i Czech. Jest to doskonały punkt widokowy, z którego można podziwiać rozległe krajobrazy Kotliny Kłodzkiej oraz pasma górskie w Czechach. Wejście na szczyt nie jest zbyt trudne, a najpopularniejszy szlak wiedzie z Międzygórza. Śnieżnik to górska destynacja, która przyciąga turystów zarówno latem, jak i zimą, ze względu na dostępność i malownicze widoki. Na szczycie znajduje się charakterystyczna wieża widokowa, która umożliwia podziwianie okolicznych gór i dolin. Trasa jest odpowiednia dla średniozaawansowanych turystów, ale ze względu na zmienną pogodę, warto przygotować się na ewentualne utrudnienia. W sezonie letnim szczyt jest średnio oblegany, co zapewnia ciszę i spokój w porównaniu z bardziej popularnymi górami.",
+      "en": "Śnieżnik is the highest peak of the Śnieżnik Massif, located on the border between Poland and the Czech Republic. It is an excellent viewpoint from which one can admire the expansive landscapes of the Kłodzka Valley and the mountain ranges in the Czech Republic. The hike to the summit is not too difficult, and the most popular trail starts from Międzygórze. Śnieżnik is a mountain destination that attracts tourists both in summer and winter, due to its accessibility and picturesque views. At the summit, there is a distinctive observation tower that allows visitors to enjoy views of the surrounding mountains and valleys. The trail is suitable for intermediate hikers, but due to changing weather conditions, it is important to be prepared for potential challenges. During the summer season, the peak is moderately frequented, ensuring peace and quiet compared to more popular mountains."
+    }
+  },
+  {
+    "name": "Tarnica",
+    "location": "Ustrzyki Górne",
+    "coordinates": {
+      "lat": 49.2581,
+      "lng": 22.6217
+    },
+    "mountain_range": "Bieszczady",
+    "height": 1346,
+    "difficulty_level": "NORMAL",
+    "average_ascent_time": 4,
+    "popularity": "MEDIUM",
+    "description": {
+      "pl": "Tarnica to najwyższy szczyt Bieszczadów, popularny cel wędrówek wśród turystów odwiedzających ten malowniczy region Polski. Jest to szczyt o niezbyt dużym stopniu trudności, idealny zarówno dla początkujących, jak i bardziej zaawansowanych turystów. Wędrówka na Tarnicę prowadzi przez przepiękne bieszczadzkie krajobrazy, w tym lasy, łąki i połoniny, z których roztacza się szeroki widok na otaczające pasma górskie i doliny. Na szczycie znajduje się charakterystyczny kamień z tablicą, a także wytyczone szlaki turystyczne. Tarnica to miejsce, które przyciąga turystów przez cały rok, szczególnie latem, kiedy to szlak jest bardziej oblegany. Warto pamiętać, że w Bieszczadach pogoda może zmieniać się szybko, więc należy być przygotowanym na zmienne warunki.",
+      "en": "Tarnica is the highest peak of the Bieszczady Mountains, a popular hiking destination for tourists visiting this picturesque region of Poland. It is a summit of moderate difficulty, ideal for both beginners and more advanced hikers. The hike to Tarnica passes through beautiful Bieszczady landscapes, including forests, meadows, and highlands, offering wide views of the surrounding mountain ranges and valleys. At the summit, there is a distinctive stone with a plaque, as well as marked tourist trails. Tarnica is a place that attracts tourists year-round, especially in the summer when the trail is more crowded. It is important to remember that in the Bieszczady Mountains, the weather can change quickly, so hikers should be prepared for varying conditions."
+    }
+  },
+  {
+    "name": "Skrzyczne",
+    "location": "Szczyrk",
+    "coordinates": {
+      "lat": 49.7111,
+      "lng": 19.0144
+    },
+    "mountain_range": "Beskid Śląski",
+    "height": 1257,
+    "difficulty_level": "NORMAL",
+    "average_ascent_time": 3,
+    "popularity": "HIGH",
+    "description": {
+      "pl": "Skrzyczne to najwyższy szczyt Beskidu Śląskiego, znajdujący się w pobliżu Szczyrku. Jest to popularny cel turystyczny, szczególnie w sezonie zimowym, kiedy to funkcjonuje tu ośrodek narciarski. Wędrówka na Skrzyczne jest stosunkowo łatwa i przyjemna, idealna dla osób o średnich umiejętnościach górskich. Z wierzchołka rozciąga się piękny widok na Beskid Śląski oraz pobliskie pasma górskie. Na szczycie znajduje się schronisko, w którym można odpocząć i rozkoszować się widokiem. Skrzyczne jest chętnie odwiedzane przez turystów, zwłaszcza tych, którzy szukają dogodnego miejsca na wędrówki górskie w pobliżu popularnych ośrodków turystycznych. Warto zauważyć, że w okresie zimowym, szlak może być oblegany przez narciarzy i snowboardzistów.",
+      "en": "Skrzyczne is the highest peak of the Silesian Beskids, located near Szczyrk. It is a popular tourist destination, especially in the winter season when a ski resort operates here. The hike to Skrzyczne is relatively easy and pleasant, ideal for those with intermediate mountain skills. From the summit, there is a beautiful view of the Silesian Beskids and nearby mountain ranges. At the top, there is a mountain hut where hikers can rest and enjoy the view. Skrzyczne is frequently visited by tourists, especially those looking for a convenient spot for mountain hiking near popular tourist resorts. It is worth noting that during the winter season, the trail can be crowded with skiers and snowboarders."
+    }
+  },
+  {
+    "name": "Lubomir",
+    "location": "Kasina Wielka",
+    "coordinates": {
+      "lat": 49.7394,
+      "lng": 20.0508
+    },
+    "mountain_range": "Beskid Makowski",
+    "height": 904,
+    "difficulty_level": "EASY",
+    "average_ascent_time": 2,
+    "popularity": "MEDIUM",
+    "description": {
+      "pl": "Lubomir to jeden z bardziej dostępnych szczytów Beskidu Makowskiego, popularny wśród rodzin z dziećmi i początkujących turystów. Z jego wierzchołka rozciąga się piękny widok na Beskid Wyspowy, Gorce oraz Tatry. Wejście na Lubomir nie jest trudne, a szlak jest dobrze oznakowany i prowadzi przez malownicze tereny lasów i łąk. Na szczycie znajduje się schronisko, w którym turyści mogą odpocząć i podziwiać okoliczne widoki. Z uwagi na swoją łatwą dostępność, Lubomir jest często odwiedzany przez turystów, zwłaszcza w sezonie letnim, kiedy to można cieszyć się pięknymi panoramami. Jest to idealne miejsce na krótką, przyjemną wędrówkę w sercu Beskidu Makowskiego.",
+      "en": "Lubomir is one of the more accessible peaks in the Maków Beskids, popular among families with children and beginner hikers. From its summit, there is a beautiful view of the Island Beskids, the Gorce Mountains, and the Tatras. The hike to Lubomir is not difficult, and the trail is well-marked, leading through picturesque forests and meadows. At the summit, there is a mountain hut where hikers can rest and enjoy the surrounding views. Due to its easy accessibility, Lubomir is often visited by tourists, especially during the summer season when visitors can enjoy the beautiful panoramas. It is an ideal place for a short, pleasant hike in the heart of the Maków Beskids."
+    }
+  },
+  {
+    "name": "Mogielica",
+    "location": "Zalesie",
+    "coordinates": {
+      "lat": 49.7747,
+      "lng": 20.1670
+    },
+    "mountain_range": "Beskid Wyspowy",
+    "height": 1170,
+    "difficulty_level": "NORMAL",
+    "average_ascent_time": 3,
+    "popularity": "MEDIUM",
+    "description": {
+      "pl": "Mogielica to najwyższy szczyt Beskidu Wyspowego, który wyróżnia się pięknymi widokami na okolice, w tym na pobliskie pasma górskie. Wędrówka na Mogielicę nie jest trudna, co sprawia, że jest to świetny wybór dla turystów o różnym stopniu zaawansowania. Z wierzchołka szczytu rozciąga się szeroka panorama, obejmująca m.in. Tatry, Beskid Sądecki i Gorce. Na szczycie znajduje się wieża widokowa, która dodatkowo umożliwia podziwianie pięknych krajobrazów. Szlak prowadzi przez lasy i łąki, co sprawia, że wędrówka jest przyjemna i relaksująca. Mogielica cieszy się średnią popularnością, szczególnie w sezonie letnim, kiedy to wielu turystów korzysta z tej atrakcyjnej trasy.",
+      "en": "Mogielica is the highest peak of the Island Beskids, known for its beautiful views of the surrounding area, including nearby mountain ranges. The hike to Mogielica is not difficult, making it a great choice for hikers of various skill levels. From the summit, there is a wide panorama, including views of the Tatras, the Sądecki Beskid, and the Gorce Mountains. At the top, there is an observation tower that further enhances the opportunity to enjoy the stunning landscapes. The trail passes through forests and meadows, making the hike pleasant and relaxing. Mogielica is moderately popular, especially during the summer season when many tourists take advantage of this attractive route."
+    }
+  },
+  {
+    "name": "Wysoka Kopa",
+    "location": "Szklarska Poręba",
+    "coordinates": {
+      "lat": 50.8903,
+      "lng": 15.3897
+    },
+    "mountain_range": "Góry Izerskie",
+    "height": 1126,
+    "difficulty_level": "NORMAL",
+    "average_ascent_time": 3,
+    "popularity": "MEDIUM",
+    "description": {
+      "pl": "Wysoka Kopa to jeden z wyższych szczytów Gór Izerskich, położony blisko granicy z Czechami. Szczyt oferuje przepiękne widoki na Góry Izerskie, Karkonosze oraz Kotlinę Jeleniogórską. Wędrówka na Wysoką Kopę jest stosunkowo łatwa i odpowiednia dla średniozaawansowanych turystów. Szlak prowadzi przez malownicze lasy i łąki, a w okolicach szczytu znajdują się liczne punktu widokowe. Na szczycie znajduje się wieża widokowa, która pozwala podziwiać panoramę górską. Wysoka Kopa cieszy się średnią popularnością, szczególnie w sezonie letnim, kiedy to turyści chętnie korzystają z tej trasy, aby podziwiać piękno Gór Izerskich.",
+      "en": "Wysoka Kopa is one of the higher peaks of the Izera Mountains, located near the border with the Czech Republic. The summit offers beautiful views of the Izera Mountains, the Karkonosze Mountains, and the Jelenia Góra Valley. The hike to Wysoka Kopa is relatively easy and suitable for intermediate hikers. The trail passes through picturesque forests and meadows, and there are several viewpoints near the summit. At the top, there is an observation tower that allows visitors to admire the mountain panorama. Wysoka Kopa enjoys moderate popularity, especially during the summer season when tourists eagerly use this trail to enjoy the beauty of the Izera Mountains."
+    }
+  },
+  {
+    "name": "Rudawiec",
+    "location": "Różanka",
+    "coordinates": {
+      "lat": 50.2681,
+      "lng": 16.7342
+    },
+    "mountain_range": "Góry Bialskie",
+    "height": 1096,
+    "difficulty_level": "NORMAL",
+    "average_ascent_time": 3,
+    "popularity": "LOW",
+    "description": {
+      "pl": "Rudawiec to malowniczy szczyt w Górach Bialskich, który oferuje spokojną wędrówkę i piękne widoki na okoliczne pasma górskie oraz Kotlinę Kłodzką. Szczyt jest stosunkowo łatwy do zdobycia, a szlak prowadzi przez urokliwe lasy i łąki. Rudawiec jest mniej popularny w porównaniu do innych górskich szczytów w regionie, co zapewnia ciszę i spokój, idealne dla osób szukających relaksu w górach. Z wierzchołka roztacza się szeroka panorama, obejmująca Góry Złote, Góry Sowie i Góry Stołowe. Wędrówka na Rudawiec to doskonała okazja do obcowania z naturą i podziwiania dzikich krajobrazów Gór Bialskich.",
+      "en": "Rudawiec is a picturesque peak in the Bialskie Mountains, offering a peaceful hike and beautiful views of the surrounding mountain ranges and the Kłodzka Valley. The summit is relatively easy to reach, and the trail passes through charming forests and meadows. Rudawiec is less popular compared to other mountain peaks in the region, ensuring peace and tranquility, making it ideal for those seeking relaxation in the mountains. From the summit, there is a wide panorama, including views of the Złote Mountains, the Sowie Mountains, and the Stołowe Mountains. The hike to Rudawiec is an excellent opportunity to connect with nature and admire the wild landscapes of the Bialskie Mountains."
+    }
+  },
+  {
+    "name": "Orlica",
+    "location": "Kudowa-Zdrój",
+    "coordinates": {
+      "lat": 50.3953,
+      "lng": 16.2945
+    },
+    "mountain_range": "Góry Orlickie",
+    "height": 1084,
+    "difficulty_level": "NORMAL",
+    "average_ascent_time": 3,
+    "popularity": "MEDIUM",
+    "description": {
+      "pl": "Orlica to najwyższy szczyt Gór Orlickich, położony na granicy polsko-czeskiej. Jest to popularny cel wędrówek, oferujący przepiękne widoki na Kotlinę Kłodzką oraz pasma górskie po obu stronach granicy. Wędrówka na Orlicę jest łatwa i przyjemna, idealna dla turystów o średnich umiejętnościach. Na szczycie znajduje się wieża widokowa, z której roztacza się szeroka panorama, obejmująca Góry Stołowe, Góry Sowie oraz pobliskie czeskie pasma górskie. Szlak prowadzi przez malownicze lasy, a Orlica cieszy się średnią popularnością, szczególnie w sezonie letnim, kiedy to szlak jest oblegany przez turystów poszukujących spokoju i pięknych krajobrazów.",
+      "en": "Orlica is the highest peak of the Orlickie Mountains, located on the Polish-Czech border. It is a popular hiking destination offering beautiful views of the Kłodzka Valley and mountain ranges on both sides of the border. The hike to Orlica is easy and pleasant, ideal for tourists with intermediate skills. At the summit, there is an observation tower from which a wide panorama can be seen, including the Stołowe Mountains, the Sowie Mountains, and the nearby Czech mountain ranges. The trail passes through picturesque forests, and Orlica enjoys moderate popularity, especially in the summer season when the trail is crowded with tourists seeking peace and beautiful landscapes."
+    }
+  },
+  {
+    "name": "Lackowa",
+    "location": "Komańcza",
+    "coordinates": {
+      "lat": 49.3853,
+      "lng": 22.4294
+    },
+    "mountain_range": "Beskid Niski",
+    "height": 997,
+    "difficulty_level": "NORMAL",
+    "average_ascent_time": 3,
+    "popularity": "LOW",
+    "description": {
+      "pl": "Lackowa to najwyższy szczyt Beskidu Niskiego, położony w malowniczym rejonie Bieszczad. Jest to szczyt o średnim stopniu trudności, idealny dla turystów szukających ciszy i kontaktu z dziką naturą. Wędrówka na Lackową prowadzi przez gęste lasy, łąki i niewielkie polany, gdzie można podziwiać spokojne krajobrazy. Z wierzchołka szczytu rozciąga się widok na doliny i pasma górskie Beskidu Niskiego, a także na część Bieszczad. Lackowa jest mniej popularna w porównaniu do innych szczytów w regionie, co sprawia, że jest to miejsce idealne dla osób poszukujących mniej zatłoczonych tras górskich. Dzięki swojej dzikości i urokowi, szczyt jest szczególnie polecany miłośnikom spokojnych wędrówek.",
+      "en": "Lackowa is the highest peak of the Low Beskids, located in the picturesque region of the Bieszczady Mountains. It is a peak of moderate difficulty, ideal for hikers seeking peace and a connection with the wild nature. The hike to Lackowa passes through dense forests, meadows, and small clearings, where one can admire tranquil landscapes. From the summit, there is a view of the valleys and mountain ranges of the Low Beskids, as well as part of the Bieszczady Mountains. Lackowa is less popular compared to other peaks in the region, making it an ideal place for those seeking less crowded mountain trails. Due to its wildness and charm, the peak is especially recommended for lovers of peaceful hikes."
+    }
+  },
+  {
+    "name": "Jagodna",
+    "location": "Sienna",
+    "coordinates": {
+      "lat": 50.2672,
+      "lng": 16.6383
+    },
+    "mountain_range": "Góry Bystrzyckie",
+    "height": 977,
+    "difficulty_level": "EASY",
+    "average_ascent_time": 2,
+    "popularity": "MEDIUM",
+    "description": {
+      "pl": "Jagodna to szczyt w Górach Bystrzyckich, który wyróżnia się łatwym dostępem i pięknymi widokami na okolice. Jest to idealne miejsce dla osób poszukujących niezbyt trudnych tras górskich. Wędrówka na Jagodną jest krótka i przyjemna, prowadzi przez lasy i malownicze łąki, co sprawia, że szlak jest atrakcyjny szczególnie dla rodzin z dziećmi oraz początkujących turystów. Z wierzchołka roztacza się widok na Góry Stołowe oraz część Gór Bystrzyckich. Szczyt cieszy się średnią popularnością, zwłaszcza w sezonie letnim, kiedy to jest chętnie odwiedzany przez turystów szukających spokoju w pięknej przyrodzie Gór Bystrzyckich.",
+      "en": "Jagodna is a peak in the Bystrzyckie Mountains, known for its easy accessibility and beautiful views of the surrounding area. It is an ideal location for those seeking relatively easy mountain trails. The hike to Jagodna is short and pleasant, passing through forests and picturesque meadows, making the trail particularly attractive for families with children and beginner hikers. From the summit, there is a view of the Stołowe Mountains and part of the Bystrzyckie Mountains. The peak enjoys moderate popularity, especially during the summer season when it is frequently visited by tourists seeking peace in the beautiful nature of the Bystrzyckie Mountains."
+    }
+  },
+  {
+    "name": "Kowadło",
+    "location": "Głuchołazy",
+    "coordinates": {
+      "lat": 50.3147,
+      "lng": 17.4194
+    },
+    "mountain_range": "Góry Złote",
+    "height": 989,
+    "difficulty_level": "NORMAL",
+    "average_ascent_time": 3,
+    "popularity": "LOW",
+    "description": {
+      "pl": "Kowadło to jeden z wyższych szczytów Gór Złotych, położony na granicy polsko-czeskiej. Jest to idealne miejsce dla osób szukających spokoju i ciszy, ponieważ szczyt jest mniej uczęszczany w porównaniu do innych popularniejszych górskich destynacji. Wędrówka na Kowadło prowadzi przez malownicze lasy i łąki, a na szczycie czeka na turystów piękna panorama Gór Złotych oraz pobliskich pasm górskich. Szczyt oferuje także piękne widoki na Kotlinę Kłodzką i okolice. Trasa nie jest zbyt trudna, przez co Kowadło jest popularnym celem wycieczek dla osób o średnich umiejętnościach górskich. Ze względu na swoją spokojną atmosferę, Kowadło to doskonałe miejsce na odpoczynek w naturze.",
+      "en": "Kowadło is one of the higher peaks of the Złote Mountains, located on the Polish-Czech border. It is an ideal place for those seeking peace and quiet, as the peak is less frequented compared to other more popular mountain destinations. The hike to Kowadło passes through picturesque forests and meadows, and at the summit, tourists are rewarded with a beautiful panorama of the Złote Mountains and nearby mountain ranges. The peak also offers stunning views of the Kłodzka Valley and its surroundings. The trail is not too difficult, making Kowadło a popular destination for hikers with intermediate skills. Due to its peaceful atmosphere, Kowadło is an excellent place for relaxation in nature."
+    }
+  },
+  {
+    "name": "Chełmiec",
+    "location": "Wałbrzych",
+    "coordinates": {
+      "lat": 50.7747,
+      "lng": 16.2743
+    },
+    "mountain_range": "Góry Wałbrzyskie",
+    "height": 851,
+    "difficulty_level": "NORMAL",
+    "average_ascent_time": 2,
+    "popularity": "MEDIUM",
+    "description": {
+      "pl": "Chełmiec to jeden z bardziej rozpoznawalnych szczytów Gór Wałbrzyskich, znajdujący się w pobliżu Wałbrzycha. Jest to szczyt o średnim stopniu trudności, idealny dla turystów, którzy chcą spędzić kilka godzin na wędrówce po malowniczym terenie. Szlak na Chełmiec prowadzi przez lasy i wzniesienia, oferując piękne widoki na okoliczne pasma górskie oraz miasto Wałbrzych. Na szczycie znajduje się wieża widokowa, z której można podziwiać panoramę Dolnego Śląska, w tym pobliskie Góry Sowie. Chełmiec cieszy się średnią popularnością, zwłaszcza w sezonie letnim, gdy turyści chętnie korzystają z dogodnej lokalizacji i spokojnej atmosfery w tym regionie.",
+      "en": "Chełmiec is one of the most recognizable peaks of the Wałbrzych Mountains, located near Wałbrzych. It is a peak of moderate difficulty, ideal for hikers who want to spend a few hours exploring the picturesque terrain. The trail to Chełmiec passes through forests and hills, offering beautiful views of the surrounding mountain ranges and the town of Wałbrzych. At the summit, there is an observation tower from which visitors can admire the panorama of Lower Silesia, including the nearby Owl Mountains. Chełmiec enjoys moderate popularity, especially in the summer season when tourists eagerly take advantage of its convenient location and the peaceful atmosphere of the region."
+    }
+  },
+  {
+    "name": "Waligóra",
+    "location": "Głuszyca",
+    "coordinates": {
+      "lat": 50.6244,
+      "lng": 16.3581
+    },
+    "mountain_range": "Góry Kamienne",
+    "height": 936,
+    "difficulty_level": "NORMAL",
+    "average_ascent_time": 3,
+    "popularity": "LOW",
+    "description": {
+      "pl": "Waligóra to jeden z mniej znanych, ale równie pięknych szczytów Gór Kamiennych. Położony w pobliżu Głuszycy, oferuje turystom malownicze widoki na Góry Kamienne oraz pobliskie pasma górskie. Wędrówka na Waligórę nie jest trudna i może być świetnym wyborem dla osób, które szukają spokojnych szlaków z dala od tłumów. Z wierzchołka szczytu rozciąga się panoramiczny widok na Kotlinę Kłodzką i Góry Sowie. Waligóra jest rzadziej uczęszczana, co czyni ją idealnym miejscem dla osób szukających ciszy i kontaktu z naturą. Trasa przez lasy i łąki sprawia, że wędrówka jest przyjemna i relaksująca.",
+      "en": "Waligóra is one of the lesser-known but equally beautiful peaks of the Kamienne Mountains. Located near Głuszyca, it offers tourists picturesque views of the Kamienne Mountains and nearby mountain ranges. The hike to Waligóra is not difficult and can be an excellent choice for those looking for peaceful trails away from the crowds. From the summit, there is a panoramic view of the Kłodzka Valley and the Owl Mountains. Waligóra is less frequently visited, making it an ideal place for those seeking peace and a connection with nature. The trail through forests and meadows makes the hike enjoyable and relaxing."
+    }
+  },
+  {
+    "name": "Skopiec",
+    "location": "Janowice Wielkie",
+    "coordinates": {
+      "lat": 50.8272,
+      "lng": 15.9722
+    },
+    "mountain_range": "Góry Kaczawskie",
+    "height": 724,
+    "difficulty_level": "EASY",
+    "average_ascent_time": 2,
+    "popularity": "MEDIUM",
+    "description": {
+      "pl": "Skopiec to jeden z bardziej rozpoznawalnych szczytów Gór Kaczawskich, idealny dla turystów szukających krótkiej, łatwej wędrówki. Jego stosunkowo niewielka wysokość sprawia, że jest to cel odpowiedni zarówno dla rodzin z dziećmi, jak i początkujących turystów. Wędrówka na Skopiec prowadzi przez malownicze lasy, a z samego szczytu rozpościera się piękny widok na Góry Kaczawskie i Kotlinę Jeleniogórską. W okolicach szczytu znajduje się wieża widokowa, która umożliwia podziwianie okolicznych górskich krajobrazów. Skopiec cieszy się średnią popularnością, szczególnie w sezonie letnim, kiedy to turyści chętnie korzystają z tej łatwej i przyjemnej trasy.",
+      "en": "Skopiec is one of the more recognizable peaks of the Kaczawskie Mountains, ideal for tourists looking for a short, easy hike. Its relatively low height makes it a suitable destination for both families with children and beginner hikers. The hike to Skopiec passes through picturesque forests, and from the summit, there is a beautiful view of the Kaczawskie Mountains and the Jelenia Góra Valley. Near the summit, there is an observation tower that allows visitors to admire the surrounding mountain landscapes. Skopiec enjoys moderate popularity, especially in the summer season when tourists eagerly take advantage of this easy and pleasant route."
+    }
+  },
+  {
+    "name": "Ślęża",
+    "location": "Sobótka",
+    "coordinates": {
+      "lat": 50.8597,
+      "lng": 16.7294
+    },
+    "mountain_range": "Masyw Ślęży",
+    "height": 718,
+    "difficulty_level": "EASY",
+    "average_ascent_time": 2,
+    "popularity": "HIGH",
+    "description": {
+      "pl": "Ślęża to jeden z najbardziej znanych szczytów Dolnego Śląska, popularny cel wędrówek, szczególnie dla turystów z Wrocławia, który jest położony w pobliżu. Jest to góra o stosunkowo niewielkiej wysokości, ale o dużym znaczeniu historycznym i kulturowym, będąca miejscem dawnych kultów. Wędrówka na Ślężę jest łatwa i przyjemna, idealna dla rodzin z dziećmi i początkujących turystów. Na szczycie znajduje się wieża widokowa, która oferuje panoramiczny widok na Wrocław oraz okolice, w tym Sudety i Góry Wałbrzyskie. Ślęża cieszy się dużą popularnością przez cały rok, zwłaszcza w sezonie letnim, kiedy to jest tłumnie odwiedzana przez turystów szukających krótkiej i relaksującej wędrówki w pięknej okolicy.",
+      "en": "Ślęża is one of the most famous peaks of Lower Silesia, a popular hiking destination, especially for tourists from Wrocław, which is located nearby. It is a mountain of relatively modest height but of great historical and cultural significance, being a site of ancient cults. The hike to Ślęża is easy and pleasant, ideal for families with children and beginner hikers. At the summit, there is an observation tower offering a panoramic view of Wrocław and the surrounding areas, including the Sudetes and the Wałbrzych Mountains. Ślęża is very popular throughout the year, especially in the summer season when it is crowded with tourists seeking a short and relaxing hike in a beautiful setting."
+    }
+  },
+  {
+    "name": "Kłodzka Góra",
+    "location": "Bardo",
+    "coordinates": {
+      "lat": 50.4875,
+      "lng": 16.7056
+    },
+    "mountain_range": "Góry Bardzkie",
+    "height": 765,
+    "difficulty_level": "EASY",
+    "average_ascent_time": 2,
+    "popularity": "LOW",
+    "description": {
+      "pl": "Kłodzka Góra to niewielki, ale malowniczy szczyt w Górach Bardzkich, który stanowi idealny cel dla osób szukających spokojnej wędrówki w bliskiej okolicy. Wejście na szczyt nie jest trudne, a szlak prowadzi przez lasy i łąki, oferując piękne widoki na miasto Bardo i okoliczne pasma górskie. Z wierzchołka rozciąga się panorama na Kotlinę Kłodzką oraz Góry Stołowe. Kłodzka Góra jest mniej uczęszczana, co czyni ją doskonałym miejscem na ucieczkę od tłumów i spędzenie czasu na łonie natury. Ze względu na łatwy dostęp, szczyt cieszy się umiarkowaną popularnością, zwłaszcza w sezonie letnim.",
+      "en": "Kłodzka Góra is a small but picturesque peak in the Bardo Mountains, which makes an ideal destination for those seeking a peaceful hike in the nearby area. The ascent is not difficult, and the trail leads through forests and meadows, offering beautiful views of the town of Bardo and surrounding mountain ranges. From the summit, there is a panorama of the Kłodzko Valley and the Stołowe Mountains. Kłodzka Góra is less frequented, making it an excellent place to escape the crowds and spend time in nature. Due to its easy accessibility, the peak enjoys moderate popularity, especially in the summer season."
+    }
+  },
+  {
+    "name": "Biskupia Kopa",
+    "location": "Pokrzywna",
+    "coordinates": {
+      "lat": 50.2525,
+      "lng": 17.3972
+    },
+    "mountain_range": "Góry Opawskie",
+    "height": 889,
+    "difficulty_level": "NORMAL",
+    "average_ascent_time": 3,
+    "popularity": "MEDIUM",
+    "description": {
+      "pl": "Biskupia Kopa to najwyższy szczyt Gór Opawskich, znany ze swoich malowniczych widoków i łatwego dostępu. Jest to idealne miejsce dla turystów szukających średnio trudnej wędrówki, z trasą prowadzącą przez gęste lasy i łąki. Z wierzchołka szczytu rozciąga się piękna panorama na Góry Opawskie, Jeseniki oraz Dolny Śląsk. Na szczycie znajduje się wieża widokowa, która umożliwia podziwianie tych niesamowitych krajobrazów. Biskupia Kopa cieszy się średnią popularnością, zwłaszcza w sezonie letnim, gdy turyści odwiedzają ją zarówno z Polski, jak i z Czech, aby spędzić czas w pięknym naturalnym otoczeniu.",
+      "en": "Biskupia Kopa is the highest peak of the Opawskie Mountains, known for its picturesque views and easy accessibility. It is an ideal spot for tourists looking for a moderately difficult hike, with the trail passing through dense forests and meadows. From the summit, there is a beautiful panorama of the Opawskie Mountains, Jeseniki, and Lower Silesia. On the top, there is an observation tower that allows visitors to admire these stunning landscapes. Biskupia Kopa enjoys moderate popularity, especially in the summer season, when tourists visit from both Poland and the Czech Republic to spend time in this beautiful natural setting."
+    }
+  },
+  {
+    "name": "Czupel",
+    "location": "Kózki",
+    "coordinates": {
+      "lat": 49.7069,
+      "lng": 19.1719
+    },
+    "mountain_range": "Beskid Mały",
+    "height": 934,
+    "difficulty_level": "NORMAL",
+    "average_ascent_time": 2,
+    "popularity": "MEDIUM",
+    "description": {
+      "pl": "Czupel to jeden z popularniejszych szczytów Beskidu Małego, oferujący piękne widoki na okoliczne pasma górskie i pobliskie doliny. Wędrówka na Czupel jest stosunkowo łatwa, co czyni go idealnym celem dla turystów o różnym stopniu zaawansowania. Z wierzchołka rozciąga się malownicza panorama na Beskid Śląski, Beskid Żywiecki oraz Beskid Wyspowy. Szczyt jest szczególnie popularny wśród miłośników krótkich wędrówek, a także rodzin z dziećmi. Czupel cieszy się umiarkowaną popularnością, zwłaszcza w okresie letnim, kiedy to jest chętnie odwiedzany przez turystów szukających spokoju w otoczeniu górskiej przyrody.",
+      "en": "Czupel is one of the more popular peaks of the Little Beskids, offering beautiful views of the surrounding mountain ranges and nearby valleys. The hike to Czupel is relatively easy, making it an ideal destination for tourists of various skill levels. From the summit, there is a picturesque panorama of the Silesian Beskids, Żywiec Beskids, and the Island Beskids. The peak is especially popular among those who enjoy short hikes, as well as families with children. Czupel enjoys moderate popularity, especially during the summer season, when it is frequently visited by tourists seeking peace in the surrounding mountain nature."
+    }
+  },
+  {
+    "name": "Wielka Sowa",
+    "location": "Sowia Góra",
+    "coordinates": {
+      "lat": 50.7992,
+      "lng": 16.5856
+    },
+    "mountain_range": "Góry Sowie",
+    "height": 1015,
+    "difficulty_level": "NORMAL",
+    "average_ascent_time": 3,
+    "popularity": "HIGH",
+    "description": {
+      "pl": "Wielka Sowa to najwyższy szczyt Gór Sowich, który cieszy się dużą popularnością wśród turystów z całej Polski. Wędrówka na szczyt nie jest trudna i może być dostosowana do różnych poziomów zaawansowania. Z wierzchołka rozciąga się przepiękna panorama obejmująca Góry Stołowe, Karkonosze oraz doliny Świdnicy i Dzierżoniowa. Na szczycie znajduje się wieża widokowa, z której turyści mogą podziwiać okoliczne krajobrazy. Wielka Sowa to także miejsce o dużym znaczeniu historycznym, z licznymi szlakami turystycznymi, które prowadzą przez tajemnicze lasy oraz wojenne fortyfikacje. Szczyt cieszy się wysoką popularnością, szczególnie w okresie letnim, kiedy to przyciąga turystów z różnych części kraju.",
+      "en": "Wielka Sowa is the highest peak of the Owl Mountains, which is very popular among tourists from all over Poland. The hike to the summit is not difficult and can be adapted to various skill levels. From the top, there is a breathtaking panorama including the Stołowe Mountains, the Krkonošsko-Jizera Range, and the valleys of Świdnica and Dzierżoniów. At the summit, there is a lookout tower where tourists can enjoy the surrounding landscapes. Wielka Sowa is also a place of great historical significance, with numerous hiking trails leading through mysterious forests and wartime fortifications. The peak enjoys high popularity, especially in the summer, attracting tourists from different parts of the country."
+    }
+  },
+  {
+    "name": "Szczeliniec Wielki",
+    "location": "Karłów",
+    "coordinates": {
+      "lat": 50.4247,
+      "lng": 16.3794
+    },
+    "mountain_range": "Góry Stołowe",
+    "height": 919,
+    "difficulty_level": "NORMAL",
+    "average_ascent_time": 2,
+    "popularity": "HIGH",
+    "description": {
+      "pl": "Szczeliniec Wielki to najbardziej znany szczyt Gór Stołowych, który przyciąga turystów zarówno z Polski, jak i z zagranicy. Jego unikalny kształt i niesamowite formacje skalne sprawiają, że jest to jedno z najbardziej charakterystycznych miejsc w Sudetach. Wędrówka na szczyt jest stosunkowo łatwa, ale pełna atrakcji, takich jak labirynty skalne i widoki na okoliczne góry i Kotlinę Kłodzką. Z wierzchołka roztacza się szeroka panorama, a na szczycie znajduje się platforma widokowa, z której można podziwiać krajobrazy. Szczeliniec Wielki cieszy się dużą popularnością, szczególnie w sezonie letnim, kiedy to odwiedzają go tłumy turystów, pragnących zobaczyć jedną z najpiękniejszych atrakcji Gór Stołowych.",
+      "en": "Szczeliniec Wielki is the most famous peak of the Stołowe Mountains, attracting tourists from both Poland and abroad. Its unique shape and incredible rock formations make it one of the most distinctive places in the Sudetes. The hike to the summit is relatively easy but filled with attractions such as rock labyrinths and views of the surrounding mountains and the Kłodzko Valley. From the top, there is a wide panorama, and at the summit, there is a viewing platform where visitors can admire the landscape. Szczeliniec Wielki is very popular, especially in the summer, when crowds of tourists visit to see one of the most beautiful attractions of the Stołowe Mountains."
+    }
+  },
+  {
+    "name": "Radziejowa",
+    "location": "Piwniczna-Zdrój",
+    "coordinates": {
+      "lat": 49.4436,
+      "lng": 20.7806
+    },
+    "mountain_range": "Beskid Sądecki",
+    "height": 1266,
+    "difficulty_level": "NORMAL",
+    "average_ascent_time": 3,
+    "popularity": "MEDIUM",
+    "description": {
+      "pl": "Radziejowa to jeden z wyższych szczytów Beskidu Sądeckiego, oferujący wspaniałe widoki na okoliczne góry, w tym na Pasmo Radziejowej oraz Pieniny. Jest to szczyt o średnim stopniu trudności, idealny dla turystów poszukujących górskich wrażeń i pięknych krajobrazów. Wędrówka na Radziejową prowadzi przez lasy, łąki i wzniesienia, oferując malownicze widoki na doliny i pasma górskie. Z wierzchołka rozciąga się szeroka panorama na Tatry, Beskid Wyspowy oraz pobliskie pasma górskie. Radziejowa cieszy się średnią popularnością, szczególnie w sezonie letnim, kiedy turyści szukają nieco mniej zatłoczonych szlaków górskich w Beskidzie Sądeckim.",
+      "en": "Radziejowa is one of the higher peaks of the Sądecki Beskid, offering magnificent views of the surrounding mountains, including the Radziejowa Range and the Pieniny. This peak has a moderate level of difficulty, making it ideal for tourists seeking mountain experiences and beautiful landscapes. The hike to Radziejowa takes you through forests, meadows, and hills, offering picturesque views of valleys and mountain ranges. From the summit, there is a wide panorama of the Tatras, the Beskid Wyspowy, and nearby mountain ranges. Radziejowa enjoys moderate popularity, especially in the summer when tourists look for less crowded mountain trails in the Sądecki Beskid."
+    }
+  },
+  {
+    "name": "Turbacz",
+    "location": "Ochotnica Górna",
+    "coordinates": {
+      "lat": 49.5961,
+      "lng": 20.0108
+    },
+    "mountain_range": "Gorce",
+    "height": 1310,
+    "difficulty_level": "NORMAL",
+    "average_ascent_time": 3,
+    "popularity": "MEDIUM",
+    "description": {
+      "pl": "Turbacz to najwyższy szczyt Gorców, oferujący wspaniałe widoki na Pieniny, Tatry oraz Beskid Wyspowy. Wędrówka na Turbacz jest średnio trudna, ale stosunkowo krótka, dzięki czemu stanowi świetną propozycję zarówno dla turystów o średnim stopniu zaawansowania, jak i dla osób szukających pięknych krajobrazów w stosunkowo krótkim czasie. Z wierzchołka szczytu rozciąga się szeroka panorama, a na samej górze znajduje się schronisko górskie, które jest doskonałym miejscem na odpoczynek. Turbacz cieszy się średnią popularnością, szczególnie w okresie letnim, kiedy to jest chętnie odwiedzany przez turystów pragnących podziwiać malownicze widoki oraz spędzić czas na łonie natury.",
+      "en": "Turbacz is the highest peak of the Gorce Mountains, offering magnificent views of the Pieniny, Tatras, and Beskid Wyspowy. The hike to Turbacz is moderately difficult but relatively short, making it a great option for tourists with intermediate skills, as well as for those looking to enjoy beautiful landscapes in a short amount of time. From the summit, a wide panorama unfolds, and at the top, there is a mountain shelter, which is an excellent spot for resting. Turbacz enjoys moderate popularity, especially in the summer, when it is frequently visited by tourists who want to admire the picturesque views and spend time in nature."
+    }
+  },
+  {
+    "name": "Wysoka",
+    "location": "Jaworki",
+    "coordinates": {
+      "lat": 49.4533,
+      "lng": 20.3967
+    },
+    "mountain_range": "Pieniny",
+    "height": 1050,
+    "difficulty_level": "NORMAL",
+    "average_ascent_time": 2.5,
+    "popularity": "MEDIUM",
+    "description": {
+      "pl": "Wysoka, znana również jako Wysokie Skałki, to najwyższy szczyt Pienin, wznoszący się na wysokość 1050 m n.p.m. Z wierzchołka rozciąga się panoramiczny widok na Pieniny, Tatry oraz pobliskie pasma górskie. Na szczycie znajduje się platforma widokowa z metalowymi barierkami, zapewniającymi bezpieczeństwo podczas podziwiania krajobrazu. Do Wysokiej prowadzi kilka szlaków turystycznych, z których najpopularniejszy wiedzie przez Wąwóz Homole. Trasa ta jest malownicza i stosunkowo łatwa, co sprawia, że jest chętnie wybierana przez turystów. Wysoka znajduje się poza Pienińskim Parkiem Narodowym, co umożliwia swobodniejszy dostęp do szlaków.",
+      "en": "Wysoka, also known as Wysokie Skałki, is the highest peak of the Pieniny Mountains, rising to a height of 1050 meters above sea level. From the summit, there is a panoramic view of the Pieniny, the Tatras, and nearby mountain ranges. At the top, there is a viewing platform with metal railings for safety while admiring the landscape. Several hiking trails lead to Wysoka, with the most popular one passing through the Homole Gorge. This route is picturesque and relatively easy, making it a popular choice for tourists. Wysoka is located outside the Pieniny National Park, allowing easier access to the trails."
+    }
+  },
+  {
+    "name": "Łysica",
+    "location": "Święta Katarzyna",
+    "coordinates": {
+      "lat": 50.8144,
+      "lng": 20.9597
+    },
+    "mountain_range": "Góry Świętokrzyskie",
+    "height": 614,
+    "difficulty_level": "EASY",
+    "average_ascent_time": 1.5,
+    "popularity": "MEDIUM",
+    "description": {
+      "pl": "Łysica to najwyższy szczyt Gór Świętokrzyskich, wznoszący się na wysokość 614 m n.p.m. Jest to bardzo popularny cel wycieczek turystycznych, dzięki stosunkowo łatwemu dostępowi oraz malowniczym widokom. Na szczycie znajduje się wieża widokowa, z której można podziwiać panoramę całych Gór Świętokrzyskich oraz pobliskie pasma górskie. Do Łysicy prowadzi kilka szlaków turystycznych, w tym szlak czerwony z miejscowości Święta Katarzyna. Trasa jest krótka, ale stroma w górnej części, co sprawia, że jest dostępna również dla mniej doświadczonych turystów.",
+      "en": "Łysica is the highest peak of the Holy Cross Mountains, rising to an altitude of 614 meters above sea level. It is a very popular destination for tourists due to its relatively easy access and picturesque views. At the summit, there is a viewing tower from which you can admire the panorama of the entire Holy Cross Mountains and nearby mountain ranges. Several hiking trails lead to Łysica, including the red trail from the village of Święta Katarzyna. The route is short, but steep in the upper part, making it accessible even for less experienced tourists."
+    }
+  },
+  {
+    "name": "Skalnik",
+    "location": "Mysłakowice",
+    "coordinates": {
+      "lat": 50.8256,
+      "lng": 15.7414
+    },
+    "mountain_range": "Rudawy Janowickie",
+    "height": 945,
+    "difficulty_level": "NORMAL",
+    "average_ascent_time": 2,
+    "popularity": "MEDIUM",
+    "description": {
+      "pl": "Skalnik to najwyższy szczyt Rudaw Janowickich, wznoszący się na wysokość 945 m n.p.m. Z jego wierzchołka rozciąga się wspaniały widok na Karkonosze oraz okolice. Na szczycie znajduje się kamienna wieża widokowa, która umożliwia podziwianie panoramy górskiej. Podejście na Skalnik jest stosunkowo łatwe, chociaż wymaga pewnego wysiłku, zwłaszcza w górnej części trasy. Najczęściej wybieranym szlakiem jest szlak niebieski z miejscowości Mysłakowice. To doskonały szczyt dla turystów szukających spokoju i pięknych widoków, idealny na jednodniową wędrówkę.",
+      "en": "Skalnik is the highest peak of the Rudawy Janowickie Mountains, rising to an altitude of 945 meters above sea level. From its summit, there is a stunning view of the Karkonosze Mountains and the surrounding area. At the top, there is a stone observation tower that allows visitors to admire the mountain panorama. The hike to Skalnik is relatively easy, although it requires some effort, especially in the upper part of the trail. The most commonly chosen trail is the blue one from the town of Mysłakowice. It is an excellent peak for tourists seeking peace and beautiful views, perfect for a one-day hike."
+    }
+  }
+]

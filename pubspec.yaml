@@ -26,8 +26,11 @@ flutter:
   uses-material-design: true
   generate: true
   assets:
-    - assets/logo/
-    - assets/providers/
+    - assets/images/avatars/
+    - assets/images/logos/
+    - assets/images/peaks/
+    - assets/images/providers/
+    - assets/json/
 
 spider:
   generate_tests: true
@@ -37,9 +40,15 @@ spider:
   use_references_list: false
   package: resources
   groups:
-    - path: assets/logo
-      class_name: AppLogoImages
+    - path: assets/images/avatars
+      class_name: AvatarImages
       types: [ .png ]
-    - path: assets/providers
-      class_name: ProvidersIconImages
+    - path: assets/images/logos
+      class_name: LogoImages
+      types: [ .png ]
+    - path: assets/images/peaks
+      class_name: PeakImages
+      types: [ .jpg, .jpeg ]
+    - path: assets/images/providers
+      class_name: ProvidersIcons
       types: [ .svg ]
