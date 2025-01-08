@@ -1,0 +1,53 @@
+import 'package:eksiazeczka_kgp/designSystem/textStyles/text_styles.dart';
+import 'package:eksiazeczka_kgp/designSystem/themes/app_colors.dart';
+import 'package:flutter/material.dart';
+
+class AppButtonThemes {
+  static final TextStyle _textStyle = AppTextStyles.h6(fontWeight: FontWeight.w500);
+  static final OutlinedBorder _shape = RoundedRectangleBorder(borderRadius: BorderRadius.circular(28));
+
+  static Size _size({double height = 56}) => Size(300, height);
+
+  static ElevatedButtonThemeData elevatedButtonThemeData({
+    required Color primary,
+    required Color secondary,
+  }) {
+    return ElevatedButtonThemeData(
+      style: ElevatedButton.styleFrom(
+        foregroundColor: secondary,
+        backgroundColor: primary,
+        textStyle: _textStyle,
+        shape: _shape,
+        fixedSize: _size(),
+      ),
+    );
+  }
+
+  static OutlinedButtonThemeData outlinedButtonThemeData({
+    required Color primary,
+    required Color secondary,
+  }) {
+    return OutlinedButtonThemeData(
+      style: OutlinedButton.styleFrom(
+        foregroundColor: secondary,
+        backgroundColor: primary,
+        textStyle: _textStyle,
+        shape: _shape,
+        fixedSize: _size(),
+      ),
+    );
+  }
+
+  static TextButtonThemeData textButtonThemeData({required Color secondary}) {
+    return TextButtonThemeData(
+      style: TextButton.styleFrom(
+        foregroundColor: secondary,
+        overlayColor: AppColors.transparent,
+        textStyle: _textStyle,
+        shape: _shape,
+        fixedSize: _size(height: 24),
+        padding: EdgeInsets.zero,
+      ),
+    );
+  }
+}

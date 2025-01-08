@@ -55,8 +55,8 @@ class App extends StatelessWidget {
         ),
       ],
       child: MaterialApp.router(
-        theme: AppTheme.light,
-        darkTheme: AppTheme.dark,
+        theme: AppThemes.light,
+        darkTheme: AppThemes.dark,
         debugShowCheckedModeBanner: false,
         localizationsDelegates: AppLocalizations.localizationsDelegates,
         supportedLocales: AppLocalizations.supportedLocales,
