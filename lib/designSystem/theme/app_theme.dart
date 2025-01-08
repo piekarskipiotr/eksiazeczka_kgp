@@ -13,9 +13,10 @@ class AppTheme {
       displayColor: AppColors.black,
     ),
     chipTheme: ChipThemeData(
-      selectedColor: AppColors.black,
-      backgroundColor: AppColors.lightBackground,
-      secondarySelectedColor: AppColors.black,
+      color: WidgetStateProperty.resolveWith<Color>((states) {
+        if (states.contains(WidgetState.selected)) return AppColors.black;
+        return AppColors.lightBackground;
+      }),
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(100),
         side: const BorderSide(),
@@ -60,8 +61,10 @@ class AppTheme {
       displayColor: AppColors.white,
     ),
     chipTheme: ChipThemeData(
-      selectedColor: AppColors.white,
-      backgroundColor: AppColors.darkBackground,
+      color: WidgetStateProperty.resolveWith<Color>((states) {
+        if (states.contains(WidgetState.selected)) return AppColors.white;
+        return AppColors.darkBackground;
+      }),
       secondarySelectedColor: AppColors.white,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(100),

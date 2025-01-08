@@ -25,5 +25,14 @@
         "example": "28"
       }
     }
-  }
+  },
+  "peaksPageHeader": "What peak do you want\nto conquer today?",
+  "all": "All",
+  "conquered": "Conquered",
+  "unconquered": "Unconquered",
+  "alphabetical": "Alphabetically",
+  "heightAsc": "Height - from highest to lowest",
+  "heightDsc": "Height - from lowest to highest",
+  "conqueredDateAsc": "Conquered date - from most recent to oldest",
+  "conqueredDateDsc": "Conquered date - from oldest to most recent"
 }

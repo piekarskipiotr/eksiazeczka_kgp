@@ -1,5 +1,6 @@
 import 'package:eksiazeczka_kgp/designSystem/design_system.dart';
 import 'package:eksiazeczka_kgp/l10n/l10n.dart';
+import 'package:eksiazeczka_kgp/presentation/peaks/bloc/peaks_bloc.dart';
 import 'package:eksiazeczka_kgp/router/app_router.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -17,6 +18,7 @@ class App extends StatelessWidget {
     return MultiRepositoryProvider(
       providers: [
         RepositoryProvider.value(value: _router),
+        BlocProvider(create: (_) => PeaksBloc()),
       ],
       child: MaterialApp.router(
         theme: AppTheme.light,

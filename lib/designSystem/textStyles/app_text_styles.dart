@@ -6,12 +6,14 @@ class AppTextStyles {
         color: color,
         fontSize: 48,
         fontWeight: fontWeight,
+        height: 1.30,
       );
 
-  static TextStyle h2({Color? color, FontWeight? fontWeight = FontWeight.w900}) => GoogleFonts.instrumentSans(
+  static TextStyle h2({Color? color, FontWeight? fontWeight = FontWeight.bold}) => GoogleFonts.instrumentSans(
         color: color,
         fontSize: 32,
         fontWeight: fontWeight,
+        height: 1.25,
       );
 
   static TextStyle h3({Color? color, FontWeight? fontWeight = FontWeight.w600}) => GoogleFonts.instrumentSans(

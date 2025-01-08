@@ -25,5 +25,14 @@
         "example": "28"
       }
     }
-  }
+  },
+  "peaksPageHeader": "Jaki szczyt dzisiaj\nchcesz zdobyć?",
+  "all": "Wszystkie",
+  "conquered": "Zdobyte",
+  "unconquered": "Niezdobyte",
+  "alphabetical": "Alfabetycznie",
+  "heightAsc": "Wysokość - od najwyższej do najniższej",
+  "heightDsc": "Wysokość - od najniższej do najwyższej",
+  "conqueredDateAsc": "Data zdobycia - od najnowszej do najstarszej",
+  "conqueredDateDsc": "Data zdobycia - od najstarszej do najnowszej"
 }

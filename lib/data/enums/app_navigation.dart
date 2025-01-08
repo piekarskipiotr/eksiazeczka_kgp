@@ -13,14 +13,14 @@ enum AppNavigation {
       };
 
   String get icon => switch (this) {
-        AppNavigation.peaks => IconsImages.landscape,
-        AppNavigation.medals => IconsImages.medals,
-        AppNavigation.more => IconsImages.menu,
+        AppNavigation.peaks => IconImages.landscape,
+        AppNavigation.medals => IconImages.medals,
+        AppNavigation.more => IconImages.menu,
       };
 
   String get activeIcon => switch (this) {
-        AppNavigation.peaks => IconsImages.landscapeFilled,
-        AppNavigation.medals => IconsImages.medalsFilled,
-        AppNavigation.more => IconsImages.menuFilled,
+        AppNavigation.peaks => IconImages.landscapeFilled,
+        AppNavigation.medals => IconImages.medalsFilled,
+        AppNavigation.more => IconImages.menuFilled,
       };
 }

@@ -38,7 +38,7 @@ class AppFilterChip extends StatelessWidget {
       onSelected: (isSelected) => onSelected(isSelected: isSelected),
       label: Text(label, style: labelStyle),
       labelPadding: const EdgeInsets.symmetric(horizontal: 6),
-      avatar: useSelectIcon && isSelected ? AppIcon(IconsImages.checkCircle, color: secondaryColor) : null,
+      avatar: useSelectIcon && isSelected ? AppIcon(IconImages.checkCircle, color: secondaryColor) : null,
       padding: size.padding,
     );
   }
