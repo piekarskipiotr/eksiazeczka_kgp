@@ -34,5 +34,11 @@
   "heightAsc": "Wysokość - od najwyższej do najniższej",
   "heightDsc": "Wysokość - od najniższej do najwyższej",
   "conqueredDateAsc": "Data zdobycia - od najnowszej do najstarszej",
-  "conqueredDateDsc": "Data zdobycia - od najstarszej do najnowszej"
+  "conqueredDateDsc": "Data zdobycia - od najstarszej do najnowszej",
+  "easy": "Łatwy",
+  "normal": "Umiarkowany",
+  "hard": "Trudny",
+  "low": "Mała",
+  "medium": "Średnia",
+  "high": "Wysoka"
 }

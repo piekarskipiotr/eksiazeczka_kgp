@@ -34,5 +34,11 @@
   "heightAsc": "Height - from highest to lowest",
   "heightDsc": "Height - from lowest to highest",
   "conqueredDateAsc": "Conquered date - from most recent to oldest",
-  "conqueredDateDsc": "Conquered date - from oldest to most recent"
+  "conqueredDateDsc": "Conquered date - from oldest to most recent",
+  "easy": "Easy",
+  "normal": "Normal",
+  "hard": "Hard",
+  "low": "Low",
+  "medium": "Medium",
+  "high": "High"
 }

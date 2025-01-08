@@ -2,9 +2,13 @@ import 'dart:async';
 import 'dart:developer';
 
 import 'package:bloc/bloc.dart';
+import 'package:eksiazeczka_kgp/data/constants.dart';
+import 'package:eksiazeczka_kgp/data/repositories/repositories.dart';
 import 'package:eksiazeczka_kgp/designSystem/design_system.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
+import 'package:sentry_flutter/sentry_flutter.dart';
+import 'package:sqflite/sqflite.dart' show databaseFactory;
 
 class AppBlocObserver extends BlocObserver {
   const AppBlocObserver();
@@ -22,13 +26,22 @@ class AppBlocObserver extends BlocObserver {
   }
 }
 
-Future<void> bootstrap(FutureOr<Widget> Function() builder) async {
+Future<void> bootstrap(FutureOr<Widget> Function() builder, {bool useSentry = false}) async {
   FlutterError.onError = (details) {
     log(details.exceptionAsString(), stackTrace: details.stack);
   };
 
   Bloc.observer = const AppBlocObserver();
   WidgetsFlutterBinding.ensureInitialized();
+  if (useSentry) {
+    await SentryFlutter.init((options) {
+      options
+        ..dsn = sentryDNSKey
+        ..tracesSampleRate = 1.0
+        ..profilesSampleRate = 1.0;
+    });
+  }
+
   await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
   await SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge, overlays: [SystemUiOverlay.top]);
   SystemChrome.setSystemUIOverlayStyle(
@@ -39,5 +52,7 @@ Future<void> bootstrap(FutureOr<Widget> Function() builder) async {
     ),
   );
 
+  await SupabaseRepository.configure(databaseFactory);
+  await SupabaseRepository().initialize();
   runApp(await builder());
 }

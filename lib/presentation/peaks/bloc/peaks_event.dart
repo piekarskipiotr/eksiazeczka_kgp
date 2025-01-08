@@ -4,6 +4,22 @@ abstract class PeaksEvent extends Equatable {
   const PeaksEvent();
 }
 
+final class InitializeStreamSubscription extends PeaksEvent {
+  const InitializeStreamSubscription();
+
+  @override
+  List<Object?> get props => [];
+}
+
+final class LoadPeaks extends PeaksEvent {
+  const LoadPeaks(this.peaks);
+
+  final List<Peak> peaks;
+
+  @override
+  List<Object?> get props => [peaks];
+}
+
 final class ChangePeaksFilter extends PeaksEvent {
   const ChangePeaksFilter(this.filter);
 
