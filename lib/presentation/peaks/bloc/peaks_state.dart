@@ -6,6 +6,7 @@ class PeaksState extends Equatable {
     this.sortType = PeaksSortTypes.alphabetical,
     this.streamSubscription,
     this.peaks,
+    this.sortedAndFilteredPeaks,
     this.error,
   });
 
@@ -13,6 +14,7 @@ class PeaksState extends Equatable {
   final PeaksSortTypes sortType;
   final StreamSubscription<List<Peak>>? streamSubscription;
   final List<Peak>? peaks;
+  final List<Peak>? sortedAndFilteredPeaks;
   final String? error;
 
   PeaksState copyWith({
@@ -20,6 +22,7 @@ class PeaksState extends Equatable {
     PeaksSortTypes? sortType,
     StreamSubscription<List<Peak>>? streamSubscription,
     List<Peak>? peaks,
+    List<Peak>? sortedAndFilteredPeaks,
     String? error,
   }) {
     return PeaksState(
@@ -27,10 +30,11 @@ class PeaksState extends Equatable {
       sortType: sortType ?? this.sortType,
       streamSubscription: streamSubscription ?? this.streamSubscription,
       peaks: peaks ?? this.peaks,
+      sortedAndFilteredPeaks: sortedAndFilteredPeaks ?? this.sortedAndFilteredPeaks,
       error: error,
     );
   }
 
   @override
-  List<Object?> get props => [filter, sortType, streamSubscription, peaks, error];
+  List<Object?> get props => [filter, sortType, streamSubscription, peaks, sortedAndFilteredPeaks, error];
 }

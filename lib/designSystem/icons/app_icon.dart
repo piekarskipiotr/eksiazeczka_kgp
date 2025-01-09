@@ -4,21 +4,22 @@ import 'package:flutter_svg/flutter_svg.dart';
 class AppIcon extends StatelessWidget {
   const AppIcon(
     this.path, {
-    required this.color,
+    this.color,
     this.size = 24,
     super.key,
   });
 
   final String path;
   final double size;
-  final Color color;
+  final Color? color;
 
   @override
   Widget build(BuildContext context) {
+    final defaultColor = Theme.of(context).iconTheme.color!;
     return SvgPicture.asset(
       path,
       width: size,
-      colorFilter: ColorFilter.mode(color, BlendMode.srcIn),
+      colorFilter: ColorFilter.mode(color ?? defaultColor, BlendMode.srcIn),
     );
   }
 }

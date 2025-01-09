@@ -40,5 +40,21 @@
   "hard": "Trudny",
   "low": "Mała",
   "medium": "Średnia",
-  "high": "Wysoka"
+  "high": "Wysoka",
+  "masl": "m n.p.m",
+  "conqueredAt": "Zdobyto: {date}",
+  "@conqueredAt": {
+    "placeholders": {
+      "date": {
+        "type": "String",
+        "example": "07.05.2025"
+      }
+    }
+  },
+  "emptyPeaksListAllTitle": "Ups, coś jest nie tak...",
+  "emptyPeaksListAllDescription": "Wygląda na to że nastąpił jakiś problem z danymi o szczytach.\nSpróbuj ponownie uruchomić aplikację.",
+  "emptyPeaksListConqueredTitle": "Nie masz jeszcze zdobytych szczytów.",
+  "emptyPeaksListConqueredDescription": "Twoja przygoda dopiero się zaczyna! Wyrusz na szlaki,\nzdobywaj szczyty i wróć tutaj, by wyświetlić zdobyte\nmiejsca.",
+  "emptyPeaksListUnconqueredTitle": "Zdobyłeś już wszystkie szczyty!",
+  "emptyPeaksListUnconqueredDescription": "Gratulacje, udało Ci się odwiedzić każdy szczyt Korony Gór Polskich."
 }

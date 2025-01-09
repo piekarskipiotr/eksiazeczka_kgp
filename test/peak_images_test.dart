@@ -1,7 +1,7 @@
 import 'dart:io';
 
-import 'package:eksiazeczka_kgp/resources/resources.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:eksiazeczka_kgp/resources/resources.dart';
 
 void main() {
   test('peak_images assets test', () {
@@ -16,7 +16,6 @@ void main() {
     expect(File(PeakImages.lubomir).existsSync(), isTrue);
     expect(File(PeakImages.lysica).existsSync(), isTrue);
     expect(File(PeakImages.mogielica).existsSync(), isTrue);
-    expect(File(PeakImages.orlica).existsSync(), isTrue);
     expect(File(PeakImages.radziejowa).existsSync(), isTrue);
     expect(File(PeakImages.rudawiec).existsSync(), isTrue);
     expect(File(PeakImages.rysy).existsSync(), isTrue);

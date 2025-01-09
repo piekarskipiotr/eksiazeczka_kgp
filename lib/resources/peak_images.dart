@@ -14,7 +14,6 @@ class PeakImages {
   static const String lubomir = 'assets/images/peaks/lubomir.jpg';
   static const String lysica = 'assets/images/peaks/lysica.jpg';
   static const String mogielica = 'assets/images/peaks/mogielica.jpg';
-  static const String orlica = 'assets/images/peaks/orlica.jpeg';
   static const String radziejowa = 'assets/images/peaks/radziejowa.jpg';
   static const String rudawiec = 'assets/images/peaks/rudawiec.jpg';
   static const String rysy = 'assets/images/peaks/rysy.jpg';
@@ -23,7 +22,7 @@ class PeakImages {
   static const String skrzyczne = 'assets/images/peaks/skrzyczne.jpg';
   static const String sleza = 'assets/images/peaks/sleza.jpg';
   static const String sniezka = 'assets/images/peaks/sniezka.jpg';
-  static const String snieznik = 'assets/images/peaks/snieznik.jpeg';
+  static const String snieznik = 'assets/images/peaks/snieznik.jpg';
   static const String szczeliniecWielki =
       'assets/images/peaks/szczeliniec_wielki.jpg';
   static const String tarnica = 'assets/images/peaks/tarnica.jpg';

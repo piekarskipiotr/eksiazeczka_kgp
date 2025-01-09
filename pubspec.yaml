@@ -71,7 +71,7 @@ spider:
       types: [ .png ]
     - path: assets/images/peaks
       class_name: PeakImages
-      types: [ .jpg, .jpeg ]
+      types: [ .jpg ]
     - path: assets/images/providers
       class_name: ProvidersIcons
       types: [ .svg ]

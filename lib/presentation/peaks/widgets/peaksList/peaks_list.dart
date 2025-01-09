@@ -1,0 +1,43 @@
+import 'package:eksiazeczka_kgp/data/enums/enums.dart';
+import 'package:eksiazeczka_kgp/data/models/models.dart';
+import 'package:eksiazeczka_kgp/presentation/peaks/widgets/card/card.dart';
+import 'package:eksiazeczka_kgp/presentation/peaks/widgets/peaksList/empty_list.dart';
+import 'package:flutter/material.dart';
+
+class PeaksList extends StatelessWidget {
+  const PeaksList({
+    required this.peaks,
+    required this.filter,
+    required this.onPeakPressed,
+    super.key,
+  });
+
+  final List<Peak>? peaks;
+  final PeaksFilters filter;
+  final void Function(BuildContext, Peak) onPeakPressed;
+
+  @override
+  Widget build(BuildContext context) {
+    if (peaks?.isEmpty ?? true) return EmptyList(filter: filter);
+    return ListView.separated(
+      shrinkWrap: true,
+      physics: const NeverScrollableScrollPhysics(),
+      itemCount: peaks!.length,
+      itemBuilder: (context, index) {
+        final peak = peaks![index];
+        return PeakCard(
+          peak: peak,
+          onPressed: () {
+            onPeakPressed(context, peak);
+          },
+        );
+      },
+      separatorBuilder: (_, index) {
+        final itemsLength = peaks?.length ?? 0;
+        final isLastItem = itemsLength == index;
+        final height = !isLastItem && itemsLength > 1 ? 24.0 : 0.0;
+        return SizedBox(height: height);
+      },
+    );
+  }
+}

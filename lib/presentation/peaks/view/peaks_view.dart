@@ -1,4 +1,5 @@
 import 'package:eksiazeczka_kgp/data/enums/enums.dart';
+import 'package:eksiazeczka_kgp/data/models/models.dart';
 import 'package:eksiazeczka_kgp/presentation/peaks/bloc/peaks_bloc.dart';
 import 'package:eksiazeczka_kgp/presentation/peaks/widgets/widgets.dart';
 import 'package:flutter/material.dart';
@@ -6,6 +7,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 class PeaksView extends StatelessWidget {
   const PeaksView({super.key});
+
+  void _onPeakPressed(BuildContext context, Peak peak) {
+    // TODO(piotr): Implement navigation to peak details
+  }
 
   void _onFilterPressed(BuildContext context, PeaksFilters filter) {
     context.read<PeaksBloc>().add(ChangePeaksFilter(filter));
@@ -19,13 +24,16 @@ class PeaksView extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<PeaksBloc, PeaksState>(
       builder: (context, state) {
+        final peaks = state.sortedAndFilteredPeaks;
         final selectedFilter = state.filter;
         final selectedSortType = state.sortType;
+
         return SingleChildScrollView(
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+            padding: const EdgeInsets.all(16),
             child: Column(
               spacing: 24,
+              mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const PeaksHeaderText(),
@@ -48,6 +56,7 @@ class PeaksView extends StatelessWidget {
                     ),
                   ],
                 ),
+                PeaksList(peaks: peaks, filter: selectedFilter, onPeakPressed: _onPeakPressed),
               ],
             ),
           ),

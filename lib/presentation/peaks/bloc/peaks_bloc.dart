@@ -55,9 +55,9 @@ class PeaksBloc extends Bloc<PeaksEvent, PeaksState> {
     final selectedFilter = state.filter;
     final selectedSortType = state.sortType;
 
-    final sortAndFilteredPeaks = _filterPeaks(peaks, selectedFilter);
-    _sortPeaks(sortAndFilteredPeaks, selectedSortType);
-    emit(state.copyWith(peaks: sortAndFilteredPeaks));
+    final sortedAndFilteredPeaks = _filterPeaks(peaks, selectedFilter);
+    _sortPeaks(sortedAndFilteredPeaks, selectedSortType);
+    emit(state.copyWith(peaks: peaks, sortedAndFilteredPeaks: sortedAndFilteredPeaks));
   }
 
   Future<void> _onChangePeaksFilter(ChangePeaksFilter event, Emitter<PeaksState> emit) async {

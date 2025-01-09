@@ -40,5 +40,21 @@
   "hard": "Hard",
   "low": "Low",
   "medium": "Medium",
-  "high": "High"
+  "high": "High",
+  "masl": "m a.s.l",
+  "conqueredAt": "Conquered at: {date}",
+  "@conqueredAt": {
+    "placeholders": {
+      "date": {
+        "type": "String",
+        "example": "07.05.2025"
+      }
+    }
+  },
+  "emptyPeaksListAllTitle": "Oops, something went wrong...",
+  "emptyPeaksListAllDescription": "It seems there was an issue with the peak data. Try restarting the app.",
+  "emptyPeaksListConqueredTitle": "You haven't conquered any peaks yet.",
+  "emptyPeaksListConqueredDescription": "Your adventure is just beginning! Hit the trails, conquer peaks,\nand come back here to view your conquered places.",
+  "emptyPeaksListUnconqueredTitle": "You've conquered all the peaks!",
+  "emptyPeaksListUnconqueredDescription": "Congratulations, you've managed to visit every peak."
 }
