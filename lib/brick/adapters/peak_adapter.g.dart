@@ -2,59 +2,57 @@
 part of '../brick.g.dart';
 
 Future<Peak> _$PeakFromSupabase(Map<String, dynamic> data,
-    {required SupabaseProvider provider,
-    OfflineFirstWithSupabaseRepository? repository}) async {
+    {required SupabaseProvider provider, OfflineFirstWithSupabaseRepository? repository}) async {
   return Peak(
-      id: data['id'] as String?,
-      name: data['name'] as String,
-      coordinates: await PeakCoordinatesAdapter().fromSupabase(
-          data['coordinates'],
-          provider: provider,
-          repository: repository),
-      location: data['location'] as String,
-      mountainRange: data['mountain_range'] as String,
-      height: data['height'] as int,
-      difficultyLevel: DifficultyLevel.values[data['difficulty_level'] as int],
-      averageAscentTime: data['average_ascent_time'] as int,
-      popularity: Popularity.values[data['popularity'] as int],
-      descriptions: await Future.wait<PeakDescription>(data['descriptions']
-              ?.map((d) => PeakDescriptionAdapter()
-                  .fromSupabase(d, provider: provider, repository: repository))
-              .toList()
-              .cast<Future<PeakDescription>>() ??
-          []),
-      userMetadata: data['user_metadata'] == null
-          ? null
-          : await PeakUserMetadataAdapter().fromSupabase(data['user_metadata'],
-              provider: provider, repository: repository));
+    id: data['id'] as String?,
+    name: data['name'] as String,
+    coordinates: await PeakCoordinatesAdapter().fromSupabase(
+      (data['coordinates'] as List<dynamic>).firstOrNull as Map<String, dynamic>,
+      provider: provider,
+      repository: repository,
+    ),
+    location: data['location'] as String,
+    mountainRange: data['mountain_range'] as String,
+    height: data['height'] as int,
+    difficultyLevel: DifficultyLevel.values[data['difficulty_level'] as int],
+    averageAscentTime: data['average_ascent_time'] as int,
+    popularity: Popularity.values[data['popularity'] as int],
+    descriptions: await Future.wait<PeakDescription>(data['descriptions']
+            ?.map((d) => PeakDescriptionAdapter().fromSupabase(d, provider: provider, repository: repository))
+            .toList()
+            .cast<Future<PeakDescription>>() ??
+        []),
+    userMetadata: data['user_metadata'] == null
+        ? null
+        : await PeakUserMetadataAdapter().fromSupabase(
+            (data['user_metadata'] as List<dynamic>).firstOrNull as Map<String, dynamic>,
+            provider: provider,
+            repository: repository,
+          ),
+  );
 }
 
 Future<Map<String, dynamic>> _$PeakToSupabase(Peak instance,
-    {required SupabaseProvider provider,
-    OfflineFirstWithSupabaseRepository? repository}) async {
+    {required SupabaseProvider provider, OfflineFirstWithSupabaseRepository? repository}) async {
   return {
     'id': instance.id,
     'name': instance.name,
     'location': instance.location,
     'mountain_range': instance.mountainRange,
     'height': instance.height,
-    'difficulty_level':
-        DifficultyLevel.values.indexOf(instance.difficultyLevel),
+    'difficulty_level': DifficultyLevel.values.indexOf(instance.difficultyLevel),
     'average_ascent_time': instance.averageAscentTime,
     'popularity': Popularity.values.indexOf(instance.popularity)
   };
 }
 
 Future<Peak> _$PeakFromSqlite(Map<String, dynamic> data,
-    {required SqliteProvider provider,
-    OfflineFirstWithSupabaseRepository? repository}) async {
+    {required SqliteProvider provider, OfflineFirstWithSupabaseRepository? repository}) async {
   return Peak(
       id: data['id'] as String,
       name: data['name'] as String,
       coordinates: (await repository!.getAssociation<PeakCoordinates>(
-        Query.where(
-            'primaryKey', data['coordinates_PeakCoordinates_brick_id'] as int,
-            limit1: true),
+        Query.where('primaryKey', data['coordinates_PeakCoordinates_brick_id'] as int, limit1: true),
       ))!
           .first,
       location: data['location'] as String,
@@ -79,9 +77,7 @@ Future<Peak> _$PeakFromSqlite(Map<String, dynamic> data,
           ? null
           : (data['user_metadata_PeakUserMetadata_brick_id'] > -1
               ? (await repository.getAssociation<PeakUserMetadata>(
-                  Query.where('primaryKey',
-                      data['user_metadata_PeakUserMetadata_brick_id'] as int,
-                      limit1: true),
+                  Query.where('primaryKey', data['user_metadata_PeakUserMetadata_brick_id'] as int, limit1: true),
                 ))
                   ?.first
               : null))
@@ -89,25 +85,21 @@ Future<Peak> _$PeakFromSqlite(Map<String, dynamic> data,
 }
 
 Future<Map<String, dynamic>> _$PeakToSqlite(Peak instance,
-    {required SqliteProvider provider,
-    OfflineFirstWithSupabaseRepository? repository}) async {
+    {required SqliteProvider provider, OfflineFirstWithSupabaseRepository? repository}) async {
   return {
     'id': instance.id,
     'name': instance.name,
     'coordinates_PeakCoordinates_brick_id': instance.coordinates.primaryKey ??
-        await provider.upsert<PeakCoordinates>(instance.coordinates,
-            repository: repository),
+        await provider.upsert<PeakCoordinates>(instance.coordinates, repository: repository),
     'location': instance.location,
     'mountain_range': instance.mountainRange,
     'height': instance.height,
-    'difficulty_level':
-        DifficultyLevel.values.indexOf(instance.difficultyLevel),
+    'difficulty_level': DifficultyLevel.values.indexOf(instance.difficultyLevel),
     'average_ascent_time': instance.averageAscentTime,
     'popularity': Popularity.values.indexOf(instance.popularity),
     'user_metadata_PeakUserMetadata_brick_id': instance.userMetadata != null
         ? instance.userMetadata!.primaryKey ??
-            await provider.upsert<PeakUserMetadata>(instance.userMetadata!,
-                repository: repository)
+            await provider.upsert<PeakUserMetadata>(instance.userMetadata!, repository: repository)
         : null
   };
 }
@@ -255,9 +247,9 @@ class PeakAdapter extends OfflineFirstWithSupabaseAdapter<Peak> {
       type: PeakUserMetadata,
     )
   };
+
   @override
-  Future<int?> primaryKeyByUniqueColumns(
-      Peak instance, DatabaseExecutor executor) async {
+  Future<int?> primaryKeyByUniqueColumns(Peak instance, DatabaseExecutor executor) async {
     final results = await executor.rawQuery('''
         SELECT * FROM `Peak` WHERE id = ? LIMIT 1''', [instance.id]);
 
@@ -271,18 +263,16 @@ class PeakAdapter extends OfflineFirstWithSupabaseAdapter<Peak> {
 
   @override
   final String tableName = 'Peak';
+
   @override
   Future<void> afterSave(instance, {required provider, repository}) async {
     if (instance.primaryKey != null) {
       final descriptionsOldColumns = await provider.rawQuery(
           'SELECT `f_PeakDescription_brick_id` FROM `_brick_Peak_descriptions` WHERE `l_Peak_brick_id` = ?',
           [instance.primaryKey]);
-      final descriptionsOldIds =
-          descriptionsOldColumns.map((a) => a['f_PeakDescription_brick_id']);
-      final descriptionsNewIds =
-          instance.descriptions.map((s) => s.primaryKey).whereType<int>();
-      final descriptionsIdsToDelete =
-          descriptionsOldIds.where((id) => !descriptionsNewIds.contains(id));
+      final descriptionsOldIds = descriptionsOldColumns.map((a) => a['f_PeakDescription_brick_id']);
+      final descriptionsNewIds = instance.descriptions.map((s) => s.primaryKey).whereType<int>();
+      final descriptionsIdsToDelete = descriptionsOldIds.where((id) => !descriptionsNewIds.contains(id));
 
       await Future.wait<void>(descriptionsIdsToDelete.map((id) async {
         return await provider.rawExecute(
@@ -291,8 +281,7 @@ class PeakAdapter extends OfflineFirstWithSupabaseAdapter<Peak> {
       }));
 
       await Future.wait<int?>(instance.descriptions.map((s) async {
-        final id = s.primaryKey ??
-            await provider.upsert<PeakDescription>(s, repository: repository);
+        final id = s.primaryKey ?? await provider.upsert<PeakDescription>(s, repository: repository);
         return await provider.rawInsert(
             'INSERT OR IGNORE INTO `_brick_Peak_descriptions` (`l_Peak_brick_id`, `f_PeakDescription_brick_id`) VALUES (?, ?)',
             [instance.primaryKey, id]);
@@ -302,23 +291,21 @@ class PeakAdapter extends OfflineFirstWithSupabaseAdapter<Peak> {
 
   @override
   Future<Peak> fromSupabase(Map<String, dynamic> input,
-          {required provider,
-          covariant OfflineFirstWithSupabaseRepository? repository}) async =>
-      await _$PeakFromSupabase(input,
-          provider: provider, repository: repository);
+          {required provider, covariant OfflineFirstWithSupabaseRepository? repository}) async =>
+      await _$PeakFromSupabase(input, provider: provider, repository: repository);
+
   @override
   Future<Map<String, dynamic>> toSupabase(Peak input,
-          {required provider,
-          covariant OfflineFirstWithSupabaseRepository? repository}) async =>
+          {required provider, covariant OfflineFirstWithSupabaseRepository? repository}) async =>
       await _$PeakToSupabase(input, provider: provider, repository: repository);
+
   @override
   Future<Peak> fromSqlite(Map<String, dynamic> input,
-          {required provider,
-          covariant OfflineFirstWithSupabaseRepository? repository}) async =>
+          {required provider, covariant OfflineFirstWithSupabaseRepository? repository}) async =>
       await _$PeakFromSqlite(input, provider: provider, repository: repository);
+
   @override
   Future<Map<String, dynamic>> toSqlite(Peak input,
-          {required provider,
-          covariant OfflineFirstWithSupabaseRepository? repository}) async =>
+          {required provider, covariant OfflineFirstWithSupabaseRepository? repository}) async =>
       await _$PeakToSqlite(input, provider: provider, repository: repository);
 }
