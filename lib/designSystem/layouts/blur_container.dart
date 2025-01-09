@@ -58,7 +58,7 @@ class BlurContainer extends StatelessWidget {
   }
 
   Widget _blurBackground(double radius, List<Color>? colors) {
-    const sigma = 4.0;
+    const sigma = 6.0;
     return Positioned.fill(
       child: BackdropFilter(
         filter: ImageFilter.blur(sigmaX: sigma, sigmaY: sigma),
@@ -66,7 +66,11 @@ class BlurContainer extends StatelessWidget {
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(radius),
             gradient: LinearGradient(
-              colors: colors ?? [Colors.grey.withValues(alpha: 0.4), AppColors.lightBackground.withValues(alpha: 0.2)],
+              colors: colors ??
+                  [
+                    Colors.grey[500]!.withValues(alpha: 0.6),
+                    Colors.grey[700]!.withValues(alpha: 0.4),
+                  ],
             ),
           ),
         ),
