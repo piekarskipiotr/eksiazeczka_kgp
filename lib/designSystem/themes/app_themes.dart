@@ -1,6 +1,4 @@
 import 'package:eksiazeczka_kgp/designSystem/design_system.dart';
-import 'package:eksiazeczka_kgp/designSystem/themes/app_button_themes.dart';
-import 'package:eksiazeczka_kgp/designSystem/themes/app_chips_themes.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -22,6 +20,7 @@ class AppThemes {
       colorScheme: ColorScheme.fromSeed(seedColor: primary, secondary: secondary),
       primaryColor: primary,
       scaffoldBackgroundColor: scaffoldBackground,
+      appBarTheme: AppBarTheme(backgroundColor: scaffoldBackground, surfaceTintColor: AppColors.transparent),
       iconTheme: IconThemeData(color: primary),
       textTheme: GoogleFonts.instrumentSansTextTheme().apply(bodyColor: primary, displayColor: primary),
       chipTheme: AppChipsThemes.chipThemeData(primary: primary, scaffoldBackground: scaffoldBackground),
