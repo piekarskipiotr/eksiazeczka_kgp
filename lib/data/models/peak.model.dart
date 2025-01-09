@@ -12,6 +12,7 @@ class Peak extends OfflineFirstWithSupabaseModel {
   Peak({
     required this.name,
     required this.coordinates,
+    required this.location,
     required this.mountainRange,
     required this.height,
     required this.difficultyLevel,
@@ -28,6 +29,7 @@ class Peak extends OfflineFirstWithSupabaseModel {
   final String name;
   @Supabase(foreignKey: 'peak_id', ignoreTo: true)
   final PeakCoordinates coordinates;
+  final String location;
   final String mountainRange;
   final int height;
   final DifficultyLevel difficultyLevel;

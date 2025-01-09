@@ -5,8 +5,9 @@ Future<PeakCoordinates> _$PeakCoordinatesFromSupabase(Map<String, dynamic> data,
     {required SupabaseProvider provider,
     OfflineFirstWithSupabaseRepository? repository}) async {
   return PeakCoordinates(
-      coordinatesLat: data['coordinates_lat'] as double,
-      coordinatesLng: data['coordinates_lng'] as double,
+      id: data['id'] as String?,
+      lat: data['lat'] as double,
+      lng: data['lng'] as double,
       peakId: data['peak_id'] as String);
 }
 
@@ -15,8 +16,9 @@ Future<Map<String, dynamic>> _$PeakCoordinatesToSupabase(
     {required SupabaseProvider provider,
     OfflineFirstWithSupabaseRepository? repository}) async {
   return {
-    'coordinates_lat': instance.coordinatesLat,
-    'coordinates_lng': instance.coordinatesLng,
+    'id': instance.id,
+    'lat': instance.lat,
+    'lng': instance.lng,
     'peak_id': instance.peakId
   };
 }
@@ -25,8 +27,9 @@ Future<PeakCoordinates> _$PeakCoordinatesFromSqlite(Map<String, dynamic> data,
     {required SqliteProvider provider,
     OfflineFirstWithSupabaseRepository? repository}) async {
   return PeakCoordinates(
-      coordinatesLat: data['coordinates_lat'] as double,
-      coordinatesLng: data['coordinates_lng'] as double,
+      id: data['id'] as String,
+      lat: data['lat'] as double,
+      lng: data['lng'] as double,
       peakId: data['peak_id'] as String)
     ..primaryKey = data['_brick_id'] as int;
 }
@@ -35,8 +38,9 @@ Future<Map<String, dynamic>> _$PeakCoordinatesToSqlite(PeakCoordinates instance,
     {required SqliteProvider provider,
     OfflineFirstWithSupabaseRepository? repository}) async {
   return {
-    'coordinates_lat': instance.coordinatesLat,
-    'coordinates_lng': instance.coordinatesLng,
+    'id': instance.id,
+    'lat': instance.lat,
+    'lng': instance.lng,
     'peak_id': instance.peakId
   };
 }
@@ -52,13 +56,17 @@ class PeakCoordinatesAdapter
   final defaultToNull = true;
   @override
   final fieldsToSupabaseColumns = {
-    'coordinatesLat': const RuntimeSupabaseColumnDefinition(
+    'id': const RuntimeSupabaseColumnDefinition(
       association: false,
-      columnName: 'coordinates_lat',
+      columnName: 'id',
     ),
-    'coordinatesLng': const RuntimeSupabaseColumnDefinition(
+    'lat': const RuntimeSupabaseColumnDefinition(
       association: false,
-      columnName: 'coordinates_lng',
+      columnName: 'lat',
+    ),
+    'lng': const RuntimeSupabaseColumnDefinition(
+      association: false,
+      columnName: 'lng',
     ),
     'peakId': const RuntimeSupabaseColumnDefinition(
       association: false,
@@ -68,7 +76,7 @@ class PeakCoordinatesAdapter
   @override
   final ignoreDuplicates = false;
   @override
-  final uniqueFields = {};
+  final uniqueFields = {'id'};
   @override
   final Map<String, RuntimeSqliteColumnDefinition> fieldsToSqliteColumns = {
     'primaryKey': const RuntimeSqliteColumnDefinition(
@@ -77,15 +85,21 @@ class PeakCoordinatesAdapter
       iterable: false,
       type: int,
     ),
-    'coordinatesLat': const RuntimeSqliteColumnDefinition(
+    'id': const RuntimeSqliteColumnDefinition(
       association: false,
-      columnName: 'coordinates_lat',
+      columnName: 'id',
+      iterable: false,
+      type: String,
+    ),
+    'lat': const RuntimeSqliteColumnDefinition(
+      association: false,
+      columnName: 'lat',
       iterable: false,
       type: double,
     ),
-    'coordinatesLng': const RuntimeSqliteColumnDefinition(
+    'lng': const RuntimeSqliteColumnDefinition(
       association: false,
-      columnName: 'coordinates_lng',
+      columnName: 'lng',
       iterable: false,
       type: double,
     ),
@@ -98,8 +112,18 @@ class PeakCoordinatesAdapter
   };
   @override
   Future<int?> primaryKeyByUniqueColumns(
-          PeakCoordinates instance, DatabaseExecutor executor) async =>
-      instance.primaryKey;
+      PeakCoordinates instance, DatabaseExecutor executor) async {
+    final results = await executor.rawQuery('''
+        SELECT * FROM `PeakCoordinates` WHERE id = ? LIMIT 1''', [instance.id]);
+
+    // SQFlite returns [{}] when no results are found
+    if (results.isEmpty || (results.length == 1 && results.first.isEmpty)) {
+      return null;
+    }
+
+    return results.first['_brick_id'] as int;
+  }
+
   @override
   final String tableName = 'PeakCoordinates';
 

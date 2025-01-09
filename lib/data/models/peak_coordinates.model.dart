@@ -1,15 +1,21 @@
 import 'package:brick_offline_first_with_supabase/brick_offline_first_with_supabase.dart';
+import 'package:brick_sqlite/brick_sqlite.dart';
 import 'package:brick_supabase/brick_supabase.dart';
+import 'package:uuid/uuid.dart';
 
 @ConnectOfflineFirstWithSupabase(supabaseConfig: SupabaseSerializable(tableName: 'peak_coordinates'))
 class PeakCoordinates extends OfflineFirstWithSupabaseModel {
   PeakCoordinates({
-    required this.coordinatesLat,
-    required this.coordinatesLng,
     required this.peakId,
-  });
+    required this.lat,
+    required this.lng,
+    String? id,
+  }) : id = id ?? const Uuid().v4();
 
-  final double coordinatesLat;
-  final double coordinatesLng;
+  @Supabase(unique: true)
+  @Sqlite(index: true, unique: true)
+  final String id;
+  final double lat;
+  final double lng;
   final String peakId;
 }

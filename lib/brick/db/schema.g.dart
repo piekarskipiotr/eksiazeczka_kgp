@@ -1,19 +1,21 @@
 // GENERATED CODE DO NOT EDIT
 // This file should be version controlled
 import 'package:brick_sqlite/db.dart';
-part '20250109090222.migration.dart';
+part '20250109093601.migration.dart';
 part '20250108142842.migration.dart';
 part '20250108144351.migration.dart';
+part '20250109090222.migration.dart';
 
 /// All intelligently-generated migrations from all `@Migratable` classes on disk
 final migrations = <Migration>{
-  const Migration20250109090222(),
+  const Migration20250109093601(),
   const Migration20250108142842(),
-  const Migration20250108144351()
+  const Migration20250108144351(),
+  const Migration20250109090222()
 };
 
 /// A consumable database structure including the latest generated migration.
-final schema = Schema(20250109090222, generatorVersion: 1, tables: <SchemaTable>{
+final schema = Schema(20250109093601, generatorVersion: 1, tables: <SchemaTable>{
   SchemaTable('_brick_Peak_descriptions', columns: <SchemaColumn>{
     SchemaColumn('_brick_id', Column.integer,
         autoincrement: true, nullable: false, isPrimaryKey: true),
@@ -42,6 +44,7 @@ final schema = Schema(20250109090222, generatorVersion: 1, tables: <SchemaTable>
         foreignTableName: 'PeakCoordinates',
         onDeleteCascade: false,
         onDeleteSetDefault: false),
+    SchemaColumn('location', Column.varchar),
     SchemaColumn('mountain_range', Column.varchar),
     SchemaColumn('height', Column.integer),
     SchemaColumn('difficulty_level', Column.integer),
@@ -68,10 +71,13 @@ final schema = Schema(20250109090222, generatorVersion: 1, tables: <SchemaTable>
   SchemaTable('PeakCoordinates', columns: <SchemaColumn>{
     SchemaColumn('_brick_id', Column.integer,
         autoincrement: true, nullable: false, isPrimaryKey: true),
-    SchemaColumn('coordinates_lat', Column.Double),
-    SchemaColumn('coordinates_lng', Column.Double),
+    SchemaColumn('id', Column.varchar, unique: true),
+    SchemaColumn('lat', Column.Double),
+    SchemaColumn('lng', Column.Double),
     SchemaColumn('peak_id', Column.varchar)
-  }, indices: <SchemaIndex>{}),
+  }, indices: <SchemaIndex>{
+    SchemaIndex(columns: ['id'], unique: true)
+  }),
   SchemaTable('PeakUserMetadata', columns: <SchemaColumn>{
     SchemaColumn('_brick_id', Column.integer,
         autoincrement: true, nullable: false, isPrimaryKey: true),
