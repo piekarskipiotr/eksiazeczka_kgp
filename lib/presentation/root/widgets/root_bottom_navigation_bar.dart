@@ -69,7 +69,7 @@ class RootBottomNavigationBar extends StatelessWidget {
   Widget _bottomNavigationBarContainer({required Widget child}) {
     return SafeArea(
       child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 24, horizontal: 72),
+        padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 72),
         child: ClipRRect(
           borderRadius: BorderRadius.circular(100),
           child: child,

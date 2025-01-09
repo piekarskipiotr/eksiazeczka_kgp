@@ -12,15 +12,18 @@ class EmptyList extends StatelessWidget {
   Widget build(BuildContext context) {
     final l10n = context.l10n;
     final (icon, title, description) = filter.getEmptyState(l10n);
-    return Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          AppIcon(icon, size: 32),
-          const SizedBox(height: 8),
-          Text(title, style: AppTextStyles.h7(), textAlign: TextAlign.center),
-          Text(description, style: AppTextStyles.h9(), textAlign: TextAlign.center),
-        ],
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(16, 0, 16, 164),
+      child: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            AppIcon(icon, size: 32),
+            const SizedBox(height: 4),
+            Text(title, style: AppTextStyles.h7(fontWeight: FontWeight.w600), textAlign: TextAlign.center),
+            Text(description, style: AppTextStyles.h9(), textAlign: TextAlign.center),
+          ],
+        ),
       ),
     );
   }

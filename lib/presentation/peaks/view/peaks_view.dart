@@ -25,43 +25,39 @@ class PeaksView extends StatelessWidget {
     return BlocBuilder<PeaksBloc, PeaksState>(
       builder: (context, state) {
         final peaks = state.sortedAndFilteredPeaks;
+        final isLoadingPeaks = state.isLoadingPeaks;
         final selectedFilter = state.filter;
         final selectedSortType = state.sortType;
 
-        return SingleChildScrollView(
-          child: Padding(
-            padding: const EdgeInsets.all(16),
-            child: Column(
-              spacing: 24,
-              mainAxisSize: MainAxisSize.min,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const PeaksHeaderText(),
-                Row(
-                  spacing: 16,
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    PeaksFilterList(
-                      selectedFilter: selectedFilter,
-                      onFilterPressed: (filter) {
-                        _onFilterPressed(context, filter);
-                      },
-                    ),
-                    PeaksSortTypeCircleButton(
-                      selectedFilter: selectedFilter,
-                      selectedSortType: selectedSortType,
-                      onSortTypePressed: (sortType) {
-                        _onSortTypePressed(context, sortType);
-                      },
-                    ),
-                  ],
-                ),
-                PeaksList(peaks: peaks, filter: selectedFilter, onPeakPressed: _onPeakPressed),
-              ],
-            ),
+        return NestedScrollView(
+          headerSliverBuilder: (_, __) {
+            return [
+              _sliverSpacer(height: 8),
+              const PeaksHeaderText(),
+              _sliverSpacer(),
+              FiltersAndSortRow(
+                selectedFilter: selectedFilter,
+                selectedSortType: selectedSortType,
+                onFilterPressed: (filter) {
+                  _onFilterPressed(context, filter);
+                },
+                onSortTypePressed: (sortType) {
+                  _onSortTypePressed(context, sortType);
+                },
+              ),
+              _sliverSpacer(),
+            ];
+          },
+          body: PeaksList(
+            peaks: peaks,
+            isLoadingPeaks: isLoadingPeaks,
+            filter: selectedFilter,
+            onPeakPressed: _onPeakPressed,
           ),
         );
       },
     );
   }
+
+  Widget _sliverSpacer({double height = 16}) => SliverToBoxAdapter(child: SizedBox(height: height));
 }

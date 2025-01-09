@@ -1,3 +1,4 @@
+import 'package:eksiazeczka_kgp/designSystem/design_system.dart';
 import 'package:flutter/material.dart';
 import 'package:shimmer/shimmer.dart';
 
@@ -14,9 +15,9 @@ class AppShimmer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Shimmer.fromColors(
-      baseColor: Theme.of(context).scaffoldBackgroundColor,
-      highlightColor: Theme.of(context).primaryColor,
       period: duration,
+      baseColor: AppColors.bottomNavigationBarColors.withValues(alpha: 0.1),
+      highlightColor: Theme.of(context).scaffoldBackgroundColor,
       child: child ?? Container(color: Theme.of(context).scaffoldBackgroundColor),
     );
   }

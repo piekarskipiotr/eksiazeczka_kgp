@@ -47,17 +47,19 @@ class PeaksBloc extends Bloc<PeaksEvent, PeaksState> {
       );
     } catch (error, stacktrace) {
       log('FAILED TO INITIALIZE STREAM SUBSCRIPTION error: $error, stacktrace: $stacktrace');
+      emit(state.copyWith(isLoadingPeaks: false, error: error.toString()));
     }
   }
 
   Future<void> _onLoadPeaks(LoadPeaks event, Emitter<PeaksState> emit) async {
+    emit(state.copyWith(isLoadingPeaks: true));
     final peaks = event.peaks;
     final selectedFilter = state.filter;
     final selectedSortType = state.sortType;
 
     final sortedAndFilteredPeaks = _filterPeaks(peaks, selectedFilter);
     _sortPeaks(sortedAndFilteredPeaks, selectedSortType);
-    emit(state.copyWith(peaks: peaks, sortedAndFilteredPeaks: sortedAndFilteredPeaks));
+    emit(state.copyWith(peaks: peaks, sortedAndFilteredPeaks: sortedAndFilteredPeaks, isLoadingPeaks: false));
   }
 
   Future<void> _onChangePeaksFilter(ChangePeaksFilter event, Emitter<PeaksState> emit) async {

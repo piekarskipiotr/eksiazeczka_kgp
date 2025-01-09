@@ -4,6 +4,7 @@ class PeaksState extends Equatable {
   const PeaksState({
     this.filter = PeaksFilters.all,
     this.sortType = PeaksSortTypes.alphabetical,
+    this.isLoadingPeaks = true,
     this.streamSubscription,
     this.peaks,
     this.sortedAndFilteredPeaks,
@@ -12,6 +13,7 @@ class PeaksState extends Equatable {
 
   final PeaksFilters filter;
   final PeaksSortTypes sortType;
+  final bool isLoadingPeaks;
   final StreamSubscription<List<Peak>>? streamSubscription;
   final List<Peak>? peaks;
   final List<Peak>? sortedAndFilteredPeaks;
@@ -20,6 +22,7 @@ class PeaksState extends Equatable {
   PeaksState copyWith({
     PeaksFilters? filter,
     PeaksSortTypes? sortType,
+    bool? isLoadingPeaks,
     StreamSubscription<List<Peak>>? streamSubscription,
     List<Peak>? peaks,
     List<Peak>? sortedAndFilteredPeaks,
@@ -28,6 +31,7 @@ class PeaksState extends Equatable {
     return PeaksState(
       filter: filter ?? this.filter,
       sortType: sortType ?? this.sortType,
+      isLoadingPeaks: isLoadingPeaks ?? this.isLoadingPeaks,
       streamSubscription: streamSubscription ?? this.streamSubscription,
       peaks: peaks ?? this.peaks,
       sortedAndFilteredPeaks: sortedAndFilteredPeaks ?? this.sortedAndFilteredPeaks,
@@ -36,5 +40,13 @@ class PeaksState extends Equatable {
   }
 
   @override
-  List<Object?> get props => [filter, sortType, streamSubscription, peaks, sortedAndFilteredPeaks, error];
+  List<Object?> get props => [
+        filter,
+        sortType,
+        isLoadingPeaks,
+        streamSubscription,
+        peaks,
+        sortedAndFilteredPeaks,
+        error,
+      ];
 }
