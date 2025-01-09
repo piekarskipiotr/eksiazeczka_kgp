@@ -7,7 +7,9 @@ Future<PeakUserMetadata> _$PeakUserMetadataFromSupabase(
     OfflineFirstWithSupabaseRepository? repository}) async {
   return PeakUserMetadata(
       id: data['id'] as String?,
-      conqueredDate: DateTime.parse(data['conquered_date'] as String),
+      conqueredDate: data['conquered_date'] == null
+          ? null
+          : DateTime.tryParse(data['conquered_date'] as String),
       peakId: data['peak_id'] as String,
       userId: data['user_id'] as String);
 }

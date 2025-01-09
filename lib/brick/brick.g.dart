@@ -11,6 +11,8 @@ import 'package:brick_supabase/brick_supabase.dart';
 // ignore: unused_import, unused_shown_name, unnecessary_import
 import 'package:eksiazeczka_kgp/data/enums/enums.dart';
 // ignore: unused_import, unused_shown_name, unnecessary_import
+import 'package:eksiazeczka_kgp/data/models/peak_coordinates.model.dart';
+// ignore: unused_import, unused_shown_name, unnecessary_import
 import 'package:eksiazeczka_kgp/data/models/peak_description.model.dart';
 // ignore: unused_import, unused_shown_name, unnecessary_import
 import 'package:eksiazeczka_kgp/data/models/peak_user_metadata.model.dart';
@@ -26,25 +28,29 @@ import 'package:brick_offline_first/brick_offline_first.dart' show RuntimeOfflin
 import 'package:sqflite_common/sqlite_api.dart' show DatabaseExecutor;
 
 import '../data/models/peak.model.dart';
-import '../data/models/peak_user_metadata.model.dart';
 import '../data/models/peak_description.model.dart';
+import '../data/models/peak_coordinates.model.dart';
+import '../data/models/peak_user_metadata.model.dart';
 
 part 'adapters/peak_adapter.g.dart';
-part 'adapters/peak_user_metadata_adapter.g.dart';
 part 'adapters/peak_description_adapter.g.dart';
+part 'adapters/peak_coordinates_adapter.g.dart';
+part 'adapters/peak_user_metadata_adapter.g.dart';
 
 /// Supabase mappings should only be used when initializing a [SupabaseProvider]
 final Map<Type, SupabaseAdapter<SupabaseModel>> supabaseMappings = {
   Peak: PeakAdapter(),
-  PeakUserMetadata: PeakUserMetadataAdapter(),
-  PeakDescription: PeakDescriptionAdapter()
+  PeakDescription: PeakDescriptionAdapter(),
+  PeakCoordinates: PeakCoordinatesAdapter(),
+  PeakUserMetadata: PeakUserMetadataAdapter()
 };
 final supabaseModelDictionary = SupabaseModelDictionary(supabaseMappings);
 
 /// Sqlite mappings should only be used when initializing a [SqliteProvider]
 final Map<Type, SqliteAdapter<SqliteModel>> sqliteMappings = {
   Peak: PeakAdapter(),
-  PeakUserMetadata: PeakUserMetadataAdapter(),
-  PeakDescription: PeakDescriptionAdapter()
+  PeakDescription: PeakDescriptionAdapter(),
+  PeakCoordinates: PeakCoordinatesAdapter(),
+  PeakUserMetadata: PeakUserMetadataAdapter()
 };
 final sqliteModelDictionary = SqliteModelDictionary(sqliteMappings);

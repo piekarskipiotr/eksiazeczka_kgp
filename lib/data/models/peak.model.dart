@@ -2,6 +2,7 @@ import 'package:brick_offline_first_with_supabase/brick_offline_first_with_supab
 import 'package:brick_sqlite/brick_sqlite.dart';
 import 'package:brick_supabase/brick_supabase.dart';
 import 'package:eksiazeczka_kgp/data/enums/enums.dart';
+import 'package:eksiazeczka_kgp/data/models/peak_coordinates.model.dart';
 import 'package:eksiazeczka_kgp/data/models/peak_description.model.dart';
 import 'package:eksiazeczka_kgp/data/models/peak_user_metadata.model.dart';
 import 'package:uuid/uuid.dart';
@@ -10,8 +11,7 @@ import 'package:uuid/uuid.dart';
 class Peak extends OfflineFirstWithSupabaseModel {
   Peak({
     required this.name,
-    required this.coordinatesLat,
-    required this.coordinatesLng,
+    required this.coordinates,
     required this.mountainRange,
     required this.height,
     required this.difficultyLevel,
@@ -26,8 +26,8 @@ class Peak extends OfflineFirstWithSupabaseModel {
   @Sqlite(index: true, unique: true)
   final String id;
   final String name;
-  final double coordinatesLat;
-  final double coordinatesLng;
+  @Supabase(foreignKey: 'peak_id', ignoreTo: true)
+  final PeakCoordinates coordinates;
   final String mountainRange;
   final int height;
   final DifficultyLevel difficultyLevel;

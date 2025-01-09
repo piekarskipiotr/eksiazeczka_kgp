@@ -6,8 +6,8 @@ Future<Peak> _$PeakFromSupabase(Map<String, dynamic> data,
   return Peak(
     id: data['id'] as String?,
     name: data['name'] as String,
-    coordinatesLat: data['coordinates_lat'] as double,
-    coordinatesLng: data['coordinates_lng'] as double,
+    coordinates: await PeakCoordinatesAdapter()
+        .fromSupabase(data['coordinates'] as Map<String, dynamic>, provider: provider, repository: repository),
     mountainRange: data['mountain_range'] as String,
     height: data['height'] as int,
     difficultyLevel: DifficultyLevel.values[data['difficulty_level'] as int],
@@ -40,8 +40,6 @@ Future<Map<String, dynamic>> _$PeakToSupabase(Peak instance,
   return {
     'id': instance.id,
     'name': instance.name,
-    'coordinates_lat': instance.coordinatesLat,
-    'coordinates_lng': instance.coordinatesLng,
     'mountain_range': instance.mountainRange,
     'height': instance.height,
     'difficulty_level': DifficultyLevel.values.indexOf(instance.difficultyLevel),
@@ -55,8 +53,10 @@ Future<Peak> _$PeakFromSqlite(Map<String, dynamic> data,
   return Peak(
     id: data['id'] as String,
     name: data['name'] as String,
-    coordinatesLat: data['coordinates_lat'] as double,
-    coordinatesLng: data['coordinates_lng'] as double,
+    coordinates: (await repository!.getAssociation<PeakCoordinates>(
+      Query.where('primaryKey', data['coordinates_PeakCoordinates_brick_id'] as int, limit1: true),
+    ))!
+        .first,
     mountainRange: data['mountain_range'] as String,
     height: data['height'] as int,
     difficultyLevel: DifficultyLevel.values[data['difficulty_level'] as int],
@@ -66,7 +66,7 @@ Future<Peak> _$PeakFromSqlite(Map<String, dynamic> data,
             'SELECT DISTINCT `f_PeakDescription_brick_id` FROM `_brick_Peak_descriptions` WHERE l_Peak_brick_id = ?',
             [data['_brick_id'] as int]).then((results) {
       final ids = results.map((r) => r['f_PeakDescription_brick_id']);
-      return Future.wait<PeakDescription>(ids.map((primaryKey) => repository!
+      return Future.wait<PeakDescription>(ids.map((primaryKey) => repository
           .getAssociation<PeakDescription>(
             Query.where('primaryKey', primaryKey, limit1: true),
           )
@@ -78,7 +78,7 @@ Future<Peak> _$PeakFromSqlite(Map<String, dynamic> data,
         ? null
         : (
             (data['user_metadata_PeakUserMetadata_brick_id'] as int) > -1
-                ? (await repository?.getAssociation<PeakUserMetadata>(
+                ? (await repository.getAssociation<PeakUserMetadata>(
                     Query.where(
                       'primaryKey',
                       data['user_metadata_PeakUserMetadata_brick_id'] as int,
@@ -96,8 +96,8 @@ Future<Map<String, dynamic>> _$PeakToSqlite(Peak instance,
   return {
     'id': instance.id,
     'name': instance.name,
-    'coordinates_lat': instance.coordinatesLat,
-    'coordinates_lng': instance.coordinatesLng,
+    'coordinates_PeakCoordinates_brick_id': instance.coordinates.primaryKey ??
+        await provider.upsert<PeakCoordinates>(instance.coordinates, repository: repository),
     'mountain_range': instance.mountainRange,
     'height': instance.height,
     'difficulty_level': DifficultyLevel.values.indexOf(instance.difficultyLevel),
@@ -128,13 +128,12 @@ class PeakAdapter extends OfflineFirstWithSupabaseAdapter<Peak> {
       association: false,
       columnName: 'name',
     ),
-    'coordinatesLat': const RuntimeSupabaseColumnDefinition(
-      association: false,
-      columnName: 'coordinates_lat',
-    ),
-    'coordinatesLng': const RuntimeSupabaseColumnDefinition(
-      association: false,
-      columnName: 'coordinates_lng',
+    'coordinates': const RuntimeSupabaseColumnDefinition(
+      association: true,
+      columnName: 'coordinates',
+      associationType: PeakCoordinates,
+      associationIsNullable: false,
+      foreignKey: 'peak_id',
     ),
     'mountainRange': const RuntimeSupabaseColumnDefinition(
       association: false,
@@ -195,17 +194,11 @@ class PeakAdapter extends OfflineFirstWithSupabaseAdapter<Peak> {
       iterable: false,
       type: String,
     ),
-    'coordinatesLat': const RuntimeSqliteColumnDefinition(
-      association: false,
-      columnName: 'coordinates_lat',
+    'coordinates': const RuntimeSqliteColumnDefinition(
+      association: true,
+      columnName: 'coordinates_PeakCoordinates_brick_id',
       iterable: false,
-      type: double,
-    ),
-    'coordinatesLng': const RuntimeSqliteColumnDefinition(
-      association: false,
-      columnName: 'coordinates_lng',
-      iterable: false,
-      type: double,
+      type: PeakCoordinates,
     ),
     'mountainRange': const RuntimeSqliteColumnDefinition(
       association: false,

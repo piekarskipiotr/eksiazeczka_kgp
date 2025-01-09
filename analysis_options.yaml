@@ -3,7 +3,8 @@ analyzer:
   exclude:
     - lib/data/models/*.g.dart
     - lib/brick/*.g.dart
-    - lib/brick/*.migration.dart
+    - lib/brick/adapters/*.g.dart
+    - lib/brick/db/*.migration.dart
 linter:
   rules:
     public_member_api_docs: false
