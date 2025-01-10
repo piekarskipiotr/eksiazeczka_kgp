@@ -1,6 +1,7 @@
 import 'package:brick_offline_first_with_supabase/brick_offline_first_with_supabase.dart';
 import 'package:brick_sqlite/brick_sqlite.dart';
 import 'package:brick_supabase/brick_supabase.dart';
+import 'package:eksiazeczka_kgp/data/constants.dart';
 import 'package:eksiazeczka_kgp/data/enums/enums.dart';
 import 'package:eksiazeczka_kgp/data/models/peak_coordinates.model.dart';
 import 'package:eksiazeczka_kgp/data/models/peak_description.model.dart';
@@ -47,7 +48,7 @@ class Peak extends OfflineFirstWithSupabaseModel {
 
   @Sqlite(ignore: true)
   @Supabase(ignore: true)
-  String get image => '/peaks/${name.snakeCase.normalize}/image.jpg';
+  String get image => '$supabaseUrl/storage/v1/object/public/peaks/${name.snakeCase.normalize}.jpg';
 
   @Sqlite(ignore: true)
   @Supabase(ignore: true)
