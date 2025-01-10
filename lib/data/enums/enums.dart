@@ -5,3 +5,4 @@ export 'difficulty_level.dart';
 export 'peaks_filters.dart';
 export 'peaks_sort_types.dart';
 export 'popularity.dart';
+export 'providers.dart';

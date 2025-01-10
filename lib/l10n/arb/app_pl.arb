@@ -56,5 +56,16 @@
   "emptyPeaksListConqueredTitle": "Nie masz jeszcze zdobytych szczytów.",
   "emptyPeaksListConqueredDescription": "Twoja przygoda dopiero się zaczyna! Wyrusz na szlaki,\nzdobywaj szczyty i wróć tutaj, by wyświetlić zdobyte\nmiejsca.",
   "emptyPeaksListUnconqueredTitle": "Zdobyłeś już wszystkie szczyty!",
-  "emptyPeaksListUnconqueredDescription": "Gratulacje, udało Ci się odwiedzić każdy szczyt Korony Gór Polskich."
+  "emptyPeaksListUnconqueredDescription": "Gratulacje, udało Ci się odwiedzić każdy szczyt Korony Gór Polskich.",
+  "signInCardTitle": "Działasz w trybie Offline",
+  "signInCardDescription": "Zaloguj się do aplikacji aby przechowywać swoje dane o zdobytych szczytach w chmurze!",
+  "signInWith": "Zaloguj się z {provider}",
+  "@signInWith": {
+    "placeholders": {
+      "provider": {
+        "type": "String",
+        "example": "Google"
+      }
+    }
+  }
 }

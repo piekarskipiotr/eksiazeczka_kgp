@@ -56,5 +56,16 @@
   "emptyPeaksListConqueredTitle": "You haven't conquered any peaks yet.",
   "emptyPeaksListConqueredDescription": "Your adventure is just beginning! Hit the trails, conquer peaks,\nand come back here to view your conquered places.",
   "emptyPeaksListUnconqueredTitle": "You've conquered all the peaks!",
-  "emptyPeaksListUnconqueredDescription": "Congratulations, you've managed to visit every peak."
+  "emptyPeaksListUnconqueredDescription": "Congratulations, you've managed to visit every peak.",
+  "signInCardTitle": "You're operating in Offline mode",
+  "signInCardDescription": "Log in to the app to store your data in the cloud!",
+  "signInWith": "Sign in with {provider}",
+  "@signInWith": {
+    "placeholders": {
+      "provider": {
+        "type": "String",
+        "example": "Google"
+      }
+    }
+  }
 }
