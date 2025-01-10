@@ -3,7 +3,7 @@ import 'dart:convert';
 
 import 'package:eksiazeczka_kgp/data/enums/enums.dart';
 import 'package:eksiazeczka_kgp/data/repositories/repositories.dart';
-import 'package:eksiazeczka_kgp/services/auth_service/auth_storage.dart';
+import 'package:eksiazeczka_kgp/services/authService/auth_storage.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 class AuthService {

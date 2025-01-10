@@ -67,5 +67,35 @@
         "example": "Google"
       }
     }
-  }
+  },
+  "personalization": "Personalization",
+  "setProfilePicture": "Set profile picture",
+  "darkMode": "Dark mode",
+  "appLanguage": "Language",
+  "account": "Account",
+  "menageAccount": "Menage account",
+  "app": "App",
+  "addReview": "Add review in store",
+  "helpAndConsents": "Help and consents",
+  "faq": "FAQ",
+  "privacyPolicy": "Privacy policy",
+  "termsOfUse": "Terms of use",
+  "light": "Light",
+  "dark": "Dark",
+  "system": "System",
+  "polish": "Polish",
+  "english": "English",
+  "general": "General",
+  "howAppWorks": "How app works",
+  "yourAccount": "Your account",
+  "generalQuestion1": "What is the purpose of the app?",
+  "generalQuestion1Answer": "The app is a digital version of the booklet issued by mountain clubs. It simplifies the process of documenting summit ascents and eliminates unnecessary verifications by clubs.",
+  "generalQuestion2": "What is the Crown of Polish Mountains?",
+  "generalQuestion2Answer": "The Crown of Polish Mountains is a list of the 28 highest peaks in Poland's mountain ranges. Climbing all of them is a popular challenge among mountain enthusiasts.",
+  "appFunctionalityQuestion1": "Does the app work offline?",
+  "appFunctionalityQuestion1Answer": "Yes, the app works offline. All data is stored locally on the phone.",
+  "appFunctionalityQuestion2": "Does the app work online?",
+  "appFunctionalityQuestion2Answer": "Yes, you can log in using a Google account for Android or an Apple account for iOS. In this case, the data will be saved in the cloud.",
+  "accountQuestion1": "How to delete an account?",
+  "accountQuestion1Answer": "To delete an account, go to More > Manage Account > Delete Account, after logging in."
 }

@@ -2,7 +2,6 @@ import 'dart:io';
 
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:eksiazeczka_kgp/designSystem/design_system.dart';
-import 'package:eksiazeczka_kgp/designSystem/shimmers/app_shimmer.dart';
 import 'package:eksiazeczka_kgp/resources/resources.dart';
 import 'package:flutter/material.dart';
 
@@ -25,7 +24,7 @@ class AppCircleAvatar extends StatelessWidget {
       child: Container(
         height: imageSize,
         width: imageSize,
-        color: Theme.of(context).colorScheme.secondary,
+        color: AppColors.white,
         child: _image(context, url: url, localPath: localPath),
       ),
     );

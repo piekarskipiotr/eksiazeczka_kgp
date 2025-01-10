@@ -52,5 +52,7 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>NSPhotoLibraryUsageDescription</key>
+    <string>This app requires access to your photo library to allow you to update your profile picture or add memorable picture from the peak.</string>
 </dict>
 </plist>

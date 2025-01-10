@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:eksiazeczka_kgp/services/auth_service/auth_storage.dart';
+import 'package:eksiazeczka_kgp/services/services.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 class SupabaseAuthRepository {

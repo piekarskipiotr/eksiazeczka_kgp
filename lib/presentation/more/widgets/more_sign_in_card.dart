@@ -30,6 +30,7 @@ class MoreSignInCard extends StatelessWidget {
           ),
           child: Column(
             spacing: 20,
+            crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Column(
@@ -37,8 +38,13 @@ class MoreSignInCard extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(l10n.signInCardTitle, style: AppTextStyles.h4(color: textColor, fontWeight: FontWeight.bold)),
-                  Text(l10n.signInCardDescription,
-                      style: AppTextStyles.h8(color: textColor, fontWeight: FontWeight.w500)),
+                  Text(
+                    l10n.signInCardDescription,
+                    style: AppTextStyles.h8(
+                      color: textColor,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
                 ],
               ),
               Row(

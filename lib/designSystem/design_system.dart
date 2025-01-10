@@ -1,6 +1,7 @@
 export 'avatars/avatars.dart';
 export 'buttons/buttons.dart';
 export 'cards/cards.dart';
+export 'checkboxes/checkboxes.dart';
 export 'chips/chips.dart';
 export 'dropdownMenu/dropdown_menu.dart';
 export 'icons/icons.dart';

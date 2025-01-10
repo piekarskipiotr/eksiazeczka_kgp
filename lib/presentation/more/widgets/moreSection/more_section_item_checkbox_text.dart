@@ -1,0 +1,40 @@
+import 'package:eksiazeczka_kgp/designSystem/design_system.dart';
+import 'package:flutter/material.dart';
+
+class MoreSectionItemCheckboxText extends StatelessWidget {
+  const MoreSectionItemCheckboxText({
+    required this.label,
+    required this.isChecked,
+    required this.onPressed,
+    super.key,
+  });
+
+  final String label;
+  final bool isChecked;
+  final VoidCallback onPressed;
+
+  @override
+  Widget build(BuildContext context) {
+
+    return InkWell(
+      onTap: onPressed,
+      child: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 16),
+        child: Row(
+          spacing: 8,
+          children: [
+            AppCircleCheckbox(isChecked: isChecked),
+            Flexible(
+              child: Text(
+                label,
+                style: AppTextStyles.h7(),
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}

@@ -1,3 +1,4 @@
+import 'package:eksiazeczka_kgp/designSystem/design_system.dart';
 import 'package:flutter/material.dart';
 
 class AppChipsThemes {
@@ -7,9 +8,10 @@ class AppChipsThemes {
         if (states.contains(WidgetState.selected)) return primary;
         return scaffoldBackground;
       }),
+      labelStyle: AppTextStyles.h8(color: primary),
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(48),
-        side: const BorderSide(),
+        side: BorderSide(color: primary),
       ),
     );
   }

@@ -1,3 +1,6 @@
+import 'package:eksiazeczka_kgp/presentation/appLanguageSettings/view/app_language_settings_page.dart';
+import 'package:eksiazeczka_kgp/presentation/darkModeSettings/view/dark_mode_settings_page.dart';
+import 'package:eksiazeczka_kgp/presentation/faq/view/faq_page.dart';
 import 'package:eksiazeczka_kgp/presentation/medals/view/medals_page.dart';
 import 'package:eksiazeczka_kgp/presentation/more/view/more_page.dart';
 import 'package:eksiazeczka_kgp/presentation/peaks/view/peaks_page.dart';
@@ -58,6 +61,27 @@ class AppRouter {
             ],
           ),
         ],
+      ),
+      GoRoute(
+        name: AppRoutes.darkModeSettings,
+        path: '/${AppRoutes.darkModeSettings}',
+        builder: (context, state) {
+          return const DarkModeSettingsPage();
+        },
+      ),
+      GoRoute(
+        name: AppRoutes.appLanguageSettings,
+        path: '/${AppRoutes.appLanguageSettings}',
+        builder: (context, state) {
+          return const AppLanguageSettingsPage();
+        },
+      ),
+      GoRoute(
+        name: AppRoutes.faq,
+        path: '/${AppRoutes.faq}',
+        builder: (context, state) {
+          return const FaqPage();
+        },
       ),
     ],
   );

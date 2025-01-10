@@ -67,5 +67,35 @@
         "example": "Google"
       }
     }
-  }
+  },
+  "personalization": "Personalizacja",
+  "setProfilePicture": "Ustaw zdjęcie profilowe",
+  "darkMode": "Tryb ciemny",
+  "appLanguage": "Język aplikacji",
+  "account": "Konto",
+  "menageAccount": "Zarządzaj kontem",
+  "app": "Aplikacja",
+  "addReview": "Oceń aplikację w sklepie",
+  "helpAndConsents": "Pomoc i zogdy",
+  "faq": "FAQ",
+  "privacyPolicy": "Polityka prywatności",
+  "termsOfUse": "Warunki użytkownia",
+  "light": "Jasny",
+  "dark": "Ciemny",
+  "system": "Systemowy",
+  "polish": "Polski",
+  "english": "Angielski",
+  "general": "Ogólne",
+  "howAppWorks": "Działanie aplikacji",
+  "yourAccount": "Twoje konto",
+  "generalQuestion1": "Do czego służy aplikacja?",
+  "generalQuestion1Answer": "Aplikacja jest zdigitalizowaną wersją książeczki wydawanej przez kluby górskie. Upraszcza proces dokumentowania zdobywania szczytów i eliminuje zbędne weryfikacje przez kluby.",
+  "generalQuestion2": "Czym jest Korona Gór Polskich?",
+  "generalQuestion2Answer": "Korona Gór Polskich to lista 28 najwyższych szczytów w polskich pasmach górskich. Zdobycie ich wszystkich to popularne wyzwanie wśród miłośników turystyki górskiej.",
+  "appFunctionalityQuestion1": "Czy aplikacja działa offline?",
+  "appFunctionalityQuestion1Answer": "Tak, aplikacja działa offline. Wszystkie dane są przechowywane lokalnie na telefonie.",
+  "appFunctionalityQuestion2": "Czy aplikacja działa online?",
+  "appFunctionalityQuestion2Answer": "Tak, istnieje możliwość zalogowania się przez konto Google dla Androida lub konto Apple dla iOS. W takim przypadku dane zostaną zapisane w chmurze.",
+  "accountQuestion1": "Jak usunąć konto?",
+  "accountQuestion1Answer": "Aby usunąć konto, przejdź do Więcej > Zarządzaj kontem > Usuń konto, po zalogowaniu się."
 }

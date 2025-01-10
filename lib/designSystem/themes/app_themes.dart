@@ -20,7 +20,11 @@ class AppThemes {
       colorScheme: ColorScheme.fromSeed(seedColor: primary, secondary: secondary),
       primaryColor: primary,
       scaffoldBackgroundColor: scaffoldBackground,
-      appBarTheme: AppBarTheme(backgroundColor: scaffoldBackground, surfaceTintColor: AppColors.transparent),
+      appBarTheme: AppBarTheme(
+        backgroundColor: scaffoldBackground,
+        surfaceTintColor: AppColors.transparent,
+        titleTextStyle: AppTextStyles.h5(color: primary),
+      ),
       iconTheme: IconThemeData(color: primary),
       textTheme: GoogleFonts.instrumentSansTextTheme().apply(bodyColor: primary, displayColor: primary),
       chipTheme: AppChipsThemes.chipThemeData(primary: primary, scaffoldBackground: scaffoldBackground),

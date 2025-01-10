@@ -5,7 +5,10 @@ import 'package:eksiazeczka_kgp/resources/resources.dart';
 
 void main() {
   test('icon_images assets test', () {
+    expect(File(IconImages.arrowForward).existsSync(), isTrue);
+    expect(File(IconImages.arrowOutward).existsSync(), isTrue);
     expect(File(IconImages.checkCircle).existsSync(), isTrue);
+    expect(File(IconImages.delete).existsSync(), isTrue);
     expect(File(IconImages.error).existsSync(), isTrue);
     expect(File(IconImages.landscape).existsSync(), isTrue);
     expect(File(IconImages.landscapeFilled).existsSync(), isTrue);
@@ -16,6 +19,8 @@ void main() {
     expect(File(IconImages.medalsFilled).existsSync(), isTrue);
     expect(File(IconImages.menu).existsSync(), isTrue);
     expect(File(IconImages.menuFilled).existsSync(), isTrue);
+    expect(File(IconImages.signOut).existsSync(), isTrue);
     expect(File(IconImages.sort).existsSync(), isTrue);
+    expect(File(IconImages.upload).existsSync(), isTrue);
   });
 }
