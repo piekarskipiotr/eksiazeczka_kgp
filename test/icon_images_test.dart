@@ -8,6 +8,7 @@ void main() {
     expect(File(IconImages.arrowForward).existsSync(), isTrue);
     expect(File(IconImages.arrowOutward).existsSync(), isTrue);
     expect(File(IconImages.checkCircle).existsSync(), isTrue);
+    expect(File(IconImages.close).existsSync(), isTrue);
     expect(File(IconImages.delete).existsSync(), isTrue);
     expect(File(IconImages.error).existsSync(), isTrue);
     expect(File(IconImages.landscape).existsSync(), isTrue);

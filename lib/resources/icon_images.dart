@@ -6,6 +6,7 @@ class IconImages {
   static const String arrowForward = 'assets/images/icons/arrow_forward.svg';
   static const String arrowOutward = 'assets/images/icons/arrow_outward.svg';
   static const String checkCircle = 'assets/images/icons/check_circle.svg';
+  static const String close = 'assets/images/icons/close.svg';
   static const String delete = 'assets/images/icons/delete.svg';
   static const String error = 'assets/images/icons/error.svg';
   static const String landscape = 'assets/images/icons/landscape.svg';

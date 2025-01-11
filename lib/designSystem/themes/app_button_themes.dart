@@ -38,10 +38,10 @@ class AppButtonThemes {
     );
   }
 
-  static TextButtonThemeData textButtonThemeData({required Color secondary}) {
+  static TextButtonThemeData textButtonThemeData({required Color primary}) {
     return TextButtonThemeData(
       style: TextButton.styleFrom(
-        foregroundColor: secondary,
+        foregroundColor: primary,
         overlayColor: AppColors.transparent,
         textStyle: _textStyle,
         shape: _shape,

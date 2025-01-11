@@ -104,5 +104,8 @@
   "menage": "Zarządzaj",
   "deleteAccount": "Usuń konto",
   "signOut": "Wyloguj się",
-  "signingIn": "Logowanie..."
+  "signingIn": "Logowanie...",
+  "deleteAccountConfirmationTitle": "Czy jesteś pewien?",
+  "deleteAccountConfirmationDescription": "Usunięcie konta sprawi usunięcie wszystkich danych powiązanych z twoim kontem, zarówno tych przechowywanych w chmurze jak i lokalnie. Operacji nie można cofnąć.",
+  "cancel": "Anuluj"
 }

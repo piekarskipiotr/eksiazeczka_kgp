@@ -30,7 +30,7 @@ class AppThemes {
       chipTheme: AppChipsThemes.chipThemeData(primary: primary, scaffoldBackground: scaffoldBackground),
       elevatedButtonTheme: AppButtonThemes.elevatedButtonThemeData(primary: primary, secondary: secondary),
       outlinedButtonTheme: AppButtonThemes.outlinedButtonThemeData(primary: primary, secondary: secondary),
-      textButtonTheme: AppButtonThemes.textButtonThemeData(secondary: secondary),
+      textButtonTheme: AppButtonThemes.textButtonThemeData(primary: primary),
     );
   }
 }
