@@ -20,6 +20,7 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_bloc: ^8.1.6
+  flutter_image_compress: ^2.4.0
   flutter_localizations:
     sdk: flutter
   flutter_secure_storage: ^4.2.1

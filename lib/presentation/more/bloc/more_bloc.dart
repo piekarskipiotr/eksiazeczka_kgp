@@ -3,6 +3,7 @@ import 'dart:developer';
 
 import 'package:bloc/bloc.dart';
 import 'package:eksiazeczka_kgp/data/enums/enums.dart';
+import 'package:eksiazeczka_kgp/data/repositories/repositories.dart';
 import 'package:eksiazeczka_kgp/presentation/more/constants/more_state_status.dart';
 import 'package:eksiazeczka_kgp/services/services.dart';
 import 'package:eksiazeczka_kgp/utils/utils.dart';
@@ -14,8 +15,9 @@ part 'more_event.dart';
 part 'more_state.dart';
 
 class MoreBloc extends Bloc<MoreEvent, MoreState> {
-  MoreBloc({required AuthService authService})
+  MoreBloc({required AuthService authService, required SupabaseStorageRepository supabaseStorageRepository})
       : _authService = authService,
+        _supabaseStorageRepository = supabaseStorageRepository,
         super(const MoreState()) {
     on<_UserUpdate>(_onUserUpdate);
     on<SignInWithProvider>(_onSignInWithProvider);
@@ -34,6 +36,7 @@ class MoreBloc extends Bloc<MoreEvent, MoreState> {
   }
 
   final AuthService _authService;
+  final SupabaseStorageRepository _supabaseStorageRepository;
   late StreamSubscription<User?> _userSubscription;
 
   Future<void> _onUserUpdate(_UserUpdate event, Emitter<MoreState> emit) async {
@@ -52,10 +55,15 @@ class MoreBloc extends Bloc<MoreEvent, MoreState> {
   }
 
   Future<void> onUpdateProfilePicture(UpdateProfilePicture event, Emitter<MoreState> emit) async {
+    final user = state.user;
+    if (user == null) return;
     final image = await ImagePicker().pickImage(source: ImageSource.gallery);
     if (image == null) return;
 
-    // TODO(piotr): Implement avatar change locally and online
+    final compressedImageBytes = await ImageCompressor.compressFile(image);
+    await _supabaseStorageRepository.uploadAvatar(fileBytes: compressedImageBytes, userId: user.id);
+    final userAvatarUrl = await _supabaseStorageRepository.getUserAvatar(userId: user.id);
+    await _authService.updateUserAvatar(userAvatarUrl);
   }
 
   Future<void> _onOpenLink(OpenLink event, Emitter<MoreState> emit) async {

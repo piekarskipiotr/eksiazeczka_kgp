@@ -25,7 +25,7 @@ class SupabaseStorageRepository {
   Future<String> getUserAvatar({required String userId}) async {
     try {
       final supabasePath = _buildAvatarPath(userId: userId);
-      final publicUrl = instance.from(_avatarsStorageBucketPath).getPublicUrl(supabasePath);
+      final publicUrl = await instance.from(_avatarsStorageBucketPath).createSignedUrl(supabasePath, 2592000);
       return '$publicUrl?version=${DateTime.now().millisecondsSinceEpoch}';
     } catch (e) {
       throw Exception(e.toString());

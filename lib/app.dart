@@ -61,7 +61,10 @@ class App extends StatelessWidget {
         ),
         BlocProvider(
           create: (_) {
-            return MoreBloc(authService: _authService);
+            return MoreBloc(
+              authService: _authService,
+              supabaseStorageRepository: _supabaseStorageRepository,
+            );
           },
         ),
         BlocProvider(
