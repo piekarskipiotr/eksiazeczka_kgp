@@ -3,6 +3,7 @@ import 'package:eksiazeczka_kgp/designSystem/design_system.dart';
 import 'package:eksiazeczka_kgp/l10n/l10n.dart';
 import 'package:eksiazeczka_kgp/presentation/appLanguageSettings/bloc/app_language_settings_bloc.dart';
 import 'package:eksiazeczka_kgp/presentation/darkModeSettings/bloc/dark_mode_settings_bloc.dart';
+import 'package:eksiazeczka_kgp/presentation/more/bloc/more_bloc.dart';
 import 'package:eksiazeczka_kgp/presentation/peaks/bloc/peaks_bloc.dart';
 import 'package:eksiazeczka_kgp/router/app_router.dart';
 import 'package:eksiazeczka_kgp/services/services.dart';
@@ -56,6 +57,11 @@ class App extends StatelessWidget {
               authService: _authService,
               supabasePeaksRepository: _supabasePeaksRepository,
             );
+          },
+        ),
+        BlocProvider(
+          create: (_) {
+            return MoreBloc(authService: _authService);
           },
         ),
         BlocProvider(

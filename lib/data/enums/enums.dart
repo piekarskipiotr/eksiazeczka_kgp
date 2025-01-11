@@ -1,5 +1,4 @@
 export 'app_navigation.dart';
-export 'authentication_status.dart';
 export 'chip_size.dart';
 export 'difficulty_level.dart';
 export 'peaks_filters.dart';

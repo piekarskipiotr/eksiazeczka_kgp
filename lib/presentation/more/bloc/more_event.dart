@@ -4,6 +4,15 @@ abstract class MoreEvent extends Equatable {
   const MoreEvent();
 }
 
+final class _UserUpdate extends MoreEvent {
+  const _UserUpdate(this.user);
+
+  final User user;
+
+  @override
+  List<Object?> get props => [user];
+}
+
 final class SignInWithProvider extends MoreEvent {
   const SignInWithProvider(this.provider);
 

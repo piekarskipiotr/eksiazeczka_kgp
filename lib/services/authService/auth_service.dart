@@ -14,9 +14,9 @@ class AuthService {
   final AuthStorage _authStorage;
   final SupabaseAuthRepository _supabaseAuthRepository;
 
-  final _controller = StreamController<AuthenticationStatus>.broadcast();
+  final _controller = StreamController<User?>.broadcast();
 
-  Stream<AuthenticationStatus> get status async* {
+  Stream<User?> get user async* {
     yield* _controller.stream;
   }
 
@@ -24,9 +24,18 @@ class AuthService {
     _supabaseAuthRepository.authStateChanges().listen((authState) async {
       final session = authState.session;
       await _handleStorageAuthStateChange(session);
-      final status = session != null ? AuthenticationStatus.authenticated : AuthenticationStatus.unauthenticated;
-      _controller.add(status);
+      final user = session?.user;
+      _controller.add(user);
     });
+  }
+
+  Future<void> signInWithProvider(Providers provider) async {
+    switch (provider) {
+      case Providers.google:
+        await _supabaseAuthRepository.signInWithGoogle();
+      case Providers.apple:
+        await _supabaseAuthRepository.signInWithApple();
+    }
   }
 
   Future<void> _restoreOrCreateAnonymousSession() async {
@@ -49,4 +58,8 @@ class AuthService {
   }
 
   Future<User> getCurrentUser() => _supabaseAuthRepository.getCurrentUser();
+
+  Future<void> deleteAccount() => _supabaseAuthRepository.deleteAccount();
+
+  Future<void> signOut() => _supabaseAuthRepository.signOut();
 }

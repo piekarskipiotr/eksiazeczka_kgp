@@ -15,6 +15,7 @@ dependencies:
   brick_supabase: ^1.4.0
   build_runner: ^2.4.14
   cached_network_image: ^3.4.1
+  crypto: ^3.0.6
   equatable: ^2.0.7
   flutter:
     sdk: flutter
@@ -26,11 +27,13 @@ dependencies:
   go_router: ^14.6.3
   google_fonts: ^6.2.1
   google_nav_bar: ^5.0.7
+  google_sign_in: ^6.2.2
   image_picker: ^1.1.2
   intl: ^0.19.0
   sentry_flutter: ^8.12.0
   shared_preferences: ^2.3.5
   shimmer: ^3.0.0
+  sign_in_with_apple: ^6.1.4
   sqflite: ^2.4.1
   sqflite_common: ^2.5.4+6
   supabase_flutter: ^2.8.3

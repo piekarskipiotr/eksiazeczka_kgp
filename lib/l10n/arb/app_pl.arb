@@ -97,5 +97,12 @@
   "appFunctionalityQuestion2": "Czy aplikacja działa online?",
   "appFunctionalityQuestion2Answer": "Tak, istnieje możliwość zalogowania się przez konto Google dla Androida lub konto Apple dla iOS. W takim przypadku dane zostaną zapisane w chmurze.",
   "accountQuestion1": "Jak usunąć konto?",
-  "accountQuestion1Answer": "Aby usunąć konto, przejdź do Więcej > Zarządzaj kontem > Usuń konto, po zalogowaniu się."
+  "accountQuestion1Answer": "Aby usunąć konto, przejdź do Więcej > Zarządzaj kontem > Usuń konto, po zalogowaniu się.",
+  "information": "Informacje",
+  "email": "Adres email",
+  "accountCreatedAt": "Data utworzenia",
+  "menage": "Zarządzaj",
+  "deleteAccount": "Usuń konto",
+  "signOut": "Wyloguj się",
+  "signingIn": "Logowanie..."
 }

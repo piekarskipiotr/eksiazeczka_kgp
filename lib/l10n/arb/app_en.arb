@@ -97,5 +97,12 @@
   "appFunctionalityQuestion2": "Does the app work online?",
   "appFunctionalityQuestion2Answer": "Yes, you can log in using a Google account for Android or an Apple account for iOS. In this case, the data will be saved in the cloud.",
   "accountQuestion1": "How to delete an account?",
-  "accountQuestion1Answer": "To delete an account, go to More > Manage Account > Delete Account, after logging in."
+  "accountQuestion1Answer": "To delete an account, go to More > Manage Account > Delete Account, after logging in.",
+  "information": "Information",
+  "email": "Email address",
+  "accountCreatedAt": "Created at",
+  "menage": "Menage",
+  "deleteAccount": "Delete account",
+  "signOut": "Sign out",
+  "signingIn": "Signing in..."
 }

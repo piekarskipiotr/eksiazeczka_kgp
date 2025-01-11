@@ -1,3 +1,5 @@
+import 'package:intl/intl.dart';
+
 extension StringExtensions on String {
   String get normalize {
     const polishAccents = {
@@ -25,5 +27,14 @@ extension StringExtensions on String {
   String get capitalizeFirst {
     if (isEmpty) return this;
     return '${this[0].toUpperCase()}${substring(1)}';
+  }
+
+  String get formatToDDMMYYYYDate {
+    try {
+      final parsedDate = DateTime.parse(this);
+      return DateFormat('dd.MM.yyyy').format(parsedDate);
+    } catch (e) {
+      return '';
+    }
   }
 }
