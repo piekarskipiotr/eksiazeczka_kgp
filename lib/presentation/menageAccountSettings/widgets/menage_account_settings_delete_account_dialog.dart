@@ -1,6 +1,5 @@
 import 'package:eksiazeczka_kgp/designSystem/design_system.dart';
 import 'package:eksiazeczka_kgp/l10n/l10n.dart';
-import 'package:eksiazeczka_kgp/resources/resources.dart';
 import 'package:flutter/material.dart';
 import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 
