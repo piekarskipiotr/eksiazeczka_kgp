@@ -8,21 +8,19 @@ class RootAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   double get _appBarHeight => 56;
 
-  double get _spacing => 16;
-
   @override
   Widget build(BuildContext context) {
     final l10n = context.l10n;
     return AppBar(
       title: Row(
-        spacing: _spacing,
+        spacing: 16,
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Expanded(
             child: Row(
-              spacing: _spacing,
+              spacing: 12,
               children: [
-                const AppCircleAvatar(),
+                Text('👋', style: AppTextStyles.h3()),
                 Flexible(
                   child: Text(
                     l10n.helloTraveler,

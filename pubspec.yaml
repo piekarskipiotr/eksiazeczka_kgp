@@ -53,7 +53,6 @@ flutter:
   uses-material-design: true
   generate: true
   assets:
-    - assets/images/avatars/
     - assets/images/icons/
     - assets/images/logos/
     - assets/images/peaks/
@@ -68,9 +67,6 @@ spider:
   use_references_list: false
   package: resources
   groups:
-    - path: assets/images/avatars
-      class_name: AvatarImages
-      types: [ .png ]
     - path: assets/images/icons
       class_name: IconImages
       types: [ .svg ]

@@ -22,6 +22,5 @@ void main() {
     expect(File(IconImages.menuFilled).existsSync(), isTrue);
     expect(File(IconImages.signOut).existsSync(), isTrue);
     expect(File(IconImages.sort).existsSync(), isTrue);
-    expect(File(IconImages.upload).existsSync(), isTrue);
   });
 }

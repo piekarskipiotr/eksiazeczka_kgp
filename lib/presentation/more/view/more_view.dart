@@ -21,10 +21,6 @@ class MoreView extends StatelessWidget {
     context.read<MoreBloc>().add(SignInWithProvider(provider));
   }
 
-  void _onSetProfilePicturePressed(BuildContext context) {
-    context.read<MoreBloc>().add(const UpdateProfilePicture());
-  }
-
   void _onDarkThemePressed(BuildContext context) {
     context.read<AppRouter>().showDarkModeSettings();
   }
@@ -92,13 +88,6 @@ class MoreView extends StatelessWidget {
                 MoreSection(
                   label: l10n.personalization,
                   children: [
-                    MoreSectionItemTextIcon(
-                      label: l10n.setProfilePicture,
-                      icon: IconImages.upload,
-                      onPressed: () {
-                        _onSetProfilePicturePressed(context);
-                      },
-                    ),
                     MoreSectionItemTextIcon(
                       label: l10n.darkMode,
                       icon: IconImages.arrowForward,

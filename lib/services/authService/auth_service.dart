@@ -57,7 +57,6 @@ class AuthService {
     }
   }
 
-  Future<void> updateUserAvatar(String url) => _supabaseAuthRepository.updateUserAvatar(url);
 
   Future<User> getCurrentUser() => _supabaseAuthRepository.getCurrentUser();
 

@@ -87,18 +87,6 @@ class SupabaseAuthRepository {
     }
   }
 
-  Future<User> updateUserAvatar(String url) async {
-    try {
-      final response = await _instance.updateUser(UserAttributes(data: {'avatar': url}));
-      final user = response.user;
-      if (user == null) throw Exception('No user returned');
-
-      return user;
-    } catch (e) {
-      throw Exception(e);
-    }
-  }
-
   Future<void> signOut() async {
     try {
       await _instance.signOut();

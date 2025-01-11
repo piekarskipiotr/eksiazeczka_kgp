@@ -63,7 +63,6 @@ class App extends StatelessWidget {
           create: (_) {
             return MoreBloc(
               authService: _authService,
-              supabaseStorageRepository: _supabaseStorageRepository,
             );
           },
         ),

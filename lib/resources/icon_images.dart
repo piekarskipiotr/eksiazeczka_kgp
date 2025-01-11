@@ -21,5 +21,4 @@ class IconImages {
   static const String menuFilled = 'assets/images/icons/menu_filled.svg';
   static const String signOut = 'assets/images/icons/sign_out.svg';
   static const String sort = 'assets/images/icons/sort.svg';
-  static const String upload = 'assets/images/icons/upload.svg';
 }
