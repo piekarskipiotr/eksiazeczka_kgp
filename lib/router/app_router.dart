@@ -1,9 +1,11 @@
+import 'package:eksiazeczka_kgp/data/models/models.dart';
 import 'package:eksiazeczka_kgp/presentation/appLanguageSettings/view/app_language_settings_page.dart';
 import 'package:eksiazeczka_kgp/presentation/darkModeSettings/view/dark_mode_settings_page.dart';
 import 'package:eksiazeczka_kgp/presentation/faq/view/faq_page.dart';
 import 'package:eksiazeczka_kgp/presentation/medals/view/medals_page.dart';
 import 'package:eksiazeczka_kgp/presentation/menageAccountSettings/view/menage_account_settings_page.dart';
 import 'package:eksiazeczka_kgp/presentation/more/view/more_page.dart';
+import 'package:eksiazeczka_kgp/presentation/peakDetails/view/peak_details_page.dart';
 import 'package:eksiazeczka_kgp/presentation/peaks/view/peaks_page.dart';
 import 'package:eksiazeczka_kgp/presentation/root/view/root_page.dart';
 import 'package:eksiazeczka_kgp/router/app_routes.dart';
@@ -62,6 +64,14 @@ class AppRouter {
             ],
           ),
         ],
+      ),
+      GoRoute(
+        name: AppRoutes.peakDetails,
+        path: '/${AppRoutes.peakDetails}',
+        builder: (context, state) {
+          final peak = state.extra! as Peak;
+          return PeakDetailsPage(peak: peak);
+        },
       ),
       GoRoute(
         name: AppRoutes.darkModeSettings,

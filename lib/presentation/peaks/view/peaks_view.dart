@@ -2,6 +2,7 @@ import 'package:eksiazeczka_kgp/data/enums/enums.dart';
 import 'package:eksiazeczka_kgp/data/models/models.dart';
 import 'package:eksiazeczka_kgp/presentation/peaks/bloc/peaks_bloc.dart';
 import 'package:eksiazeczka_kgp/presentation/peaks/widgets/widgets.dart';
+import 'package:eksiazeczka_kgp/router/router.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -9,7 +10,7 @@ class PeaksView extends StatelessWidget {
   const PeaksView({super.key});
 
   void _onPeakPressed(BuildContext context, Peak peak) {
-    // TODO(piotr): Implement navigation to peak details
+    context.read<AppRouter>().showPeakDetails(peak: peak);
   }
 
   void _onFilterPressed(BuildContext context, PeaksFilters filter) {

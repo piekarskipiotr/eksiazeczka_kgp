@@ -6,9 +6,11 @@ class IconImages {
   static const String arrowForward = 'assets/images/icons/arrow_forward.svg';
   static const String arrowOutward = 'assets/images/icons/arrow_outward.svg';
   static const String checkCircle = 'assets/images/icons/check_circle.svg';
+  static const String city = 'assets/images/icons/city.svg';
   static const String close = 'assets/images/icons/close.svg';
   static const String delete = 'assets/images/icons/delete.svg';
   static const String error = 'assets/images/icons/error.svg';
+  static const String hiking = 'assets/images/icons/hiking.svg';
   static const String landscape = 'assets/images/icons/landscape.svg';
   static const String landscapeFilled =
       'assets/images/icons/landscape_filled.svg';
@@ -21,4 +23,6 @@ class IconImages {
   static const String menuFilled = 'assets/images/icons/menu_filled.svg';
   static const String signOut = 'assets/images/icons/sign_out.svg';
   static const String sort = 'assets/images/icons/sort.svg';
+  static const String timer = 'assets/images/icons/timer.svg';
+  static const String trending = 'assets/images/icons/trending.svg';
 }

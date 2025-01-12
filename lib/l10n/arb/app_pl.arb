@@ -106,5 +106,9 @@
   "signingIn": "Logowanie...",
   "deleteAccountConfirmationTitle": "Czy jesteś pewien?",
   "deleteAccountConfirmationDescription": "Usunięcie konta sprawi usunięcie wszystkich danych powiązanych z twoim kontem, zarówno tych przechowywanych w chmurze jak i lokalnie. Operacji nie można cofnąć.",
-  "cancel": "Anuluj"
+  "cancel": "Anuluj",
+  "description": "Opis",
+  "baseInformation": "Podstawowe informacje",
+  "baseInformationSubtitle": "Zapoznaj się z szczegółami o szczycie",
+  "markConquerPeak": "Zaznacz zdobycie szczytu"
 }

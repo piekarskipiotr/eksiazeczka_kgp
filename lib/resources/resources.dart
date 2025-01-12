@@ -1,5 +1,3 @@
-part 'avatar_images.dart';
-
 part 'icon_images.dart';
 
 part 'logo_images.dart';
