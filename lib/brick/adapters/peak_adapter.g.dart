@@ -25,7 +25,7 @@ Future<Peak> _$PeakFromSupabase(Map<String, dynamic> data,
     userMetadata: data['user_metadata'] == null
         ? null
         : await PeakUserMetadataAdapter().fromSupabase(
-            (data['user_metadata'] as List<dynamic>).firstOrNull as Map<String, dynamic>,
+            data['user_metadata'] as Map<String, dynamic>,
             provider: provider,
             repository: repository,
           ),

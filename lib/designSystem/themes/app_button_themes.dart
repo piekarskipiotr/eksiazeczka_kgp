@@ -23,16 +23,13 @@ class AppButtonThemes {
     );
   }
 
-  static OutlinedButtonThemeData outlinedButtonThemeData({
-    required Color primary,
-    required Color secondary,
-  }) {
+  static OutlinedButtonThemeData outlinedButtonThemeData({required Color primary}) {
     return OutlinedButtonThemeData(
       style: OutlinedButton.styleFrom(
-        foregroundColor: secondary,
-        backgroundColor: primary,
+        foregroundColor: primary,
         textStyle: _textStyle,
         shape: _shape,
+        side: BorderSide(color: primary, width: 2),
         fixedSize: _size(),
       ),
     );

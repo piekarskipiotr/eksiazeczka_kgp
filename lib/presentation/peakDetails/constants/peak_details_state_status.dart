@@ -1,0 +1,20 @@
+enum PeakDetailsStateStatus {
+  initial,
+  validatingLocation,
+  validatingLocationSucceeded,
+  validatingLocationFailed,
+  validatingLocationPermissionsDenied,
+  validatingLocationPermissionsPermanentlyDenied,
+  takingPhoto,
+  takingPhotoSucceeded,
+  takingPhotoFailed,
+  addingGalleryPhoto,
+  addingGalleryPhotoSucceeded,
+  addingGalleryPhotoFailed,
+  buyingPeak,
+  buyingPeakSucceeded,
+  buyingPeakFailed,
+  insertingMetadata,
+  insertingMetadataSucceeded,
+  insertingMetadataFailed;
+}

@@ -110,5 +110,17 @@
   "description": "Description",
   "baseInformation": "Base information",
   "baseInformationSubtitle": "Read the details about the peak",
-  "markConquerPeak": "Mark conquering the peak"
+  "markConquerPeak": "Mark conquering the peak",
+  "youHaveConqueredPeak": "You have conquered the peak!",
+  "youHaveConqueredPeakDescription": "Congratulations! You've reached the peak and can be proud of yourself.\nAnother step in your mountain adventure is complete – time to\nenjoy the views and plan the next challenges!",
+  "takePhoto": "Take photo",
+  "addPhotoFromGallery": "Add from gallery",
+  "notInPeakRange": "Nie jesteś wystarczająco blisko szczytu!",
+  "notInPeakRangeDescription": "Wygląda na to, że nie znajdujesz się wystarczająco blisko szczytu,\naby zaznaczyć jego zdobycie. Upewnij się, że dotarłeś na miejsce\nzgodnie z wymaganiami – twoja lokalizacja musi pokrywać się z\nwyznaczoną strefą szczytu.",
+  "tryAgain": "Try again",
+  "buyPeak": "Unlock peak for 20 PLN",
+  "close": "Close",
+  "openSettings": "Otwórz ustawienia",
+  "geolocationPermissionRationaleTitle": "Uprawnienia do lokalizacji",
+  "geolocationPermissionRationaleDescription": "Aplikacja potrzebuje dostępu do Twojej lokalizacji, aby zweryfikować, czy znajdujesz się w okolicy szczytu. Przejdź do ustawień aplikacji i zezwól na dostęp do lokalizacji."
 }

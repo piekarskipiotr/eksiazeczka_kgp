@@ -36,7 +36,7 @@ class PeakCard extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               if (peak.isConquered)
-                PeakConqueredInformation(date: peak.userMetadata!.conqueredDate)
+                SafeArea(child: PeakConqueredInformation(date: peak.userMetadata!.conqueredDate))
               else
                 const SizedBox(),
               PeakCardInformation(name: peak.name, mountainRange: peak.mountainRange, peakHeight: peak.height),

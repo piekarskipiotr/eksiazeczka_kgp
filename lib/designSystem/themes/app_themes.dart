@@ -29,7 +29,7 @@ class AppThemes {
       textTheme: GoogleFonts.instrumentSansTextTheme().apply(bodyColor: primary, displayColor: primary),
       chipTheme: AppChipsThemes.chipThemeData(primary: primary, scaffoldBackground: scaffoldBackground),
       elevatedButtonTheme: AppButtonThemes.elevatedButtonThemeData(primary: primary, secondary: secondary),
-      outlinedButtonTheme: AppButtonThemes.outlinedButtonThemeData(primary: primary, secondary: secondary),
+      outlinedButtonTheme: AppButtonThemes.outlinedButtonThemeData(primary: primary),
       textButtonTheme: AppButtonThemes.textButtonThemeData(primary: primary),
     );
   }

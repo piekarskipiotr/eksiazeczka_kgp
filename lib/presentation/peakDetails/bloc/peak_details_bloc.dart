@@ -1,7 +1,13 @@
+import 'dart:developer';
+
 import 'package:bloc/bloc.dart';
 import 'package:eksiazeczka_kgp/data/models/models.dart';
+import 'package:eksiazeczka_kgp/data/repositories/repositories.dart';
+import 'package:eksiazeczka_kgp/presentation/peakDetails/constants/peak_details_state_status.dart';
 import 'package:eksiazeczka_kgp/services/services.dart';
+import 'package:eksiazeczka_kgp/utils/utils.dart';
 import 'package:equatable/equatable.dart';
+import 'package:image_picker/image_picker.dart';
 
 part 'peak_details_event.dart';
 part 'peak_details_state.dart';
@@ -10,8 +16,118 @@ class PeakDetailsBloc extends Bloc<PeakDetailsEvent, PeakDetailsState> {
   PeakDetailsBloc({
     required Peak peak,
     required AuthService authService,
+    required SupabasePeaksUserMetadataRepository supabasePeaksUserMetadataRepository,
+    required SupabaseStorageRepository supabaseStorageRepository,
   })  : _authService = authService,
-        super(PeakDetailsState(peak: peak)) {}
+        _supabasePeaksUserMetadataRepository = supabasePeaksUserMetadataRepository,
+        _supabaseStorageRepository = supabaseStorageRepository,
+        super(PeakDetailsState(peak: peak)) {
+    on<ValidateUserLocation>(_onValidateUserLocation);
+    on<TakePhoto>(_onTakePhoto);
+    on<AddFromGallery>(_onAddFromGallery);
+    on<MarkPeakAsConquered>(_onMarkPeakAsConquered);
+  }
 
   final AuthService _authService;
+  final SupabasePeaksUserMetadataRepository _supabasePeaksUserMetadataRepository;
+  final SupabaseStorageRepository _supabaseStorageRepository;
+
+  Future<void> _onValidateUserLocation(ValidateUserLocation event, Emitter<PeakDetailsState> emit) async {
+    try {
+      emit(state.copyWith(status: PeakDetailsStateStatus.validatingLocation));
+      final peak = state.peak;
+      final peakCoordinates = peak.coordinates;
+      final geolocatorStatus = await AppGeolocator.checkPermissionStatus(
+        onDenied: () {
+          emit(state.copyWith(status: PeakDetailsStateStatus.validatingLocationPermissionsDenied));
+        },
+        onPermanentlyDenied: () {
+          emit(state.copyWith(status: PeakDetailsStateStatus.validatingLocationPermissionsPermanentlyDenied));
+        },
+      );
+
+      if (geolocatorStatus == false) return;
+
+      final currentUserCoordinates = await AppGeolocator.currentLocation;
+      final isValid = AppGeolocator.isWithinRange(
+        longitude1: peakCoordinates.lng,
+        latitude1: peakCoordinates.lat,
+        longitude2: currentUserCoordinates.longitude,
+        latitude2: currentUserCoordinates.latitude,
+        range: 100,
+      );
+
+      emit(
+        state.copyWith(
+          status: isValid
+              ? PeakDetailsStateStatus.validatingLocationSucceeded
+              : PeakDetailsStateStatus.validatingLocationFailed,
+        ),
+      );
+    } catch (error, stacktrace) {
+      log('FAILED TO VALIDATE USER LOCATION error: $error, stacktrace: $stacktrace');
+      emit(state.copyWith(error: error.toString()));
+    }
+  }
+
+  Future<void> _onTakePhoto(TakePhoto event, Emitter<PeakDetailsState> emit) async {
+    try {
+      final image = await ImagePicker().pickImage(source: ImageSource.camera);
+      if (image == null) return;
+
+      emit(state.copyWith(status: PeakDetailsStateStatus.takingPhoto));
+      final compressedImageBytes = await ImageCompressor.compressFile(image);
+      final peak = state.peak;
+      final peakId = peak.id;
+      final user = await _authService.getCurrentUser();
+      final userId = user.id;
+      await _supabaseStorageRepository.uploadPeakPhoto(compressedImageBytes, peakId, userId);
+
+      emit(state.copyWith(status: PeakDetailsStateStatus.takingPhotoSucceeded));
+    } catch (error, stacktrace) {
+      log('FAILED TO TAKE PHOTO error: $error, stacktrace: $stacktrace');
+      emit(state.copyWith(status: PeakDetailsStateStatus.addingGalleryPhotoFailed, error: error.toString()));
+    }
+  }
+
+  Future<void> _onAddFromGallery(AddFromGallery event, Emitter<PeakDetailsState> emit) async {
+    try {
+      final image = await ImagePicker().pickImage(source: ImageSource.gallery);
+      if (image == null) return;
+
+      emit(state.copyWith(status: PeakDetailsStateStatus.addingGalleryPhoto));
+      final compressedImageBytes = await ImageCompressor.compressFile(image);
+      final peak = state.peak;
+      final peakId = peak.id;
+      final user = await _authService.getCurrentUser();
+      final userId = user.id;
+      await _supabaseStorageRepository.uploadPeakPhoto(compressedImageBytes, peakId, userId);
+
+      emit(state.copyWith(status: PeakDetailsStateStatus.addingGalleryPhotoSucceeded));
+    } catch (error, stacktrace) {
+      log('FAILED TO ADD PHOTO FROM GALLERY error: $error, stacktrace: $stacktrace');
+      emit(state.copyWith(status: PeakDetailsStateStatus.addingGalleryPhotoFailed, error: error.toString()));
+    }
+  }
+
+  Future<void> _onMarkPeakAsConquered(MarkPeakAsConquered event, Emitter<PeakDetailsState> emit) async {
+    try {
+      emit(state.copyWith(status: PeakDetailsStateStatus.insertingMetadata));
+      final peak = state.peak;
+      final peakId = peak.id;
+      final user = await _authService.getCurrentUser();
+      final userId = user.id;
+      final metadata = await _supabasePeaksUserMetadataRepository.insert(peakId: peakId, userId: userId);
+
+      emit(
+        state.copyWith(
+          status: PeakDetailsStateStatus.insertingMetadataSucceeded,
+          peak: peak.updateUserMetadata(metadata),
+        ),
+      );
+    } catch (error, stacktrace) {
+      log('FAILED TO MARK PEAK AS CONQUERED error: $error, stacktrace: $stacktrace');
+      emit(state.copyWith(status: PeakDetailsStateStatus.insertingMetadataFailed, error: error.toString()));
+    }
+  }
 }

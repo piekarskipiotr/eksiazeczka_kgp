@@ -1,20 +1,99 @@
+import 'package:eksiazeczka_kgp/designSystem/design_system.dart';
 import 'package:flutter/material.dart';
 
-class AppTextButton extends StatelessWidget {
+class AppTextButton extends StatefulWidget {
   const AppTextButton({
     required this.label,
     required this.onPressed,
+    this.isLoading = false,
+    this.labelColor,
     super.key,
   });
 
   final String label;
   final VoidCallback onPressed;
+  final bool isLoading;
+  final Color? labelColor;
+
+  @override
+  State<AppTextButton> createState() => _AppTextButtonState();
+}
+
+class _AppTextButtonState extends State<AppTextButton> with TickerProviderStateMixin {
+  late AnimationController _controller;
+  late Animation<double> _opacityAnimation;
+  late Animation<double> _widthAnimation;
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = AnimationController(vsync: this, duration: const Duration(milliseconds: 300));
+
+    _opacityAnimation = Tween<double>(begin: 0, end: 1).animate(
+      CurvedAnimation(parent: _controller, curve: Curves.easeIn),
+    );
+
+    _widthAnimation = Tween<double>(begin: 0, end: 16).animate(
+      CurvedAnimation(parent: _controller, curve: Curves.easeIn),
+    );
+  }
+
+  @override
+  void didUpdateWidget(covariant AppTextButton oldWidget) {
+    super.didUpdateWidget(oldWidget);
+
+    if (widget.isLoading && !oldWidget.isLoading) {
+      _controller.forward();
+    } else if (!widget.isLoading && oldWidget.isLoading) {
+      _controller.reverse();
+    }
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
-    return TextButton(
-      onPressed: onPressed,
-      child: Text(label),
+    return AbsorbPointer(
+      absorbing: widget.isLoading,
+      child: TextButton(
+        onPressed: widget.onPressed,
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            AnimatedBuilder(
+              animation: _controller,
+              builder: (context, child) {
+                return Opacity(
+                  opacity: _opacityAnimation.value,
+                  child: SizedBox(
+                    width: _widthAnimation.value,
+                    height: 16,
+                    child: const CircularProgressIndicator(
+                      valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
+                      strokeWidth: 2,
+                    ),
+                  ),
+                );
+              },
+            ),
+            AnimatedSwitcher(
+              duration: const Duration(milliseconds: 300),
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 8),
+                child: Text(
+                  widget.label,
+                  style: AppTextStyles.h6(fontWeight: FontWeight.w500, color: widget.labelColor),
+                  key: ValueKey<String>(widget.label),
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }

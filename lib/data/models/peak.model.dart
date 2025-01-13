@@ -53,4 +53,20 @@ class Peak extends OfflineFirstWithSupabaseModel {
   @Sqlite(ignore: true)
   @Supabase(ignore: true)
   String get assetImage => 'assets/images/peaks/${name.snakeCase.normalize}.jpg';
+
+  Peak updateUserMetadata(PeakUserMetadata userMetadata) {
+    return Peak(
+      id: id,
+      name: name,
+      coordinates: coordinates,
+      location: location,
+      mountainRange: mountainRange,
+      height: height,
+      difficultyLevel: difficultyLevel,
+      averageAscentTime: averageAscentTime,
+      popularity: popularity,
+      descriptions: descriptions,
+      userMetadata: userMetadata,
+    );
+  }
 }

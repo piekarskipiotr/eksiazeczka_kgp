@@ -3,6 +3,7 @@ import 'package:eksiazeczka_kgp/presentation/peakDetails/bloc/peak_details_bloc.
 import 'package:eksiazeczka_kgp/presentation/peakDetails/view/peak_details_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 
 class PeakDetailsPage extends StatelessWidget {
   const PeakDetailsPage({required this.peak, super.key});
@@ -15,8 +16,10 @@ class PeakDetailsPage extends StatelessWidget {
       create: (_) => PeakDetailsBloc(
         peak: peak,
         authService: context.read(),
+        supabasePeaksUserMetadataRepository: context.read(),
+        supabaseStorageRepository: context.read(),
       ),
-      child: const PeakDetailsView(),
+      child: const CupertinoScaffold(body: PeakDetailsView()),
     );
   }
 }

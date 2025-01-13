@@ -54,5 +54,7 @@
 	<false/>
 	<key>NSPhotoLibraryUsageDescription</key>
     <string>This app requires access to your photo library to allow you to update your profile picture or add memorable picture from the peak.</string>
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>This app needs access to location to check if user is near peak.</string>
 </dict>
 </plist>
