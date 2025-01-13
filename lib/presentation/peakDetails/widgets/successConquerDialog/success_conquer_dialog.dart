@@ -117,10 +117,13 @@ class SuccessConquerDialog {
     Navigator.push(
       context,
       MaterialPageRoute<void>(
-        builder: (context) => _SuccessConquerDialog(
-          peak: peak,
-          onTakePhotoPressed: onTakePhotoPressed,
-          onAddFromGalleryPressed: onAddFromGalleryPressed,
+        builder: (_) => BlocProvider.value(
+          value: context.read<PeakDetailsBloc>(),
+          child: _SuccessConquerDialog(
+            peak: peak,
+            onTakePhotoPressed: onTakePhotoPressed,
+            onAddFromGalleryPressed: onAddFromGalleryPressed,
+          ),
         ),
         fullscreenDialog: true,
       ),

@@ -24,7 +24,10 @@ class _FailedConquerDialog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = context.l10n;
-    final textColor = Theme.of(context).colorScheme.secondary;
+    final textColor = Theme
+        .of(context)
+        .colorScheme
+        .secondary;
     return Scaffold(
       backgroundColor: AppColors.transparent,
       body: DecoratedBox(
@@ -129,18 +132,22 @@ class _FailedConquerDialog extends StatelessWidget {
 }
 
 class FailedConquerDialog {
-  static void show(
-    BuildContext context, {
+  static void show(BuildContext context, {
     required VoidCallback onTryAgainPressed,
     required VoidCallback onBuyConquerPressed,
   }) {
     Navigator.push(
       context,
       TransparentRoute(
-        builder: (context) => _FailedConquerDialog(
-          onTryAgainPressed: onTryAgainPressed,
-          onBuyConquerPressed: onBuyConquerPressed,
-        ),
+        builder: (_) =>
+            BlocProvider.value(
+              value: context.read<PeakDetailsBloc>(),
+
+              child: _FailedConquerDialog(
+                onTryAgainPressed: onTryAgainPressed,
+                onBuyConquerPressed: onBuyConquerPressed,
+              ),
+            ),
       ),
     );
   }
