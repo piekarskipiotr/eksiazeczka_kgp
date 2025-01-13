@@ -1,8 +1,11 @@
 import 'package:eksiazeczka_kgp/data/models/models.dart';
 import 'package:eksiazeczka_kgp/designSystem/design_system.dart';
 import 'package:eksiazeczka_kgp/l10n/l10n.dart';
+import 'package:eksiazeczka_kgp/presentation/peakDetails/bloc/peak_details_bloc.dart';
+import 'package:eksiazeczka_kgp/presentation/peakDetails/constants/peak_details_state_status.dart';
 import 'package:eksiazeczka_kgp/resources/resources.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
 class _SuccessConquerDialog extends StatelessWidget {
@@ -61,25 +64,42 @@ class _SuccessConquerDialog extends StatelessWidget {
               const SizedBox(height: 64),
             ],
           ),
-          SafeArea(
-            child: Padding(
-              padding: const EdgeInsets.symmetric(vertical: 12),
-              child: Column(
-                spacing: 16,
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  AppButton(
-                    label: l10n.takePhoto,
-                    onPressed: onTakePhotoPressed,
+          BlocBuilder<PeakDetailsBloc, PeakDetailsState>(
+            builder: (context, state) {
+              final status = state.status;
+              final processingStates = [
+                PeakDetailsStateStatus.takingPhoto,
+                PeakDetailsStateStatus.addingGalleryPhoto,
+              ];
+
+              return Theme(
+                data: AppThemes.dark,
+                child: SafeArea(
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 12),
+                    child: Column(
+                      spacing: 16,
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        AppButton(
+                          label: l10n.takePhoto,
+                          onPressed: onTakePhotoPressed,
+                          isLoading: status == PeakDetailsStateStatus.takingPhoto,
+                          isProcessing: processingStates.contains(status),
+                        ),
+                        AppTextButton(
+                          label: l10n.addPhotoFromGallery,
+                          labelColor: textColor,
+                          onPressed: onAddFromGalleryPressed,
+                          isLoading: status == PeakDetailsStateStatus.addingGalleryPhoto,
+                          isProcessing: processingStates.contains(status),
+                        ),
+                      ],
+                    ),
                   ),
-                  AppTextButton(
-                    label: l10n.addPhotoFromGallery,
-                    labelColor: textColor,
-                    onPressed: onAddFromGalleryPressed,
-                  ),
-                ],
-              ),
-            ),
+                ),
+              );
+            },
           ),
         ],
       ),

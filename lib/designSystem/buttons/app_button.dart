@@ -5,12 +5,14 @@ class AppButton extends StatefulWidget {
     required this.label,
     required this.onPressed,
     this.isLoading = false,
+    this.isProcessing = false,
     super.key,
   });
 
   final String label;
   final VoidCallback onPressed;
   final bool isLoading;
+  final bool isProcessing;
 
   @override
   State<AppButton> createState() => _AppButtonState();
@@ -55,7 +57,7 @@ class _AppButtonState extends State<AppButton> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return AbsorbPointer(
-      absorbing: widget.isLoading,
+      absorbing: widget.isLoading || widget.isProcessing,
       child: ElevatedButton(
         onPressed: widget.onPressed,
         child: Row(

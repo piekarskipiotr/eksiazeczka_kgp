@@ -5,12 +5,14 @@ class AppOutlinedButton extends StatefulWidget {
     required this.label,
     required this.onPressed,
     this.isLoading = false,
+    this.isProcessing = false,
     super.key,
   });
 
   final String label;
   final VoidCallback onPressed;
   final bool isLoading;
+  final bool isProcessing;
 
   @override
   State<AppOutlinedButton> createState() => _AppOutlinedButtonState();
@@ -55,7 +57,7 @@ class _AppOutlinedButtonState extends State<AppOutlinedButton> with TickerProvid
   @override
   Widget build(BuildContext context) {
     return AbsorbPointer(
-      absorbing: widget.isLoading,
+      absorbing: widget.isLoading || widget.isProcessing,
       child: OutlinedButton(
         onPressed: widget.onPressed,
         child: Row(

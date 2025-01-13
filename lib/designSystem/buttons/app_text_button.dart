@@ -6,6 +6,7 @@ class AppTextButton extends StatefulWidget {
     required this.label,
     required this.onPressed,
     this.isLoading = false,
+    this.isProcessing = false,
     this.labelColor,
     super.key,
   });
@@ -13,6 +14,7 @@ class AppTextButton extends StatefulWidget {
   final String label;
   final VoidCallback onPressed;
   final bool isLoading;
+  final bool isProcessing;
   final Color? labelColor;
 
   @override
@@ -58,7 +60,7 @@ class _AppTextButtonState extends State<AppTextButton> with TickerProviderStateM
   @override
   Widget build(BuildContext context) {
     return AbsorbPointer(
-      absorbing: widget.isLoading,
+      absorbing: widget.isLoading || widget.isProcessing,
       child: TextButton(
         onPressed: widget.onPressed,
         child: Row(

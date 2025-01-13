@@ -74,6 +74,7 @@ class PeakDetailsView extends StatelessWidget {
       listener: _handleStateStatus,
       builder: (context, state) {
         final peak = state.peak;
+        final status = state.status;
         return Scaffold(
           body: Stack(
             alignment: Alignment.bottomCenter,
@@ -125,6 +126,7 @@ class PeakDetailsView extends StatelessWidget {
                     padding: const EdgeInsets.only(bottom: 24),
                     child: AppButton(
                       label: l10n.markConquerPeak,
+                      isLoading: status == PeakDetailsStateStatus.validatingLocation,
                       onPressed: () {
                         _onMarkConquerPeakPressed(context);
                       },
