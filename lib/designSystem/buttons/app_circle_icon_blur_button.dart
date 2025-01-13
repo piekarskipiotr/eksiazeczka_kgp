@@ -17,7 +17,6 @@ class AppCircleIconBlurButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
     return BlurContainer(
       onPressed: onPressed,
       radius: size / 2,
@@ -25,7 +24,7 @@ class AppCircleIconBlurButton extends StatelessWidget {
       child: AppIcon(
         iconPath,
         size: iconSize,
-        color: theme.colorScheme.secondary,
+        color: AppColors.white,
       ),
     );
   }

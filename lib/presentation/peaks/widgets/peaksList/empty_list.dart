@@ -18,10 +18,10 @@ class EmptyList extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            AppIcon(icon, size: 32),
+            AppIcon(icon, size: 48),
             const SizedBox(height: 4),
-            Text(title, style: AppTextStyles.h7(fontWeight: FontWeight.w600), textAlign: TextAlign.center),
-            Text(description, style: AppTextStyles.h9(), textAlign: TextAlign.center),
+            Text(title, style: AppTextStyles.h6(fontWeight: FontWeight.w600), textAlign: TextAlign.center),
+            Text(description, style: AppTextStyles.h8(), textAlign: TextAlign.center),
           ],
         ),
       ),
