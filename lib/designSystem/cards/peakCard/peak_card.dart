@@ -1,5 +1,5 @@
 import 'package:eksiazeczka_kgp/data/models/models.dart';
-import 'package:eksiazeczka_kgp/designSystem/cards/image_card.dart';
+import 'package:eksiazeczka_kgp/designSystem/images/image_online_offline.dart';
 import 'package:eksiazeczka_kgp/designSystem/layouts/layouts.dart';
 import 'package:eksiazeczka_kgp/presentation/peaks/widgets/card/peak_card_information.dart';
 import 'package:eksiazeczka_kgp/presentation/peaks/widgets/card/peak_conquered_information.dart';
@@ -23,7 +23,7 @@ class PeakCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        ImageCard(
+        ImageOnlineOffline(
           radius: radius,
           height: height,
           url: peak.image,

@@ -7,6 +7,7 @@ import 'package:eksiazeczka_kgp/router/transparent_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 
 class _FailedConquerDialog extends StatelessWidget {
   const _FailedConquerDialog({
@@ -20,6 +21,7 @@ class _FailedConquerDialog extends StatelessWidget {
   void _onExitPressed(BuildContext context) {
     context.pop();
   }
+
 
   @override
   Widget build(BuildContext context) {
@@ -79,7 +81,7 @@ class _FailedConquerDialog extends StatelessWidget {
               BlocBuilder<PeakDetailsBloc, PeakDetailsState>(
                 builder: (context, state) {
                   final status = state.status;
-                  final processingStauts = [
+                  final processingStatus = [
                     PeakDetailsStateStatus.validatingLocation,
                     PeakDetailsStateStatus.buyingPeak,
                   ];
@@ -94,13 +96,13 @@ class _FailedConquerDialog extends StatelessWidget {
                             label: l10n.tryAgain,
                             onPressed: onTryAgainPressed,
                             isLoading: status == PeakDetailsStateStatus.validatingLocation,
-                            isProcessing: processingStauts.contains(status),
+                            isProcessing: processingStatus.contains(status),
                           ),
                           AppOutlinedButton(
                             label: l10n.buyPeak,
                             onPressed: onBuyConquerPressed,
                             isLoading: status == PeakDetailsStateStatus.buyingPeak,
-                            isProcessing: processingStauts.contains(status),
+                            isProcessing: processingStatus.contains(status),
                           ),
                           AppTextButton(
                             label: l10n.close,
@@ -123,21 +125,23 @@ class _FailedConquerDialog extends StatelessWidget {
 }
 
 class FailedConquerDialog {
-  static void show(
-    BuildContext context, {
+  static void show(BuildContext context, {
     required VoidCallback onTryAgainPressed,
     required VoidCallback onBuyConquerPressed,
   }) {
     Navigator.push(
       context,
       TransparentRoute(
-        builder: (_) => BlocProvider.value(
-          value: context.read<PeakDetailsBloc>(),
-          child: _FailedConquerDialog(
-            onTryAgainPressed: onTryAgainPressed,
-            onBuyConquerPressed: onBuyConquerPressed,
-          ),
-        ),
+        builder: (_) =>
+            BlocProvider.value(
+              value: context.read<PeakDetailsBloc>(),
+              child: CupertinoScaffold(
+                body: _FailedConquerDialog(
+                  onTryAgainPressed: onTryAgainPressed,
+                  onBuyConquerPressed: onBuyConquerPressed,
+                ),
+              ),
+            ),
       ),
     );
   }

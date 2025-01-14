@@ -4,6 +4,7 @@ export 'checkboxes/checkboxes.dart';
 export 'chips/chips.dart';
 export 'dropdownMenu/dropdown_menu.dart';
 export 'icons/icons.dart';
+export 'images/images.dart';
 export 'layouts/layouts.dart';
 export 'shimmers/shimmers.dart';
 export 'textStyles/text_styles.dart';

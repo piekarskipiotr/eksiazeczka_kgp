@@ -18,7 +18,7 @@ class PeakCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        ImageCard(
+        ImageOnlineOffline(
           radius: _radius,
           height: _height,
           url: peak.image,

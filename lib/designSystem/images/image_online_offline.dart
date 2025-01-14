@@ -2,8 +2,8 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:eksiazeczka_kgp/designSystem/design_system.dart';
 import 'package:flutter/material.dart';
 
-class ImageCard extends StatelessWidget {
-  const ImageCard({
+class ImageOnlineOffline extends StatelessWidget {
+  const ImageOnlineOffline({
     required this.assetPath,
     required this.url,
     required this.height,

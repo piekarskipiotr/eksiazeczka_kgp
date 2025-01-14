@@ -57,7 +57,6 @@ class AuthService {
     }
   }
 
-
   Future<User> getCurrentUser() => _supabaseAuthRepository.getCurrentUser();
 
   Future<void> deleteAccount() => _supabaseAuthRepository.deleteAccount();

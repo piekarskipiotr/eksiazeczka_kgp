@@ -8,6 +8,7 @@ import 'package:eksiazeczka_kgp/services/services.dart';
 import 'package:eksiazeczka_kgp/utils/utils.dart';
 import 'package:equatable/equatable.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:permission_handler/permission_handler.dart';
 
 part 'peak_details_event.dart';
 part 'peak_details_state.dart';
@@ -72,6 +73,15 @@ class PeakDetailsBloc extends Bloc<PeakDetailsEvent, PeakDetailsState> {
 
   Future<void> _onTakePhoto(TakePhoto event, Emitter<PeakDetailsState> emit) async {
     try {
+      emit(state.copyWith(status: PeakDetailsStateStatus.initial));
+      final isPermissionGranted = await PermissionsHelper.checkPermissionStatus(
+        permission: Permission.camera,
+        onPermanentlyDenied: () {
+          emit(state.copyWith(status: PeakDetailsStateStatus.takingPhotoPermissionsPermanentlyDenied));
+        },
+      );
+
+      if (!isPermissionGranted) return;
       final image = await ImagePicker().pickImage(source: ImageSource.camera);
       if (image == null) return;
 
@@ -92,6 +102,15 @@ class PeakDetailsBloc extends Bloc<PeakDetailsEvent, PeakDetailsState> {
 
   Future<void> _onAddFromGallery(AddFromGallery event, Emitter<PeakDetailsState> emit) async {
     try {
+      emit(state.copyWith(status: PeakDetailsStateStatus.initial));
+      final isPermissionGranted = await PermissionsHelper.checkPermissionStatus(
+        permission: Permission.photos,
+        onPermanentlyDenied: () {
+          emit(state.copyWith(status: PeakDetailsStateStatus.addingGalleryPhotoPermissionsPermanentlyDenied));
+        },
+      );
+
+      if (!isPermissionGranted) return;
       final image = await ImagePicker().pickImage(source: ImageSource.gallery);
       if (image == null) return;
 

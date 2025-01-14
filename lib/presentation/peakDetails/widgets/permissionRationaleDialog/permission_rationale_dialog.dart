@@ -1,3 +1,4 @@
+import 'package:eksiazeczka_kgp/data/enums/enums.dart';
 import 'package:eksiazeczka_kgp/designSystem/design_system.dart';
 import 'package:eksiazeczka_kgp/l10n/l10n.dart';
 import 'package:flutter/material.dart';
@@ -5,8 +6,10 @@ import 'package:go_router/go_router.dart';
 import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 import 'package:permission_handler/permission_handler.dart';
 
-class _GeolocationPermissionRationaleDialog extends StatelessWidget {
-  const _GeolocationPermissionRationaleDialog();
+class _PermissionRationaleDialog extends StatelessWidget {
+  const _PermissionRationaleDialog(this.rationale);
+
+  final Rationale rationale;
 
   void _onOpenSettingsPressed(BuildContext context) {
     openAppSettings();
@@ -20,6 +23,7 @@ class _GeolocationPermissionRationaleDialog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = context.l10n;
+    final (title, description) = rationale.getText(l10n);
     return Scaffold(
       body: SafeArea(
         child: Column(
@@ -31,8 +35,8 @@ class _GeolocationPermissionRationaleDialog extends StatelessWidget {
                 spacing: 8,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(l10n.geolocationPermissionRationaleTitle, style: AppTextStyles.h2()),
-                  Text(l10n.geolocationPermissionRationaleDescription, style: AppTextStyles.h6()),
+                  Text(title, style: AppTextStyles.h2()),
+                  Text(description, style: AppTextStyles.h6()),
                 ],
               ),
             ),
@@ -63,11 +67,11 @@ class _GeolocationPermissionRationaleDialog extends StatelessWidget {
   }
 }
 
-class GeolocationPermissionRationaleDialog {
-  static void show(BuildContext context) {
+class PermissionRationaleDialog {
+  static void show(BuildContext context, {required Rationale rationale}) {
     CupertinoScaffold.showCupertinoModalBottomSheet<void>(
       context: context,
-      builder: (context) => const _GeolocationPermissionRationaleDialog(),
+      builder: (context) => _PermissionRationaleDialog(rationale),
     );
   }
 }

@@ -1,7 +1,9 @@
+import 'package:eksiazeczka_kgp/data/enums/enums.dart';
 import 'package:eksiazeczka_kgp/designSystem/design_system.dart';
 import 'package:eksiazeczka_kgp/l10n/l10n.dart';
 import 'package:eksiazeczka_kgp/presentation/peakDetails/bloc/peak_details_bloc.dart';
 import 'package:eksiazeczka_kgp/presentation/peakDetails/constants/peak_details_state_status.dart';
+import 'package:eksiazeczka_kgp/presentation/peakDetails/widgets/permissionRationaleDialog/permission_rationale_dialog.dart';
 import 'package:eksiazeczka_kgp/presentation/peakDetails/widgets/widgets.dart';
 import 'package:eksiazeczka_kgp/resources/resources.dart';
 import 'package:flutter/material.dart';
@@ -35,7 +37,7 @@ class PeakDetailsView extends StatelessWidget {
     final peak = state.peak;
     switch (state.status) {
       case PeakDetailsStateStatus.validatingLocationPermissionsPermanentlyDenied:
-        GeolocationPermissionRationaleDialog.show(context);
+        PermissionRationaleDialog.show(context, rationale: Rationale.location);
       case PeakDetailsStateStatus.validatingLocationFailed:
         FailedConquerDialog.show(
           context,
@@ -61,6 +63,8 @@ class PeakDetailsView extends StatelessWidget {
       case PeakDetailsStateStatus.takingPhotoSucceeded:
       case PeakDetailsStateStatus.addingGalleryPhotoSucceeded:
         context.read<PeakDetailsBloc>().add(const MarkPeakAsConquered());
+      case PeakDetailsStateStatus.insertingMetadataSucceeded:
+        context.pop();
       case _:
         break;
     }
@@ -114,6 +118,12 @@ class PeakDetailsView extends StatelessWidget {
                           PeakDetailsDescription(
                             description: peak.descriptions.first.text,
                           ),
+                          if (peak.isConquered)
+                            const PeakDetailsMemorablePhoto(
+                              peakId: '',
+                              userId: '',
+                              userToken: '',
+                            ),
                         ],
                       ),
                     ),
@@ -128,7 +138,16 @@ class PeakDetailsView extends StatelessWidget {
                       label: l10n.markConquerPeak,
                       isLoading: status == PeakDetailsStateStatus.validatingLocation,
                       onPressed: () {
-                        _onMarkConquerPeakPressed(context);
+                        SuccessConquerDialog.show(
+                          context,
+                          peak: peak,
+                          onTakePhotoPressed: () {
+                            _onTakePhotoPressed(context);
+                          },
+                          onAddFromGalleryPressed: () {
+                            _onAddFromGalleryPressed(context);
+                          },
+                        );
                       },
                     ),
                   ),

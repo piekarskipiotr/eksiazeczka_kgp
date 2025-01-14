@@ -121,6 +121,12 @@
   "buyPeak": "Oznacz szczyt zdalnie za 20 zł",
   "close": "Zamknij",
   "openSettings": "Otwórz ustawienia",
-  "geolocationPermissionRationaleTitle": "Uprawnienia do lokalizacji",
-  "geolocationPermissionRationaleDescription": "Aplikacja potrzebuje dostępu do Twojej lokalizacji, aby zweryfikować, czy znajdujesz się w okolicy szczytu. Przejdź do ustawień aplikacji i zezwól na dostęp do lokalizacji."
+  "locationRationaleTitle": "Uprawnienia do lokalizacji",
+  "locationRationaleDescription": "Aplikacja potrzebuje dostępu do Twojej lokalizacji, aby zweryfikować, czy znajdujesz się w okolicy szczytu. Przejdź do ustawień aplikacji i zezwól na dostęp do lokalizacji.",
+  "cameraRationaleTitle": "Uprawnienia do lokalizacji",
+  "cameraRationaleDescription": "Aplikacja potrzebuje dostępu do Twojej lokalizacji, aby zweryfikować, czy znajdujesz się w okolicy szczytu. Przejdź do ustawień aplikacji i zezwól na dostęp do lokalizacji.",
+  "photosRationaleTitle": "Uprawnienia do lokalizacji",
+  "photosRationaleDescription": "Aplikacja potrzebuje dostępu do Twojej lokalizacji, aby zweryfikować, czy znajdujesz się w okolicy szczytu. Przejdź do ustawień aplikacji i zezwól na dostęp do lokalizacji.",
+  "memorablePhoto": "Pamiątkowe zdjęcie",
+  "memorablePhotoDescription": "Twoje heroiczne zdobycie szczytu nie może obejść się bez zdjęcia."
 }
