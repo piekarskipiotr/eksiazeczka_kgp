@@ -57,6 +57,7 @@ flutter:
   assets:
     - assets/images/icons/
     - assets/images/logos/
+    - assets/images/medalBackgrounds/
     - assets/images/peaks/
     - assets/images/providers/
     - assets/json/
@@ -75,6 +76,9 @@ spider:
     - path: assets/images/logos
       class_name: LogoImages
       types: [ .png ]
+    - path: assets/images/medalBackgrounds
+      class_name: MedalBackgrounds
+      types: [ .jpeg ]
     - path: assets/images/peaks
       class_name: PeakImages
       types: [ .jpg ]

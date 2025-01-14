@@ -6,6 +6,7 @@ class TransparentFadeRoute extends PageRouteBuilder<void> {
       : super(
           pageBuilder: (context, animation, secondaryAnimation) => builder(context),
           opaque: false,
+          fullscreenDialog: true,
           barrierColor: AppColors.transparent,
           transitionsBuilder: (context, animation, secondaryAnimation, child) {
             return FadeTransition(opacity: animation, child: child);

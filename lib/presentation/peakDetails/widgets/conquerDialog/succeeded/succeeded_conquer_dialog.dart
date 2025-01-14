@@ -8,7 +8,6 @@ import 'package:eksiazeczka_kgp/presentation/peakDetails/widgets/conquerDialog/s
 import 'package:eksiazeczka_kgp/router/router.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 
 class _SucceededConquerDialog extends StatelessWidget {
   const _SucceededConquerDialog({
@@ -47,21 +46,16 @@ class SucceededConquerDialog {
     required VoidCallback onTakePhotoPressed,
     required VoidCallback onAddFromGalleryPressed,
   }) {
-    Navigator.push(
-      context,
-      TransparentFadeRoute(
-        builder: (_) => BlocProvider.value(
-          value: context.read<PeakDetailsBloc>(),
-          child: CupertinoScaffold(
-            body: _SucceededConquerDialog(
+    context.read<AppRouter>().showTransparentDialog(
+          context: context,
+          child: BlocProvider.value(
+            value: context.read<PeakDetailsBloc>(),
+            child: _SucceededConquerDialog(
               peak: peak,
               onTakePhotoPressed: onTakePhotoPressed,
               onAddFromGalleryPressed: onAddFromGalleryPressed,
             ),
           ),
-        ),
-      ),
-    );
-
+        );
   }
 }

@@ -5,10 +5,10 @@ import 'package:flutter/material.dart';
 class ImageOnlineOffline extends StatelessWidget {
   const ImageOnlineOffline({
     required this.assetPath,
-    required this.url,
     required this.height,
     required this.radius,
     this.disable = false,
+    this.url,
     super.key,
   });
 

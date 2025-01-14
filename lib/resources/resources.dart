@@ -2,6 +2,8 @@ part 'icon_images.dart';
 
 part 'logo_images.dart';
 
+part 'medal_backgrounds.dart';
+
 part 'peak_images.dart';
 
 part 'providers_icons.dart';

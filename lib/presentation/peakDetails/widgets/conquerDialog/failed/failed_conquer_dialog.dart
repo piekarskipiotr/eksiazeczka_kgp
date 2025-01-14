@@ -7,7 +7,6 @@ import 'package:eksiazeczka_kgp/presentation/peakDetails/widgets/conquerDialog/f
 import 'package:eksiazeczka_kgp/router/router.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 
 class _FailedConquerDialog extends StatelessWidget {
   const _FailedConquerDialog({
@@ -54,18 +53,13 @@ class FailedConquerDialog {
     required VoidCallback onTryAgainPressed,
     required VoidCallback onBuyConquerPressed,
   }) {
-    Navigator.push(
-      context,
-      TransparentFadeRoute(
-        builder: (_) => BlocProvider.value(
-          value: context.read<PeakDetailsBloc>(),
-          child: CupertinoScaffold(
-            transitionBackgroundColor: AppColors.transparent,
-            body: _FailedConquerDialog(
-              onTryAgainPressed: onTryAgainPressed,
-              onBuyConquerPressed: onBuyConquerPressed,
-            ),
-          ),
+    context.read<AppRouter>().showTransparentDialog(
+      context: context,
+      child: BlocProvider.value(
+        value: context.read<PeakDetailsBloc>(),
+        child: _FailedConquerDialog(
+          onTryAgainPressed: onTryAgainPressed,
+          onBuyConquerPressed: onBuyConquerPressed,
         ),
       ),
     );

@@ -128,5 +128,15 @@
   "photosRationaleTitle": "Uprawnienia do lokalizacji",
   "photosRationaleDescription": "Aplikacja potrzebuje dostępu do Twojej lokalizacji, aby zweryfikować, czy znajdujesz się w okolicy szczytu. Przejdź do ustawień aplikacji i zezwól na dostęp do lokalizacji.",
   "memorablePhoto": "Pamiątkowe zdjęcie",
-  "memorablePhotoDescription": "Twoje heroiczne zdobycie szczytu nie może obejść się bez zdjęcia."
+  "memorablePhotoDescription": "Twoje heroiczne zdobycie szczytu nie może obejść się bez zdjęcia.",
+  "medalsPageHeader": "Każdy medal to\ndowód na twoje\nmistrzostwo!",
+  "medalLabel": "{count, select, 1{Zdobądź pierwszy szczyt} 28{Zdobądź wszystkie szczyty Korony Gór Polskich} other{Zdobądź łącznie: {count} szczytów}}",
+  "@medalLabel": {
+    "placeholders": {
+      "count": {
+        "type": "String",
+        "example": "1"
+      }
+    }
+  }
 }
