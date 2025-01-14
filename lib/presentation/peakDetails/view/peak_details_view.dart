@@ -84,14 +84,14 @@ class PeakDetailsView extends StatelessWidget {
                 PeakDetailsActionButtons(
                   status: status,
                   onMarkConquerPeakPressed: () {
-                    FailedConquerDialog.show(
+                    SucceededConquerDialog.show(
                       context,
-                      onTryAgainPressed: () {
-                        context.pop();
-                        _onMarkConquerPeakPressed(context);
+                      peak: peak,
+                      onTakePhotoPressed: () {
+                        _onTakePhotoPressed(context);
                       },
-                      onBuyConquerPressed: () {
-                        _onBuyConquerPressed(context);
+                      onAddFromGalleryPressed: () {
+                        _onAddFromGalleryPressed(context);
                       },
                     );
                   },

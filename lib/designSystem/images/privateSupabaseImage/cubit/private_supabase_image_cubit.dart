@@ -12,12 +12,15 @@ class PrivateSupabaseImageCubit extends Cubit<PrivateSupabaseImageState> {
   final AuthService _authService;
 
   Future<void> initialize(String path) async {
-    final user = await _authService.getCurrentUser();
+    final session = await _authService.getCurrentSession();
+    final user = session.user;
     final imageUrl = '$supabaseUrl/storage/v1/object/authenticated/userPeakPhotos/${user.id}/$path';
     final headers = {
       'method': 'GET',
       'apikey': supabaseKey,
-      'Authorization': 'Bearer ${user.id}',
+      'Authorization': 'Bearer ${session.accessToken}',
     };
+
+    emit(state.copyWith(url: imageUrl, headers: headers));
   }
 }

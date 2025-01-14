@@ -76,12 +76,24 @@ class SupabaseAuthRepository {
       final currentUser = _instance.currentUser;
       if (currentUser != null) return currentUser;
 
+      final currentSession = await getCurrentSession();
+      return currentSession.user;
+    } catch (e) {
+      throw Exception('Failed to get current user');
+    }
+  }
+
+  Future<Session> getCurrentSession() async {
+    try {
+      final currentSession = _instance.currentSession;
+      if (currentSession != null) return currentSession;
+
       final sessionJsonString = await _authStorage.readSecureData(AuthStorage.supabaseSessionKey);
       if (sessionJsonString == null) throw Exception('Failed to get current user');
 
       final sessionJson = jsonDecode(sessionJsonString) as Map<String, dynamic>;
       final session = Session.fromJson(sessionJson);
-      return session!.user;
+      return session!;
     } catch (e) {
       throw Exception('Failed to get current user');
     }
