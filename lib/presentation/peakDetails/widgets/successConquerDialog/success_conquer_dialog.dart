@@ -26,55 +26,54 @@ class _SuccessConquerDialog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = context.l10n;
-    final textColor = Theme.of(context).colorScheme.secondary;
-    return Scaffold(
-      body: Stack(
-        alignment: Alignment.center,
-        children: [
-          ImageCard(
-            assetPath: peak.assetImage,
-            url: peak.image,
-            height: double.infinity,
-            radius: 0,
-          ),
-          SafeArea(
-            child: Container(
-              alignment: Alignment.topRight,
-              padding: const EdgeInsets.all(12),
-              child: AppCircleIconBlurButton(
-                iconPath: IconImages.close,
-                onPressed: () {
-                  _onExitPressed(context);
-                },
+    return Theme(
+      data: AppThemes.dark,
+      child: Scaffold(
+        body: Stack(
+          alignment: Alignment.center,
+          children: [
+            ImageCard(
+              assetPath: peak.assetImage,
+              url: peak.image,
+              height: double.infinity,
+              radius: 0,
+            ),
+            SafeArea(
+              child: Container(
+                alignment: Alignment.topRight,
+                padding: const EdgeInsets.all(12),
+                child: AppCircleIconBlurButton(
+                  iconPath: IconImages.close,
+                  onPressed: () {
+                    _onExitPressed(context);
+                  },
+                ),
               ),
             ),
-          ),
-          Column(
-            spacing: 8,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(l10n.youHaveConqueredPeak, style: AppTextStyles.h3(color: textColor)),
-              Text(peak.name, style: AppTextStyles.h1(color: textColor)),
-              const SizedBox(height: 16),
-              Text(
-                l10n.youHaveConqueredPeakDescription,
-                style: AppTextStyles.h7(color: textColor),
-                textAlign: TextAlign.center,
-              ),
-              const SizedBox(height: 64),
-            ],
-          ),
-          BlocBuilder<PeakDetailsBloc, PeakDetailsState>(
-            builder: (context, state) {
-              final status = state.status;
-              final processingStates = [
-                PeakDetailsStateStatus.takingPhoto,
-                PeakDetailsStateStatus.addingGalleryPhoto,
-              ];
-
-              return Theme(
-                data: AppThemes.dark,
-                child: SafeArea(
+            Column(
+              spacing: 8,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(l10n.youHaveConqueredPeak, style: AppTextStyles.h3()),
+                Text(peak.name, style: AppTextStyles.h1()),
+                const SizedBox(height: 16),
+                Text(
+                  l10n.youHaveConqueredPeakDescription,
+                  style: AppTextStyles.h7(),
+                  textAlign: TextAlign.center,
+                ),
+                const SizedBox(height: 64),
+              ],
+            ),
+            BlocBuilder<PeakDetailsBloc, PeakDetailsState>(
+              builder: (context, state) {
+                final status = state.status;
+                final processingStates = [
+                  PeakDetailsStateStatus.takingPhoto,
+                  PeakDetailsStateStatus.addingGalleryPhoto,
+                ];
+      
+                return SafeArea(
                   child: Padding(
                     padding: const EdgeInsets.symmetric(vertical: 12),
                     child: Column(
@@ -89,7 +88,6 @@ class _SuccessConquerDialog extends StatelessWidget {
                         ),
                         AppTextButton(
                           label: l10n.addPhotoFromGallery,
-                          labelColor: textColor,
                           onPressed: onAddFromGalleryPressed,
                           isLoading: status == PeakDetailsStateStatus.addingGalleryPhoto,
                           isProcessing: processingStates.contains(status),
@@ -97,11 +95,11 @@ class _SuccessConquerDialog extends StatelessWidget {
                       ],
                     ),
                   ),
-                ),
-              );
-            },
-          ),
-        ],
+                );
+              },
+            ),
+          ],
+        ),
       ),
     );
   }
