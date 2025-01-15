@@ -14,7 +14,7 @@ class PeaksList extends StatelessWidget {
     super.key,
   });
 
-  final List<Peak>? peaks;
+  final List<Peak> peaks;
   final bool isLoadingPeaks;
   final PeaksFilters filter;
   final void Function(BuildContext, Peak) onPeakPressed;
@@ -22,14 +22,14 @@ class PeaksList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     if (isLoadingPeaks) return const LoadingList();
-    if (peaks?.isEmpty ?? true) return EmptyList(filter: filter);
+    if (peaks.isEmpty) return EmptyList(filter: filter);
     return ListView.separated(
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
-      itemCount: peaks!.length,
+      itemCount: peaks.length,
       padding: const EdgeInsets.fromLTRB(16, 0, 16, 196),
       itemBuilder: (context, index) {
-        final peak = peaks![index];
+        final peak = peaks[index];
         return PeakCard(
           peak: peak,
           onPressed: () {
@@ -38,7 +38,7 @@ class PeaksList extends StatelessWidget {
         );
       },
       separatorBuilder: (_, index) {
-        final itemsLength = peaks?.length ?? 0;
+        final itemsLength = peaks.length;
         final isLastItem = itemsLength == index;
         final height = !isLastItem && itemsLength > 1 ? 24.0 : 0.0;
         return SizedBox(height: height);

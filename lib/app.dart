@@ -61,7 +61,7 @@ class App extends StatelessWidget {
         ),
         BlocProvider(
           create: (_) {
-            return MoreBloc(authService: _authService)..add(const Initialize());
+            return MoreBloc(authService: _authService);
           },
         ),
         BlocProvider(
@@ -81,6 +81,10 @@ class App extends StatelessWidget {
       ],
       child: Builder(
         builder: (context) {
+          WidgetsBinding.instance.addPostFrameCallback((_) {
+            context.read<MoreBloc>().add(const Initialize());
+          });
+
           final themeMode = context.watch<DarkModeSettingsBloc>().state.themeMode;
           final locale = context.watch<AppLanguageSettingsBloc>().state.locale;
 

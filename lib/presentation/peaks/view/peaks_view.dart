@@ -25,7 +25,7 @@ class PeaksView extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<PeaksBloc, PeaksState>(
       builder: (context, state) {
-        final peaks = state.sortedAndFilteredPeaks;
+        final peaks = [...?state.sortedAndFilteredPeaks];
         final isLoadingPeaks = state.isLoadingPeaks;
         final selectedFilter = state.filter;
         final selectedSortType = state.sortType;

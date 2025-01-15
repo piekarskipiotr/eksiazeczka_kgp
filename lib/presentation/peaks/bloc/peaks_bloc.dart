@@ -37,7 +37,7 @@ class PeaksBloc extends Bloc<PeaksEvent, PeaksState> {
         state.copyWith(
           streamSubscription: stream.listen(
             (peaks) {
-              add(LoadPeaks(peaks));
+              if (peaks.isNotEmpty) add(LoadPeaks(peaks));
             },
             onError: (Object error, StackTrace stacktrace) {
               addError(error, StackTrace.current);
@@ -134,5 +134,11 @@ class PeaksBloc extends Bloc<PeaksEvent, PeaksState> {
 
     final comparison = conqueredDateA.compareTo(conqueredDateB);
     return isAscending ? comparison : -comparison;
+  }
+
+  @override
+  Future<void> close() {
+    state.streamSubscription?.cancel();
+    return super.close();
   }
 }
