@@ -11,30 +11,14 @@ part 'menage_account_settings_event.dart';
 part 'menage_account_settings_state.dart';
 
 class MenageAccountSettingsBloc extends Bloc<MenageAccountSettingsEvent, MenageAccountSettingsState> {
-  MenageAccountSettingsBloc({required AuthService authService})
+  MenageAccountSettingsBloc({required AuthService authService, required User user})
       : _authService = authService,
-        super(const MenageAccountSettingsState()) {
-    on<_UserUpdate>(_onUserUpdate);
+        super(MenageAccountSettingsState(user: user)) {
     on<DeleteAccount>(_onDeleteAccount);
     on<SignOut>(onSignOut);
-
-    _authService.getCurrentUser().then((user) {
-      add(_UserUpdate(user));
-    }).whenComplete(() {
-      _userSubscription = _authService.user.listen(
-        (user) {
-          if (user != null) add(_UserUpdate(user));
-        },
-      );
-    });
   }
 
   final AuthService _authService;
-  late StreamSubscription<User?> _userSubscription;
-
-  Future<void> _onUserUpdate(_UserUpdate event, Emitter<MenageAccountSettingsState> emit) async {
-    emit(state.copyWith(user: event.user, error: state.error));
-  }
 
   Future<void> _onDeleteAccount(DeleteAccount event, Emitter<MenageAccountSettingsState> emit) async {
     emit(state.copyWith(status: MenageAccountSettingsStateStatus.deletingAccount));
@@ -55,11 +39,5 @@ class MenageAccountSettingsBloc extends Bloc<MenageAccountSettingsEvent, MenageA
       log('FAILED TO SIGN OUT, error: $error \n\n $stacktrace');
       emit(state.copyWith(status: MenageAccountSettingsStateStatus.signingOutFailed, error: error.toString()));
     });
-  }
-
-  @override
-  Future<void> close() {
-    _userSubscription.cancel();
-    return super.close();
   }
 }

@@ -2,23 +2,22 @@ part of 'menage_account_settings_bloc.dart';
 
 class MenageAccountSettingsState extends Equatable {
   const MenageAccountSettingsState({
+    required this.user,
     this.status = MenageAccountSettingsStateStatus.initial,
-    this.user,
     this.error,
   });
 
   final MenageAccountSettingsStateStatus status;
-  final User? user;
+  final User user;
   final String? error;
 
   MenageAccountSettingsState copyWith({
     MenageAccountSettingsStateStatus? status,
-    User? user,
     String? error,
   }) {
     return MenageAccountSettingsState(
       status: status ?? this.status,
-      user: user ?? this.user,
+      user: user,
       error: error,
     );
   }

@@ -11,6 +11,7 @@ import 'package:eksiazeczka_kgp/router/router.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 
 class MoreView extends StatelessWidget {
   const MoreView({super.key});
@@ -29,8 +30,9 @@ class MoreView extends StatelessWidget {
     context.read<AppRouter>().showAppLanguageSettings();
   }
 
-  void _onMenageAccountPressed(BuildContext context) {
-    context.read<AppRouter>().showManageAccount();
+  void _onMenageAccountPressed(BuildContext context, User? user) {
+    if (user == null) return;
+    context.read<AppRouter>().showManageAccount(user: user);
   }
 
   void _onReviewAppPressed(BuildContext context) {
@@ -112,7 +114,7 @@ class MoreView extends StatelessWidget {
                         label: l10n.menageAccount,
                         icon: IconImages.arrowForward,
                         onPressed: () {
-                          _onMenageAccountPressed(context);
+                          _onMenageAccountPressed(context, user);
                         },
                       ),
                     ],

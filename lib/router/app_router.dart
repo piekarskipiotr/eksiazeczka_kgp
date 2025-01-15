@@ -11,6 +11,7 @@ import 'package:eksiazeczka_kgp/presentation/root/view/root_page.dart';
 import 'package:eksiazeczka_kgp/router/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 
 class AppRouter {
   final _rootNavigatorKey = GlobalKey<NavigatorState>();
@@ -98,7 +99,8 @@ class AppRouter {
         name: AppRoutes.manageAccount,
         path: '/${AppRoutes.manageAccount}',
         builder: (context, state) {
-          return const MenageAccountSettingsPage();
+          final user = state.extra! as User;
+          return MenageAccountSettingsPage(user: user);
         },
       ),
     ],

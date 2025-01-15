@@ -16,23 +16,26 @@ class MoreBloc extends Bloc<MoreEvent, MoreState> {
   MoreBloc({required AuthService authService})
       : _authService = authService,
         super(const MoreState()) {
+    on<Initialize>(_onInitialize);
     on<_UserUpdate>(_onUserUpdate);
     on<SignInWithProvider>(_onSignInWithProvider);
     on<OpenLink>(_onOpenLink);
-
-    _authService.getCurrentUser().then((user) {
-      add(_UserUpdate(user));
-    }).whenComplete(() {
-      _userSubscription = _authService.user.listen(
-        (user) {
-          if (user != null) add(_UserUpdate(user));
-        },
-      );
-    });
   }
 
   final AuthService _authService;
   late StreamSubscription<User?> _userSubscription;
+
+  Future<void> _onInitialize(Initialize event, Emitter<MoreState> emit) async {
+    await _authService.getCurrentUser().then((user) {
+      add(_UserUpdate(user));
+    });
+
+    _userSubscription = _authService.user.listen(
+      (user) {
+        if (user != null) add(_UserUpdate(user));
+      },
+    );
+  }
 
   Future<void> _onUserUpdate(_UserUpdate event, Emitter<MoreState> emit) async {
     emit(state.copyWith(user: event.user, error: state.error));
