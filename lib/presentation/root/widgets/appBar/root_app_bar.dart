@@ -32,7 +32,7 @@ class RootAppBar extends StatelessWidget implements PreferredSizeWidget {
               ],
             ),
           ),
-          const RootAppBarPeaksCounter(count: 0, total: 28),
+          const RootAppBarPeaksCounter(),
         ],
       ),
     );

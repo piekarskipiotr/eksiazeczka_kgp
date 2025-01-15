@@ -7,9 +7,10 @@ import 'package:eksiazeczka_kgp/presentation/medals/widgets/medalDialog/medal_di
 import 'package:flutter/material.dart';
 
 class MedalCard extends StatelessWidget {
-  const MedalCard({required this.medal, this.height = 240, this.radius = 28, super.key});
+  const MedalCard({required this.medal, required this.isEnabled, this.height = 240, this.radius = 28, super.key});
 
   final Medals medal;
+  final bool isEnabled;
   final double height;
   final double radius;
 
@@ -21,7 +22,12 @@ class MedalCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        ImageOnlineOffline(assetPath: medal.background, height: height, radius: radius, disable: true),
+        ImageOnlineOffline(
+          assetPath: medal.background,
+          height: height,
+          radius: radius,
+          disable: !isEnabled,
+        ),
         Positioned.fill(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,

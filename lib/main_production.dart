@@ -13,6 +13,7 @@ void main() {
     final supabasePeaksRepository = SupabasePeaksRepository();
     final supabasePeaksUserMetadataRepository = SupabasePeaksUserMetadataRepository();
     final userPreferencesService = UserPreferencesService();
+    final peaksService = PeaksService(authService, supabasePeaksRepository);
     final router = AppRouter();
 
     return App(
@@ -20,6 +21,7 @@ void main() {
       userPreferencesService: userPreferencesService,
       authStorage: authStorage,
       authService: authService,
+      peaksService: peaksService,
       supabaseAuthRepository: supabaseAuthRepository,
       supabaseStorageRepository: supabaseStorageRepository,
       supabasePeaksRepository: supabasePeaksRepository,

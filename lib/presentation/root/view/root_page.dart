@@ -1,5 +1,7 @@
+import 'package:eksiazeczka_kgp/presentation/root/bloc/root_bloc.dart';
 import 'package:eksiazeczka_kgp/presentation/root/view/root_view.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
 class RootPage extends StatelessWidget {
@@ -9,6 +11,9 @@ class RootPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return RootView(navigationShell: navigationShell);
+    return BlocProvider.value(
+      value: context.read<RootBloc>(),
+      child: RootView(navigationShell: navigationShell),
+    );
   }
 }

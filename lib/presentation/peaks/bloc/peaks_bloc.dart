@@ -1,10 +1,8 @@
 import 'dart:async';
-import 'dart:developer';
 
 import 'package:bloc/bloc.dart';
 import 'package:eksiazeczka_kgp/data/enums/enums.dart';
 import 'package:eksiazeczka_kgp/data/models/models.dart';
-import 'package:eksiazeczka_kgp/data/repositories/repositories.dart';
 import 'package:eksiazeczka_kgp/services/services.dart';
 import 'package:equatable/equatable.dart';
 
@@ -12,44 +10,21 @@ part 'peaks_event.dart';
 part 'peaks_state.dart';
 
 class PeaksBloc extends Bloc<PeaksEvent, PeaksState> {
-  PeaksBloc({
-    required AuthService authService,
-    required SupabasePeaksRepository supabasePeaksRepository,
-  })  : _authService = authService,
-        _supabasePeaksRepository = supabasePeaksRepository,
+  PeaksBloc({required PeaksService peaksService})
+      : _peaksService = peaksService,
         super(const PeaksState()) {
-    on<InitializeStreamSubscription>(_onInitializeStreamSubscription);
     on<LoadPeaks>(_onLoadPeaks);
     on<ChangePeaksFilter>(_onChangePeaksFilter);
     on<ChangePeaksSortType>(_onChangePeaksSortType);
 
-    add(const InitializeStreamSubscription());
+    _peaksService.peaks.listen(
+      (peaks) {
+        if (peaks.isNotEmpty) add(LoadPeaks(peaks));
+      },
+    );
   }
 
-  final AuthService _authService;
-  final SupabasePeaksRepository _supabasePeaksRepository;
-
-  Future<void> _onInitializeStreamSubscription(InitializeStreamSubscription event, Emitter<PeaksState> emit) async {
-    try {
-      final user = await _authService.getCurrentUser();
-      final stream = await _supabasePeaksRepository.subscribe(userId: user.id);
-      emit(
-        state.copyWith(
-          streamSubscription: stream.listen(
-            (peaks) {
-              if (peaks.isNotEmpty) add(LoadPeaks(peaks));
-            },
-            onError: (Object error, StackTrace stacktrace) {
-              addError(error, StackTrace.current);
-            },
-          ),
-        ),
-      );
-    } catch (error, stacktrace) {
-      log('FAILED TO INITIALIZE STREAM SUBSCRIPTION error: $error, stacktrace: $stacktrace');
-      emit(state.copyWith(isLoadingPeaks: false, error: error.toString()));
-    }
-  }
+  final PeaksService _peaksService;
 
   Future<void> _onLoadPeaks(LoadPeaks event, Emitter<PeaksState> emit) async {
     emit(state.copyWith(isLoadingPeaks: true));
@@ -134,11 +109,5 @@ class PeaksBloc extends Bloc<PeaksEvent, PeaksState> {
 
     final comparison = conqueredDateA.compareTo(conqueredDateB);
     return isAscending ? comparison : -comparison;
-  }
-
-  @override
-  Future<void> close() {
-    state.streamSubscription?.cancel();
-    return super.close();
   }
 }
