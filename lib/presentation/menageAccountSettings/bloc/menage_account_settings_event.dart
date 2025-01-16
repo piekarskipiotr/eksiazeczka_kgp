@@ -4,15 +4,6 @@ abstract class MenageAccountSettingsEvent extends Equatable {
   const MenageAccountSettingsEvent();
 }
 
-final class _UserUpdate extends MenageAccountSettingsEvent {
-  const _UserUpdate(this.user);
-
-  final User user;
-
-  @override
-  List<Object?> get props => [user];
-}
-
 final class DeleteAccount extends MenageAccountSettingsEvent {
   const DeleteAccount();
 

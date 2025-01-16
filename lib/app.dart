@@ -1,4 +1,3 @@
-import 'package:eksiazeczka_kgp/data/repositories/offlineOnline/storage_repository.dart';
 import 'package:eksiazeczka_kgp/data/repositories/repositories.dart';
 import 'package:eksiazeczka_kgp/designSystem/design_system.dart';
 import 'package:eksiazeczka_kgp/l10n/l10n.dart';
@@ -15,36 +14,36 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 class App extends StatelessWidget {
   const App({
     required AppRouter router,
-    required UserPreferencesService userPreferencesService,
-    required DataRefreshService dataRefreshService,
     required StorageRepository storageRepository,
     required PeaksRepository peaksRepository,
     required UserMetadataRepository userMetadataRepository,
+    required DataRefreshService dataRefreshService,
+    required UserPreferencesService userPreferencesService,
     super.key,
   })  : _router = router,
-        _userPreferencesService = userPreferencesService,
-        _dataRefreshService = dataRefreshService,
         _storageRepository = storageRepository,
         _peaksRepository = peaksRepository,
-        _userMetadataRepository = userMetadataRepository;
+        _userMetadataRepository = userMetadataRepository,
+        _dataRefreshService = dataRefreshService,
+        _userPreferencesService = userPreferencesService;
 
   final AppRouter _router;
-  final UserPreferencesService _userPreferencesService;
-  final DataRefreshService _dataRefreshService;
   final StorageRepository _storageRepository;
   final PeaksRepository _peaksRepository;
   final UserMetadataRepository _userMetadataRepository;
+  final DataRefreshService _dataRefreshService;
+  final UserPreferencesService _userPreferencesService;
 
   @override
   Widget build(BuildContext context) {
     return MultiRepositoryProvider(
       providers: [
         RepositoryProvider.value(value: _router),
-        RepositoryProvider.value(value: _userPreferencesService),
-        RepositoryProvider.value(value: _dataRefreshService),
         RepositoryProvider.value(value: _storageRepository),
         RepositoryProvider.value(value: _peaksRepository),
         RepositoryProvider.value(value: _userMetadataRepository),
+        RepositoryProvider.value(value: _dataRefreshService),
+        RepositoryProvider.value(value: _userPreferencesService),
         BlocProvider(
           create: (_) {
             return RootBloc(
