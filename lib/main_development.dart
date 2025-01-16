@@ -16,23 +16,16 @@ void main() {
     final localUserMetadataRepository = LocalUserMetadataRepository(appDatabase);
     final peaksRepository = PeaksRepository(localPeaksRepository);
     final userMetadataRepository = UserMetadataRepository(localUserMetadataRepository);
-    final authStorage = AuthStorage();
-    final supabaseAuthRepository = SupabaseAuthRepository(authStorage);
-    final authService = AuthService(authStorage, supabaseAuthRepository);
     final dataRefreshService = DataRefreshService();
     final localStorageRepository = LocalStorageRepository();
-    final supabaseStorageRepository = SupabaseStorageRepository();
-    final storageRepository = StorageRepository(localStorageRepository, supabaseStorageRepository);
+    final storageRepository = StorageRepository(localStorageRepository);
     final userPreferencesService = UserPreferencesService();
     final router = AppRouter();
 
     return App(
       router: router,
       userPreferencesService: userPreferencesService,
-      authStorage: authStorage,
-      authService: authService,
       dataRefreshService: dataRefreshService,
-      supabaseAuthRepository: supabaseAuthRepository,
       storageRepository: storageRepository,
       peaksRepository: peaksRepository,
       userMetadataRepository: userMetadataRepository,

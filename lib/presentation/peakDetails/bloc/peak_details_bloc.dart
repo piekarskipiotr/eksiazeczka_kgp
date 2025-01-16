@@ -5,7 +5,6 @@ import 'package:eksiazeczka_kgp/data/models/models.dart';
 import 'package:eksiazeczka_kgp/data/repositories/offlineOnline/storage_repository.dart';
 import 'package:eksiazeczka_kgp/data/repositories/repositories.dart';
 import 'package:eksiazeczka_kgp/presentation/peakDetails/constants/peak_details_state_status.dart';
-import 'package:eksiazeczka_kgp/services/services.dart';
 import 'package:eksiazeczka_kgp/utils/utils.dart';
 import 'package:equatable/equatable.dart';
 import 'package:image_picker/image_picker.dart';
@@ -17,10 +16,9 @@ part 'peak_details_state.dart';
 class PeakDetailsBloc extends Bloc<PeakDetailsEvent, PeakDetailsState> {
   PeakDetailsBloc({
     required Peak peak,
-    required AuthService authService,
     required UserMetadataRepository userMetadataRepository,
     required StorageRepository storageRepository,
-  })  : _authService = authService,
+  })  :
         _userMetadataRepository = userMetadataRepository,
         _storageRepository = storageRepository,
         super(PeakDetailsState(peak: peak)) {
@@ -30,7 +28,6 @@ class PeakDetailsBloc extends Bloc<PeakDetailsEvent, PeakDetailsState> {
     on<MarkPeakAsConquered>(_onMarkPeakAsConquered);
   }
 
-  final AuthService _authService;
   final UserMetadataRepository _userMetadataRepository;
   final StorageRepository _storageRepository;
 

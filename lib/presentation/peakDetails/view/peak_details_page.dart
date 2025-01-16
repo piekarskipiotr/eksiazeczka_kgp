@@ -15,7 +15,6 @@ class PeakDetailsPage extends StatelessWidget {
     return BlocProvider(
       create: (_) => PeakDetailsBloc(
         peak: peak,
-        authService: context.read(),
         userMetadataRepository: context.read(),
         storageRepository: context.read(),
       ),

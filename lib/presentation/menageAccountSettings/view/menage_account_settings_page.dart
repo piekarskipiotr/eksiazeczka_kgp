@@ -13,7 +13,7 @@ class MenageAccountSettingsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (_) => MenageAccountSettingsBloc(authService: context.read(), user: user),
+      create: (_) => MenageAccountSettingsBloc(user: user),
       child: const CupertinoScaffold(body: MenageAccountSettingsView()),
     );
   }

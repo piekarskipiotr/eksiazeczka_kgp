@@ -18,30 +18,21 @@ class App extends StatelessWidget {
   const App({
     required AppRouter router,
     required UserPreferencesService userPreferencesService,
-    required AuthStorage authStorage,
-    required AuthService authService,
     required DataRefreshService dataRefreshService,
-    required SupabaseAuthRepository supabaseAuthRepository,
     required StorageRepository storageRepository,
     required PeaksRepository peaksRepository,
     required UserMetadataRepository userMetadataRepository,
     super.key,
   })  : _router = router,
         _userPreferencesService = userPreferencesService,
-        _authStorage = authStorage,
-        _authService = authService,
         _dataRefreshService = dataRefreshService,
-        _supabaseAuthRepository = supabaseAuthRepository,
         _storageRepository = storageRepository,
         _peaksRepository = peaksRepository,
         _userMetadataRepository = userMetadataRepository;
 
   final AppRouter _router;
   final UserPreferencesService _userPreferencesService;
-  final AuthStorage _authStorage;
-  final AuthService _authService;
   final DataRefreshService _dataRefreshService;
-  final SupabaseAuthRepository _supabaseAuthRepository;
   final StorageRepository _storageRepository;
   final PeaksRepository _peaksRepository;
   final UserMetadataRepository _userMetadataRepository;
@@ -52,10 +43,7 @@ class App extends StatelessWidget {
       providers: [
         RepositoryProvider.value(value: _router),
         RepositoryProvider.value(value: _userPreferencesService),
-        RepositoryProvider.value(value: _authStorage),
-        RepositoryProvider.value(value: _authService),
         RepositoryProvider.value(value: _dataRefreshService),
-        RepositoryProvider.value(value: _supabaseAuthRepository),
         RepositoryProvider.value(value: _storageRepository),
         RepositoryProvider.value(value: _peaksRepository),
         RepositoryProvider.value(value: _userMetadataRepository),
@@ -85,7 +73,7 @@ class App extends StatelessWidget {
         ),
         BlocProvider(
           create: (_) {
-            return MoreBloc(authService: _authService);
+            return MoreBloc();
           },
         ),
         BlocProvider(
