@@ -90,10 +90,10 @@ class PeakDetailsView extends StatelessWidget {
                       context,
                       peak: peak,
                       onTakePhotoPressed: () {
-                        context.read<PeakDetailsBloc>().add(const MarkPeakAsConquered());
+                        _onTakePhotoPressed(context);
                       },
                       onAddFromGalleryPressed: () {
-                        context.read<PeakDetailsBloc>().add(const MarkPeakAsConquered());
+                        _onAddFromGalleryPressed(context);
                       },
                     );
                   },

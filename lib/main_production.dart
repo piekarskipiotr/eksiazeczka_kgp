@@ -2,6 +2,8 @@ import 'package:eksiazeczka_kgp/app.dart';
 import 'package:eksiazeczka_kgp/bootstrap.dart';
 import 'package:eksiazeczka_kgp/data/database/database.dart';
 import 'package:eksiazeczka_kgp/data/repositories/local/local_repositories.dart';
+import 'package:eksiazeczka_kgp/data/repositories/local/storage/local_storage_repository.dart';
+import 'package:eksiazeczka_kgp/data/repositories/offlineOnline/storage_repository.dart';
 import 'package:eksiazeczka_kgp/data/repositories/repositories.dart';
 import 'package:eksiazeczka_kgp/router/router.dart';
 import 'package:eksiazeczka_kgp/services/dataRefreshService/data_refresh_service.dart';
@@ -17,8 +19,10 @@ void main() {
     final authStorage = AuthStorage();
     final supabaseAuthRepository = SupabaseAuthRepository(authStorage);
     final authService = AuthService(authStorage, supabaseAuthRepository);
-    final supabaseStorageRepository = SupabaseStorageRepository();
     final dataRefreshService = DataRefreshService();
+    final localStorageRepository = LocalStorageRepository();
+    final supabaseStorageRepository = SupabaseStorageRepository();
+    final storageRepository = StorageRepository(localStorageRepository, supabaseStorageRepository);
     final userPreferencesService = UserPreferencesService();
     final router = AppRouter();
 
@@ -29,7 +33,7 @@ void main() {
       authService: authService,
       dataRefreshService: dataRefreshService,
       supabaseAuthRepository: supabaseAuthRepository,
-      supabaseStorageRepository: supabaseStorageRepository,
+      storageRepository: storageRepository,
       peaksRepository: peaksRepository,
       userMetadataRepository: userMetadataRepository,
     );

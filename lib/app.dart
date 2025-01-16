@@ -1,3 +1,4 @@
+import 'package:eksiazeczka_kgp/data/repositories/offlineOnline/storage_repository.dart';
 import 'package:eksiazeczka_kgp/data/repositories/repositories.dart';
 import 'package:eksiazeczka_kgp/designSystem/design_system.dart';
 import 'package:eksiazeczka_kgp/l10n/l10n.dart';
@@ -21,7 +22,7 @@ class App extends StatelessWidget {
     required AuthService authService,
     required DataRefreshService dataRefreshService,
     required SupabaseAuthRepository supabaseAuthRepository,
-    required SupabaseStorageRepository supabaseStorageRepository,
+    required StorageRepository storageRepository,
     required PeaksRepository peaksRepository,
     required UserMetadataRepository userMetadataRepository,
     super.key,
@@ -31,7 +32,7 @@ class App extends StatelessWidget {
         _authService = authService,
         _dataRefreshService = dataRefreshService,
         _supabaseAuthRepository = supabaseAuthRepository,
-        _supabaseStorageRepository = supabaseStorageRepository,
+        _storageRepository = storageRepository,
         _peaksRepository = peaksRepository,
         _userMetadataRepository = userMetadataRepository;
 
@@ -41,7 +42,7 @@ class App extends StatelessWidget {
   final AuthService _authService;
   final DataRefreshService _dataRefreshService;
   final SupabaseAuthRepository _supabaseAuthRepository;
-  final SupabaseStorageRepository _supabaseStorageRepository;
+  final StorageRepository _storageRepository;
   final PeaksRepository _peaksRepository;
   final UserMetadataRepository _userMetadataRepository;
 
@@ -55,7 +56,7 @@ class App extends StatelessWidget {
         RepositoryProvider.value(value: _authService),
         RepositoryProvider.value(value: _dataRefreshService),
         RepositoryProvider.value(value: _supabaseAuthRepository),
-        RepositoryProvider.value(value: _supabaseStorageRepository),
+        RepositoryProvider.value(value: _storageRepository),
         RepositoryProvider.value(value: _peaksRepository),
         RepositoryProvider.value(value: _userMetadataRepository),
         BlocProvider(

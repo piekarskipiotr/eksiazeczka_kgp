@@ -2,6 +2,7 @@ import 'dart:developer';
 
 import 'package:bloc/bloc.dart';
 import 'package:eksiazeczka_kgp/data/models/models.dart';
+import 'package:eksiazeczka_kgp/data/repositories/offlineOnline/storage_repository.dart';
 import 'package:eksiazeczka_kgp/data/repositories/repositories.dart';
 import 'package:eksiazeczka_kgp/presentation/peakDetails/constants/peak_details_state_status.dart';
 import 'package:eksiazeczka_kgp/services/services.dart';
@@ -18,10 +19,10 @@ class PeakDetailsBloc extends Bloc<PeakDetailsEvent, PeakDetailsState> {
     required Peak peak,
     required AuthService authService,
     required UserMetadataRepository userMetadataRepository,
-    required SupabaseStorageRepository supabaseStorageRepository,
+    required StorageRepository storageRepository,
   })  : _authService = authService,
         _userMetadataRepository = userMetadataRepository,
-        _supabaseStorageRepository = supabaseStorageRepository,
+        _storageRepository = storageRepository,
         super(PeakDetailsState(peak: peak)) {
     on<ValidateUserLocation>(_onValidateUserLocation);
     on<TakePhoto>(_onTakePhoto);
@@ -31,7 +32,7 @@ class PeakDetailsBloc extends Bloc<PeakDetailsEvent, PeakDetailsState> {
 
   final AuthService _authService;
   final UserMetadataRepository _userMetadataRepository;
-  final SupabaseStorageRepository _supabaseStorageRepository;
+  final StorageRepository _storageRepository;
 
   Future<void> _onValidateUserLocation(ValidateUserLocation event, Emitter<PeakDetailsState> emit) async {
     try {
@@ -89,9 +90,7 @@ class PeakDetailsBloc extends Bloc<PeakDetailsEvent, PeakDetailsState> {
       final compressedImageBytes = await ImageCompressor.compressFile(image);
       final peak = state.peak;
       final peakId = peak.id;
-      final user = await _authService.getCurrentUser();
-      final userId = user.id;
-      await _supabaseStorageRepository.uploadPeakPhoto(compressedImageBytes, peakId, userId);
+      await _storageRepository.savePeakImage(bytes: compressedImageBytes, peakId: peakId);
 
       emit(state.copyWith(status: PeakDetailsStateStatus.takingPhotoSucceeded));
     } catch (error, stacktrace) {
@@ -118,9 +117,7 @@ class PeakDetailsBloc extends Bloc<PeakDetailsEvent, PeakDetailsState> {
       final compressedImageBytes = await ImageCompressor.compressFile(image);
       final peak = state.peak;
       final peakId = peak.id;
-      final user = await _authService.getCurrentUser();
-      final userId = user.id;
-      await _supabaseStorageRepository.uploadPeakPhoto(compressedImageBytes, peakId, userId);
+      await _storageRepository.savePeakImage(bytes: compressedImageBytes, peakId: peakId);
 
       emit(state.copyWith(status: PeakDetailsStateStatus.addingGalleryPhotoSucceeded));
     } catch (error, stacktrace) {
