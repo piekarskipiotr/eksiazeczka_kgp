@@ -4,10 +4,16 @@ import 'package:eksiazeczka_kgp/l10n/l10n.dart';
 import 'package:flutter/material.dart';
 
 class PeaksFilterList extends StatelessWidget {
-  const PeaksFilterList({required this.selectedFilter, required this.onFilterPressed, super.key});
+  const PeaksFilterList({
+    required this.selectedFilter,
+    required this.onFilterPressed,
+    required this.onActiveFilterPressed,
+    super.key,
+  });
 
   final PeaksFilters selectedFilter;
   final void Function(PeaksFilters filter) onFilterPressed;
+  final VoidCallback onActiveFilterPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -25,6 +31,7 @@ class PeaksFilterList extends StatelessWidget {
                   filter: filter,
                   selectedFilter: selectedFilter,
                   onFilterPressed: onFilterPressed,
+                  onActiveFilterPressed: onActiveFilterPressed,
                   l10n: l10n,
                 );
               }).toList(),
@@ -40,13 +47,14 @@ class PeaksFilterList extends StatelessWidget {
     required PeaksFilters filter,
     required PeaksFilters selectedFilter,
     required void Function(PeaksFilters filter) onFilterPressed,
+    required VoidCallback onActiveFilterPressed,
     required AppLocalizations l10n,
   }) {
     return AppFilterChip(
       label: filter.getLabel(l10n),
       isSelected: filter == selectedFilter,
       onSelected: ({required isSelected}) {
-        onFilterPressed(filter);
+        !isSelected ? onActiveFilterPressed.call() : onFilterPressed.call(filter);
       },
     );
   }

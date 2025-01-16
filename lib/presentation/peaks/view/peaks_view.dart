@@ -6,8 +6,27 @@ import 'package:eksiazeczka_kgp/router/router.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class PeaksView extends StatelessWidget {
+class PeaksView extends StatefulWidget {
   const PeaksView({super.key});
+
+  @override
+  State<PeaksView> createState() => _PeaksViewState();
+}
+
+class _PeaksViewState extends State<PeaksView> {
+  late ScrollController _scrollController;
+
+  @override
+  void initState() {
+    super.initState();
+    _scrollController = ScrollController();
+  }
+
+  @override
+  void dispose() {
+    _scrollController.dispose();
+    super.dispose();
+  }
 
   void _onPeakPressed(BuildContext context, Peak peak) {
     context.read<AppRouter>().showPeakDetails(peak: peak);
@@ -21,6 +40,11 @@ class PeaksView extends StatelessWidget {
     context.read<PeaksBloc>().add(ChangePeaksSortType(sortType));
   }
 
+  void _onActiveFilterPressed() {
+    if (!_scrollController.hasClients) return;
+    _scrollController.animateTo(0, duration: const Duration(milliseconds: 300), curve: Curves.easeInOut);
+  }
+
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<PeaksBloc, PeaksState>(
@@ -31,6 +55,7 @@ class PeaksView extends StatelessWidget {
         final selectedSortType = state.sortType;
 
         return NestedScrollView(
+          controller: _scrollController,
           headerSliverBuilder: (_, __) {
             return [
               _sliverSpacer(height: 8),
@@ -42,6 +67,7 @@ class PeaksView extends StatelessWidget {
                 onFilterPressed: (filter) {
                   _onFilterPressed(context, filter);
                 },
+                onActiveFilterPressed: _onActiveFilterPressed,
                 onSortTypePressed: (sortType) {
                   _onSortTypePressed(context, sortType);
                 },

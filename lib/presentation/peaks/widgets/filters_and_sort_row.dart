@@ -10,6 +10,7 @@ class FiltersAndSortRow extends StatelessWidget {
     required this.selectedSortType,
     required this.onFilterPressed,
     required this.onSortTypePressed,
+    required this.onActiveFilterPressed,
     super.key,
   });
 
@@ -17,6 +18,7 @@ class FiltersAndSortRow extends StatelessWidget {
   final PeaksSortTypes selectedSortType;
   final void Function(PeaksFilters filter) onFilterPressed;
   final void Function(PeaksSortTypes sortType) onSortTypePressed;
+  final VoidCallback onActiveFilterPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -29,6 +31,7 @@ class FiltersAndSortRow extends StatelessWidget {
             PeaksFilterList(
               selectedFilter: selectedFilter,
               onFilterPressed: onFilterPressed,
+              onActiveFilterPressed: onActiveFilterPressed,
             ),
             const SizedBox(width: 16),
             PeaksSortTypeCircleButton(
