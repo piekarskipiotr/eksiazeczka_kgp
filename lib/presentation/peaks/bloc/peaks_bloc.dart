@@ -33,6 +33,7 @@ class PeaksBloc extends Bloc<PeaksEvent, PeaksState> {
   Future<void> _onFetchPeaks(FetchPeaks event, Emitter<PeaksState> emit) async {
     emit(state.copyWith(isLoadingPeaks: true));
     await _peaksRepository.select().then((peaks) {
+      emit(state.copyWith(isLoadingPeaks: false));
       add(LoadPeaks(peaks));
     }).catchError((Object error, StackTrace stacktrace) async {
       log('FAILED TO FETCH PEAKS, error: $error \n\n $stacktrace');
@@ -47,7 +48,7 @@ class PeaksBloc extends Bloc<PeaksEvent, PeaksState> {
 
     final sortedAndFilteredPeaks = _filterPeaks(peaks, selectedFilter);
     _sortPeaks(sortedAndFilteredPeaks, selectedSortType);
-    emit(state.copyWith(peaks: peaks, sortedAndFilteredPeaks: sortedAndFilteredPeaks, isLoadingPeaks: false));
+    emit(state.copyWith(peaks: peaks, sortedAndFilteredPeaks: sortedAndFilteredPeaks));
   }
 
   Future<void> _onChangePeaksFilter(ChangePeaksFilter event, Emitter<PeaksState> emit) async {

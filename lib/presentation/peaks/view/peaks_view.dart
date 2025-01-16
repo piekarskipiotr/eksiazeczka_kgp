@@ -79,6 +79,7 @@ class _PeaksViewState extends State<PeaksView> {
             peaks: peaks,
             isLoadingPeaks: isLoadingPeaks,
             filter: selectedFilter,
+            sortTypes: selectedSortType,
             onPeakPressed: _onPeakPressed,
           ),
         );
