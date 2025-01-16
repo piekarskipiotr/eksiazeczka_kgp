@@ -5,8 +5,8 @@ import 'package:eksiazeczka_kgp/designSystem/shimmers/shimmers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class LocalImage extends StatelessWidget {
-  const LocalImage({
+class LocalMemorablePeakImage extends StatelessWidget {
+  const LocalMemorablePeakImage({
     required this.width,
     required this.height,
     required this.radius,
@@ -24,26 +24,24 @@ class LocalImage extends StatelessWidget {
     return FutureBuilder<String?>(
       future: context.read<StorageRepository>().getPeakImage(peakId: peakId),
       builder: (context, snapshot) {
-        if (snapshot.connectionState == ConnectionState.waiting) {
-          return const AppShimmer();
-        } else if (snapshot.hasError || !snapshot.hasData) {
-          return const AppShimmer();
-        } else {
-          final imagePath = snapshot.data!;
-          return ClipRRect(
-            borderRadius: BorderRadius.circular(radius),
-            child: SizedBox(
-              height: height,
-              width: width,
-              child: Image.file(
-                File(imagePath),
-                fit: BoxFit.cover,
-                width: double.infinity,
-                height: double.infinity,
-              ),
+        final showShimmer =
+            (snapshot.connectionState == ConnectionState.waiting) || (snapshot.hasError || !snapshot.hasData);
+        if (showShimmer) return const AppShimmer();
+
+        final imagePath = snapshot.data!;
+        return ClipRRect(
+          borderRadius: BorderRadius.circular(radius),
+          child: SizedBox(
+            height: height,
+            width: width,
+            child: Image.file(
+              File(imagePath),
+              fit: BoxFit.cover,
+              width: double.infinity,
+              height: double.infinity,
             ),
-          );
-        }
+          ),
+        );
       },
     );
   }

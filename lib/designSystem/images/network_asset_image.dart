@@ -2,8 +2,8 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:eksiazeczka_kgp/designSystem/design_system.dart';
 import 'package:flutter/material.dart';
 
-class ImageOnlineOffline extends StatelessWidget {
-  const ImageOnlineOffline({
+class NetworkAssetImage extends StatelessWidget {
+  const NetworkAssetImage({
     required this.assetPath,
     required this.height,
     required this.radius,

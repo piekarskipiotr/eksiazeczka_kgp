@@ -1,8 +1,7 @@
 import 'package:eksiazeczka_kgp/data/models/models.dart';
-import 'package:eksiazeczka_kgp/designSystem/images/image_online_offline.dart';
-import 'package:eksiazeczka_kgp/designSystem/layouts/layouts.dart';
-import 'package:eksiazeczka_kgp/presentation/peaks/widgets/card/peak_card_information.dart';
-import 'package:eksiazeczka_kgp/presentation/peaks/widgets/card/peak_conquered_information.dart';
+import 'package:eksiazeczka_kgp/designSystem/cards/peakCard/peak_card_information.dart';
+import 'package:eksiazeczka_kgp/designSystem/cards/peakCard/peak_conquered_information.dart';
+import 'package:eksiazeczka_kgp/designSystem/design_system.dart';
 import 'package:flutter/material.dart';
 
 class PeakCard extends StatelessWidget {
@@ -23,7 +22,7 @@ class PeakCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        ImageOnlineOffline(
+        NetworkAssetImage(
           radius: radius,
           height: height,
           url: peak.image,
@@ -36,7 +35,7 @@ class PeakCard extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               if (peak.isConquered)
-                SafeArea(child: PeakConqueredInformation(date: peak.userMetadata!.conqueredDate))
+                PeakConqueredInformation(date: peak.userMetadata!.conqueredDate)
               else
                 const SizedBox(),
               PeakCardInformation(name: peak.name, mountainRange: peak.mountainRange, peakHeight: peak.height),

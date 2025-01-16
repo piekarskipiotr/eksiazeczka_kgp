@@ -9,6 +9,6 @@ class SucceededConquerDialogBackground extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ImageOnlineOffline(assetPath: assetPath, url: url, height: double.infinity, radius: 0);
+    return NetworkAssetImage(assetPath: assetPath, url: url, height: double.infinity, radius: 0);
   }
 }

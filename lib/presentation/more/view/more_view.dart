@@ -1,7 +1,6 @@
 import 'dart:io';
 
 import 'package:eksiazeczka_kgp/data/constants.dart';
-import 'package:eksiazeczka_kgp/data/enums/enums.dart';
 import 'package:eksiazeczka_kgp/l10n/l10n.dart';
 import 'package:eksiazeczka_kgp/presentation/more/bloc/more_bloc.dart';
 import 'package:eksiazeczka_kgp/presentation/more/constants/more_state_status.dart';
@@ -11,16 +10,9 @@ import 'package:eksiazeczka_kgp/router/router.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import 'package:supabase_flutter/supabase_flutter.dart';
 
 class MoreView extends StatelessWidget {
   const MoreView({super.key});
-
-  Providers get _provider => Platform.isIOS ? Providers.apple : Providers.google;
-
-  void _onSignInPressed(BuildContext context, Providers provider) {
-    context.read<MoreBloc>().add(SignInWithProvider(provider));
-  }
 
   void _onDarkThemePressed(BuildContext context) {
     context.read<AppRouter>().showDarkModeSettings();
@@ -28,11 +20,6 @@ class MoreView extends StatelessWidget {
 
   void _onAppLanguagePressed(BuildContext context) {
     context.read<AppRouter>().showAppLanguageSettings();
-  }
-
-  void _onMenageAccountPressed(BuildContext context, User? user) {
-    if (user == null) return;
-    context.read<AppRouter>().showManageAccount(user: user);
   }
 
   void _onReviewAppPressed(BuildContext context) {
@@ -73,20 +60,11 @@ class MoreView extends StatelessWidget {
         listenWhen: (previous, current) => previous.status != current.status,
         listener: _handleStateStatus,
         builder: (context, state) {
-          final user = state.user;
-          final isSignedUser = !(user?.isAnonymous ?? true);
           return AnimatedContainer(
             duration: const Duration(milliseconds: 300),
             child: Column(
               spacing: 20,
               children: [
-                if (!isSignedUser)
-                  MoreSignInCard(
-                    provider: _provider,
-                    onPressed: (provider) {
-                      _onSignInPressed(context, provider);
-                    },
-                  ),
                 MoreSection(
                   label: l10n.personalization,
                   children: [
@@ -106,19 +84,6 @@ class MoreView extends StatelessWidget {
                     ),
                   ],
                 ),
-                if (isSignedUser)
-                  MoreSection(
-                    label: l10n.account,
-                    children: [
-                      MoreSectionItemTextIcon(
-                        label: l10n.menageAccount,
-                        icon: IconImages.arrowForward,
-                        onPressed: () {
-                          _onMenageAccountPressed(context, user);
-                        },
-                      ),
-                    ],
-                  ),
                 MoreSection(
                   label: l10n.app,
                   children: [

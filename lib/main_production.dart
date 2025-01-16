@@ -6,7 +6,6 @@ import 'package:eksiazeczka_kgp/data/repositories/local/storage/local_storage_re
 import 'package:eksiazeczka_kgp/data/repositories/offlineOnline/storage_repository.dart';
 import 'package:eksiazeczka_kgp/data/repositories/repositories.dart';
 import 'package:eksiazeczka_kgp/router/router.dart';
-import 'package:eksiazeczka_kgp/services/dataRefreshService/data_refresh_service.dart';
 import 'package:eksiazeczka_kgp/services/services.dart';
 
 void main() {

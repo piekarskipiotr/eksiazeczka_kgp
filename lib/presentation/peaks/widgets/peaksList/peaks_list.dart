@@ -1,6 +1,6 @@
 import 'package:eksiazeczka_kgp/data/enums/enums.dart';
 import 'package:eksiazeczka_kgp/data/models/models.dart';
-import 'package:eksiazeczka_kgp/presentation/peaks/widgets/card/card.dart';
+import 'package:eksiazeczka_kgp/designSystem/design_system.dart';
 import 'package:eksiazeczka_kgp/presentation/peaks/widgets/peaksList/empty_list.dart';
 import 'package:eksiazeczka_kgp/presentation/peaks/widgets/peaksList/loading_list.dart';
 import 'package:flutter/material.dart';

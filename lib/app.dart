@@ -5,11 +5,9 @@ import 'package:eksiazeczka_kgp/l10n/l10n.dart';
 import 'package:eksiazeczka_kgp/presentation/appLanguageSettings/bloc/app_language_settings_bloc.dart';
 import 'package:eksiazeczka_kgp/presentation/darkModeSettings/bloc/dark_mode_settings_bloc.dart';
 import 'package:eksiazeczka_kgp/presentation/medals/bloc/medals_bloc.dart';
-import 'package:eksiazeczka_kgp/presentation/more/bloc/more_bloc.dart';
 import 'package:eksiazeczka_kgp/presentation/peaks/bloc/peaks_bloc.dart';
 import 'package:eksiazeczka_kgp/presentation/root/bloc/root_bloc.dart';
 import 'package:eksiazeczka_kgp/router/app_router.dart';
-import 'package:eksiazeczka_kgp/services/dataRefreshService/data_refresh_service.dart';
 import 'package:eksiazeczka_kgp/services/services.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -73,11 +71,6 @@ class App extends StatelessWidget {
         ),
         BlocProvider(
           create: (_) {
-            return MoreBloc();
-          },
-        ),
-        BlocProvider(
-          create: (_) {
             return DarkModeSettingsBloc(userPreferencesService: _userPreferencesService);
           },
         ),
@@ -93,10 +86,10 @@ class App extends StatelessWidget {
           final locale = context.watch<AppLanguageSettingsBloc>().state.locale;
 
           return MaterialApp.router(
+            debugShowCheckedModeBanner: false,
             themeMode: themeMode,
             theme: AppThemes.light,
             darkTheme: AppThemes.dark,
-            debugShowCheckedModeBanner: false,
             locale: Locale(locale),
             localizationsDelegates: AppLocalizations.localizationsDelegates,
             supportedLocales: AppLocalizations.supportedLocales,
