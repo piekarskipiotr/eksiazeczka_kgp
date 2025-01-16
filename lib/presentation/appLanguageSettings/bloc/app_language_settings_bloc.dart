@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
-import 'package:eksiazeczka_kgp/services/userPreferencesService/user_preferences_service.dart';
+import 'package:eksiazeczka_kgp/services/services.dart';
 import 'package:equatable/equatable.dart';
 
 part 'app_language_settings_event.dart';

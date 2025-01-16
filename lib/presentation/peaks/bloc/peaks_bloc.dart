@@ -1,8 +1,10 @@
 import 'dart:async';
+import 'dart:developer';
 
 import 'package:bloc/bloc.dart';
 import 'package:eksiazeczka_kgp/data/enums/enums.dart';
 import 'package:eksiazeczka_kgp/data/models/models.dart';
+import 'package:eksiazeczka_kgp/data/repositories/offlineOnline/offline_online.dart';
 import 'package:eksiazeczka_kgp/services/services.dart';
 import 'package:equatable/equatable.dart';
 
@@ -10,24 +12,35 @@ part 'peaks_event.dart';
 part 'peaks_state.dart';
 
 class PeaksBloc extends Bloc<PeaksEvent, PeaksState> {
-  PeaksBloc({required PeaksService peaksService})
-      : _peaksService = peaksService,
+  PeaksBloc({required DataRefreshService dataRefreshService, required PeaksRepository peaksRepository})
+      : _dataRefreshService = dataRefreshService,
+        _peaksRepository = peaksRepository,
         super(const PeaksState()) {
+    on<FetchPeaks>(_onFetchPeaks);
     on<LoadPeaks>(_onLoadPeaks);
     on<ChangePeaksFilter>(_onChangePeaksFilter);
     on<ChangePeaksSortType>(_onChangePeaksSortType);
 
-    _peaksService.peaks.listen(
-      (peaks) {
-        if (peaks.isNotEmpty) add(LoadPeaks(peaks));
-      },
-    );
+    add(const FetchPeaks());
+    _dataRefreshService.peaksUpdateStream.listen((_) {
+      add(const FetchPeaks());
+    });
   }
 
-  final PeaksService _peaksService;
+  final DataRefreshService _dataRefreshService;
+  final PeaksRepository _peaksRepository;
+
+  Future<void> _onFetchPeaks(FetchPeaks event, Emitter<PeaksState> emit) async {
+    emit(state.copyWith(isLoadingPeaks: true));
+    await _peaksRepository.select().then((peaks) {
+      add(LoadPeaks(peaks));
+    }).catchError((Object error, StackTrace stacktrace) async {
+      log('FAILED TO FETCH PEAKS, error: $error \n\n $stacktrace');
+      emit(state.copyWith(isLoadingPeaks: false, error: error.toString()));
+    });
+  }
 
   Future<void> _onLoadPeaks(LoadPeaks event, Emitter<PeaksState> emit) async {
-    emit(state.copyWith(isLoadingPeaks: true));
     final peaks = event.peaks;
     final selectedFilter = state.filter;
     final selectedSortType = state.sortType;

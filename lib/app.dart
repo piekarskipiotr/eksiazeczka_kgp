@@ -1,10 +1,10 @@
+import 'package:eksiazeczka_kgp/data/repositories/offlineOnline/storage_repository.dart';
 import 'package:eksiazeczka_kgp/data/repositories/repositories.dart';
 import 'package:eksiazeczka_kgp/designSystem/design_system.dart';
 import 'package:eksiazeczka_kgp/l10n/l10n.dart';
 import 'package:eksiazeczka_kgp/presentation/appLanguageSettings/bloc/app_language_settings_bloc.dart';
 import 'package:eksiazeczka_kgp/presentation/darkModeSettings/bloc/dark_mode_settings_bloc.dart';
-import 'package:eksiazeczka_kgp/presentation/medals/bloc/medals_bloc.dart' as medal;
-import 'package:eksiazeczka_kgp/presentation/more/bloc/more_bloc.dart' as more;
+import 'package:eksiazeczka_kgp/presentation/medals/bloc/medals_bloc.dart';
 import 'package:eksiazeczka_kgp/presentation/peaks/bloc/peaks_bloc.dart';
 import 'package:eksiazeczka_kgp/presentation/root/bloc/root_bloc.dart';
 import 'package:eksiazeczka_kgp/router/app_router.dart';
@@ -16,33 +16,24 @@ class App extends StatelessWidget {
   const App({
     required AppRouter router,
     required UserPreferencesService userPreferencesService,
-    required AuthStorage authStorage,
-    required AuthService authService,
-    required PeaksService peaksService,
-    required SupabaseAuthRepository supabaseAuthRepository,
-    required SupabaseStorageRepository supabaseStorageRepository,
-    required SupabasePeaksRepository supabasePeaksRepository,
-    required SupabasePeaksUserMetadataRepository supabasePeaksUserMetadataRepository,
+    required DataRefreshService dataRefreshService,
+    required StorageRepository storageRepository,
+    required PeaksRepository peaksRepository,
+    required UserMetadataRepository userMetadataRepository,
     super.key,
   })  : _router = router,
         _userPreferencesService = userPreferencesService,
-        _authStorage = authStorage,
-        _authService = authService,
-        _peaksService = peaksService,
-        _supabaseAuthRepository = supabaseAuthRepository,
-        _supabaseStorageRepository = supabaseStorageRepository,
-        _supabasePeaksRepository = supabasePeaksRepository,
-        _supabasePeaksUserMetadataRepository = supabasePeaksUserMetadataRepository;
+        _dataRefreshService = dataRefreshService,
+        _storageRepository = storageRepository,
+        _peaksRepository = peaksRepository,
+        _userMetadataRepository = userMetadataRepository;
 
   final AppRouter _router;
   final UserPreferencesService _userPreferencesService;
-  final AuthStorage _authStorage;
-  final AuthService _authService;
-  final PeaksService _peaksService;
-  final SupabaseAuthRepository _supabaseAuthRepository;
-  final SupabaseStorageRepository _supabaseStorageRepository;
-  final SupabasePeaksRepository _supabasePeaksRepository;
-  final SupabasePeaksUserMetadataRepository _supabasePeaksUserMetadataRepository;
+  final DataRefreshService _dataRefreshService;
+  final StorageRepository _storageRepository;
+  final PeaksRepository _peaksRepository;
+  final UserMetadataRepository _userMetadataRepository;
 
   @override
   Widget build(BuildContext context) {
@@ -50,31 +41,32 @@ class App extends StatelessWidget {
       providers: [
         RepositoryProvider.value(value: _router),
         RepositoryProvider.value(value: _userPreferencesService),
-        RepositoryProvider.value(value: _authStorage),
-        RepositoryProvider.value(value: _authService),
-        RepositoryProvider.value(value: _peaksService),
-        RepositoryProvider.value(value: _supabaseAuthRepository),
-        RepositoryProvider.value(value: _supabaseStorageRepository),
-        RepositoryProvider.value(value: _supabasePeaksRepository),
-        RepositoryProvider.value(value: _supabasePeaksUserMetadataRepository),
+        RepositoryProvider.value(value: _dataRefreshService),
+        RepositoryProvider.value(value: _storageRepository),
+        RepositoryProvider.value(value: _peaksRepository),
+        RepositoryProvider.value(value: _userMetadataRepository),
         BlocProvider(
           create: (_) {
-            return RootBloc(peaksService: _peaksService);
+            return RootBloc(
+              dataRefreshService: _dataRefreshService,
+              peaksRepository: _peaksRepository,
+            );
           },
         ),
         BlocProvider(
           create: (_) {
-            return PeaksBloc(peaksService: _peaksService);
+            return PeaksBloc(
+              dataRefreshService: _dataRefreshService,
+              peaksRepository: _peaksRepository,
+            );
           },
         ),
         BlocProvider(
           create: (_) {
-            return medal.MedalsBloc(peaksService: _peaksService);
-          },
-        ),
-        BlocProvider(
-          create: (_) {
-            return more.MoreBloc(authService: _authService);
+            return MedalsBloc(
+              dataRefreshService: _dataRefreshService,
+              peaksRepository: _peaksRepository,
+            );
           },
         ),
         BlocProvider(
@@ -90,19 +82,14 @@ class App extends StatelessWidget {
       ],
       child: Builder(
         builder: (context) {
-          WidgetsBinding.instance.addPostFrameCallback((_) {
-            context.read<medal.MedalsBloc>().add(const medal.Initialize());
-            context.read<more.MoreBloc>().add(const more.Initialize());
-          });
-
           final themeMode = context.watch<DarkModeSettingsBloc>().state.themeMode;
           final locale = context.watch<AppLanguageSettingsBloc>().state.locale;
 
           return MaterialApp.router(
+            debugShowCheckedModeBanner: false,
             themeMode: themeMode,
             theme: AppThemes.light,
             darkTheme: AppThemes.dark,
-            debugShowCheckedModeBanner: false,
             locale: Locale(locale),
             localizationsDelegates: AppLocalizations.localizationsDelegates,
             supportedLocales: AppLocalizations.supportedLocales,

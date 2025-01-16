@@ -1,4 +1,3 @@
-export 'card/card.dart';
 export 'filters_and_sort_row.dart';
 export 'peaksList/list.dart';
 export 'peaks_filter_list.dart';

@@ -12,15 +12,18 @@ class PeakConqueredInformation extends StatelessWidget {
   Widget build(BuildContext context) {
     final l10n = context.l10n;
     final formatedDate = DateFormat('dd.MM.yyyy').format(date);
-    return BlurContainer(
-      radius: 28,
-      outerPadding: const EdgeInsets.all(12),
-      innerPadding: const EdgeInsets.symmetric(vertical: 10, horizontal: 8),
-      gradientColors: [
-        AppColors.accentColor.withValues(alpha: 0.5),
-        AppColors.accentColor.withValues(alpha: 0.3),
-      ],
-      child: Text(l10n.conqueredAt(formatedDate), style: AppTextStyles.h9(color: AppColors.white)),
+    return SafeArea(
+      bottom: false,
+      child: BlurContainer(
+        radius: 28,
+        outerPadding: const EdgeInsets.all(12),
+        innerPadding: const EdgeInsets.symmetric(vertical: 10, horizontal: 8),
+        gradientColors: [
+          AppColors.accentColor.withValues(alpha: 0.5),
+          AppColors.accentColor.withValues(alpha: 0.3),
+        ],
+        child: Text(l10n.conqueredAt(formatedDate), style: AppTextStyles.h9(color: AppColors.white)),
+      ),
     );
   }
 }

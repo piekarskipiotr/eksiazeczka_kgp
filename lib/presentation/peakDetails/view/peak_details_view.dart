@@ -2,6 +2,7 @@ import 'package:eksiazeczka_kgp/data/enums/enums.dart';
 import 'package:eksiazeczka_kgp/presentation/peakDetails/bloc/peak_details_bloc.dart';
 import 'package:eksiazeczka_kgp/presentation/peakDetails/constants/peak_details_state_status.dart';
 import 'package:eksiazeczka_kgp/presentation/peakDetails/widgets/widgets.dart';
+import 'package:eksiazeczka_kgp/services/services.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
@@ -56,6 +57,7 @@ class PeakDetailsView extends StatelessWidget {
       case PeakDetailsStateStatus.addingGalleryPhotoSucceeded:
         context.read<PeakDetailsBloc>().add(const MarkPeakAsConquered());
       case PeakDetailsStateStatus.insertingMetadataSucceeded:
+        context.read<DataRefreshService>().refresh();
         context.pop();
       case _:
         break;

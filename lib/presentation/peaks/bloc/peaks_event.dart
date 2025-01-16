@@ -4,6 +4,13 @@ abstract class PeaksEvent extends Equatable {
   const PeaksEvent();
 }
 
+final class FetchPeaks extends PeaksEvent {
+  const FetchPeaks();
+
+  @override
+  List<Object?> get props => [];
+}
+
 final class LoadPeaks extends PeaksEvent {
   const LoadPeaks(this.peaks);
 

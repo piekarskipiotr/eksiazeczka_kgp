@@ -4,12 +4,9 @@ abstract class RootEvent extends Equatable {
   const RootEvent();
 }
 
-
 final class LoadConqueredPeaksCount extends RootEvent {
-  const LoadConqueredPeaksCount(this.peaks);
-
-  final List<Peak> peaks;
+  const LoadConqueredPeaksCount();
 
   @override
-  List<Object?> get props => [peaks];
+  List<Object?> get props => [];
 }

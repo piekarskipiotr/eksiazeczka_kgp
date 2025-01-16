@@ -1,4 +1,2 @@
-export 'authService/auth_service.dart';
-export 'authService/auth_storage.dart';
-export 'peaksService/peaksService.dart';
+export 'dataRefreshService/data_refresh_service.dart';
 export 'userPreferencesService/user_preferences_service.dart';

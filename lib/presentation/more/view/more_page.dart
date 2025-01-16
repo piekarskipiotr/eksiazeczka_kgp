@@ -8,8 +8,8 @@ class MorePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider.value(
-      value: context.read<MoreBloc>(),
+    return BlocProvider(
+      create: (_) => MoreBloc(),
       child: const MoreView(),
     );
   }

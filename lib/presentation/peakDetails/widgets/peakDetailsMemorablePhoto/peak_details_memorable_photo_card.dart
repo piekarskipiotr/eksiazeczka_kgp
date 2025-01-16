@@ -20,12 +20,7 @@ class PeakDetailsMemorablePhotoCard extends StatelessWidget {
           color: AppColors.white,
           child: Padding(
             padding: const EdgeInsets.only(left: 12, top: 12, right: 12, bottom: 32),
-            child: PrivateSupabaseImage(
-              path: '$peakId/image.jpg',
-              width: 360,
-              height: 360,
-              radius: 0,
-            ),
+            child: LocalMemorablePeakImage(peakId: peakId, width: 360, height: 360, radius: 0),
           ),
         ),
       ),

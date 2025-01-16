@@ -1,6 +1,5 @@
 import 'package:eksiazeczka_kgp/data/enums/enums.dart';
-import 'package:eksiazeczka_kgp/designSystem/images/image_online_offline.dart';
-import 'package:eksiazeczka_kgp/designSystem/layouts/layouts.dart';
+import 'package:eksiazeczka_kgp/designSystem/design_system.dart';
 import 'package:eksiazeczka_kgp/presentation/medals/widgets/medalCard/medal_card_information.dart';
 import 'package:eksiazeczka_kgp/presentation/medals/widgets/medalCard/medal_card_medal.dart';
 import 'package:eksiazeczka_kgp/presentation/medals/widgets/medalDialog/medal_dialog.dart';
@@ -22,7 +21,7 @@ class MedalCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        ImageOnlineOffline(
+        NetworkAssetImage(
           assetPath: medal.background,
           height: height,
           radius: radius,
