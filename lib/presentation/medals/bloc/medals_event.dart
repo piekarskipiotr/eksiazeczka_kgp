@@ -4,8 +4,8 @@ abstract class MedalsEvent extends Equatable {
   const MedalsEvent();
 }
 
-final class Initialize extends MedalsEvent {
-  const Initialize();
+final class FetchPeaks extends MedalsEvent {
+  const FetchPeaks();
 
   @override
   List<Object?> get props => [];

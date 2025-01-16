@@ -3,12 +3,11 @@ import 'dart:developer';
 
 import 'package:bloc/bloc.dart';
 import 'package:eksiazeczka_kgp/data/constants.dart';
-import 'package:eksiazeczka_kgp/data/repositories/repositories.dart';
 import 'package:eksiazeczka_kgp/designSystem/design_system.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:sentry_flutter/sentry_flutter.dart';
-import 'package:sqflite/sqflite.dart' show databaseFactory;
+import 'package:supabase_flutter/supabase_flutter.dart';
 
 class AppBlocObserver extends BlocObserver {
   const AppBlocObserver();
@@ -42,6 +41,7 @@ Future<void> bootstrap(FutureOr<Widget> Function() builder, {bool useSentry = fa
     });
   }
 
+  await Supabase.initialize(url: supabaseUrl, anonKey: supabaseKey);
   await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
   await SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge, overlays: [SystemUiOverlay.top]);
   SystemChrome.setSystemUIOverlayStyle(
@@ -52,7 +52,5 @@ Future<void> bootstrap(FutureOr<Widget> Function() builder, {bool useSentry = fa
     ),
   );
 
-  await SupabaseRepository.configure(databaseFactory);
-  await SupabaseRepository().initialize();
   runApp(await builder());
 }

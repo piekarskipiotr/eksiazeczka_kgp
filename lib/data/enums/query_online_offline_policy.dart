@@ -1,0 +1,4 @@
+enum QueryOnlineOfflinePolicy {
+  offline,
+  online;
+}

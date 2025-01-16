@@ -1,16 +1,16 @@
-import 'package:brick_offline_first_with_supabase/brick_offline_first_with_supabase.dart';
-import 'package:brick_sqlite/brick_sqlite.dart';
-import 'package:brick_supabase/brick_supabase.dart';
+import 'dart:convert';
+
 import 'package:eksiazeczka_kgp/data/constants.dart';
 import 'package:eksiazeczka_kgp/data/enums/enums.dart';
-import 'package:eksiazeczka_kgp/data/models/peak_coordinates.model.dart';
-import 'package:eksiazeczka_kgp/data/models/peak_description.model.dart';
-import 'package:eksiazeczka_kgp/data/models/peak_user_metadata.model.dart';
+import 'package:eksiazeczka_kgp/data/models/coordinates.dart';
+import 'package:eksiazeczka_kgp/data/models/description.dart';
+import 'package:eksiazeczka_kgp/data/models/peak_user_metadata.dart';
 import 'package:eksiazeczka_kgp/utils/utils.dart';
 import 'package:uuid/uuid.dart';
 
-@ConnectOfflineFirstWithSupabase(supabaseConfig: SupabaseSerializable(tableName: 'peaks'))
-class Peak extends OfflineFirstWithSupabaseModel {
+part 'peak_sqflite.dart';
+
+class Peak {
   Peak({
     required this.name,
     required this.coordinates,
@@ -25,33 +25,27 @@ class Peak extends OfflineFirstWithSupabaseModel {
     String? id,
   }) : id = id ?? const Uuid().v5(Namespace.url.value, name);
 
-  @Supabase(unique: true)
-  @Sqlite(index: true, unique: true)
+  factory Peak.fromSqflite(Map<String, dynamic> json) => _$PeakFromSqflite(json);
+
+  Map<String, dynamic> toSqflite() => _$PeakToSqflite(this);
+
+
   final String id;
   final String name;
-  @Supabase(foreignKey: 'peak_id', ignoreTo: true)
-  final PeakCoordinates coordinates;
+  final Coordinates coordinates;
   final String location;
   final String mountainRange;
   final int height;
   final DifficultyLevel difficultyLevel;
   final int averageAscentTime;
   final Popularity popularity;
-  @Supabase(foreignKey: 'peak_id', ignoreTo: true)
-  final List<PeakDescription> descriptions;
-  @Supabase(foreignKey: 'peak_id', ignoreTo: true)
+  final List<Description> descriptions;
   final PeakUserMetadata? userMetadata;
 
-  @Sqlite(ignore: true)
-  @Supabase(ignore: true)
   bool get isConquered => userMetadata != null;
 
-  @Sqlite(ignore: true)
-  @Supabase(ignore: true)
   String get image => '$supabaseUrl/storage/v1/object/public/peaks/${name.snakeCase.normalize}.jpg';
 
-  @Sqlite(ignore: true)
-  @Supabase(ignore: true)
   String get assetImage => 'assets/images/peaks/${name.snakeCase.normalize}.jpg';
 
   Peak updateUserMetadata(PeakUserMetadata userMetadata) {

@@ -16,7 +16,7 @@ class PeakDetailsPage extends StatelessWidget {
       create: (_) => PeakDetailsBloc(
         peak: peak,
         authService: context.read(),
-        supabasePeaksUserMetadataRepository: context.read(),
+        userMetadataRepository: context.read(),
         supabaseStorageRepository: context.read(),
       ),
       child: const CupertinoScaffold(body: PeakDetailsView()),

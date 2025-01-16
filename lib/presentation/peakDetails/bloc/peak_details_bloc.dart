@@ -17,10 +17,10 @@ class PeakDetailsBloc extends Bloc<PeakDetailsEvent, PeakDetailsState> {
   PeakDetailsBloc({
     required Peak peak,
     required AuthService authService,
-    required SupabasePeaksUserMetadataRepository supabasePeaksUserMetadataRepository,
+    required UserMetadataRepository userMetadataRepository,
     required SupabaseStorageRepository supabaseStorageRepository,
   })  : _authService = authService,
-        _supabasePeaksUserMetadataRepository = supabasePeaksUserMetadataRepository,
+        _userMetadataRepository = userMetadataRepository,
         _supabaseStorageRepository = supabaseStorageRepository,
         super(PeakDetailsState(peak: peak)) {
     on<ValidateUserLocation>(_onValidateUserLocation);
@@ -30,7 +30,7 @@ class PeakDetailsBloc extends Bloc<PeakDetailsEvent, PeakDetailsState> {
   }
 
   final AuthService _authService;
-  final SupabasePeaksUserMetadataRepository _supabasePeaksUserMetadataRepository;
+  final UserMetadataRepository _userMetadataRepository;
   final SupabaseStorageRepository _supabaseStorageRepository;
 
   Future<void> _onValidateUserLocation(ValidateUserLocation event, Emitter<PeakDetailsState> emit) async {
@@ -51,8 +51,8 @@ class PeakDetailsBloc extends Bloc<PeakDetailsEvent, PeakDetailsState> {
 
       final currentUserCoordinates = await AppGeolocator.currentLocation;
       final isValid = AppGeolocator.isWithinRange(
-        longitude1: peakCoordinates.lng,
-        latitude1: peakCoordinates.lat,
+        longitude1: peakCoordinates.longitude,
+        latitude1: peakCoordinates.latitude,
         longitude2: currentUserCoordinates.longitude,
         latitude2: currentUserCoordinates.latitude,
         range: 100,
@@ -134,9 +134,9 @@ class PeakDetailsBloc extends Bloc<PeakDetailsEvent, PeakDetailsState> {
       emit(state.copyWith(status: PeakDetailsStateStatus.insertingMetadata));
       final peak = state.peak;
       final peakId = peak.id;
-      final user = await _authService.getCurrentUser();
-      final userId = user.id;
-      final metadata = await _supabasePeaksUserMetadataRepository.insert(peakId: peakId, userId: userId);
+      // final user = await _authService.getCurrentUser();
+      // final userId = user.id;
+      final metadata = await _userMetadataRepository.insert(peakId: peakId);
 
       emit(
         state.copyWith(

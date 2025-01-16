@@ -6,4 +6,5 @@ export 'peaks_filters.dart';
 export 'peaks_sort_types.dart';
 export 'popularity.dart';
 export 'providers.dart';
+export 'query_online_offline_policy.dart';
 export 'rationale.dart';

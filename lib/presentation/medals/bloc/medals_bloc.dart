@@ -1,32 +1,40 @@
 import 'dart:async';
+import 'dart:developer';
 
 import 'package:bloc/bloc.dart';
 import 'package:eksiazeczka_kgp/data/enums/enums.dart';
 import 'package:eksiazeczka_kgp/data/models/models.dart';
-import 'package:eksiazeczka_kgp/services/services.dart';
+import 'package:eksiazeczka_kgp/data/repositories/repositories.dart';
+import 'package:eksiazeczka_kgp/services/dataRefreshService/data_refresh_service.dart';
 import 'package:equatable/equatable.dart';
 
 part 'medals_event.dart';
 part 'medals_state.dart';
 
 class MedalsBloc extends Bloc<MedalsEvent, MedalsState> {
-  MedalsBloc({required PeaksService peaksService})
-      : _peaksService = peaksService,
+  MedalsBloc({required DataRefreshService dataRefreshService, required PeaksRepository peaksRepository})
+      : _dataRefreshService = dataRefreshService,
+        _peaksRepository = peaksRepository,
         super(const MedalsState()) {
-    on<Initialize>(_onInitialize);
+    on<FetchPeaks>(_onFetchPeaks);
     on<LoadPeaks>(_onLoadPeaks);
+
+    add(const FetchPeaks());
+    _dataRefreshService.peaksUpdateStream.listen((_) {
+      add(const FetchPeaks());
+    });
   }
 
-  final PeaksService _peaksService;
+  final DataRefreshService _dataRefreshService;
+  final PeaksRepository _peaksRepository;
 
-  late StreamSubscription<List<Peak>> _peaksSubscription;
-
-  Future<void> _onInitialize(Initialize event, Emitter<MedalsState> emit) async {
-    _peaksSubscription = _peaksService.peaks.listen(
-      (peaks) {
-        if (peaks.isNotEmpty) add(LoadPeaks(peaks));
-      },
-    );
+  Future<void> _onFetchPeaks(FetchPeaks event, Emitter<MedalsState> emit) async {
+    await _peaksRepository.select().then((peaks) {
+      add(LoadPeaks(peaks));
+    }).catchError((Object error, StackTrace stacktrace) async {
+      log('FAILED TO FETCH PEAKS, error: $error \n\n $stacktrace');
+      emit(state.copyWith(error: error.toString()));
+    });
   }
 
   Future<void> _onLoadPeaks(LoadPeaks event, Emitter<MedalsState> emit) async {
@@ -34,11 +42,5 @@ class MedalsBloc extends Bloc<MedalsEvent, MedalsState> {
     final conqueredPeaksCount = peaks.where((e) => e.userMetadata != null).length;
     final medals = Medals.getByStep(conqueredPeaksCount);
     emit(state.copyWith(medals: [Medals.first, ...medals]));
-  }
-
-  @override
-  Future<void> close() {
-    _peaksSubscription.cancel();
-    return super.close();
   }
 }

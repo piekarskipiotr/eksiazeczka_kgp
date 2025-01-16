@@ -44,8 +44,6 @@ class AuthService {
       await _supabaseAuthRepository.setSession(session);
       return;
     }
-
-    await _supabaseAuthRepository.signInAnonymously();
   }
 
   Future<void> _handleStorageAuthStateChange(Session? session) async {
