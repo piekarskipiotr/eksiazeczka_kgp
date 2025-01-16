@@ -134,8 +134,6 @@ class PeakDetailsBloc extends Bloc<PeakDetailsEvent, PeakDetailsState> {
       emit(state.copyWith(status: PeakDetailsStateStatus.insertingMetadata));
       final peak = state.peak;
       final peakId = peak.id;
-      // final user = await _authService.getCurrentUser();
-      // final userId = user.id;
       final metadata = await _userMetadataRepository.insert(peakId: peakId);
 
       emit(
