@@ -20,17 +20,20 @@ class NetworkAssetImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ClipRRect(
-      borderRadius: BorderRadius.circular(radius),
-      child: SizedBox(
-        height: height,
-        width: double.infinity,
-        child: ColorFiltered(
-          colorFilter: ColorFilter.mode(
-            disable ? AppColors.black : AppColors.transparent,
-            BlendMode.saturation,
+    return Hero(
+      tag: '$assetPath$url',
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(radius),
+        child: SizedBox(
+          height: height,
+          width: double.infinity,
+          child: ColorFiltered(
+            colorFilter: ColorFilter.mode(
+              disable ? AppColors.black : AppColors.transparent,
+              BlendMode.saturation,
+            ),
+            child: _image(context, assetPath: assetPath, url: url),
           ),
-          child: _image(context, assetPath: assetPath, url: url),
         ),
       ),
     );

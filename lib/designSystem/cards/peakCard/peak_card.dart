@@ -30,16 +30,19 @@ class PeakCard extends StatelessWidget {
           disable: !peak.isConquered,
         ),
         Positioned.fill(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              if (peak.isConquered)
-                PeakConqueredInformation(date: peak.userMetadata!.conqueredDate)
-              else
-                const SizedBox(),
-              PeakCardInformation(name: peak.name, mountainRange: peak.mountainRange, peakHeight: peak.height),
-            ],
+          child: Hero(
+            tag: peak.id,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                if (peak.isConquered)
+                  PeakConqueredInformation(date: peak.userMetadata!.conqueredDate)
+                else
+                  const SizedBox(),
+                PeakCardInformation(name: peak.name, mountainRange: peak.mountainRange, peakHeight: peak.height),
+              ],
+            ),
           ),
         ),
         if (onPressed != null) FixedInkWell(onPressed: onPressed!, radius: radius),

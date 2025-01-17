@@ -20,7 +20,7 @@ class MedalList extends StatelessWidget {
               spacing: 16,
               children: [
                 Expanded(child: _animatedMedalCard(medal: Medals.first, medals: medals)),
-                Expanded(child: _animatedMedalCard(medal: Medals.tenth, medals: medals)),
+                Expanded(child: _animatedMedalCard(medal: Medals.fifth, medals: medals)),
               ],
             ),
             Row(
@@ -45,7 +45,7 @@ class MedalList extends StatelessWidget {
       duration: Duration(milliseconds: 350 + 100 * index),
       child: SlideAnimation(
         verticalOffset: 50,
-        child: FadeInAnimation(child: MedalCard(medal: Medals.first, isEnabled: isEnabled)),
+        child: FadeInAnimation(child: MedalCard(medal: medal, isEnabled: isEnabled)),
       ),
     );
   }
