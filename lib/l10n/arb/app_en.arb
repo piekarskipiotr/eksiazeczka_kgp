@@ -104,8 +104,8 @@
   "deleteAccount": "Delete account",
   "signOut": "Sign out",
   "signingIn": "Signing in...",
-  "deleteAccountConfirmationTitle": "Czy jesteś pewien?",
-  "deleteAccountConfirmationDescription": "Usunięcie konta sprawi usunięcie wszystkich danych powiązanych z twoim kontem, zarówno tych przechowywanych w chmurze jak i lokalnie. Operacji nie można cofnąć.",
+  "deleteAccountConfirmationTitle": "Are you sure?",
+  "deleteAccountConfirmationDescription": "Deleting your account will remove all data associated with your account, both stored in the cloud and locally. This operation cannot be undone.",
   "cancel": "Cancel",
   "description": "Description",
   "baseInformation": "Base information",
@@ -115,22 +115,22 @@
   "youHaveConqueredPeakDescription": "Congratulations! You've reached the peak and can be proud of yourself.\nAnother step in your mountain adventure is complete – time to\nenjoy the views and plan the next challenges!",
   "takePhoto": "Take photo",
   "addPhotoFromGallery": "Add from gallery",
-  "notInPeakRange": "Nie jesteś wystarczająco blisko szczytu!",
-  "notInPeakRangeDescription": "Wygląda na to, że nie znajdujesz się wystarczająco blisko szczytu,\naby zaznaczyć jego zdobycie. Upewnij się, że dotarłeś na miejsce\nzgodnie z wymaganiami – twoja lokalizacja musi pokrywać się z\nwyznaczoną strefą szczytu.",
+  "notInPeakRange": "You are not close enough to the peak!",
+  "notInPeakRangeDescription": "It seems that you are not close enough to the peak\nto mark it as conquered. Make sure you have reached the location\naccording to the requirements – your location must match the\ndesignated peak area.",
   "tryAgain": "Try again",
   "buyPeak": "Unlock peak for 20 PLN",
   "close": "Close",
-  "openSettings": "Otwórz ustawienia",
-  "locationRationaleTitle": "Uprawnienia do lokalizacji",
-  "locationRationaleDescription": "Aplikacja potrzebuje dostępu do Twojej lokalizacji, aby zweryfikować, czy znajdujesz się w okolicy szczytu. Przejdź do ustawień aplikacji i zezwól na dostęp do lokalizacji.",
-  "cameraRationaleTitle": "Uprawnienia do lokalizacji",
-  "cameraRationaleDescription": "Aplikacja potrzebuje dostępu do Twojej lokalizacji, aby zweryfikować, czy znajdujesz się w okolicy szczytu. Przejdź do ustawień aplikacji i zezwól na dostęp do lokalizacji.",
-  "photosRationaleTitle": "Uprawnienia do lokalizacji",
-  "photosRationaleDescription": "Aplikacja potrzebuje dostępu do Twojej lokalizacji, aby zweryfikować, czy znajdujesz się w okolicy szczytu. Przejdź do ustawień aplikacji i zezwól na dostęp do lokalizacji.",
-  "memorablePhoto": "Pamiątkowe zdjęcie",
-  "memorablePhotoDescription": "Twoje heroiczne zdobycie szczytu nie może obejść się bez zdjęcia.",
-  "medalsPageHeader": "Każdy medal to\ndowód na twoje\nmistrzostwo!",
-  "medalLabel": "{count, select, 1{Zdobądź pierwszy szczyt} 28{Zdobądź wszystkie szczyty Korony Gór Polskich} other{Zdobądź łącznie: {count} szczytów}}",
+  "openSettings": "Open settings",
+  "locationRationaleTitle": "Location permissions",
+  "locationRationaleDescription": "The app needs access to your location to verify if you are near the peak. Go to the app settings and allow location access.",
+  "cameraRationaleTitle": "Camera permissions",
+  "cameraRationaleDescription": "The app needs access to your camera to capture photos. Go to the app settings and allow camera access.",
+  "photosRationaleTitle": "Photos permissions",
+  "photosRationaleDescription": "The app needs access to your photos to save your memorable photos. Go to the app settings and allow photo access.",
+  "memorablePhoto": "Memorable photo",
+  "memorablePhotoDescription": "Your heroic peak conquest cannot go without a photo.",
+  "medalsPageHeader": "Every medal is\na proof of your\nmastery!",
+  "medalLabel": "{count, select, 1{Conquer your first peak} 28{Conquer all the peaks of the Polish Crown} other{Conquer a total of: {count} peaks}}",
   "@medalLabel": {
     "placeholders": {
       "count": {
@@ -139,6 +139,6 @@
       }
     }
   },
-  "memorablePhotoDialogTitle": "Pamiątka ze szczytu",
-  "memorablePhotoDialogDescription": "Zdobycie szczytu na pewno nie było proste ale udało Ci się! Wracaj wspominienami do tego dnia a może i pewnego dnia wróć zdobyć ponownie ten szczyt."
+  "memorablePhotoDialogTitle": "Peak souvenir",
+  "memorablePhotoDialogDescription": "Reaching the peak was surely not easy, but you did it! Relive the memories of that day, and maybe one day return to conquer this peak again."
 }
