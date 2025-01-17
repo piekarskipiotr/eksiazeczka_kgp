@@ -138,5 +138,7 @@
         "example": "1"
       }
     }
-  }
+  },
+  "memorablePhotoDialogTitle": "Pamiątka ze szczytu",
+  "memorablePhotoDialogDescription": "Zdobycie szczytu na pewno nie było proste ale udało Ci się! Wracaj wspominienami do tego dnia a może i pewnego dnia wróć zdobyć ponownie ten szczyt."
 }
