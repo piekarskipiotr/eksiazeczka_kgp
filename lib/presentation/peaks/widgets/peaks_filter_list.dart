@@ -23,7 +23,7 @@ class PeaksFilterList extends StatelessWidget {
         children: [
           SingleChildScrollView(
             scrollDirection: Axis.horizontal,
-            padding: const EdgeInsets.only(left: 16),
+            padding: const EdgeInsets.only(left: 16, right: 32),
             child: Row(
               spacing: 8,
               children: PeaksFilters.values.map((filter) {
