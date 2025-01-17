@@ -86,16 +86,7 @@ class PeakDetailsView extends StatelessWidget {
                 PeakDetailsActionButtons(
                   status: status,
                   onMarkConquerPeakPressed: () {
-                    SucceededConquerDialog.show(
-                      context,
-                      peak: peak,
-                      onTakePhotoPressed: () {
-                        _onTakePhotoPressed(context);
-                      },
-                      onAddFromGalleryPressed: () {
-                        _onAddFromGalleryPressed(context);
-                      },
-                    );
+                    _onMarkConquerPeakPressed(context);
                   },
                 ),
             ],
