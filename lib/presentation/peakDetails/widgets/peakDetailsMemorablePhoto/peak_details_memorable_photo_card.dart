@@ -24,42 +24,45 @@ class PeakDetailsMemorablePhotoCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Transform.rotate(
-      angle: pi / -24,
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 24),
-        child: Stack(
-          children: [
-            Container(
-              width: width,
-              height: height,
-              decoration: BoxDecoration(
-                color: AppColors.white,
-                boxShadow: [
-                  BoxShadow(
-                    color: AppColors.black.withValues(alpha: 0.25),
-                    blurRadius: 8,
-                    offset: const Offset(0, 4),
-                  ),
-                ],
-              ),
-              child: Padding(
-                padding: const EdgeInsets.only(left: 12, top: 12, right: 12, bottom: 32),
-                child: LocalMemorablePeakImage(peakId: peakId),
-              ),
-            ),
-            if (enableOnPressed)
-              Positioned.fill(
-                child: Material(
-                  color: Colors.transparent,
-                  child: InkWell(
-                    onTap: () {
-                      _onCardPressed(context, peakId);
-                    },
-                  ),
+    return Hero(
+      tag: 'memorablePhoto-$peakId',
+      child: Transform.rotate(
+        angle: pi / -24,
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 24),
+          child: Stack(
+            children: [
+              Container(
+                width: width,
+                height: height,
+                decoration: BoxDecoration(
+                  color: AppColors.white,
+                  boxShadow: [
+                    BoxShadow(
+                      color: AppColors.black.withValues(alpha: 0.25),
+                      blurRadius: 8,
+                      offset: const Offset(0, 4),
+                    ),
+                  ],
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 12, top: 12, right: 12, bottom: 32),
+                  child: LocalMemorablePeakImage(peakId: peakId),
                 ),
               ),
-          ],
+              if (enableOnPressed)
+                Positioned.fill(
+                  child: Material(
+                    color: Colors.transparent,
+                    child: InkWell(
+                      onTap: () {
+                        _onCardPressed(context, peakId);
+                      },
+                    ),
+                  ),
+                ),
+            ],
+          ),
         ),
       ),
     );
