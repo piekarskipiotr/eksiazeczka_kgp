@@ -13,13 +13,14 @@ class MoreSectionItemCheckboxText extends StatelessWidget {
   final bool isChecked;
   final VoidCallback onPressed;
 
+  EdgeInsets get _padding => const EdgeInsets.symmetric(vertical: 16, horizontal: 16);
+
   @override
   Widget build(BuildContext context) {
-
     return InkWell(
       onTap: onPressed,
       child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 16),
+        padding: _padding,
         child: Row(
           spacing: 8,
           children: [

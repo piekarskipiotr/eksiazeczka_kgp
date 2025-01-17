@@ -7,12 +7,18 @@ class MoreSection extends StatelessWidget {
   final String? label;
   final List<Widget> children;
 
+  EdgeInsets get _padding => const EdgeInsets.symmetric(horizontal: 16);
+
   @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        if (label != null) Text('$label', style: AppTextStyles.h4(), maxLines: 1, overflow: TextOverflow.ellipsis),
+        if (label != null)
+          Padding(
+            padding: _padding,
+            child: Text('$label', style: AppTextStyles.h4(), maxLines: 1, overflow: TextOverflow.ellipsis),
+          ),
         ListView.separated(
           padding: EdgeInsets.zero,
           physics: const NeverScrollableScrollPhysics(),
@@ -22,7 +28,7 @@ class MoreSection extends StatelessWidget {
             return widget;
           },
           separatorBuilder: (_, index) {
-            return index < children.length - 1 ? _divider(context) : const SizedBox.shrink();
+            return index < children.length - 1 ? _divider(context, _padding) : const SizedBox.shrink();
           },
           itemCount: children.length,
         ),
@@ -30,7 +36,13 @@ class MoreSection extends StatelessWidget {
     );
   }
 
-  Widget _divider(BuildContext context) {
-    return Container(color: Theme.of(context).primaryColor.withValues(alpha: 0.2), height: 1);
+  Widget _divider(BuildContext context, EdgeInsets padding) {
+    return Padding(
+      padding: padding,
+      child: Container(
+        color: Theme.of(context).primaryColor.withValues(alpha: 0.2),
+        height: 1,
+      ),
+    );
   }
 }

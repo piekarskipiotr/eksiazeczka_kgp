@@ -39,12 +39,14 @@ class _MoreSectionItemExpandableTextState extends State<MoreSectionItemExpandabl
     super.dispose();
   }
 
+  EdgeInsets get _padding => const EdgeInsets.symmetric(vertical: 16, horizontal: 16);
+
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: _toggleExpansion,
       child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 16),
+        padding: _padding,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [

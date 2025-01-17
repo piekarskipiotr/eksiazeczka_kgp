@@ -55,7 +55,7 @@ class MoreView extends StatelessWidget {
   Widget build(BuildContext context) {
     final l10n = context.l10n;
     return SingleChildScrollView(
-      padding: const EdgeInsets.fromLTRB(16, 16, 16, 196),
+      padding: const EdgeInsets.fromLTRB(0, 16, 0, 196),
       child: BlocConsumer<MoreBloc, MoreState>(
         listenWhen: (previous, current) => previous.status != current.status,
         listener: _handleStateStatus,

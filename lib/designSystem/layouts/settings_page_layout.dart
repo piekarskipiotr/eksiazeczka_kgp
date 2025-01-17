@@ -50,7 +50,7 @@ class SettingsPageLayout extends StatelessWidget {
         ),
       ),
       body: SingleChildScrollView(
-        padding: const EdgeInsets.fromLTRB(16, 0, 16, 196),
+        padding: const EdgeInsets.fromLTRB(0, 0, 0, 196),
         child: child,
       ),
     );

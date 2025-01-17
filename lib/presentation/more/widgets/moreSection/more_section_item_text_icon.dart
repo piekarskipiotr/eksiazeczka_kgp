@@ -15,14 +15,15 @@ class MoreSectionItemTextIcon extends StatelessWidget {
   final VoidCallback onPressed;
   final bool isDanger;
 
+  EdgeInsets get _padding => const EdgeInsets.symmetric(vertical: 16, horizontal: 16);
+
   @override
   Widget build(BuildContext context) {
     final color = isDanger ? AppColors.secondaryAccentColor : null;
-
     return InkWell(
       onTap: onPressed,
       child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 16),
+        padding: _padding,
         child: Row(
           spacing: 24,
           mainAxisAlignment: MainAxisAlignment.spaceBetween,

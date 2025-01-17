@@ -46,11 +46,11 @@ class MenageAccountSettingsView extends StatelessWidget {
                   children: [
                     MoreSectionItemTextText(
                       label: l10n.email,
-                      text: user?.email ?? '-',
+                      text: user.email ?? '-',
                     ),
                     MoreSectionItemTextText(
                       label: l10n.accountCreatedAt,
-                      text: user?.createdAt.formatToDDMMYYYYDate ?? '-',
+                      text: user.createdAt.formatToDDMMYYYYDate,
                     ),
                   ],
                 ),
