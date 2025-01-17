@@ -140,5 +140,9 @@
     }
   },
   "memorablePhotoDialogTitle": "Peak souvenir",
-  "memorablePhotoDialogDescription": "Reaching the peak was surely not easy, but you did it! Relive the memories of that day, and maybe one day return to conquer this peak again."
+  "memorablePhotoDialogDescription": "Reaching the peak was surely not easy, but you did it! Relive the memories of that day, and maybe one day return to conquer this peak again.",
+  "haveYouConqueredPeaksAlready": "Czy zdobyłeś już jakiś szczyt bez użycia aplikacji?",
+  "haveYouConqueredPeaksAlreadyDescription": "Możesz zaznaczyć już zdobyte szczyty tylko teraz. Każde oznaczenie wymaga zdjęcia z danego miejsca, które musi zawierać dane geolokalizacyjne. To zapewnia uczciwość i autentyczność oznaczeń.",
+  "goToApp": "Przejdź do aplikacji",
+  "remindMeLater": "Przypomnij mi później"
 }
