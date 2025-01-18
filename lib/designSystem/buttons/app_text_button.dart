@@ -63,18 +63,18 @@ class _AppTextButtonState extends State<AppTextButton> with TickerProviderStateM
       absorbing: widget.isLoading || widget.isProcessing,
       child: TextButton(
         onPressed: widget.onPressed,
-        child: Row(
-          mainAxisSize: MainAxisSize.min,
+        child: Stack(
+          alignment: Alignment.centerLeft,
           children: [
             AnimatedBuilder(
               animation: _controller,
               builder: (context, child) {
                 return Opacity(
                   opacity: _opacityAnimation.value,
-                  child: SizedBox(
-                    width: _widthAnimation.value,
+                  child: const SizedBox(
+                    width: 16,
                     height: 16,
-                    child: const CircularProgressIndicator(
+                    child: CircularProgressIndicator(
                       valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
                       strokeWidth: 2,
                     ),
@@ -82,16 +82,17 @@ class _AppTextButtonState extends State<AppTextButton> with TickerProviderStateM
                 );
               },
             ),
-            AnimatedSwitcher(
-              duration: const Duration(milliseconds: 300),
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 8),
-                child: Text(
-                  widget.label,
-                  style: AppTextStyles.h6(fontWeight: FontWeight.w500, color: widget.labelColor),
-                  key: ValueKey<String>(widget.label),
-                ),
-              ),
+            AnimatedBuilder(
+              animation: _controller,
+              builder: (context, child) {
+                return Padding(
+                  padding: EdgeInsets.only(left: _widthAnimation.value + 8, right: 8),
+                  child: Text(
+                    widget.label,
+                    style: AppTextStyles.h6(fontWeight: FontWeight.w500, color: widget.labelColor),
+                  ),
+                );
+              },
             ),
           ],
         ),
