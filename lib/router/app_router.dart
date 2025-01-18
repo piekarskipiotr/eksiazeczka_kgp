@@ -7,13 +7,18 @@ import 'package:eksiazeczka_kgp/presentation/menageAccountSettings/view/menage_a
 import 'package:eksiazeczka_kgp/presentation/more/view/more_page.dart';
 import 'package:eksiazeczka_kgp/presentation/peakDetails/view/peak_details_page.dart';
 import 'package:eksiazeczka_kgp/presentation/peaks/view/peaks_page.dart';
+import 'package:eksiazeczka_kgp/presentation/peaksOnboarding/view/peaks_onboarding_page.dart';
 import 'package:eksiazeczka_kgp/presentation/root/view/root_page.dart';
 import 'package:eksiazeczka_kgp/router/app_routes.dart';
+import 'package:eksiazeczka_kgp/services/services.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 class AppRouter {
+  AppRouter(this._userPreferencesService);
+
+  final UserPreferencesService _userPreferencesService;
   final _rootNavigatorKey = GlobalKey<NavigatorState>();
   final _peaksNavigatorKey = GlobalKey<NavigatorState>();
   final _medalsNavigatorKey = GlobalKey<NavigatorState>();
@@ -21,8 +26,22 @@ class AppRouter {
 
   late final instance = GoRouter(
     navigatorKey: _rootNavigatorKey,
-    initialLocation: '/${AppRoutes.peaks}',
+    initialLocation: '/',
     routes: [
+      GoRoute(
+        path: '/',
+        redirect: (context, state) async {
+          final isPeaksOnboardingCompleted = await _userPreferencesService.isPeaksOnboardingCompleted();
+          return isPeaksOnboardingCompleted ? '/${AppRoutes.peaks}' : '/${AppRoutes.peaksOnboarding}';
+        },
+      ),
+      GoRoute(
+        name: AppRoutes.peaksOnboarding,
+        path: '/${AppRoutes.peaksOnboarding}',
+        builder: (context, state) {
+          return const PeaksOnboardingPage();
+        },
+      ),
       StatefulShellRoute.indexedStack(
         builder: (context, state, navigationShell) {
           return RootPage(key: state.pageKey, navigationShell: navigationShell);

@@ -8,6 +8,7 @@ class UserPreferencesService {
     _init();
   }
 
+  static const String _peaksOnboarding = 'peaksOnboardingKey';
   static const String _themeModeKey = 'themeModeKey';
   static const String _localeKey = 'localeKey';
 
@@ -33,5 +34,14 @@ class UserPreferencesService {
 
   Future<void> setLocale(String locale) async {
     await _instance!.setString(_localeKey, locale);
+  }
+
+  Future<bool> isPeaksOnboardingCompleted() async {
+    final isCompleted = _instance!.getBool(_peaksOnboarding) ?? false;
+    return isCompleted;
+  }
+
+  Future<void> changePeaksOnboardingStatus({required bool value}) async {
+    await _instance!.setBool(_peaksOnboarding, value);
   }
 }

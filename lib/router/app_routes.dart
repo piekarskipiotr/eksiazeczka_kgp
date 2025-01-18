@@ -1,4 +1,5 @@
 class AppRoutes {
+  static String peaksOnboarding = 'peaksOnboarding';
   static String peaks = 'peaks';
   static String peakDetails = 'peakDetails';
   static String medals = 'medals';

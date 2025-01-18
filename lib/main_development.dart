@@ -25,7 +25,7 @@ void main() {
     final userPreferencesService = UserPreferencesService();
 
     // Router
-    final router = AppRouter();
+    final router = AppRouter(userPreferencesService);
 
     return App(
       router: router,

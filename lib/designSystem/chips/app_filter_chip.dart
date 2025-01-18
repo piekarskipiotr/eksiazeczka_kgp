@@ -9,6 +9,7 @@ class AppFilterChip extends StatelessWidget {
     required this.onSelected,
     required this.isSelected,
     this.useSelectIcon = false,
+    this.isProcessing = false,
     this.size = ChipSize.regular,
     super.key,
   });
@@ -17,6 +18,7 @@ class AppFilterChip extends StatelessWidget {
   final void Function({required bool isSelected}) onSelected;
   final bool isSelected;
   final bool useSelectIcon;
+  final bool isProcessing;
   final ChipSize size;
 
   TextStyle get _labelStyle => AppTextStyles.h8(fontWeight: FontWeight.w500);
@@ -24,6 +26,7 @@ class AppFilterChip extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+    final primaryColor = theme.primaryColor;
     final secondaryColor = theme.colorScheme.secondary;
     final labelStyle = isSelected
         ? _labelStyle.copyWith(
@@ -38,7 +41,14 @@ class AppFilterChip extends StatelessWidget {
       onSelected: (isSelected) => onSelected(isSelected: isSelected),
       label: Text(label, style: labelStyle),
       labelPadding: const EdgeInsets.symmetric(horizontal: 6),
-      avatar: useSelectIcon && isSelected ? AppIcon(IconImages.checkCircle, color: secondaryColor) : null,
+      avatar: isProcessing
+          ? CircularProgressIndicator(
+              strokeWidth: 1,
+              color: primaryColor,
+            )
+          : useSelectIcon && isSelected
+              ? AppIcon(IconImages.checkCircle, color: secondaryColor)
+              : null,
       padding: size.padding,
     );
   }

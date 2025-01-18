@@ -2,7 +2,6 @@ import 'package:eksiazeczka_kgp/data/enums/enums.dart';
 import 'package:eksiazeczka_kgp/data/models/models.dart';
 import 'package:eksiazeczka_kgp/presentation/peaks/bloc/peaks_bloc.dart';
 import 'package:eksiazeczka_kgp/presentation/peaks/widgets/widgets.dart';
-import 'package:eksiazeczka_kgp/presentation/peaksOnboardingDialog/view/peaks_onboarding_dialog.dart';
 import 'package:eksiazeczka_kgp/router/router.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -38,8 +37,7 @@ class _PeaksViewState extends State<PeaksView> {
   }
 
   void _onSortTypePressed(BuildContext context, PeaksSortTypes sortType) {
-    // context.read<PeaksBloc>().add(ChangePeaksSortType(sortType));
-    PeaksOnboardingDialog.show(context);
+    context.read<PeaksBloc>().add(ChangePeaksSortType(sortType));
   }
 
   void _onActiveFilterPressed() {
