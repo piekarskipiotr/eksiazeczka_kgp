@@ -112,7 +112,7 @@
   "baseInformationSubtitle": "Read the details about the peak",
   "markConquerPeak": "Mark conquering the peak",
   "youHaveConqueredPeak": "You have conquered the peak!",
-  "youHaveConqueredPeakDescription": "Congratulations! You've reached the peak and can be proud of yourself.\nAnother step in your mountain adventure is complete – time to\nenjoy the views and plan the next challenges!",
+  "youHaveConqueredPeakDescription": "Congratulations! You've reached the peak and can\nbe proud of yourself. Another step in your mountain\nadventure is complete – time to enjoy the views and plan the next challenges!",
   "takePhoto": "Take photo",
   "addPhotoFromGallery": "Add from gallery",
   "notInPeakRange": "You are not close enough to the peak!",
@@ -141,8 +141,7 @@
   },
   "memorablePhotoDialogTitle": "Peak souvenir",
   "memorablePhotoDialogDescription": "Reaching the peak was surely not easy, but you did it! Relive the memories of that day, and maybe one day return to conquer this peak again.",
-  "haveYouConqueredPeaksAlready": "Czy zdobyłeś już jakiś szczyt bez użycia aplikacji?",
-  "haveYouConqueredPeaksAlreadyDescription": "Możesz zaznaczyć już zdobyte szczyty tylko teraz. Każde oznaczenie wymaga zdjęcia z danego miejsca, które musi zawierać dane geolokalizacyjne. To zapewnia uczciwość i autentyczność oznaczeń.",
-  "goToApp": "Przejdź do aplikacji",
-  "remindMeLater": "Przypomnij mi później"
+  "haveYouConqueredPeaksAlready": "Have you already conquered any peaks without using the app?",
+  "haveYouConqueredPeaksAlreadyDescription": "You can mark peaks you've already conquered only now. Each marking requires a photo from the location, which must contain geolocation data. This ensures fairness and authenticity of the markings.",
+  "goToApp": "Go to the app."
 }

@@ -9,12 +9,10 @@ import 'package:go_router/go_router.dart';
 class FailedConquerDialogActionButtons extends StatelessWidget {
   const FailedConquerDialogActionButtons({
     required this.onTryAgainPressed,
-    required this.onBuyConquerPressed,
     super.key,
   });
 
   final VoidCallback onTryAgainPressed;
-  final VoidCallback onBuyConquerPressed;
 
   void _onExitPressed(BuildContext context) {
     context.pop();
@@ -42,12 +40,6 @@ class FailedConquerDialogActionButtons extends StatelessWidget {
                   label: l10n.tryAgain,
                   onPressed: onTryAgainPressed,
                   isLoading: status == PeakDetailsStateStatus.validatingLocation,
-                  isProcessing: processingStatus.contains(status),
-                ),
-                AppOutlinedButton(
-                  label: l10n.buyPeak,
-                  onPressed: onBuyConquerPressed,
-                  isLoading: status == PeakDetailsStateStatus.buyingPeak,
                   isProcessing: processingStatus.contains(status),
                 ),
                 AppTextButton(

@@ -22,10 +22,6 @@ class PeakDetailsView extends StatelessWidget {
     context.read<PeakDetailsBloc>().add(const AddFromGallery());
   }
 
-  void _onBuyConquerPressed(BuildContext context) {
-    context.read<PeakDetailsBloc>().add(const AddFromGallery());
-  }
-
   void _handleStateStatus(BuildContext context, PeakDetailsState state) {
     final peak = state.peak;
     switch (state.status) {
@@ -37,9 +33,6 @@ class PeakDetailsView extends StatelessWidget {
           onTryAgainPressed: () {
             context.pop();
             _onMarkConquerPeakPressed(context);
-          },
-          onBuyConquerPressed: () {
-            _onBuyConquerPressed(context);
           },
         );
       case PeakDetailsStateStatus.validatingLocationSucceeded:

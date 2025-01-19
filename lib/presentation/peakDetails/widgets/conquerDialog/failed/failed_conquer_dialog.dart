@@ -9,13 +9,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class _FailedConquerDialog extends StatelessWidget {
-  const _FailedConquerDialog({
-    required this.onTryAgainPressed,
-    required this.onBuyConquerPressed,
-  });
+  const _FailedConquerDialog({required this.onTryAgainPressed});
 
   final VoidCallback onTryAgainPressed;
-  final VoidCallback onBuyConquerPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -36,10 +32,7 @@ class _FailedConquerDialog extends StatelessWidget {
           children: [
             const ConquerBaseDialogExitButton(),
             const FailedConquerDialogContent(),
-            FailedConquerDialogActionButtons(
-              onTryAgainPressed: onTryAgainPressed,
-              onBuyConquerPressed: onBuyConquerPressed,
-            ),
+            FailedConquerDialogActionButtons(onTryAgainPressed: onTryAgainPressed),
           ],
         ),
       ),
@@ -51,17 +44,15 @@ class FailedConquerDialog {
   static void show(
     BuildContext context, {
     required VoidCallback onTryAgainPressed,
-    required VoidCallback onBuyConquerPressed,
   }) {
     context.read<AppRouter>().showTransparentDialog(
-      context: context,
-      child: BlocProvider.value(
-        value: context.read<PeakDetailsBloc>(),
-        child: _FailedConquerDialog(
-          onTryAgainPressed: onTryAgainPressed,
-          onBuyConquerPressed: onBuyConquerPressed,
-        ),
-      ),
-    );
+          context: context,
+          child: BlocProvider.value(
+            value: context.read<PeakDetailsBloc>(),
+            child: _FailedConquerDialog(
+              onTryAgainPressed: onTryAgainPressed,
+            ),
+          ),
+        );
   }
 }
