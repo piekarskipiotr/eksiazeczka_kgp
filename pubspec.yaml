@@ -76,7 +76,7 @@ spider:
       types: [ .png ]
     - path: assets/images/medalBackgrounds
       class_name: MedalBackgrounds
-      types: [ .jpeg ]
+      types: [ .jpg ]
     - path: assets/images/peaks
       class_name: PeakImages
       types: [ .jpg ]

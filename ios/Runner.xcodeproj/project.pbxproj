@@ -513,6 +513,7 @@
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				FLAVOR_APP_NAME = "Eksiazeczka Kgp";
 				INFOPLIST_FILE = Runner/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.travel";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -613,6 +614,7 @@
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				FLAVOR_APP_NAME = "Eksiazeczka Kgp";
 				INFOPLIST_FILE = Runner/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.travel";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -708,6 +710,7 @@
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				FLAVOR_APP_NAME = "Eksiazeczka Kgp";
 				INFOPLIST_FILE = Runner/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.travel";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -808,6 +811,7 @@
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				FLAVOR_APP_NAME = "[DEV] Eksiazeczka Kgp";
 				INFOPLIST_FILE = Runner/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.travel";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -906,6 +910,7 @@
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				FLAVOR_APP_NAME = "[DEV] Eksiazeczka Kgp";
 				INFOPLIST_FILE = Runner/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.travel";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1003,6 +1008,7 @@
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				FLAVOR_APP_NAME = "[DEV] Eksiazeczka Kgp";
 				INFOPLIST_FILE = Runner/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.travel";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
