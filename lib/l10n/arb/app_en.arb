@@ -130,7 +130,7 @@
   "memorablePhoto": "Memorable photo",
   "memorablePhotoDescription": "Your heroic peak conquest cannot go without a photo.",
   "medalsPageHeader": "Every medal is\na proof of your\nmastery!",
-  "medalLabel": "{count, select, 1{Conquer your first peak} 28{Conquer all the peaks of the Polish Crown} other{Conquer a total of: {count} peaks}}",
+  "medalLabel": "{count, select, 1{Conquer your first peak} 28{Conquer all the peaks} other{Conquer a total of: {count} peaks}}",
   "@medalLabel": {
     "placeholders": {
       "count": {
