@@ -24,6 +24,8 @@ extension AppRouterNavigation on AppRouter {
 
   void showFaq() => instance.pushNamed(AppRoutes.faq);
 
+  void showAttributions() => instance.pushNamed(AppRoutes.attributions);
+
   void showTransparentDialog({required BuildContext context, required Widget child}) =>
       Navigator.of(context, rootNavigator: true).push(
         TransparentFadeRoute(

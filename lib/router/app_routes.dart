@@ -8,4 +8,5 @@ class AppRoutes {
   static String appLanguageSettings = 'appLanguageSettings';
   static String manageAccount = 'manageAccount';
   static String faq = 'faq';
+  static String attributions = 'attributions';
 }

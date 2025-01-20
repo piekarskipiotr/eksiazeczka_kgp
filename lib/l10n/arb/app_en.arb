@@ -143,5 +143,6 @@
   "memorablePhotoDialogDescription": "Reaching the peak was surely not easy, but you did it! Relive the memories of that day, and maybe one day return to conquer this peak again.",
   "haveYouConqueredPeaksAlready": "Have you already conquered any peaks without using the app?",
   "haveYouConqueredPeaksAlreadyDescription": "You can mark peaks you've already conquered only now. Each marking requires a photo from the location, which must contain geolocation data. This ensures fairness and authenticity of the markings.",
-  "goToApp": "Go to the app."
+  "goToApp": "Go to the app.",
+  "attributions": "Attributions"
 }

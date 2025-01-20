@@ -27,6 +27,10 @@ class MoreView extends StatelessWidget {
     context.read<MoreBloc>().add(OpenLink(store));
   }
 
+  void _onAttributionsPressed(BuildContext context) {
+    context.read<AppRouter>().showAttributions();
+  }
+
   void _onFaqPressed(BuildContext context) {
     context.read<AppRouter>().showFaq();
   }
@@ -92,6 +96,13 @@ class MoreView extends StatelessWidget {
                       icon: IconImages.arrowOutward,
                       onPressed: () {
                         _onReviewAppPressed(context);
+                      },
+                    ),
+                    MoreSectionItemTextIcon(
+                      label: l10n.attributions,
+                      icon: IconImages.arrowForward,
+                      onPressed: () {
+                        _onAttributionsPressed(context);
                       },
                     ),
                   ],

@@ -1,5 +1,6 @@
 import 'package:eksiazeczka_kgp/data/models/models.dart';
 import 'package:eksiazeczka_kgp/presentation/appLanguageSettings/view/app_language_settings_page.dart';
+import 'package:eksiazeczka_kgp/presentation/credits/view/attributions_page.dart';
 import 'package:eksiazeczka_kgp/presentation/darkModeSettings/view/dark_mode_settings_page.dart';
 import 'package:eksiazeczka_kgp/presentation/faq/view/faq_page.dart';
 import 'package:eksiazeczka_kgp/presentation/medals/view/medals_page.dart';
@@ -112,6 +113,13 @@ class AppRouter {
         path: '/${AppRoutes.faq}',
         builder: (context, state) {
           return const FaqPage();
+        },
+      ),
+      GoRoute(
+        name: AppRoutes.attributions,
+        path: '/${AppRoutes.attributions}',
+        builder: (context, state) {
+          return const AttributionsPage();
         },
       ),
       GoRoute(
