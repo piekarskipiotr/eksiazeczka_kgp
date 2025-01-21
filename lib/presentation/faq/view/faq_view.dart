@@ -18,7 +18,7 @@ class FaqView extends StatelessWidget {
           children: [
             MoreSection(
               label: l10n.general,
-              children:  [
+              children: [
                 MoreSectionItemExpandableText(
                   label: l10n.generalQuestion1,
                   text: l10n.generalQuestion1Answer,
@@ -27,11 +27,15 @@ class FaqView extends StatelessWidget {
                   label: l10n.generalQuestion2,
                   text: l10n.generalQuestion2Answer,
                 ),
+                MoreSectionItemExpandableText(
+                  label: l10n.generalQuestion3,
+                  text: l10n.generalQuestion3Answer,
+                ),
               ],
             ),
             MoreSection(
               label: l10n.howAppWorks,
-              children:  [
+              children: [
                 MoreSectionItemExpandableText(
                   label: l10n.appFunctionalityQuestion1,
                   text: l10n.appFunctionalityQuestion1Answer,
@@ -40,14 +44,13 @@ class FaqView extends StatelessWidget {
                   label: l10n.appFunctionalityQuestion2,
                   text: l10n.appFunctionalityQuestion2Answer,
                 ),
-              ],
-            ),
-            MoreSection(
-              label: l10n.yourAccount,
-              children: [
                 MoreSectionItemExpandableText(
-                  label: l10n.accountQuestion1,
-                  text: l10n.accountQuestion1Answer,
+                  label: l10n.appFunctionalityQuestion3,
+                  text: l10n.appFunctionalityQuestion3Answer,
+                ),
+                MoreSectionItemExpandableText(
+                  label: l10n.appFunctionalityQuestion4,
+                  text: l10n.appFunctionalityQuestion4Answer,
                 ),
               ],
             ),
