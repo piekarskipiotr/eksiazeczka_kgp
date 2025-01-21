@@ -29,6 +29,6 @@ enum Medals {
       };
 
   static List<Medals> getByStep(int step) {
-    return Medals.values.where((e) => step > 0 && e.value <= step).toList();
+    return Medals.values.where((e) => e.value <= step).toList();
   }
 }

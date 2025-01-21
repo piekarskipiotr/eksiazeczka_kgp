@@ -41,6 +41,6 @@ class MedalsBloc extends Bloc<MedalsEvent, MedalsState> {
     final peaks = event.peaks;
     final conqueredPeaksCount = peaks.where((e) => e.userMetadata != null).length;
     final medals = Medals.getByStep(conqueredPeaksCount);
-    emit(state.copyWith(medals: [Medals.first, ...medals]));
+    emit(state.copyWith(medals: medals));
   }
 }
