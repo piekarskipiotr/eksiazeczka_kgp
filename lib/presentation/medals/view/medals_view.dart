@@ -1,5 +1,5 @@
-import 'package:eksiazeczka_kgp/presentation/medals/bloc/medals_bloc.dart';
-import 'package:eksiazeczka_kgp/presentation/medals/widgets/widgets.dart';
+import 'package:eksiazeczka_kp/presentation/medals/bloc/medals_bloc.dart';
+import 'package:eksiazeczka_kp/presentation/medals/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

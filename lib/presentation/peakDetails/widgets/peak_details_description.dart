@@ -1,7 +1,7 @@
-import 'package:eksiazeczka_kgp/data/models/models.dart';
-import 'package:eksiazeczka_kgp/l10n/l10n.dart';
-import 'package:eksiazeczka_kgp/presentation/appLanguageSettings/bloc/app_language_settings_bloc.dart';
-import 'package:eksiazeczka_kgp/presentation/peakDetails/widgets/peak_details_information_section.dart';
+import 'package:eksiazeczka_kp/data/models/models.dart';
+import 'package:eksiazeczka_kp/l10n/l10n.dart';
+import 'package:eksiazeczka_kp/presentation/appLanguageSettings/bloc/app_language_settings_bloc.dart';
+import 'package:eksiazeczka_kp/presentation/peakDetails/widgets/peak_details_information_section.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

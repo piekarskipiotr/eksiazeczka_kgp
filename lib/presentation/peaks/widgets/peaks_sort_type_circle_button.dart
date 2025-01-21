@@ -1,8 +1,8 @@
-import 'package:eksiazeczka_kgp/data/enums/enums.dart';
-import 'package:eksiazeczka_kgp/data/models/models.dart';
-import 'package:eksiazeczka_kgp/designSystem/design_system.dart';
-import 'package:eksiazeczka_kgp/l10n/l10n.dart';
-import 'package:eksiazeczka_kgp/resources/resources.dart';
+import 'package:eksiazeczka_kp/data/enums/enums.dart';
+import 'package:eksiazeczka_kp/data/models/models.dart';
+import 'package:eksiazeczka_kp/designSystem/design_system.dart';
+import 'package:eksiazeczka_kp/l10n/l10n.dart';
+import 'package:eksiazeczka_kp/resources/resources.dart';
 import 'package:flutter/material.dart';
 
 class PeaksSortTypeCircleButton extends StatelessWidget {

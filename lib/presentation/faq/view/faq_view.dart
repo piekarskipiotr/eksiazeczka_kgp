@@ -1,6 +1,6 @@
-import 'package:eksiazeczka_kgp/designSystem/design_system.dart';
-import 'package:eksiazeczka_kgp/l10n/l10n.dart';
-import 'package:eksiazeczka_kgp/presentation/more/widgets/widgets.dart';
+import 'package:eksiazeczka_kp/designSystem/design_system.dart';
+import 'package:eksiazeczka_kp/l10n/l10n.dart';
+import 'package:eksiazeczka_kp/presentation/more/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 
 class FaqView extends StatelessWidget {

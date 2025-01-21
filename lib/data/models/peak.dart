@@ -1,11 +1,11 @@
 import 'dart:convert';
 
-import 'package:eksiazeczka_kgp/data/constants.dart';
-import 'package:eksiazeczka_kgp/data/enums/enums.dart';
-import 'package:eksiazeczka_kgp/data/models/coordinates.dart';
-import 'package:eksiazeczka_kgp/data/models/description.dart';
-import 'package:eksiazeczka_kgp/data/models/peak_user_metadata.dart';
-import 'package:eksiazeczka_kgp/utils/utils.dart';
+import 'package:eksiazeczka_kp/data/constants.dart';
+import 'package:eksiazeczka_kp/data/enums/enums.dart';
+import 'package:eksiazeczka_kp/data/models/coordinates.dart';
+import 'package:eksiazeczka_kp/data/models/description.dart';
+import 'package:eksiazeczka_kp/data/models/peak_user_metadata.dart';
+import 'package:eksiazeczka_kp/utils/utils.dart';
 import 'package:uuid/uuid.dart';
 
 part 'peak_sqflite.dart';

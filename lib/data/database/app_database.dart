@@ -1,11 +1,11 @@
-import 'package:eksiazeczka_kgp/data/database/app_database_tables_scripts.dart';
+import 'package:eksiazeczka_kp/data/database/app_database_tables_scripts.dart';
 import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
 
 class AppDatabase {
   AppDatabase();
 
-  static const _databaseName = 'ekgp_database.db';
+  static const _databaseName = 'ekp_database.db';
   static const _databaseVersion = 1;
 
   static Database? _database;

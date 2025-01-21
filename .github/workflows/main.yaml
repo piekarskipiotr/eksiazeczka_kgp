@@ -1,4 +1,4 @@
-name: eksiazeczka_kgp
+name: eksiazeczka_kp
 
 concurrency:
   group: $-$

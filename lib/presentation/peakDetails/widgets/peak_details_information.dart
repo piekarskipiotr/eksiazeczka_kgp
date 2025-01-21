@@ -1,7 +1,7 @@
-import 'package:eksiazeczka_kgp/data/models/models.dart';
-import 'package:eksiazeczka_kgp/presentation/peakDetails/widgets/peakDetailsBaseInformation/peak_details_base_information.dart';
-import 'package:eksiazeczka_kgp/presentation/peakDetails/widgets/peakDetailsMemorablePhoto/peak_details_memorable_photo.dart';
-import 'package:eksiazeczka_kgp/presentation/peakDetails/widgets/peak_details_description.dart';
+import 'package:eksiazeczka_kp/data/models/models.dart';
+import 'package:eksiazeczka_kp/presentation/peakDetails/widgets/peakDetailsBaseInformation/peak_details_base_information.dart';
+import 'package:eksiazeczka_kp/presentation/peakDetails/widgets/peakDetailsMemorablePhoto/peak_details_memorable_photo.dart';
+import 'package:eksiazeczka_kp/presentation/peakDetails/widgets/peak_details_description.dart';
 import 'package:flutter/material.dart';
 
 class PeakDetailsInformation extends StatelessWidget {

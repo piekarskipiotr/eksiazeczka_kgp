@@ -1,6 +1,6 @@
 import 'dart:math';
 
-import 'package:eksiazeczka_kgp/data/models/models.dart';
+import 'package:eksiazeczka_kp/data/models/models.dart';
 import 'package:exif/exif.dart';
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';

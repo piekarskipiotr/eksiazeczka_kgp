@@ -1,4 +1,4 @@
-import 'package:eksiazeczka_kgp/data/models/models.dart';
+import 'package:eksiazeczka_kp/data/models/models.dart';
 import 'package:sqflite/sqflite.dart';
 
 class LocalUserMetadataRepository {

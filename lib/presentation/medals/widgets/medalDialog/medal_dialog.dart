@@ -1,9 +1,9 @@
-import 'package:eksiazeczka_kgp/designSystem/design_system.dart';
-import 'package:eksiazeczka_kgp/presentation/medals/widgets/medalDialog/medal_base_dialog.dart';
-import 'package:eksiazeczka_kgp/presentation/medals/widgets/medalDialog/medal_base_dialog_exit_button.dart';
-import 'package:eksiazeczka_kgp/presentation/medals/widgets/medalDialog/medal_dialog_action_buttons.dart';
-import 'package:eksiazeczka_kgp/presentation/medals/widgets/medalDialog/medal_dialog_content.dart';
-import 'package:eksiazeczka_kgp/router/router.dart';
+import 'package:eksiazeczka_kp/designSystem/design_system.dart';
+import 'package:eksiazeczka_kp/presentation/medals/widgets/medalDialog/medal_base_dialog.dart';
+import 'package:eksiazeczka_kp/presentation/medals/widgets/medalDialog/medal_base_dialog_exit_button.dart';
+import 'package:eksiazeczka_kp/presentation/medals/widgets/medalDialog/medal_dialog_action_buttons.dart';
+import 'package:eksiazeczka_kp/presentation/medals/widgets/medalDialog/medal_dialog_content.dart';
+import 'package:eksiazeczka_kp/router/router.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

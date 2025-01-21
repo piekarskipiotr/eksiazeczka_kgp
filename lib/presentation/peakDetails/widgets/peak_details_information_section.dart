@@ -1,4 +1,4 @@
-import 'package:eksiazeczka_kgp/designSystem/textStyles/text_styles.dart';
+import 'package:eksiazeczka_kp/designSystem/textStyles/text_styles.dart';
 import 'package:flutter/material.dart';
 
 class PeakDetailsInformationSection extends StatelessWidget {

@@ -1,8 +1,8 @@
-import 'package:eksiazeczka_kgp/data/enums/enums.dart';
-import 'package:eksiazeczka_kgp/data/models/models.dart';
-import 'package:eksiazeczka_kgp/presentation/peaks/bloc/peaks_bloc.dart';
-import 'package:eksiazeczka_kgp/presentation/peaks/widgets/widgets.dart';
-import 'package:eksiazeczka_kgp/router/router.dart';
+import 'package:eksiazeczka_kp/data/enums/enums.dart';
+import 'package:eksiazeczka_kp/data/models/models.dart';
+import 'package:eksiazeczka_kp/presentation/peaks/bloc/peaks_bloc.dart';
+import 'package:eksiazeczka_kp/presentation/peaks/widgets/widgets.dart';
+import 'package:eksiazeczka_kp/router/router.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

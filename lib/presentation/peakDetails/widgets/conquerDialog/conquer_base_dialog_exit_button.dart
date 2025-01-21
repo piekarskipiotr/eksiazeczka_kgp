@@ -1,5 +1,5 @@
-import 'package:eksiazeczka_kgp/designSystem/design_system.dart';
-import 'package:eksiazeczka_kgp/resources/resources.dart';
+import 'package:eksiazeczka_kp/designSystem/design_system.dart';
+import 'package:eksiazeczka_kp/resources/resources.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 

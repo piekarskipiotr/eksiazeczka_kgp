@@ -1,7 +1,7 @@
-import 'package:eksiazeczka_kgp/data/enums/enums.dart';
-import 'package:eksiazeczka_kgp/designSystem/design_system.dart';
-import 'package:eksiazeczka_kgp/presentation/peaksOnboarding/widgets/peakChip/bloc/peak_chip_bloc.dart';
-import 'package:eksiazeczka_kgp/presentation/peaksOnboarding/widgets/peakChip/constants/peak_chip_state_status.dart';
+import 'package:eksiazeczka_kp/data/enums/enums.dart';
+import 'package:eksiazeczka_kp/designSystem/design_system.dart';
+import 'package:eksiazeczka_kp/presentation/peaksOnboarding/widgets/peakChip/bloc/peak_chip_bloc.dart';
+import 'package:eksiazeczka_kp/presentation/peaksOnboarding/widgets/peakChip/constants/peak_chip_state_status.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

@@ -1,6 +1,6 @@
 import 'dart:ui';
 
-import 'package:eksiazeczka_kgp/designSystem/design_system.dart';
+import 'package:eksiazeczka_kp/designSystem/design_system.dart';
 import 'package:flutter/material.dart';
 
 class BlurContainer extends StatelessWidget {

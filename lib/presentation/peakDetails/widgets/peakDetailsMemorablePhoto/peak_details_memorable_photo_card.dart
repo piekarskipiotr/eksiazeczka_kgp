@@ -1,7 +1,7 @@
 import 'dart:math';
 
-import 'package:eksiazeczka_kgp/designSystem/design_system.dart';
-import 'package:eksiazeczka_kgp/presentation/peakDetails/widgets/peakDetailsMemorablePhotoDialog/peak_details_memorable_photo_dialog.dart';
+import 'package:eksiazeczka_kp/designSystem/design_system.dart';
+import 'package:eksiazeczka_kp/presentation/peakDetails/widgets/peakDetailsMemorablePhotoDialog/peak_details_memorable_photo_dialog.dart';
 import 'package:flutter/material.dart';
 
 class PeakDetailsMemorablePhotoCard extends StatelessWidget {

@@ -1,6 +1,6 @@
-import 'package:eksiazeczka_kgp/data/models/models.dart';
-import 'package:eksiazeczka_kgp/presentation/peaksOnboarding/widgets/peakChip/bloc/peak_chip_bloc.dart';
-import 'package:eksiazeczka_kgp/presentation/peaksOnboarding/widgets/peakChip/view/peak_chip_view.dart';
+import 'package:eksiazeczka_kp/data/models/models.dart';
+import 'package:eksiazeczka_kp/presentation/peaksOnboarding/widgets/peakChip/bloc/peak_chip_bloc.dart';
+import 'package:eksiazeczka_kp/presentation/peaksOnboarding/widgets/peakChip/view/peak_chip_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

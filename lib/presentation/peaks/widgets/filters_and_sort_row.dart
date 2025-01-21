@@ -1,7 +1,7 @@
-import 'package:eksiazeczka_kgp/data/enums/enums.dart';
-import 'package:eksiazeczka_kgp/presentation/peaks/widgets/peaks_filter_list.dart';
-import 'package:eksiazeczka_kgp/presentation/peaks/widgets/peaks_sort_type_circle_button.dart';
-import 'package:eksiazeczka_kgp/presentation/peaks/widgets/pinned_sliver.dart';
+import 'package:eksiazeczka_kp/data/enums/enums.dart';
+import 'package:eksiazeczka_kp/presentation/peaks/widgets/peaks_filter_list.dart';
+import 'package:eksiazeczka_kp/presentation/peaks/widgets/peaks_sort_type_circle_button.dart';
+import 'package:eksiazeczka_kp/presentation/peaks/widgets/pinned_sliver.dart';
 import 'package:flutter/material.dart';
 
 class FiltersAndSortRow extends StatelessWidget {

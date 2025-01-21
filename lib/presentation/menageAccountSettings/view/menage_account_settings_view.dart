@@ -1,10 +1,10 @@
-import 'package:eksiazeczka_kgp/designSystem/design_system.dart';
-import 'package:eksiazeczka_kgp/l10n/l10n.dart';
-import 'package:eksiazeczka_kgp/presentation/menageAccountSettings/bloc/menage_account_settings_bloc.dart';
-import 'package:eksiazeczka_kgp/presentation/menageAccountSettings/widgets/widgets.dart';
-import 'package:eksiazeczka_kgp/presentation/more/widgets/widgets.dart';
-import 'package:eksiazeczka_kgp/resources/resources.dart';
-import 'package:eksiazeczka_kgp/utils/utils.dart';
+import 'package:eksiazeczka_kp/designSystem/design_system.dart';
+import 'package:eksiazeczka_kp/l10n/l10n.dart';
+import 'package:eksiazeczka_kp/presentation/menageAccountSettings/bloc/menage_account_settings_bloc.dart';
+import 'package:eksiazeczka_kp/presentation/menageAccountSettings/widgets/widgets.dart';
+import 'package:eksiazeczka_kp/presentation/more/widgets/widgets.dart';
+import 'package:eksiazeczka_kp/resources/resources.dart';
+import 'package:eksiazeczka_kp/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';

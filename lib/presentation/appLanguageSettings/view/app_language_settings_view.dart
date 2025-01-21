@@ -1,7 +1,7 @@
-import 'package:eksiazeczka_kgp/designSystem/design_system.dart';
-import 'package:eksiazeczka_kgp/l10n/l10n.dart';
-import 'package:eksiazeczka_kgp/presentation/appLanguageSettings/bloc/app_language_settings_bloc.dart';
-import 'package:eksiazeczka_kgp/presentation/more/widgets/widgets.dart';
+import 'package:eksiazeczka_kp/designSystem/design_system.dart';
+import 'package:eksiazeczka_kp/l10n/l10n.dart';
+import 'package:eksiazeczka_kp/presentation/appLanguageSettings/bloc/app_language_settings_bloc.dart';
+import 'package:eksiazeczka_kp/presentation/more/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

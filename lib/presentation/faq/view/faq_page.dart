@@ -1,4 +1,4 @@
-import 'package:eksiazeczka_kgp/presentation/faq/view/faq_view.dart';
+import 'package:eksiazeczka_kp/presentation/faq/view/faq_view.dart';
 import 'package:flutter/material.dart';
 
 class FaqPage extends StatelessWidget {

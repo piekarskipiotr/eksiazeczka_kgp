@@ -1,6 +1,6 @@
-import 'package:eksiazeczka_kgp/presentation/peaksOnboarding/bloc/peaks_onboarding_bloc.dart';
-import 'package:eksiazeczka_kgp/presentation/peaksOnboarding/widgets/widgets.dart';
-import 'package:eksiazeczka_kgp/router/router.dart';
+import 'package:eksiazeczka_kp/presentation/peaksOnboarding/bloc/peaks_onboarding_bloc.dart';
+import 'package:eksiazeczka_kp/presentation/peaksOnboarding/widgets/widgets.dart';
+import 'package:eksiazeczka_kp/router/router.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

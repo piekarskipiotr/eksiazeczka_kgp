@@ -2,8 +2,8 @@ import 'dart:async';
 import 'dart:developer';
 
 import 'package:bloc/bloc.dart';
-import 'package:eksiazeczka_kgp/data/constants.dart';
-import 'package:eksiazeczka_kgp/designSystem/design_system.dart';
+import 'package:eksiazeczka_kp/data/constants.dart';
+import 'package:eksiazeczka_kp/designSystem/design_system.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:sentry_flutter/sentry_flutter.dart';

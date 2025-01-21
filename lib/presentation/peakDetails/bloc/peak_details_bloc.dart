@@ -1,10 +1,10 @@
 import 'dart:developer';
 
 import 'package:bloc/bloc.dart';
-import 'package:eksiazeczka_kgp/data/models/models.dart';
-import 'package:eksiazeczka_kgp/data/repositories/repositories.dart';
-import 'package:eksiazeczka_kgp/presentation/peakDetails/constants/peak_details_state_status.dart';
-import 'package:eksiazeczka_kgp/utils/utils.dart';
+import 'package:eksiazeczka_kp/data/models/models.dart';
+import 'package:eksiazeczka_kp/data/repositories/repositories.dart';
+import 'package:eksiazeczka_kp/presentation/peakDetails/constants/peak_details_state_status.dart';
+import 'package:eksiazeczka_kp/utils/utils.dart';
 import 'package:equatable/equatable.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:permission_handler/permission_handler.dart';

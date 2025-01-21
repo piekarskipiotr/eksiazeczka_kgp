@@ -1,8 +1,8 @@
-import 'package:eksiazeczka_kgp/data/enums/enums.dart';
-import 'package:eksiazeczka_kgp/designSystem/design_system.dart';
-import 'package:eksiazeczka_kgp/presentation/medals/widgets/medalCard/medal_card_information.dart';
-import 'package:eksiazeczka_kgp/presentation/medals/widgets/medalCard/medal_card_medal.dart';
-import 'package:eksiazeczka_kgp/presentation/medals/widgets/medalDialog/medal_dialog.dart';
+import 'package:eksiazeczka_kp/data/enums/enums.dart';
+import 'package:eksiazeczka_kp/designSystem/design_system.dart';
+import 'package:eksiazeczka_kp/presentation/medals/widgets/medalCard/medal_card_information.dart';
+import 'package:eksiazeczka_kp/presentation/medals/widgets/medalCard/medal_card_medal.dart';
+import 'package:eksiazeczka_kp/presentation/medals/widgets/medalDialog/medal_dialog.dart';
 import 'package:flutter/material.dart';
 
 class MedalCard extends StatelessWidget {

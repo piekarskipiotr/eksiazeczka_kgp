@@ -1,7 +1,7 @@
 import 'dart:typed_data';
 
-import 'package:eksiazeczka_kgp/data/enums/enums.dart';
-import 'package:eksiazeczka_kgp/data/repositories/local/local_storage_repository.dart';
+import 'package:eksiazeczka_kp/data/enums/enums.dart';
+import 'package:eksiazeczka_kp/data/repositories/local/local_storage_repository.dart';
 
 class StorageRepository {
   StorageRepository(this._localStorageRepository);

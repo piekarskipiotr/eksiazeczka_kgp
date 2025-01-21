@@ -1,6 +1,6 @@
-import 'package:eksiazeczka_kgp/data/models/models.dart';
-import 'package:eksiazeczka_kgp/presentation/peakDetails/bloc/peak_details_bloc.dart';
-import 'package:eksiazeczka_kgp/presentation/peakDetails/view/peak_details_view.dart';
+import 'package:eksiazeczka_kp/data/models/models.dart';
+import 'package:eksiazeczka_kp/presentation/peakDetails/bloc/peak_details_bloc.dart';
+import 'package:eksiazeczka_kp/presentation/peakDetails/view/peak_details_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';

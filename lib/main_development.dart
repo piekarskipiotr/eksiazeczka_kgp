@@ -1,9 +1,9 @@
-import 'package:eksiazeczka_kgp/app.dart';
-import 'package:eksiazeczka_kgp/bootstrap.dart';
-import 'package:eksiazeczka_kgp/data/database/database.dart';
-import 'package:eksiazeczka_kgp/data/repositories/repositories.dart';
-import 'package:eksiazeczka_kgp/router/router.dart';
-import 'package:eksiazeczka_kgp/services/services.dart';
+import 'package:eksiazeczka_kp/app.dart';
+import 'package:eksiazeczka_kp/bootstrap.dart';
+import 'package:eksiazeczka_kp/data/database/database.dart';
+import 'package:eksiazeczka_kp/data/repositories/repositories.dart';
+import 'package:eksiazeczka_kp/router/router.dart';
+import 'package:eksiazeczka_kp/services/services.dart';
 
 void main() {
   bootstrap(() async {

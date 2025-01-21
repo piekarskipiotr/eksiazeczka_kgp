@@ -1,5 +1,5 @@
-import 'package:eksiazeczka_kgp/data/models/peak.dart';
-import 'package:eksiazeczka_kgp/presentation/peaksOnboarding/widgets/peakChip/view/peak_chip.dart';
+import 'package:eksiazeczka_kp/data/models/peak.dart';
+import 'package:eksiazeczka_kp/presentation/peaksOnboarding/widgets/peakChip/view/peak_chip.dart';
 import 'package:flutter/material.dart';
 
 class PeaksOnboardingList extends StatelessWidget {

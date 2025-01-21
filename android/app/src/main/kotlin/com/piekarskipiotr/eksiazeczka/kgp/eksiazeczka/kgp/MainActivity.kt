@@ -1,4 +1,4 @@
-package com.piekarskipiotr.eksiazeczka.kgp.eksiazeczka_kgp
+package com.piekarskipiotr.eksiazeczka.kp
 
 import io.flutter.embedding.android.FlutterActivity
 

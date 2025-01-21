@@ -1,8 +1,8 @@
-import 'package:eksiazeczka_kgp/data/enums/enums.dart';
-import 'package:eksiazeczka_kgp/l10n/l10n.dart';
-import 'package:eksiazeczka_kgp/presentation/peakDetails/widgets/peakDetailsBaseInformation/peak_details_base_information_chip.dart';
-import 'package:eksiazeczka_kgp/presentation/peakDetails/widgets/peak_details_information_section.dart';
-import 'package:eksiazeczka_kgp/resources/resources.dart';
+import 'package:eksiazeczka_kp/data/enums/enums.dart';
+import 'package:eksiazeczka_kp/l10n/l10n.dart';
+import 'package:eksiazeczka_kp/presentation/peakDetails/widgets/peakDetailsBaseInformation/peak_details_base_information_chip.dart';
+import 'package:eksiazeczka_kp/presentation/peakDetails/widgets/peak_details_information_section.dart';
+import 'package:eksiazeczka_kp/resources/resources.dart';
 import 'package:flutter/material.dart';
 
 class PeakDetailsBaseInformation extends StatelessWidget {

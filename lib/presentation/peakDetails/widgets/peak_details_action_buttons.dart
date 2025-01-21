@@ -1,6 +1,6 @@
-import 'package:eksiazeczka_kgp/designSystem/design_system.dart';
-import 'package:eksiazeczka_kgp/l10n/l10n.dart';
-import 'package:eksiazeczka_kgp/presentation/peakDetails/constants/peak_details_state_status.dart';
+import 'package:eksiazeczka_kp/designSystem/design_system.dart';
+import 'package:eksiazeczka_kp/l10n/l10n.dart';
+import 'package:eksiazeczka_kp/presentation/peakDetails/constants/peak_details_state_status.dart';
 import 'package:flutter/material.dart';
 
 class PeakDetailsActionButtons extends StatelessWidget {

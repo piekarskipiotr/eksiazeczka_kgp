@@ -1,7 +1,7 @@
-import 'package:eksiazeczka_kgp/data/models/models.dart';
-import 'package:eksiazeczka_kgp/designSystem/design_system.dart';
-import 'package:eksiazeczka_kgp/designSystem/dropdownMenu/app_dropdown_menu_entry.dart';
-import 'package:eksiazeczka_kgp/designSystem/dropdownMenu/app_dropdown_menu_entry_divider.dart';
+import 'package:eksiazeczka_kp/data/models/models.dart';
+import 'package:eksiazeczka_kp/designSystem/design_system.dart';
+import 'package:eksiazeczka_kp/designSystem/dropdownMenu/app_dropdown_menu_entry.dart';
+import 'package:eksiazeczka_kp/designSystem/dropdownMenu/app_dropdown_menu_entry_divider.dart';
 import 'package:flutter/material.dart';
 
 class AppDropdownMenu extends StatelessWidget {

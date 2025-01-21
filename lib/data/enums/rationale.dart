@@ -1,4 +1,4 @@
-import 'package:eksiazeczka_kgp/l10n/l10n.dart';
+import 'package:eksiazeczka_kp/l10n/l10n.dart';
 
 enum Rationale {
   location,

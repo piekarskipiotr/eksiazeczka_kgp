@@ -1,6 +1,6 @@
-import 'package:eksiazeczka_kgp/l10n/l10n.dart';
-import 'package:eksiazeczka_kgp/presentation/peakDetails/widgets/peakDetailsMemorablePhoto/peak_details_memorable_photo_card.dart';
-import 'package:eksiazeczka_kgp/presentation/peakDetails/widgets/peak_details_information_section.dart';
+import 'package:eksiazeczka_kp/l10n/l10n.dart';
+import 'package:eksiazeczka_kp/presentation/peakDetails/widgets/peakDetailsMemorablePhoto/peak_details_memorable_photo_card.dart';
+import 'package:eksiazeczka_kp/presentation/peakDetails/widgets/peak_details_information_section.dart';
 import 'package:flutter/material.dart';
 
 class PeakDetailsMemorablePhoto extends StatelessWidget {

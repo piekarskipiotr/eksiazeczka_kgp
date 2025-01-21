@@ -2,10 +2,10 @@ import 'dart:async';
 import 'dart:developer';
 
 import 'package:bloc/bloc.dart';
-import 'package:eksiazeczka_kgp/data/enums/enums.dart';
-import 'package:eksiazeczka_kgp/data/models/models.dart';
-import 'package:eksiazeczka_kgp/data/repositories/repositories.dart';
-import 'package:eksiazeczka_kgp/services/services.dart';
+import 'package:eksiazeczka_kp/data/enums/enums.dart';
+import 'package:eksiazeczka_kp/data/models/models.dart';
+import 'package:eksiazeczka_kp/data/repositories/repositories.dart';
+import 'package:eksiazeczka_kp/services/services.dart';
 import 'package:equatable/equatable.dart';
 
 part 'medals_event.dart';

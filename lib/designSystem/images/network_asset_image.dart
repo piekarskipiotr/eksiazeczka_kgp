@@ -1,5 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:eksiazeczka_kgp/designSystem/design_system.dart';
+import 'package:eksiazeczka_kp/designSystem/design_system.dart';
 import 'package:flutter/material.dart';
 
 class NetworkAssetImage extends StatelessWidget {

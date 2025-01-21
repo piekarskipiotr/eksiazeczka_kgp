@@ -1,5 +1,5 @@
 import 'package:bloc/bloc.dart';
-import 'package:eksiazeczka_kgp/presentation/menageAccountSettings/constants/menage_account_settings_state_status.dart';
+import 'package:eksiazeczka_kp/presentation/menageAccountSettings/constants/menage_account_settings_state_status.dart';
 import 'package:equatable/equatable.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 

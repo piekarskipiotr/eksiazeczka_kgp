@@ -1,7 +1,7 @@
-import 'package:eksiazeczka_kgp/data/models/models.dart';
-import 'package:eksiazeczka_kgp/designSystem/cards/peakCard/peak_card_information.dart';
-import 'package:eksiazeczka_kgp/designSystem/cards/peakCard/peak_conquered_information.dart';
-import 'package:eksiazeczka_kgp/designSystem/design_system.dart';
+import 'package:eksiazeczka_kp/data/models/models.dart';
+import 'package:eksiazeczka_kp/designSystem/cards/peakCard/peak_card_information.dart';
+import 'package:eksiazeczka_kp/designSystem/cards/peakCard/peak_conquered_information.dart';
+import 'package:eksiazeczka_kp/designSystem/design_system.dart';
 import 'package:flutter/material.dart';
 
 class PeakCard extends StatelessWidget {

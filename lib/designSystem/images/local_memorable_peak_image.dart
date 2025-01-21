@@ -1,8 +1,8 @@
 import 'dart:io';
 
-import 'package:eksiazeczka_kgp/data/repositories/repositories.dart';
-import 'package:eksiazeczka_kgp/designSystem/design_system.dart';
-import 'package:eksiazeczka_kgp/designSystem/shimmers/shimmers.dart';
+import 'package:eksiazeczka_kp/data/repositories/repositories.dart';
+import 'package:eksiazeczka_kp/designSystem/design_system.dart';
+import 'package:eksiazeczka_kp/designSystem/shimmers/shimmers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

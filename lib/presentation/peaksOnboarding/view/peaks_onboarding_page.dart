@@ -1,5 +1,5 @@
-import 'package:eksiazeczka_kgp/presentation/peaksOnboarding/bloc/peaks_onboarding_bloc.dart';
-import 'package:eksiazeczka_kgp/presentation/peaksOnboarding/view/peaks_onboarding_view.dart';
+import 'package:eksiazeczka_kp/presentation/peaksOnboarding/bloc/peaks_onboarding_bloc.dart';
+import 'package:eksiazeczka_kp/presentation/peaksOnboarding/view/peaks_onboarding_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

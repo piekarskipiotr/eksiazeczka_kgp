@@ -1,4 +1,4 @@
-import 'package:eksiazeczka_kgp/resources/resources.dart';
+import 'package:eksiazeczka_kp/resources/resources.dart';
 
 enum Providers {
   google,

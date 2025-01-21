@@ -29,7 +29,7 @@ if (keystorePropertiesFile.exists()) {
 }
 
 android {
-    namespace "com.piekarskipiotr.eksiazeczka.kgp.eksiazeczka_kgp"
+    namespace "com.piekarskipiotr.eksiazeczka.kp"
     compileSdkVersion flutter.compileSdkVersion
     ndkVersion flutter.ndkVersion
 
@@ -47,7 +47,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.piekarskipiotr.eksiazeczka.kgp"
+        applicationId "com.piekarskipiotr.eksiazeczka.kp"
         minSdkVersion flutter.minSdkVersion
         targetSdkVersion flutter.targetSdkVersion
         versionCode flutterVersionCode.toInteger()

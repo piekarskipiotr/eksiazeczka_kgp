@@ -1,5 +1,5 @@
-import 'package:eksiazeczka_kgp/presentation/peaks/bloc/peaks_bloc.dart';
-import 'package:eksiazeczka_kgp/presentation/peaks/view/peaks_view.dart';
+import 'package:eksiazeczka_kp/presentation/peaks/bloc/peaks_bloc.dart';
+import 'package:eksiazeczka_kp/presentation/peaks/view/peaks_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

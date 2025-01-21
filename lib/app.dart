@@ -1,13 +1,13 @@
-import 'package:eksiazeczka_kgp/data/repositories/repositories.dart';
-import 'package:eksiazeczka_kgp/designSystem/design_system.dart';
-import 'package:eksiazeczka_kgp/l10n/l10n.dart';
-import 'package:eksiazeczka_kgp/presentation/appLanguageSettings/bloc/app_language_settings_bloc.dart';
-import 'package:eksiazeczka_kgp/presentation/darkModeSettings/bloc/dark_mode_settings_bloc.dart';
-import 'package:eksiazeczka_kgp/presentation/medals/bloc/medals_bloc.dart';
-import 'package:eksiazeczka_kgp/presentation/peaks/bloc/peaks_bloc.dart';
-import 'package:eksiazeczka_kgp/presentation/root/bloc/root_bloc.dart';
-import 'package:eksiazeczka_kgp/router/app_router.dart';
-import 'package:eksiazeczka_kgp/services/services.dart';
+import 'package:eksiazeczka_kp/data/repositories/repositories.dart';
+import 'package:eksiazeczka_kp/designSystem/design_system.dart';
+import 'package:eksiazeczka_kp/l10n/l10n.dart';
+import 'package:eksiazeczka_kp/presentation/appLanguageSettings/bloc/app_language_settings_bloc.dart';
+import 'package:eksiazeczka_kp/presentation/darkModeSettings/bloc/dark_mode_settings_bloc.dart';
+import 'package:eksiazeczka_kp/presentation/medals/bloc/medals_bloc.dart';
+import 'package:eksiazeczka_kp/presentation/peaks/bloc/peaks_bloc.dart';
+import 'package:eksiazeczka_kp/presentation/root/bloc/root_bloc.dart';
+import 'package:eksiazeczka_kp/router/app_router.dart';
+import 'package:eksiazeczka_kp/services/services.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
