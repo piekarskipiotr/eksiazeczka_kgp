@@ -513,7 +513,7 @@
 				DEVELOPMENT_TEAM = 57FZDXJ76S;
 				ENABLE_BITCODE = NO;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
-				FLAVOR_APP_NAME = "Eksiazeczka Kgp";
+				FLAVOR_APP_NAME = "eKsiążeczka - Korona Polski";
 				INFOPLIST_FILE = Runner/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.travel";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -614,7 +614,7 @@
 				DEVELOPMENT_TEAM = 57FZDXJ76S;
 				ENABLE_BITCODE = NO;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
-				FLAVOR_APP_NAME = "Eksiazeczka Kgp";
+				FLAVOR_APP_NAME = "eKsiążeczka - Korona Polski";
 				INFOPLIST_FILE = Runner/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.travel";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -710,7 +710,7 @@
 				DEVELOPMENT_TEAM = 57FZDXJ76S;
 				ENABLE_BITCODE = NO;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
-				FLAVOR_APP_NAME = "Eksiazeczka Kgp";
+				FLAVOR_APP_NAME = "eKsiążeczka - Korona Polski";
 				INFOPLIST_FILE = Runner/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.travel";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -811,7 +811,7 @@
 				DEVELOPMENT_TEAM = 57FZDXJ76S;
 				ENABLE_BITCODE = NO;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
-				FLAVOR_APP_NAME = "[DEV] Eksiazeczka Kgp";
+				FLAVOR_APP_NAME = "[DEV] eKsiążeczka - Korona Polski";
 				INFOPLIST_FILE = Runner/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.travel";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -910,7 +910,7 @@
 				DEVELOPMENT_TEAM = 57FZDXJ76S;
 				ENABLE_BITCODE = NO;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
-				FLAVOR_APP_NAME = "[DEV] Eksiazeczka Kgp";
+				FLAVOR_APP_NAME = "[DEV] eKsiążeczka - Korona Polski";
 				INFOPLIST_FILE = Runner/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.travel";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1008,7 +1008,7 @@
 				DEVELOPMENT_TEAM = 57FZDXJ76S;
 				ENABLE_BITCODE = NO;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
-				FLAVOR_APP_NAME = "[DEV] Eksiazeczka Kgp";
+				FLAVOR_APP_NAME = "[DEV] eKsiążeczka - Korona Polski";
 				INFOPLIST_FILE = Runner/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.travel";
 				LD_RUNPATH_SEARCH_PATHS = (

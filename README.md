@@ -1,4 +1,4 @@
-# Eksiazeczka Kgp
+# eKsiążeczka - Korona Polski
 
 ![coverage][coverage_badge]
 [![style: very good analysis][very_good_analysis_badge]][very_good_analysis_link]
@@ -27,7 +27,7 @@ $ flutter run --flavor development --target lib/main_development.dart
 $ flutter run --flavor production --target lib/main_production.dart
 ```
 
-_\*Eksiazeczka Kgp works on iOS, Android, Web, and Windows._
+_\*eKsiążeczka - Korona Polski works on iOS, Android, Web, and Windows._
 
 ---
 

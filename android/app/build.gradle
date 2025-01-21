@@ -68,12 +68,12 @@ android {
         production {
             dimension "default"
             applicationIdSuffix ""
-            manifestPlaceholders = [appName: "Eksiazeczka Kgp"]
+            manifestPlaceholders = [appName: "eKsiążeczka - Korona Polski"]
         }
         development {
             dimension "default"
             applicationIdSuffix ".dev"
-            manifestPlaceholders = [appName: "[DEV] Eksiazeczka Kgp"]
+            manifestPlaceholders = [appName: "[DEV] eKsiążeczka - Korona Polski"]
         }
     }
 
