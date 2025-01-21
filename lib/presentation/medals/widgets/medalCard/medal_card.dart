@@ -38,12 +38,13 @@ class MedalCard extends StatelessWidget {
             ],
           ),
         ),
-        FixedInkWell(
-          onPressed: () {
-            _onMedalCardPressed(context);
-          },
-          radius: radius,
-        ),
+        if (isEnabled)
+          FixedInkWell(
+            onPressed: () {
+              _onMedalCardPressed(context);
+            },
+            radius: radius,
+          ),
       ],
     );
   }
