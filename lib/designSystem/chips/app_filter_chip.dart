@@ -29,11 +29,8 @@ class AppFilterChip extends StatelessWidget {
     final primaryColor = theme.primaryColor;
     final secondaryColor = theme.colorScheme.secondary;
     final labelStyle = isSelected
-        ? _labelStyle.copyWith(
-            fontWeight: FontWeight.w600,
-            color: secondaryColor,
-          )
-        : _labelStyle;
+        ? _labelStyle.copyWith(fontWeight: FontWeight.w600, color: secondaryColor)
+        : _labelStyle.copyWith(color: primaryColor);
 
     return FilterChip(
       showCheckmark: false,

@@ -23,7 +23,8 @@ class AppChip extends StatelessWidget {
     final theme = Theme.of(context);
     final primaryColor = theme.primaryColor;
     final secondaryColor = theme.colorScheme.secondary;
-    final labelStyle = isFilled ? _labelStyle.copyWith(color: secondaryColor) : _labelStyle;
+    final labelStyle =
+        isFilled ? _labelStyle.copyWith(color: secondaryColor) : _labelStyle.copyWith(color: primaryColor);
     final iconColor = isFilled ? secondaryColor : primaryColor;
     final backgroundColor = isFilled ? primaryColor : null;
 
