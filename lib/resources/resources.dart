@@ -7,3 +7,7 @@ part 'medal_backgrounds.dart';
 part 'peak_images.dart';
 
 part 'providers_icons.dart';
+
+part 'jsons.dart';
+
+part 'medal_models.dart';

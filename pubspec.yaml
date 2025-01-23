@@ -59,6 +59,7 @@ flutter:
     - assets/images/peaks/
     - assets/images/providers/
     - assets/json/
+    - assets/models/medals
 
 spider:
   generate_tests: true
@@ -83,3 +84,9 @@ spider:
     - path: assets/images/providers
       class_name: ProvidersIcons
       types: [ .svg ]
+    - path: assets/json/
+      class_name: Jsons
+      types: [ .json ]
+    - path: assets/models/medals
+      class_name: MedalModels
+      types: [ .glb ]

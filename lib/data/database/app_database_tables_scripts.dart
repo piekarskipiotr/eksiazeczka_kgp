@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:eksiazeczka_kp/resources/resources.dart';
 import 'package:flutter/services.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:uuid/uuid.dart';
@@ -37,7 +38,7 @@ class AppDatabaseTablesScripts {
 
   static Future<void> insertPeaksData(Database db) async {
     final batch = db.batch();
-    final jsonString = await rootBundle.loadString('assets/json/peaks.json');
+    final jsonString = await rootBundle.loadString(Jsons.peaks);
     final jsonData = (jsonDecode(jsonString) as List)
         .map((item) => item as Map<String, dynamic>)
         .toList();
