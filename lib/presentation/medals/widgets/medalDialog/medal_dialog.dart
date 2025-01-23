@@ -1,3 +1,4 @@
+import 'package:eksiazeczka_kp/data/enums/enums.dart';
 import 'package:eksiazeczka_kp/designSystem/design_system.dart';
 import 'package:eksiazeczka_kp/presentation/medals/widgets/medalDialog/medal_base_dialog.dart';
 import 'package:eksiazeczka_kp/presentation/medals/widgets/medalDialog/medal_base_dialog_exit_button.dart';
@@ -8,7 +9,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class _MedalDialog extends StatelessWidget {
-  const _MedalDialog();
+  const _MedalDialog(this.medal);
+
+  final Medals medal;
 
   @override
   Widget build(BuildContext context) {
@@ -24,12 +27,12 @@ class _MedalDialog extends StatelessWidget {
             ],
           ),
         ),
-        child: const Stack(
+        child: Stack(
           alignment: Alignment.center,
           children: [
-            MedalBaseDialogExitButton(),
-            MedalDialogContent(title: '', description: ''),
-            MedalDialogActionButtons(),
+            const MedalBaseDialogExitButton(),
+            MedalDialogContent(medal: medal),
+            const MedalDialogActionButtons(),
           ],
         ),
       ),
@@ -38,10 +41,10 @@ class _MedalDialog extends StatelessWidget {
 }
 
 class MedalDialog {
-  static void show(BuildContext context) {
+  static void show(BuildContext context, {required Medals medal}) {
     context.read<AppRouter>().showTransparentDialog(
           context: context,
-          child: const _MedalDialog(),
+          child: _MedalDialog(medal),
         );
   }
 }

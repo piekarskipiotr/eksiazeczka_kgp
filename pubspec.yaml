@@ -30,6 +30,7 @@ dependencies:
   image_picker: ^1.1.2
   intl: ^0.19.0
   modal_bottom_sheet: ^3.0.0
+  model_viewer_plus: ^1.9.1
   path: ^1.9.0
   path_provider: ^2.1.5
   permission_handler: ^11.3.1
@@ -59,7 +60,7 @@ flutter:
     - assets/images/peaks/
     - assets/images/providers/
     - assets/json/
-    - assets/models/medals
+    - assets/models/medals/
 
 spider:
   generate_tests: true
@@ -84,7 +85,7 @@ spider:
     - path: assets/images/providers
       class_name: ProvidersIcons
       types: [ .svg ]
-    - path: assets/json/
+    - path: assets/json
       class_name: Jsons
       types: [ .json ]
     - path: assets/models/medals

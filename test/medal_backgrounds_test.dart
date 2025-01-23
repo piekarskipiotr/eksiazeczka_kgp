@@ -1,7 +1,7 @@
 import 'dart:io';
 
-import 'package:eksiazeczka_kp/resources/resources.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:eksiazeczka_kp/resources/resources.dart';
 
 void main() {
   test('medal_backgrounds assets test', () {

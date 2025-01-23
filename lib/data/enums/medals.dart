@@ -20,6 +20,22 @@ enum Medals {
         Medals.all => l10n.medalLabel('28'),
       };
 
+  String getTitle(AppLocalizations l10n) => switch (this) {
+        Medals.first => l10n.medalTitle('1'),
+        Medals.fifth => l10n.medalTitle('5'),
+        Medals.tenth => l10n.medalTitle('10'),
+        Medals.twenty => l10n.medalTitle('20'),
+        Medals.all => l10n.medalTitle('28'),
+      };
+
+  String getSubtitle(AppLocalizations l10n) => switch (this) {
+        Medals.first => l10n.medalSubtitle('1'),
+        Medals.fifth => l10n.medalSubtitle('5'),
+        Medals.tenth => l10n.medalSubtitle('10'),
+        Medals.twenty => l10n.medalSubtitle('20'),
+        Medals.all => l10n.medalSubtitle('28'),
+      };
+
   String get background => switch (this) {
         Medals.first => MedalBackgrounds.first,
         Medals.fifth => MedalBackgrounds.fifth,
@@ -28,7 +44,15 @@ enum Medals {
         Medals.all => MedalBackgrounds.all,
       };
 
+  String get model3d => switch (this) {
+        Medals.first => MedalModels.first,
+        Medals.fifth => MedalModels.fifth,
+        Medals.tenth => MedalModels.tenth,
+        Medals.twenty => MedalModels.twenty,
+        Medals.all => MedalModels.all,
+      };
+
   static List<Medals> getByStep(int step) {
-    return Medals.values.where((e) => e.value <= step).toList();
+    return Medals.values;
   }
 }

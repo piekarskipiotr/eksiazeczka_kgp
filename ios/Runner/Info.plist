@@ -62,5 +62,7 @@
     <string>This app needs access to location to check if user is near peak.</string>
     <key>ITSAppUsesNonExemptEncryption</key>
     <false/>
+    <key>io.flutter.embedded_views_preview</key>
+    <true/>
 </dict>
 </plist>

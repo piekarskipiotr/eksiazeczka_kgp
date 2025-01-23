@@ -142,6 +142,24 @@
       }
     }
   },
+  "medalTitle": "{count, select, 1{First summit conquered} 28{All summits conquered} other{Conquered {count} summits}}",
+  "@medalTitle": {
+    "placeholders": {
+      "count": {
+        "type": "String",
+        "example": "1"
+      }
+    }
+  },
+  "medalSubtitle": "{count, select, 1{First step on your adventure! Congratulations on conquering your first summit!} 5{Five summits conquered! You're showing perseverance and a passion for hiking.} 10{Ten summits conquered! You're proving yourself to be a true mountaineer.} 20{Twenty summits behind you – you're inspiring others and showing strength of character.} 28{All summits conquered! You're a master of mountain adventure – hats off!} other{}}",
+  "@medalSubtitle": {
+    "placeholders": {
+      "count": {
+        "type": "String",
+        "example": "1"
+      }
+    }
+  },
   "memorablePhotoDialogTitle": "Peak souvenir",
   "memorablePhotoDialogDescription": "Reaching the peak was surely not easy, but you did it! Relive the memories of that day, and maybe one day return to conquer this peak again.",
   "haveYouConqueredPeaksAlready": "Have you already conquered any peaks without using the app?",

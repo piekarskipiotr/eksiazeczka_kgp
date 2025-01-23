@@ -142,6 +142,24 @@
       }
     }
   },
+  "medalTitle": "{count, select, 1{Zdobyto pierwszy szczyt} 28{Zdobyto wszystkie szczyty} other{Zdobyto {count} szczytów}}",
+  "@medalTitle": {
+    "placeholders": {
+      "count": {
+        "type": "String",
+        "example": "1"
+      }
+    }
+  },
+  "medalSubtitle": "{count, select, 1{Pierwszy krok w stronę przygody! Gratulacje za zdobycie swojego pierwszego szczytu!} 5{Pięć razy na szczycie! Pokazujesz wytrwałość i pasję do górskich wędrówek.} 10{Dziesięć zdobytych szczytów! Udowadniasz, że jesteś prawdziwym górołazem.} 20{Dwadzieścia szczytów za Tobą – inspirujesz innych i pokazujesz siłę charakteru.} 28{Wszystkie szczyty zdobyte! Jesteś mistrzem górskiej przygody – czapki z głów!} other{}}",
+  "@medalSubtitle": {
+    "placeholders": {
+      "count": {
+        "type": "String",
+        "example": "1"
+      }
+    }
+  },
   "memorablePhotoDialogTitle": "Pamiątka ze szczytu",
   "memorablePhotoDialogDescription": "Zdobycie szczytu na pewno nie było proste ale udało Ci się! Wracaj wspominienami do tego dnia a może i pewnego dnia wróć zdobyć ponownie ten szczyt.",
   "haveYouConqueredPeaksAlready": "Czy zdobyłeś już jakiś szczyt bez użycia aplikacji?",

@@ -13,8 +13,8 @@ class MedalCard extends StatelessWidget {
   final double height;
   final double radius;
 
-  void _onMedalCardPressed(BuildContext context) {
-    MedalDialog.show(context);
+  void _onMedalCardPressed(BuildContext context, Medals medal) {
+    MedalDialog.show(context, medal: medal);
   }
 
   @override
@@ -44,7 +44,7 @@ class MedalCard extends StatelessWidget {
         if (isEnabled)
           FixedInkWell(
             onPressed: () {
-              _onMedalCardPressed(context);
+              _onMedalCardPressed(context, medal);
             },
             radius: radius,
           ),
