@@ -6,7 +6,10 @@ class NetworkAssetImage extends StatelessWidget {
   const NetworkAssetImage({
     required this.assetPath,
     required this.height,
-    required this.radius,
+    required this.topLeftRadius,
+    required this.topRightRadius,
+    required this.bottomLeftRadius,
+    required this.bottomRightRadius,
     this.disable = false,
     this.url,
     super.key,
@@ -15,7 +18,10 @@ class NetworkAssetImage extends StatelessWidget {
   final String? url;
   final String assetPath;
   final double height;
-  final double radius;
+  final double topLeftRadius;
+  final double topRightRadius;
+  final double bottomLeftRadius;
+  final double bottomRightRadius;
   final bool disable;
 
   @override
@@ -23,7 +29,12 @@ class NetworkAssetImage extends StatelessWidget {
     return Hero(
       tag: '$assetPath$url',
       child: ClipRRect(
-        borderRadius: BorderRadius.circular(radius),
+        borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(topLeftRadius),
+          topRight: Radius.circular(topRightRadius),
+          bottomLeft: Radius.circular(bottomLeftRadius),
+          bottomRight: Radius.circular(bottomRightRadius),
+        ),
         child: SizedBox(
           height: height,
           width: double.infinity,

@@ -17,7 +17,7 @@ class PeakDetailsHeader extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        PeakCard(peak: peak, height: 420),
+        PeakCard(peak: peak, height: 420, isHeader: true),
         SafeArea(
           child: Container(
             alignment: Alignment.topRight,

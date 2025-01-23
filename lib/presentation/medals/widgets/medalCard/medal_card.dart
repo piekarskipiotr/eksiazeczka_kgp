@@ -22,9 +22,12 @@ class MedalCard extends StatelessWidget {
     return Stack(
       children: [
         NetworkAssetImage(
+          topLeftRadius: radius,
+          topRightRadius: radius,
+          bottomLeftRadius: radius,
+          bottomRightRadius: radius,
           assetPath: medal.background,
           height: height,
-          radius: radius,
           disable: !isEnabled,
         ),
         Positioned.fill(

@@ -10,6 +10,7 @@ class PeakCard extends StatelessWidget {
     this.onPressed,
     this.height = 300,
     this.radius = 36,
+    this.isHeader = false,
     super.key,
   });
 
@@ -17,13 +18,17 @@ class PeakCard extends StatelessWidget {
   final VoidCallback? onPressed;
   final double height;
   final double radius;
+  final bool isHeader;
 
   @override
   Widget build(BuildContext context) {
     return Stack(
       children: [
         NetworkAssetImage(
-          radius: radius,
+          topLeftRadius: isHeader ? 0 : radius,
+          topRightRadius: isHeader ? 0 : radius,
+          bottomLeftRadius: radius,
+          bottomRightRadius: radius,
           height: height,
           url: peak.image,
           assetPath: peak.assetImage,

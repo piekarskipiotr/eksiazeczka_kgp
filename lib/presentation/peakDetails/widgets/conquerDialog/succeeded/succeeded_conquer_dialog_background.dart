@@ -13,7 +13,10 @@ class SucceededConquerDialogBackground extends StatelessWidget {
       assetPath: assetPath,
       url: url,
       height: double.infinity,
-      radius: 0,
+      topLeftRadius: 0,
+      topRightRadius: 0,
+      bottomLeftRadius: 0,
+      bottomRightRadius: 0,
     );
   }
 }
