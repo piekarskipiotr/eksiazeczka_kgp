@@ -44,6 +44,14 @@ enum Medals {
         Medals.all => MedalBackgrounds.all,
       };
 
+  String get model3dImage => switch (this) {
+        Medals.first => MedalImages.first,
+        Medals.fifth => MedalImages.fifth,
+        Medals.tenth => MedalImages.tenth,
+        Medals.twenty => MedalImages.twenty,
+        Medals.all => MedalImages.all,
+      };
+
   String get model3d => switch (this) {
         Medals.first => MedalModels.first,
         Medals.fifth => MedalModels.fifth,
@@ -53,6 +61,6 @@ enum Medals {
       };
 
   static List<Medals> getByStep(int step) {
-    return Medals.values;
+    return Medals.values.where((e) => e.value <= step).toList();
   }
 }

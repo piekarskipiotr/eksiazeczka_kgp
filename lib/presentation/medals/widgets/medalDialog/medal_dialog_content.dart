@@ -22,6 +22,7 @@ class MedalDialogContent extends StatelessWidget {
             src: medal.model3d,
             cameraOrbit: '0deg 90deg auto',
             disableZoom: true,
+            ar: false,
           ),
         ),
         Padding(

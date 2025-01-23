@@ -35,8 +35,8 @@ class MedalCard extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               const SizedBox.shrink(),
-              const MedalCardMedal(),
               const SizedBox.shrink(),
+              MedalCardMedal(medal: medal, isEnabled: isEnabled),
               MedalCardInformation(medal: medal),
             ],
           ),
