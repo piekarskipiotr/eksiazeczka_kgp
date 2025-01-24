@@ -84,7 +84,7 @@
   "generalQuestion3": "Gdzie mogę zgłosić problem lub nową funkcję?",
   "generalQuestion3Answer": "Problemy techniczne lub pomysły na nowe funkcje aplikacji możesz zgłaszać, wysyłając wiadomość na naszym Instagramie: @eksiazeczka.kp.",
   "appFunctionalityQuestion1": "Jak działa odznaczanie szczytów?",
-  "appFunctionalityQuestion1Answer": "Szczyt można odznaczyć za pomocą geolokalizacji. Jeśli znajdujesz się w promieniu 100 metrów od szczytu, aplikacja pozwoli Ci go oznaczyć jako zdobyty.",
+  "appFunctionalityQuestion1Answer": "Szczyt można odznaczyć za pomocą geolokalizacji. Jeśli znajdujesz się w promieniu 200 metrów od szczytu, aplikacja pozwoli Ci go oznaczyć jako zdobyty.",
   "appFunctionalityQuestion2": "Gdzie zapisywane są zdjęcia?",
   "appFunctionalityQuestion2Answer": "Zdjęcia robione w aplikacji są zapisywane lokalnie na Twoim urządzeniu. Po usunięciu aplikacji wszystkie zapisane zdjęcia zostaną automatycznie usunięte.",
   "appFunctionalityQuestion3": "Czy aplikacja zapisuje dane w chmurze?",

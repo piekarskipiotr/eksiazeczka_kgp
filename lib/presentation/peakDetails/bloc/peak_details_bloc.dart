@@ -52,7 +52,6 @@ class PeakDetailsBloc extends Bloc<PeakDetailsEvent, PeakDetailsState> {
         latitude1: peakCoordinates.latitude,
         longitude2: currentUserCoordinates.longitude,
         latitude2: currentUserCoordinates.latitude,
-        range: 100,
       );
 
       emit(

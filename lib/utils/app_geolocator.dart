@@ -39,7 +39,7 @@ class AppGeolocator {
     required double latitude1,
     required double longitude2,
     required double latitude2,
-    required double range,
+    double range = 200,
   }) {
     final distance = _calculateDistance(
       longitude1: longitude1,

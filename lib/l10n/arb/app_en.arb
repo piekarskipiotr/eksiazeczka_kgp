@@ -84,7 +84,7 @@
   "generalQuestion3": "Where can I report a problem or suggest a new feature?",
   "generalQuestion3Answer": "You can report technical issues or suggest new features by sending a message to our Instagram account: @eksiazeczka.kp.",
   "appFunctionalityQuestion1": "How does marking peaks work?",
-  "appFunctionalityQuestion1Answer": "You can mark a peak using geolocation. If you are within 100 meters of the peak, the app will allow you to mark it as conquered.",
+  "appFunctionalityQuestion1Answer": "You can mark a peak using geolocation. If you are within 200 meters of the peak, the app will allow you to mark it as conquered.",
   "appFunctionalityQuestion2": "Where are the photos saved?",
   "appFunctionalityQuestion2Answer": "Photos taken within the app are saved locally on your device. If you delete the app, all saved photos will be automatically removed.",
   "appFunctionalityQuestion3": "Does the app save data in cloud?",

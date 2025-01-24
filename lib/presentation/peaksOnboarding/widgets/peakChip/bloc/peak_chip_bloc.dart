@@ -58,7 +58,6 @@ class PeakChipBloc extends Bloc<PeakChipEvent, PeakChipState> {
         latitude1: peakCoordinates.latitude,
         longitude2: imageCoordinates.longitude,
         latitude2: imageCoordinates.latitude,
-        range: 100,
       );
 
       if (!isValid) {
