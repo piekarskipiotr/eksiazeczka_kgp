@@ -3,15 +3,6 @@
   "peaks": "Szczyty",
   "medals": "Medale",
   "more": "Więcej",
-  "hello": "Witaj, {name}",
-  "@hello": {
-    "placeholders": {
-      "name": {
-        "type": "String",
-        "example": "Piotr"
-      }
-    }
-  },
   "helloTraveler": "Witaj podróżniku!",
   "conqueredPeaks": "Zdobyto {count} z {total}",
   "@conqueredPeaks": {
@@ -151,7 +142,7 @@
       }
     }
   },
-  "medalSubtitle": "{count, select, 1{Pierwszy krok w stronę przygody! Gratulacje za zdobycie swojego pierwszego szczytu!} 5{Pięć razy na szczycie! Pokazujesz wytrwałość i pasję do górskich wędrówek.} 10{Dziesięć zdobytych szczytów! Udowadniasz, że jesteś prawdziwym górołazem.} 20{Dwadzieścia szczytów za Tobą – inspirujesz innych i pokazujesz siłę charakteru.} 28{Wszystkie szczyty zdobyte! Jesteś mistrzem górskiej przygody – czapki z głów!} other{}}",
+  "medalSubtitle": "{count, select, 1{Pierwszy krok w stronę przygody! Gratulacje za zdobycie swojego pierwszego szczytu!} 5{Pięć razy na szczycie! Pokazujesz wytrwałość i pasję do górskich wędrówek.} 10{Dziesięć zdobytych szczytów! Udowadniasz, że jesteś prawdziwym podróżnikiem.} 20{Dwadzieścia szczytów za Tobą – pokazujesz siłę charakteru.} 28{Wszystkie szczyty zdobyte! Jesteś mistrzem górskiej przygody – czapki z głów!} other{}}",
   "@medalSubtitle": {
     "placeholders": {
       "count": {

@@ -3,15 +3,6 @@
   "peaks": "Peaks",
   "medals": "Medals",
   "more": "More",
-  "hello": "Hello, {name}",
-  "@hello": {
-    "placeholders": {
-      "name": {
-        "type": "String",
-        "example": "Piotr"
-      }
-    }
-  },
   "helloTraveler": "Hello traveler!",
   "conqueredPeaks": "Conquered {count} of {total}",
   "@conqueredPeaks": {
@@ -151,7 +142,7 @@
       }
     }
   },
-  "medalSubtitle": "{count, select, 1{First step on your adventure! Congratulations on conquering your first summit!} 5{Five summits conquered! You're showing perseverance and a passion for hiking.} 10{Ten summits conquered! You're proving yourself to be a true mountaineer.} 20{Twenty summits behind you – you're inspiring others and showing strength of character.} 28{All summits conquered! You're a master of mountain adventure – hats off!} other{}}",
+  "medalSubtitle": "{count, select, 1{First step on your adventure! Congratulations on conquering your first summit!} 5{Five summits conquered! You're showing perseverance and a passion for hiking.} 10{Ten summits conquered! You're proving yourself to be a true mountaineer.} 20{Twenty summits behind you – you're showing strength of character.} 28{All summits conquered! You're a master of mountain adventure – hats off!} other{}}",
   "@medalSubtitle": {
     "placeholders": {
       "count": {
