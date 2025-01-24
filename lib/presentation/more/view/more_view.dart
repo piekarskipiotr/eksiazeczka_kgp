@@ -22,6 +22,10 @@ class MoreView extends StatelessWidget {
     context.read<AppRouter>().showAppLanguageSettings();
   }
 
+  void _onFollowInstagramPressed(BuildContext context) {
+    context.read<MoreBloc>().add(const OpenLink(instagramUrl));
+  }
+
   void _onReviewAppPressed(BuildContext context) {
     final store = Platform.isIOS ? appStoreUrl : googlePlayStoreUrl;
     context.read<MoreBloc>().add(OpenLink(store));
@@ -91,6 +95,13 @@ class MoreView extends StatelessWidget {
                 MoreSection(
                   label: l10n.app,
                   children: [
+                    MoreSectionItemTextIcon(
+                      label: l10n.followUsInstagram,
+                      icon: IconImages.instagram,
+                      onPressed: () {
+                        _onFollowInstagramPressed(context);
+                      },
+                    ),
                     MoreSectionItemTextIcon(
                       label: l10n.addReview,
                       icon: IconImages.arrowOutward,

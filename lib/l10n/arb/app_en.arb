@@ -156,5 +156,6 @@
   "haveYouConqueredPeaksAlready": "Have you already conquered any peaks without using the app?",
   "haveYouConqueredPeaksAlreadyDescription": "You can mark peaks you've already conquered only now. Each marking requires a photo from the location, which must contain geolocation data. This ensures fairness and authenticity of the markings.",
   "goToApp": "Go to the app.",
-  "attributions": "Attributions"
+  "attributions": "Attributions",
+  "followUsInstagram": "Follow us on Instagram"
 }

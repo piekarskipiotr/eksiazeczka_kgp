@@ -11,6 +11,7 @@ class IconImages {
   static const String delete = 'assets/images/icons/delete.svg';
   static const String error = 'assets/images/icons/error.svg';
   static const String hiking = 'assets/images/icons/hiking.svg';
+  static const String instagram = 'assets/images/icons/instagram.svg';
   static const String landscape = 'assets/images/icons/landscape.svg';
   static const String landscapeFilled =
       'assets/images/icons/landscape_filled.svg';

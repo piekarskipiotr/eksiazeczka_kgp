@@ -13,6 +13,7 @@ void main() {
     expect(File(IconImages.delete).existsSync(), isTrue);
     expect(File(IconImages.error).existsSync(), isTrue);
     expect(File(IconImages.hiking).existsSync(), isTrue);
+    expect(File(IconImages.instagram).existsSync(), isTrue);
     expect(File(IconImages.landscape).existsSync(), isTrue);
     expect(File(IconImages.landscapeFilled).existsSync(), isTrue);
     expect(File(IconImages.location).existsSync(), isTrue);

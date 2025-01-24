@@ -156,5 +156,6 @@
   "haveYouConqueredPeaksAlready": "Czy zdobyłeś już jakiś szczyt bez użycia aplikacji?",
   "haveYouConqueredPeaksAlreadyDescription": "Możesz zaznaczyć już zdobyte szczyty tylko teraz. Każde oznaczenie wymaga zdjęcia z danego miejsca, które musi zawierać dane geolokalizacyjne. To zapewnia uczciwość i autentyczność oznaczeń.",
   "goToApp": "Przejdź do aplikacji",
-  "attributions": "Atrybucje"
+  "attributions": "Atrybucje",
+  "followUsInstagram": "Obserwuj nasz Instagram"
 }
