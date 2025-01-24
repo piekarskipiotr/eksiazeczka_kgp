@@ -1,9 +1,9 @@
 import 'dart:async';
-import 'dart:developer';
 
 import 'package:bloc/bloc.dart';
 import 'package:eksiazeczka_kp/data/constants.dart';
 import 'package:eksiazeczka_kp/designSystem/design_system.dart';
+import 'package:eksiazeczka_kp/utils/utils.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:sentry_flutter/sentry_flutter.dart';
@@ -15,19 +15,19 @@ class AppBlocObserver extends BlocObserver {
   @override
   void onChange(BlocBase<dynamic> bloc, Change<dynamic> change) {
     super.onChange(bloc, change);
-    log('onChange(${bloc.runtimeType}, $change)');
+    AppLogger.info('onChange(${bloc.runtimeType}, $change)');
   }
 
   @override
   void onError(BlocBase<dynamic> bloc, Object error, StackTrace stackTrace) {
-    log('onError(${bloc.runtimeType}, $error, $stackTrace)');
+    AppLogger.error('onError(${bloc.runtimeType}, $error, $stackTrace)', stackTrace);
     super.onError(bloc, error, stackTrace);
   }
 }
 
 Future<void> bootstrap(FutureOr<Widget> Function() builder, {bool useSentry = false}) async {
   FlutterError.onError = (details) {
-    log(details.exceptionAsString(), stackTrace: details.stack);
+    AppLogger.error(details.exceptionAsString(), details.stack);
   };
 
   Bloc.observer = const AppBlocObserver();

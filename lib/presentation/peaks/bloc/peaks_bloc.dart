@@ -1,11 +1,11 @@
 import 'dart:async';
-import 'dart:developer';
 
 import 'package:bloc/bloc.dart';
 import 'package:eksiazeczka_kp/data/enums/enums.dart';
 import 'package:eksiazeczka_kp/data/models/models.dart';
 import 'package:eksiazeczka_kp/data/repositories/repositories.dart';
 import 'package:eksiazeczka_kp/services/services.dart';
+import 'package:eksiazeczka_kp/utils/utils.dart';
 import 'package:equatable/equatable.dart';
 
 part 'peaks_event.dart';
@@ -36,7 +36,7 @@ class PeaksBloc extends Bloc<PeaksEvent, PeaksState> {
       emit(state.copyWith(isLoadingPeaks: false));
       add(LoadPeaks(peaks));
     }).catchError((Object error, StackTrace stacktrace) async {
-      log('FAILED TO FETCH PEAKS, error: $error \n\n $stacktrace');
+      AppLogger.error('FAILED TO FETCH PEAKS, error: $error \n\n $stacktrace');
       emit(state.copyWith(isLoadingPeaks: false, error: error.toString()));
     });
   }

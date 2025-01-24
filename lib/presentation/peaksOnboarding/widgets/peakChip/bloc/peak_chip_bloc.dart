@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:bloc/bloc.dart';
 import 'package:eksiazeczka_kp/data/models/models.dart';
 import 'package:eksiazeczka_kp/data/repositories/repositories.dart';
@@ -68,7 +66,7 @@ class PeakChipBloc extends Bloc<PeakChipEvent, PeakChipState> {
       emit(state.copyWith(status: PeakChipStateStatus.validatingMemorablePhotoSucceeded));
       add(SaveMemorablePhoto(image));
     } catch (error, stacktrace) {
-      log('FAILED TO VALIDATE IMAGE LOCATION error: $error, stacktrace: $stacktrace');
+      AppLogger.error('FAILED TO VALIDATE IMAGE LOCATION error: $error, stacktrace: $stacktrace');
       emit(state.copyWith(status: PeakChipStateStatus.validatingMemorablePhotoFailed, error: error.toString()));
     }
   }
@@ -84,7 +82,7 @@ class PeakChipBloc extends Bloc<PeakChipEvent, PeakChipState> {
       emit(state.copyWith(status: PeakChipStateStatus.savingMemorablePhotoSucceeded));
       add(const MarkPeakAsConquered());
     } catch (error, stacktrace) {
-      log('FAILED TO MARK PEAK AS CONQUERED error: $error, stacktrace: $stacktrace');
+      AppLogger.error('FAILED TO MARK PEAK AS CONQUERED error: $error, stacktrace: $stacktrace');
       emit(state.copyWith(status: PeakChipStateStatus.savingMemorablePhotoFailed, error: error.toString()));
     }
   }
@@ -102,7 +100,7 @@ class PeakChipBloc extends Bloc<PeakChipEvent, PeakChipState> {
         ),
       );
     } catch (error, stacktrace) {
-      log('FAILED TO MARK PEAK AS CONQUERED error: $error, stacktrace: $stacktrace');
+      AppLogger.error('FAILED TO MARK PEAK AS CONQUERED error: $error, stacktrace: $stacktrace');
       emit(state.copyWith(status: PeakChipStateStatus.insertingMetadataFailed, error: error.toString()));
     }
   }

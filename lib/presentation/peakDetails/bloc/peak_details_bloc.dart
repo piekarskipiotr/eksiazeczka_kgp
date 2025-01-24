@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:bloc/bloc.dart';
 import 'package:eksiazeczka_kp/data/models/models.dart';
 import 'package:eksiazeczka_kp/data/repositories/repositories.dart';
@@ -17,8 +15,7 @@ class PeakDetailsBloc extends Bloc<PeakDetailsEvent, PeakDetailsState> {
     required Peak peak,
     required UserMetadataRepository userMetadataRepository,
     required StorageRepository storageRepository,
-  })  :
-        _userMetadataRepository = userMetadataRepository,
+  })  : _userMetadataRepository = userMetadataRepository,
         _storageRepository = storageRepository,
         super(PeakDetailsState(peak: peak)) {
     on<ValidateUserLocation>(_onValidateUserLocation);
@@ -62,7 +59,7 @@ class PeakDetailsBloc extends Bloc<PeakDetailsEvent, PeakDetailsState> {
         ),
       );
     } catch (error, stacktrace) {
-      log('FAILED TO VALIDATE USER LOCATION error: $error, stacktrace: $stacktrace');
+      AppLogger.error('FAILED TO VALIDATE USER LOCATION error: $error, stacktrace: $stacktrace');
       emit(state.copyWith(error: error.toString()));
     }
   }
@@ -89,7 +86,7 @@ class PeakDetailsBloc extends Bloc<PeakDetailsEvent, PeakDetailsState> {
 
       emit(state.copyWith(status: PeakDetailsStateStatus.takingPhotoSucceeded));
     } catch (error, stacktrace) {
-      log('FAILED TO TAKE PHOTO error: $error, stacktrace: $stacktrace');
+      AppLogger.error('FAILED TO TAKE PHOTO error: $error, stacktrace: $stacktrace');
       emit(state.copyWith(status: PeakDetailsStateStatus.addingGalleryPhotoFailed, error: error.toString()));
     }
   }
@@ -116,7 +113,7 @@ class PeakDetailsBloc extends Bloc<PeakDetailsEvent, PeakDetailsState> {
 
       emit(state.copyWith(status: PeakDetailsStateStatus.addingGalleryPhotoSucceeded));
     } catch (error, stacktrace) {
-      log('FAILED TO ADD PHOTO FROM GALLERY error: $error, stacktrace: $stacktrace');
+      AppLogger.error('FAILED TO ADD PHOTO FROM GALLERY error: $error, stacktrace: $stacktrace');
       emit(state.copyWith(status: PeakDetailsStateStatus.addingGalleryPhotoFailed, error: error.toString()));
     }
   }
@@ -135,7 +132,7 @@ class PeakDetailsBloc extends Bloc<PeakDetailsEvent, PeakDetailsState> {
         ),
       );
     } catch (error, stacktrace) {
-      log('FAILED TO MARK PEAK AS CONQUERED error: $error, stacktrace: $stacktrace');
+      AppLogger.error('FAILED TO MARK PEAK AS CONQUERED error: $error, stacktrace: $stacktrace');
       emit(state.copyWith(status: PeakDetailsStateStatus.insertingMetadataFailed, error: error.toString()));
     }
   }
