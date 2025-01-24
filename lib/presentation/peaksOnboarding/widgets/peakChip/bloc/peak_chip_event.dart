@@ -21,8 +21,10 @@ final class SaveMemorablePhoto extends PeakChipEvent {
 }
 
 final class MarkPeakAsConquered extends PeakChipEvent {
-  const MarkPeakAsConquered();
+  const MarkPeakAsConquered(this.imageCreatedAt);
+
+  final DateTime? imageCreatedAt;
 
   @override
-  List<Object?> get props => [];
+  List<Object?> get props => [imageCreatedAt];
 }

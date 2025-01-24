@@ -43,7 +43,7 @@ class PeakChipBloc extends Bloc<PeakChipEvent, PeakChipState> {
         return;
       }
 
-      final imageCoordinates = await AppGeolocator.getImageCoordinates(image);
+      final imageCoordinates = await ImageExif.getImageCoordinates(image);
       if (imageCoordinates == null) {
         emit(state.copyWith(status: PeakChipStateStatus.validatingMemorablePhotoFailed));
         return;
@@ -75,12 +75,13 @@ class PeakChipBloc extends Bloc<PeakChipEvent, PeakChipState> {
     try {
       emit(state.copyWith(status: PeakChipStateStatus.savingMemorablePhoto));
       final image = event.image;
+      final imageCreatedAt = await ImageExif.getImageDateTime(image);
       final compressedImageBytes = await ImageCompressor.compressFile(image);
       final peak = state.peak;
       final peakId = peak.id;
       await _storageRepository.savePeakImage(bytes: compressedImageBytes, peakId: peakId);
       emit(state.copyWith(status: PeakChipStateStatus.savingMemorablePhotoSucceeded));
-      add(const MarkPeakAsConquered());
+      add(MarkPeakAsConquered(imageCreatedAt));
     } catch (error, stacktrace) {
       AppLogger.error('FAILED TO MARK PEAK AS CONQUERED error: $error, stacktrace: $stacktrace');
       emit(state.copyWith(status: PeakChipStateStatus.savingMemorablePhotoFailed, error: error.toString()));
@@ -92,7 +93,7 @@ class PeakChipBloc extends Bloc<PeakChipEvent, PeakChipState> {
       emit(state.copyWith(status: PeakChipStateStatus.insertingMetadata));
       final peak = state.peak;
       final peakId = peak.id;
-      final metadata = await _userMetadataRepository.insert(peakId: peakId);
+      final metadata = await _userMetadataRepository.insert(peakId: peakId, conqueredDate: event.imageCreatedAt);
       emit(
         state.copyWith(
           status: PeakChipStateStatus.insertingMetadataSucceeded,

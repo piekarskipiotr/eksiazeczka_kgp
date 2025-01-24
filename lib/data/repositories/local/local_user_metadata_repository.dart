@@ -7,9 +7,9 @@ class LocalUserMetadataRepository {
   final Database _database;
   static const _tableName = 'user_metadata';
 
-  Future<PeakUserMetadata> insert({required String peakId}) async {
+  Future<PeakUserMetadata> insert({required String peakId, DateTime? conqueredDate}) async {
     try {
-      final metadata = PeakUserMetadata(peakId: peakId);
+      final metadata = PeakUserMetadata(peakId: peakId, conqueredDate: conqueredDate);
       await _database.insert(_tableName, metadata.toSqflite());
       return metadata;
     } catch (e) {

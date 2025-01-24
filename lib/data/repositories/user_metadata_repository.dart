@@ -9,8 +9,9 @@ class UserMetadataRepository {
 
   Future<PeakUserMetadata> insert({
     required String peakId,
+    DateTime? conqueredDate,
     QueryOnlineOfflinePolicy policy = QueryOnlineOfflinePolicy.offline,
   }) async {
-    return _localUserMetadataRepository.insert(peakId: peakId);
+    return _localUserMetadataRepository.insert(peakId: peakId, conqueredDate: conqueredDate);
   }
 }
