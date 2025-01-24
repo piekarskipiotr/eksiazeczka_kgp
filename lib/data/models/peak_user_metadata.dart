@@ -15,9 +15,13 @@ class PeakUserMetadata {
 
   Map<String, dynamic> toSqflite() => _$PeakUserMetadataToSqflite(this);
 
-
   final String id;
   final DateTime conqueredDate;
   final String peakId;
   final String? userId;
+
+  @override
+  String toString() {
+    return 'PeakUserMetadata{id: $id, conqueredDate: $conqueredDate, peakId: $peakId, userId: $userId}';
+  }
 }

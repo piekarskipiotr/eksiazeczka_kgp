@@ -12,4 +12,9 @@ class Description {
 
   final String locale;
   final String text;
+
+  @override
+  String toString() {
+    return 'Description{locale: $locale, text: $text}';
+  }
 }

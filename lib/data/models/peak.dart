@@ -29,7 +29,6 @@ class Peak {
 
   Map<String, dynamic> toSqflite() => _$PeakToSqflite(this);
 
-
   final String id;
   final String name;
   final Coordinates coordinates;
@@ -62,5 +61,10 @@ class Peak {
       descriptions: descriptions,
       userMetadata: userMetadata,
     );
+  }
+
+  @override
+  String toString() {
+    return 'Peak{id: $id, name: $name, coordinates: $coordinates, location: $location, mountainRange: $mountainRange, height: $height, difficultyLevel: $difficultyLevel, averageAscentTime: $averageAscentTime, popularity: $popularity, descriptions: $descriptions, userMetadata: $userMetadata}';
   }
 }

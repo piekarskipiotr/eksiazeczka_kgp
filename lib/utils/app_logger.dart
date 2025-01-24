@@ -1,6 +1,6 @@
 import 'dart:developer' as developer;
 
-import 'package:eksiazeczka_kp/data/constants.dart';
+import 'package:flutter/foundation.dart';
 
 class AppLogger {
   static const String _infoEmoji = 'ℹ️';
@@ -40,5 +40,5 @@ class AppLogger {
     developer.log(formattedMessage, name: 'Logger');
   }
 
-  static bool get _isLoggingEnabled => flavor == 'dev';
+  static bool get _isLoggingEnabled => kDebugMode;
 }
