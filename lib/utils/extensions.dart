@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
 extension StringExtensions on String {
@@ -36,5 +37,11 @@ extension StringExtensions on String {
     } catch (e) {
       return '';
     }
+  }
+}
+
+extension ThemeModeExtension on ThemeData {
+  bool get isDarkMode {
+    return brightness == Brightness.dark;
   }
 }

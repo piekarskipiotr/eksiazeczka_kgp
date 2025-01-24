@@ -10,7 +10,7 @@ class AppColors {
   static const lightSecondaryBackground = Color(0xFF2E2E2E);
   static const darkSecondaryBackground = Color(0xFF2E2E2E);
 
-  static const bottomNavigationBarColors = Color(0xFF272727);
+  static const bottomNavigationBarTabBackgroundColorDark = Color(0xFF272727);
 
   static const accentColor = Color(0xFF40916C);
   static const secondaryAccentColor = Color(0xFFDD0000);

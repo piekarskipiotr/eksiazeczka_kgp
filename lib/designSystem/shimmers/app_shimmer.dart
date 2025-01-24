@@ -16,7 +16,7 @@ class AppShimmer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Shimmer.fromColors(
       period: duration,
-      baseColor: AppColors.bottomNavigationBarColors.withValues(alpha: 0.1),
+      baseColor: AppColors.black.withValues(alpha: 0.1),
       highlightColor: Theme.of(context).scaffoldBackgroundColor,
       child: child ?? Container(color: Theme.of(context).scaffoldBackgroundColor),
     );

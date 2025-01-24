@@ -7,17 +7,25 @@ class AppThemes {
     primary: AppColors.black,
     secondary: AppColors.white,
     scaffoldBackground: AppColors.lightBackground,
+    brightness: Brightness.light,
   );
 
   static ThemeData dark = _theme(
     primary: AppColors.white,
     secondary: AppColors.black,
     scaffoldBackground: AppColors.darkBackground,
+    brightness: Brightness.dark,
   );
 
-  static ThemeData _theme({required Color primary, required Color secondary, required Color scaffoldBackground}) {
+  static ThemeData _theme({
+    required Color primary,
+    required Color secondary,
+    required Color scaffoldBackground,
+    required Brightness brightness,
+  }) {
     return ThemeData(
-      colorScheme: ColorScheme.fromSeed(seedColor: primary, secondary: secondary),
+      brightness: brightness,
+      colorScheme: ColorScheme.fromSeed(seedColor: primary, secondary: secondary, brightness: brightness),
       primaryColor: primary,
       scaffoldBackgroundColor: scaffoldBackground,
       appBarTheme: AppBarTheme(
