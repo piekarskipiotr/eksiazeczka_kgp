@@ -19,7 +19,6 @@ dependencies:
   flutter_image_compress: ^2.4.0
   flutter_localizations:
     sdk: flutter
-  flutter_secure_storage: ^4.2.1
   flutter_staggered_animations: ^1.1.1
   flutter_svg: ^2.0.16
   geolocator: ^13.0.2
