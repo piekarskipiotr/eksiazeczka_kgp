@@ -9,11 +9,12 @@ class ImageExif {
       final data = await readExifFromBytes(bytes);
       if (data.isEmpty) return null;
 
-      final ifdTag = data['DateTimeOriginal'] ?? data['DateTime'];
+      final ifdTag = data['EXIF DateTimeOriginal'] ?? data['Image DateTime'];
       if (ifdTag == null) return null;
 
       final dateString = ifdTag.toString();
-      return DateTime.parse(dateString.replaceFirst(':', '-', 2));
+      final dateStringFormatted = dateString.replaceFirst(':', '-').replaceFirst(':', '-');
+      return DateTime.parse(dateStringFormatted);
     } catch (e) {
       throw Exception('Failed to getImageDateTime: $e');
     }
@@ -25,14 +26,14 @@ class ImageExif {
       final data = await readExifFromBytes(bytes);
       if (data.isEmpty) return null;
 
-      final gpsLat = data['GPSLatitude'];
-      final gpsLatRef = data['GPSLatitudeRef'];
-      final gpsLon = data['GPSLongitude'];
-      final gpsLonRef = data['GPSLongitudeRef'];
+      final gpsLat = data['GPS GPSLatitude'];
+      final gpsLatRef = data['GPS GPSLatitudeRef'];
+      final gpsLon = data['GPS GPSLongitude'];
+      final gpsLonRef = data['GPS GPSLongitudeRef'];
       if (gpsLat == null || gpsLatRef == null || gpsLon == null || gpsLonRef == null) return null;
 
-      final latitude = _convertToDecimalDegrees(gpsLat.values, gpsLatRef.toString());
-      final longitude = _convertToDecimalDegrees(gpsLon.values, gpsLonRef.toString());
+      final latitude = _convertToDecimalDegrees(gpsLat.values.toList(), gpsLatRef.toString());
+      final longitude = _convertToDecimalDegrees(gpsLon.values.toList(), gpsLonRef.toString());
       if (latitude == null || longitude == null) return null;
 
       return Coordinates(latitude: latitude, longitude: longitude);
@@ -42,11 +43,11 @@ class ImageExif {
   }
 
   static double? _convertToDecimalDegrees(dynamic value, dynamic ref) {
-    if (value is! List || value.length != 3) return null;
+    if (value is! List<Ratio> || value.length != 3) return null;
 
-    final degrees = _toDouble(value[0]);
-    final minutes = _toDouble(value[1]);
-    final seconds = _toDouble(value[2]);
+    final degrees = _toDouble(value[0].numerator);
+    final minutes = _toDouble(value[1].numerator);
+    final seconds = _toDouble(value[2].numerator);
     if (degrees == null || minutes == null || seconds == null) return null;
 
     var decimal = degrees + (minutes / 60) + (seconds / 3600);
