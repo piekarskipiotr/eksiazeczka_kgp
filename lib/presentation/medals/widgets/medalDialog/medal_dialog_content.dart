@@ -2,7 +2,7 @@ import 'package:eksiazeczka_kp/data/enums/enums.dart';
 import 'package:eksiazeczka_kp/designSystem/design_system.dart';
 import 'package:eksiazeczka_kp/l10n/l10n.dart';
 import 'package:flutter/material.dart';
-import 'package:model_viewer_plus/model_viewer_plus.dart';
+import 'package:flutter_3d_controller/flutter_3d_controller.dart';
 
 class MedalDialogContent extends StatelessWidget {
   const MedalDialogContent({required this.medal, super.key});
@@ -18,11 +18,9 @@ class MedalDialogContent extends StatelessWidget {
       children: [
         SizedBox(
           height: 325,
-          child: ModelViewer(
+          child: Flutter3DViewer(
             src: medal.model3d,
-            cameraOrbit: '0deg 90deg auto',
-            disableZoom: true,
-            shadowIntensity: 0,
+            progressBarColor: AppColors.transparent,
           ),
         ),
         Padding(
