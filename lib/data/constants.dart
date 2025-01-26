@@ -1,5 +1,5 @@
-const termsOfUseUrl = 'https://piekarskipiotr.com/eksiazeczka_kp/#/terms_of_use';
-const privacyPolicyUrl = 'https://piekarskipiotr.com/eksiazeczka_kp/#/privacy_policy';
+const termsOfUseUrl = 'https://piekarskipiotr.com/eksiazeczka%5fkp/#/terms_of_use';
+const privacyPolicyUrl = 'https://piekarskipiotr.com/eksiazeczka%5fkp/#/privacy_policy';
 const appStoreUrl = 'https://apps.apple.com/app/6740989198';
 const googlePlayStoreUrl = 'https://play.google.com/store/apps/details?id=com.piekarskipiotr.eksiazeczka.kp';
 const instagramUrl = 'https://www.instagram.com/eksiazeczka.kp';
