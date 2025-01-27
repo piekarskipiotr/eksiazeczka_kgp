@@ -31,12 +31,12 @@ class MoreView extends StatelessWidget {
     context.read<MoreBloc>().add(OpenLink(store));
   }
 
-  void _onAttributionsPressed(BuildContext context) {
-    context.read<AppRouter>().showAttributions();
-  }
-
   void _onFaqPressed(BuildContext context) {
     context.read<AppRouter>().showFaq();
+  }
+
+  void _onAttributionsPressed(BuildContext context) {
+    context.read<AppRouter>().showAttributions();
   }
 
   void _onPrivacyPolicyPressed(BuildContext context) {
@@ -109,13 +109,6 @@ class MoreView extends StatelessWidget {
                         _onReviewAppPressed(context);
                       },
                     ),
-                    MoreSectionItemTextIcon(
-                      label: l10n.attributions,
-                      icon: IconImages.arrowForward,
-                      onPressed: () {
-                        _onAttributionsPressed(context);
-                      },
-                    ),
                   ],
                 ),
                 MoreSection(
@@ -126,6 +119,13 @@ class MoreView extends StatelessWidget {
                       icon: IconImages.arrowForward,
                       onPressed: () {
                         _onFaqPressed(context);
+                      },
+                    ),
+                    MoreSectionItemTextIcon(
+                      label: l10n.attributions,
+                      icon: IconImages.arrowForward,
+                      onPressed: () {
+                        _onAttributionsPressed(context);
                       },
                     ),
                     MoreSectionItemTextIcon(
