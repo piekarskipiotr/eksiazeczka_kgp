@@ -12,9 +12,13 @@ part 'peaks_event.dart';
 part 'peaks_state.dart';
 
 class PeaksBloc extends Bloc<PeaksEvent, PeaksState> {
-  PeaksBloc({required DataRefreshService dataRefreshService, required PeaksRepository peaksRepository})
-      : _dataRefreshService = dataRefreshService,
-        _peaksRepository = peaksRepository,
+  PeaksBloc({
+    required PeaksRepository peaksRepository,
+    required AnalyticsService analyticsService,
+    required DataRefreshService dataRefreshService,
+  })  : _peaksRepository = peaksRepository,
+        _analyticsService = analyticsService,
+        _dataRefreshService = dataRefreshService,
         super(const PeaksState()) {
     on<FetchPeaks>(_onFetchPeaks);
     on<LoadPeaks>(_onLoadPeaks);
@@ -27,8 +31,9 @@ class PeaksBloc extends Bloc<PeaksEvent, PeaksState> {
     });
   }
 
-  final DataRefreshService _dataRefreshService;
   final PeaksRepository _peaksRepository;
+  final AnalyticsService _analyticsService;
+  final DataRefreshService _dataRefreshService;
 
   Future<void> _onFetchPeaks(FetchPeaks event, Emitter<PeaksState> emit) async {
     emit(state.copyWith(isLoadingPeaks: true));
@@ -56,6 +61,7 @@ class PeaksBloc extends Bloc<PeaksEvent, PeaksState> {
     final selectedFilter = state.filter;
     if (pressedFilter == selectedFilter) return;
 
+    _analyticsService.onFilterTypeChanged(pressedFilter);
     final validatedState = _validateSortTypeState(pressedFilter);
     emit(validatedState.copyWith(filter: pressedFilter));
 
@@ -68,6 +74,7 @@ class PeaksBloc extends Bloc<PeaksEvent, PeaksState> {
     final selectedSortType = state.sortType;
     if (pressedSortType == selectedSortType) return;
 
+    _analyticsService.onSortTypeChanged(pressedSortType);
     emit(state.copyWith(sortType: pressedSortType));
 
     final peaks = [...?state.peaks];

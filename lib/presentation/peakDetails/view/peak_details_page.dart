@@ -17,6 +17,7 @@ class PeakDetailsPage extends StatelessWidget {
         peak: peak,
         userMetadataRepository: context.read(),
         storageRepository: context.read(),
+        analyticsService: context.read(),
       ),
       child: const CupertinoScaffold(body: PeakDetailsView()),
     );

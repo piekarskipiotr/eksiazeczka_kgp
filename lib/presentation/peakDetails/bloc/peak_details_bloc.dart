@@ -2,6 +2,7 @@ import 'package:bloc/bloc.dart';
 import 'package:eksiazeczka_kp/data/models/models.dart';
 import 'package:eksiazeczka_kp/data/repositories/repositories.dart';
 import 'package:eksiazeczka_kp/presentation/peakDetails/constants/peak_details_state_status.dart';
+import 'package:eksiazeczka_kp/services/services.dart';
 import 'package:eksiazeczka_kp/utils/utils.dart';
 import 'package:equatable/equatable.dart';
 import 'package:image_picker/image_picker.dart';
@@ -15,8 +16,10 @@ class PeakDetailsBloc extends Bloc<PeakDetailsEvent, PeakDetailsState> {
     required Peak peak,
     required UserMetadataRepository userMetadataRepository,
     required StorageRepository storageRepository,
+    required AnalyticsService analyticsService,
   })  : _userMetadataRepository = userMetadataRepository,
         _storageRepository = storageRepository,
+        _analyticsService = analyticsService,
         super(PeakDetailsState(peak: peak)) {
     on<ValidateUserLocation>(_onValidateUserLocation);
     on<TakePhoto>(_onTakePhoto);
@@ -26,6 +29,7 @@ class PeakDetailsBloc extends Bloc<PeakDetailsEvent, PeakDetailsState> {
 
   final UserMetadataRepository _userMetadataRepository;
   final StorageRepository _storageRepository;
+  final AnalyticsService _analyticsService;
 
   Future<void> _onValidateUserLocation(ValidateUserLocation event, Emitter<PeakDetailsState> emit) async {
     try {
@@ -51,6 +55,7 @@ class PeakDetailsBloc extends Bloc<PeakDetailsEvent, PeakDetailsState> {
         latitude2: currentUserCoordinates.latitude,
       );
 
+      isValid ? _analyticsService.onConquerPeakSucceeded() : _analyticsService.onConquerPeakFailed();
       emit(
         state.copyWith(
           status: isValid
@@ -84,6 +89,7 @@ class PeakDetailsBloc extends Bloc<PeakDetailsEvent, PeakDetailsState> {
       final peakId = peak.id;
       await _storageRepository.savePeakImage(bytes: compressedImageBytes, peakId: peakId);
 
+      _analyticsService.onConquerPeakSucceededPhotoAdded(ImageSource.camera);
       emit(state.copyWith(status: PeakDetailsStateStatus.takingPhotoSucceeded));
     } catch (error, stacktrace) {
       AppLogger.error('FAILED TO TAKE PHOTO error: $error, stacktrace: $stacktrace');
@@ -111,6 +117,7 @@ class PeakDetailsBloc extends Bloc<PeakDetailsEvent, PeakDetailsState> {
       final peakId = peak.id;
       await _storageRepository.savePeakImage(bytes: compressedImageBytes, peakId: peakId);
 
+      _analyticsService.onConquerPeakSucceededPhotoAdded(ImageSource.gallery);
       emit(state.copyWith(status: PeakDetailsStateStatus.addingGalleryPhotoSucceeded));
     } catch (error, stacktrace) {
       AppLogger.error('FAILED TO ADD PHOTO FROM GALLERY error: $error, stacktrace: $stacktrace');

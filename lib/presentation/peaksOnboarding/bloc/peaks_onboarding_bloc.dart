@@ -13,8 +13,10 @@ part 'peaks_onboarding_state.dart';
 class PeaksOnboardingBloc extends Bloc<PeaksOnboardingEvent, PeaksOnboardingState> {
   PeaksOnboardingBloc({
     required PeaksRepository peaksRepository,
+    required AnalyticsService analyticsService,
     required UserPreferencesService userPreferencesService,
   })  : _peaksRepository = peaksRepository,
+        _analyticsService = analyticsService,
         _userPreferencesService = userPreferencesService,
         super(const PeaksOnboardingState()) {
     on<FetchPeaks>(_onFetchPeaks);
@@ -25,6 +27,7 @@ class PeaksOnboardingBloc extends Bloc<PeaksOnboardingEvent, PeaksOnboardingStat
   }
 
   final PeaksRepository _peaksRepository;
+  final AnalyticsService _analyticsService;
   final UserPreferencesService _userPreferencesService;
 
   Future<void> _onFetchPeaks(FetchPeaks event, Emitter<PeaksOnboardingState> emit) async {
@@ -52,6 +55,9 @@ class PeaksOnboardingBloc extends Bloc<PeaksOnboardingEvent, PeaksOnboardingStat
   }
 
   Future<void> _onMarkOnboardingAsCompleted(MarkOnboardingAsCompleted event, Emitter<PeaksOnboardingState> emit) async {
+    final peaks = [...?state.peaks];
+    final conqueredPeaksCount = peaks.where((peak) => peak.isConquered).length;
+    _analyticsService.onPeaksOnboardingCompleted(conqueredPeaksCount);
     await _userPreferencesService.changePeaksOnboardingStatus(value: true);
   }
 }

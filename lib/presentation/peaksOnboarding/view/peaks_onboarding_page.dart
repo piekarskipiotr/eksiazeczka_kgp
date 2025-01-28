@@ -11,6 +11,7 @@ class PeaksOnboardingPage extends StatelessWidget {
     return BlocProvider(
       create: (_) => PeaksOnboardingBloc(
         peaksRepository: context.read(),
+        analyticsService: context.read(),
         userPreferencesService: context.read(),
       ),
       child: const PeaksOnboardingView(),

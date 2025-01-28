@@ -17,6 +17,7 @@ class App extends StatelessWidget {
     required StorageRepository storageRepository,
     required PeaksRepository peaksRepository,
     required UserMetadataRepository userMetadataRepository,
+    required AnalyticsService analyticsService,
     required DataRefreshService dataRefreshService,
     required UserPreferencesService userPreferencesService,
     super.key,
@@ -24,6 +25,7 @@ class App extends StatelessWidget {
         _storageRepository = storageRepository,
         _peaksRepository = peaksRepository,
         _userMetadataRepository = userMetadataRepository,
+        _analyticsService = analyticsService,
         _dataRefreshService = dataRefreshService,
         _userPreferencesService = userPreferencesService;
 
@@ -31,6 +33,7 @@ class App extends StatelessWidget {
   final StorageRepository _storageRepository;
   final PeaksRepository _peaksRepository;
   final UserMetadataRepository _userMetadataRepository;
+  final AnalyticsService _analyticsService;
   final DataRefreshService _dataRefreshService;
   final UserPreferencesService _userPreferencesService;
 
@@ -42,6 +45,7 @@ class App extends StatelessWidget {
         RepositoryProvider.value(value: _storageRepository),
         RepositoryProvider.value(value: _peaksRepository),
         RepositoryProvider.value(value: _userMetadataRepository),
+        RepositoryProvider.value(value: _analyticsService),
         RepositoryProvider.value(value: _dataRefreshService),
         RepositoryProvider.value(value: _userPreferencesService),
         BlocProvider(
@@ -55,8 +59,9 @@ class App extends StatelessWidget {
         BlocProvider(
           create: (_) {
             return PeaksBloc(
-              dataRefreshService: _dataRefreshService,
               peaksRepository: _peaksRepository,
+              analyticsService: _analyticsService,
+              dataRefreshService: _dataRefreshService,
             );
           },
         ),

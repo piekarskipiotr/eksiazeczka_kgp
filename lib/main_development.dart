@@ -21,6 +21,7 @@ void main() {
     final userMetadataRepository = UserMetadataRepository(localUserMetadataRepository);
 
     // Services
+    final analyticsService = AnalyticsService();
     final dataRefreshService = DataRefreshService();
     final userPreferencesService = UserPreferencesService();
 
@@ -32,6 +33,7 @@ void main() {
       storageRepository: storageRepository,
       peaksRepository: peaksRepository,
       userMetadataRepository: userMetadataRepository,
+      analyticsService: analyticsService,
       dataRefreshService: dataRefreshService,
       userPreferencesService: userPreferencesService,
     );
