@@ -56,6 +56,8 @@ class _AppOutlinedButtonState extends State<AppOutlinedButton> with TickerProvid
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final primaryColor = theme.primaryColor;
     return AbsorbPointer(
       absorbing: widget.isLoading || widget.isProcessing,
       child: OutlinedButton(
@@ -68,11 +70,11 @@ class _AppOutlinedButtonState extends State<AppOutlinedButton> with TickerProvid
               builder: (context, child) {
                 return Opacity(
                   opacity: _opacityAnimation.value,
-                  child: const SizedBox(
+                  child: SizedBox(
                     width: 16,
                     height: 16,
                     child: CircularProgressIndicator(
-                      valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
+                      color: primaryColor,
                       strokeWidth: 2,
                     ),
                   ),
