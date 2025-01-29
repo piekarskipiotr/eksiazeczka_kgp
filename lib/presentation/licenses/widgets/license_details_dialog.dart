@@ -3,10 +3,23 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 
-class _LicenseDetailsView extends StatelessWidget {
+class _LicenseDetailsView extends StatefulWidget {
   const _LicenseDetailsView({required this.packageName});
 
   final String packageName;
+
+  @override
+  State<_LicenseDetailsView> createState() => _LicenseDetailsViewState();
+}
+
+class _LicenseDetailsViewState extends State<_LicenseDetailsView> {
+  late Future<String> _licenseTextFuture;
+
+  @override
+  void initState() {
+    super.initState();
+    _licenseTextFuture = _fetchLicenseText(widget.packageName);
+  }
 
   Future<String> _fetchLicenseText(String packageName) async {
     final licenseText = StringBuffer();
@@ -26,11 +39,11 @@ class _LicenseDetailsView extends StatelessWidget {
     final primaryColor = Theme.of(context).primaryColor;
     return Scaffold(
       appBar: AppBar(
-        title: Text(packageName),
+        title: Text(widget.packageName),
         automaticallyImplyLeading: false,
       ),
       body: FutureBuilder<String>(
-        future: _fetchLicenseText(packageName),
+        future: _licenseTextFuture,
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
             return Padding(
