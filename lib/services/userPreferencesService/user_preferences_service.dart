@@ -1,7 +1,7 @@
 import 'dart:async';
+import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class UserPreferencesService {
@@ -32,7 +32,7 @@ class UserPreferencesService {
     final locale = _instance!.getString(_localeKey);
     if (locale != null) return locale;
 
-    final systemLocale = Intl.getCurrentLocale();
+    final systemLocale = Platform.localeName;
     return systemLocale.startsWith('pl') ? 'pl' : 'en';
   }
 
