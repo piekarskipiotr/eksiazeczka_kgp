@@ -1,4 +1,4 @@
-import 'package:eksiazeczka_kp/presentation/credits/view/attributions_view.dart';
+import 'package:eksiazeczka_kp/presentation/attributions/view/attributions_view.dart';
 import 'package:flutter/material.dart';
 
 class AttributionsPage extends StatelessWidget {

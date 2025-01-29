@@ -39,6 +39,10 @@ class MoreView extends StatelessWidget {
     context.read<AppRouter>().showAttributions();
   }
 
+  void _onLicensesPressed(BuildContext context) {
+    context.read<AppRouter>().showLicenses();
+  }
+
   void _onPrivacyPolicyPressed(BuildContext context) {
     context.read<MoreBloc>().add(const OpenLink(privacyPolicyUrl));
   }
@@ -68,84 +72,82 @@ class MoreView extends StatelessWidget {
         listenWhen: (previous, current) => previous.status != current.status,
         listener: _handleStateStatus,
         builder: (context, state) {
-          return AnimatedContainer(
-            duration: const Duration(milliseconds: 300),
-            child: Column(
-              spacing: 20,
-              children: [
-                MoreSection(
-                  label: l10n.personalization,
-                  children: [
-                    MoreSectionItemTextIcon(
-                      label: l10n.darkMode,
-                      icon: IconImages.arrowForward,
-                      onPressed: () {
-                        _onDarkThemePressed(context);
-                      },
-                    ),
-                    MoreSectionItemTextIcon(
-                      label: l10n.appLanguage,
-                      icon: IconImages.arrowForward,
-                      onPressed: () {
-                        _onAppLanguagePressed(context);
-                      },
-                    ),
-                  ],
-                ),
-                MoreSection(
-                  label: l10n.app,
-                  children: [
-                    MoreSectionItemTextIcon(
-                      label: l10n.followUsInstagram,
-                      icon: IconImages.instagram,
-                      onPressed: () {
-                        _onFollowInstagramPressed(context);
-                      },
-                    ),
-                    MoreSectionItemTextIcon(
-                      label: l10n.addReview,
-                      icon: IconImages.arrowOutward,
-                      onPressed: () {
-                        _onReviewAppPressed(context);
-                      },
-                    ),
-                  ],
-                ),
-                MoreSection(
-                  label: l10n.helpAndConsents,
-                  children: [
-                    MoreSectionItemTextIcon(
-                      label: l10n.faq,
-                      icon: IconImages.arrowForward,
-                      onPressed: () {
-                        _onFaqPressed(context);
-                      },
-                    ),
-                    MoreSectionItemTextIcon(
-                      label: l10n.attributions,
-                      icon: IconImages.arrowForward,
-                      onPressed: () {
-                        _onAttributionsPressed(context);
-                      },
-                    ),
-                    MoreSectionItemTextIcon(
-                      label: l10n.privacyPolicy,
-                      icon: IconImages.arrowOutward,
-                      onPressed: () {
-                        _onPrivacyPolicyPressed(context);
-                      },
-                    ),
-                    MoreSectionItemTextIcon(
-                      label: l10n.termsOfUse,
-                      icon: IconImages.arrowOutward,
-                      onPressed: () {
-                        _onTermsOfUsePressed(context);
-                      },
-                    ),
-                  ],
-                ),
-              ],
-            ),
+          return Column(
+            spacing: 20,
+            children: [
+              MoreSection(
+                label: l10n.personalization,
+                children: [
+                  MoreSectionItemTextIcon(
+                    label: l10n.darkMode,
+                    icon: IconImages.arrowForward,
+                    onPressed: () {
+                      _onDarkThemePressed(context);
+                    },
+                  ),
+                  MoreSectionItemTextIcon(
+                    label: l10n.appLanguage,
+                    icon: IconImages.arrowForward,
+                    onPressed: () {
+                      _onAppLanguagePressed(context);
+                    },
+                  ),
+                ],
+              ),
+              MoreSection(
+                label: l10n.app,
+                children: [
+                  MoreSectionItemTextIcon(
+                    label: l10n.followUsInstagram,
+                    icon: IconImages.instagram,
+                    onPressed: () {
+                      _onFollowInstagramPressed(context);
+                    },
+                  ),
+                  MoreSectionItemTextIcon(
+                    label: l10n.addReview,
+                    icon: IconImages.arrowOutward,
+                    onPressed: () {
+                      _onReviewAppPressed(context);
+                    },
+                  ),
+                ],
+              ),
+              MoreSection(
+                label: l10n.helpAndConsents,
+                children: [
+                  MoreSectionItemTextIcon(
+                    label: l10n.faq,
+                    icon: IconImages.arrowForward,
+                    onPressed: () {
+                      _onFaqPressed(context);
+                    },
+                  ),
+                  MoreSectionItemTextIcon(
+                    label: l10n.privacyPolicy,
+                    icon: IconImages.arrowOutward,
+                    onPressed: () {
+                      _onPrivacyPolicyPressed(context);
+                    },
+                  ),
+                  MoreSectionItemTextIcon(
+                    label: l10n.termsOfUse,
+                    icon: IconImages.arrowOutward,
+                    onPressed: () {
+                      _onTermsOfUsePressed(context);
+                    },
+                  ),
+                ],
+              ),
+              AppInformation(
+                onLicensesPressed: () {
+                  _onLicensesPressed(context);
+                },
+                onAttributionsPressed: () {
+                  _onAttributionsPressed(context);
+                },
+              ),
+            ],
           );
         },
       ),

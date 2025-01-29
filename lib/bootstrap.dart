@@ -4,6 +4,7 @@ import 'package:bloc/bloc.dart';
 import 'package:eksiazeczka_kp/data/constants.dart';
 import 'package:eksiazeczka_kp/designSystem/design_system.dart';
 import 'package:eksiazeczka_kp/utils/utils.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:sentry_flutter/sentry_flutter.dart';
@@ -40,6 +41,11 @@ Future<void> bootstrap(FutureOr<Widget> Function() builder, {bool useSentry = fa
         ..profilesSampleRate = 1.0;
     });
   }
+
+  LicenseRegistry.addLicense(() async* {
+    final license = await rootBundle.loadString('assets/googleFonts/OFL.txt');
+    yield LicenseEntryWithLineBreaks(['googleFonts'], license);
+  });
 
   await Supabase.initialize(url: supabaseUrl, anonKey: supabaseKey);
   await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);

@@ -156,6 +156,16 @@
   "haveYouConqueredPeaksAlready": "Czy zdobyłeś już jakiś szczyt bez użycia aplikacji?",
   "haveYouConqueredPeaksAlreadyDescription": "Możesz zaznaczyć już zdobyte szczyty tylko teraz. Każde oznaczenie wymaga zdjęcia z danego miejsca, które musi zawierać dane geolokalizacyjne. To zapewnia uczciwość i autentyczność oznaczeń.",
   "goToApp": "Przejdź do aplikacji",
+  "version": "eKsiążeczka - Korona Polski — wersja {ver}",
+  "@version": {
+    "placeholders": {
+      "ver": {
+        "type": "String",
+        "example": "1.0.0"
+      }
+    }
+  },
   "attributions": "Atrybucje",
+  "licenses": "Licencje",
   "followUsInstagram": "Obserwuj nasz Instagram"
 }

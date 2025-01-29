@@ -54,6 +54,7 @@ flutter:
   uses-material-design: true
   generate: true
   assets:
+    - assets/googleFonts/
     - assets/images/icons/
     - assets/images/logos/
     - assets/images/medalBackgrounds/
@@ -62,6 +63,7 @@ flutter:
     - assets/images/providers/
     - assets/json/
     - assets/models/medals/
+
 
 spider:
   generate_tests: true

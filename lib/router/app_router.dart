@@ -1,8 +1,9 @@
 import 'package:eksiazeczka_kp/data/models/models.dart';
 import 'package:eksiazeczka_kp/presentation/appLanguageSettings/view/app_language_settings_page.dart';
-import 'package:eksiazeczka_kp/presentation/credits/view/attributions_page.dart';
+import 'package:eksiazeczka_kp/presentation/attributions/view/attributions_page.dart';
 import 'package:eksiazeczka_kp/presentation/darkModeSettings/view/dark_mode_settings_page.dart';
 import 'package:eksiazeczka_kp/presentation/faq/view/faq_page.dart';
+import 'package:eksiazeczka_kp/presentation/licenses/view/licenses_page.dart';
 import 'package:eksiazeczka_kp/presentation/medals/view/medals_page.dart';
 import 'package:eksiazeczka_kp/presentation/menageAccountSettings/view/menage_account_settings_page.dart';
 import 'package:eksiazeczka_kp/presentation/more/view/more_page.dart';
@@ -113,6 +114,13 @@ class AppRouter {
         path: '/${AppRoutes.faq}',
         builder: (context, state) {
           return const FaqPage();
+        },
+      ),
+      GoRoute(
+        name: AppRoutes.licenses,
+        path: '/${AppRoutes.licenses}',
+        builder: (context, state) {
+          return const LicensesPage();
         },
       ),
       GoRoute(

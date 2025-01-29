@@ -24,6 +24,8 @@ extension AppRouterNavigation on AppRouter {
 
   void showFaq() => instance.pushNamed(AppRoutes.faq);
 
+  void showLicenses() => instance.pushNamed(AppRoutes.licenses);
+
   void showAttributions() => instance.pushNamed(AppRoutes.attributions);
 
   void showTransparentDialog({required BuildContext context, required Widget child}) =>

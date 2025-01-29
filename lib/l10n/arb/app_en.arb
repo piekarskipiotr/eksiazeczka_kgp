@@ -156,6 +156,16 @@
   "haveYouConqueredPeaksAlready": "Have you already conquered any peaks without using the app?",
   "haveYouConqueredPeaksAlreadyDescription": "You can mark peaks you've already conquered only now. Each marking requires a photo from the location, which must contain geolocation data. This ensures fairness and authenticity of the markings.",
   "goToApp": "Go to the app.",
+  "version": "eKsiążeczka - Korona Polski — version {ver}",
+  "@version": {
+    "placeholders": {
+      "ver": {
+        "type": "String",
+        "example": "1.0.0"
+      }
+    }
+  },
   "attributions": "Attributions",
+  "licenses": "Licenses",
   "followUsInstagram": "Follow us on Instagram"
 }
