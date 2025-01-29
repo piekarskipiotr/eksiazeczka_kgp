@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class UserPreferencesService {
@@ -28,8 +29,11 @@ class UserPreferencesService {
   }
 
   Future<String> getLocale() async {
-    final locale = _instance!.getString(_localeKey) ?? 'pl';
-    return locale;
+    final locale = _instance!.getString(_localeKey);
+    if (locale != null) return locale;
+
+    final systemLocale = Intl.getCurrentLocale();
+    return systemLocale.startsWith('pl') ? 'pl' : 'en';
   }
 
   Future<void> setLocale(String locale) async {
