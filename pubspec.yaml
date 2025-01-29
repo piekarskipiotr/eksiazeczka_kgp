@@ -1,6 +1,6 @@
 name: eksiazeczka_kp
 description: Digital version of booklet to conquer popular polish peaks
-version: 1.0.0+1
+version: 1.0.0+10
 publish_to: none
 
 environment:
