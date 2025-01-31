@@ -1,3 +1,5 @@
+part 'animations.dart';
+
 part 'icon_images.dart';
 
 part 'logo_images.dart';

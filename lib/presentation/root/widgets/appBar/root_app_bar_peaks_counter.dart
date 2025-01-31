@@ -19,6 +19,7 @@ class RootAppBarPeaksCounter extends StatelessWidget {
     final textStyle = AppTextStyles.h9(color: secondaryColor, fontWeight: FontWeight.w500);
     return BlocBuilder<RootBloc, RootState>(
       builder: (context, state) {
+        final totalPeaks = state.totalPeaks;
         final conqueredPeaksCount = state.conqueredPeaksCount;
         return Container(
           height: size,
@@ -33,7 +34,7 @@ class RootAppBarPeaksCounter extends StatelessWidget {
                 Text(l10n.conqueredPeaks, style: textStyle),
                 AnimatedFlipCounter(value: conqueredPeaksCount, textStyle: textStyle, hideLeadingZeroes: true),
                 Text(l10n.conqueredPeaksOf, style: textStyle),
-                Text('28', style: textStyle),
+                Text(totalPeaks.toString(), style: textStyle),
               ],
             ),
           ),

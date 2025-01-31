@@ -9,11 +9,16 @@ class RootView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      extendBody: true,
-      appBar: const RootAppBar(),
-      body: navigationShell,
-      bottomNavigationBar: RootBottomNavigationBar(navigationShell: navigationShell),
+    return Stack(
+      children: [
+        Scaffold(
+          extendBody: true,
+          appBar: const RootAppBar(),
+          body: navigationShell,
+          bottomNavigationBar: RootBottomNavigationBar(navigationShell: navigationShell),
+        ),
+        const CelebrationAnimation(),
+      ],
     );
   }
 }
