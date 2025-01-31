@@ -1,5 +1,6 @@
 export 'app_geolocator.dart';
 export 'app_logger.dart';
+export 'app_review.dart';
 export 'extensions.dart';
 export 'image_compressor.dart';
 export 'image_exif.dart';
