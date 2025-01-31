@@ -7,6 +7,7 @@ environment:
   sdk: ^3.5.0
 
 dependencies:
+  animated_flip_counter: ^0.3.4
   bloc: ^8.1.4
   build_runner: ^2.4.14
   cached_network_image: ^3.4.1
@@ -16,7 +17,6 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_3d_controller: ^2.1.0
-  flutter_animate: ^4.5.2
   flutter_bloc: ^8.1.6
   flutter_image_compress: ^2.4.0
   flutter_localizations:

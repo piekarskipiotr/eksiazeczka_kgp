@@ -4,19 +4,8 @@
   "medals": "Medale",
   "more": "Więcej",
   "helloTraveler": "Witaj podróżniku!",
-  "conqueredPeaks": "Zdobyto {count} z {total}",
-  "@conqueredPeaks": {
-    "placeholders": {
-      "count": {
-        "type": "int",
-        "example": "2"
-      },
-      "total": {
-        "type": "int",
-        "example": "28"
-      }
-    }
-  },
+  "conqueredPeaks": "Zdobyto ",
+  "conqueredPeaksOf": " z ",
   "peaksPageHeader": "Jaki szczyt dzisiaj\nchcesz zdobyć?",
   "all": "Wszystkie",
   "conquered": "Zdobyte",

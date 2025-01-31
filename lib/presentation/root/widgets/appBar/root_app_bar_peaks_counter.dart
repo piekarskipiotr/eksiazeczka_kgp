@@ -1,3 +1,4 @@
+import 'package:animated_flip_counter/animated_flip_counter.dart';
 import 'package:eksiazeczka_kp/designSystem/design_system.dart';
 import 'package:eksiazeczka_kp/l10n/l10n.dart';
 import 'package:eksiazeczka_kp/presentation/root/bloc/root_bloc.dart';
@@ -12,6 +13,10 @@ class RootAppBarPeaksCounter extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = context.l10n;
+    final theme = Theme.of(context);
+    final primaryColor = theme.primaryColor;
+    final secondaryColor = theme.colorScheme.secondary;
+    final textStyle = AppTextStyles.h9(color: secondaryColor, fontWeight: FontWeight.w500);
     return BlocBuilder<RootBloc, RootState>(
       builder: (context, state) {
         final conqueredPeaksCount = state.conqueredPeaksCount;
@@ -19,16 +24,17 @@ class RootAppBarPeaksCounter extends StatelessWidget {
           height: size,
           padding: const EdgeInsets.symmetric(horizontal: 16),
           decoration: BoxDecoration(
-            color: Theme.of(context).iconTheme.color,
+            color: primaryColor,
             borderRadius: BorderRadius.circular(size / 2),
           ),
           child: Center(
-            child: Text(
-              l10n.conqueredPeaks(conqueredPeaksCount, 28),
-              style: AppTextStyles.h9(
-                color: Theme.of(context).colorScheme.secondary,
-                fontWeight: FontWeight.w500,
-              ),
+            child: Row(
+              children: [
+                Text(l10n.conqueredPeaks, style: textStyle),
+                AnimatedFlipCounter(value: conqueredPeaksCount, textStyle: textStyle, hideLeadingZeroes: true),
+                Text(l10n.conqueredPeaksOf, style: textStyle),
+                Text('28', style: textStyle),
+              ],
             ),
           ),
         );
