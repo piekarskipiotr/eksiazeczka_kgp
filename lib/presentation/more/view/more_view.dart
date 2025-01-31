@@ -7,6 +7,7 @@ import 'package:eksiazeczka_kp/presentation/more/constants/more_state_status.dar
 import 'package:eksiazeczka_kp/presentation/more/widgets/widgets.dart';
 import 'package:eksiazeczka_kp/resources/resources.dart';
 import 'package:eksiazeczka_kp/router/router.dart';
+import 'package:eksiazeczka_kp/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
@@ -27,8 +28,7 @@ class MoreView extends StatelessWidget {
   }
 
   void _onReviewAppPressed(BuildContext context) {
-    final store = Platform.isIOS ? appStoreUrl : googlePlayStoreUrl;
-    context.read<MoreBloc>().add(OpenLink(store));
+    AppReview.openStore();
   }
 
   void _onFaqPressed(BuildContext context) {

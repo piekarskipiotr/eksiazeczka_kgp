@@ -3,6 +3,7 @@ import 'package:eksiazeczka_kp/presentation/peakDetails/bloc/peak_details_bloc.d
 import 'package:eksiazeczka_kp/presentation/peakDetails/constants/peak_details_state_status.dart';
 import 'package:eksiazeczka_kp/presentation/peakDetails/widgets/widgets.dart';
 import 'package:eksiazeczka_kp/services/services.dart';
+import 'package:eksiazeczka_kp/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
@@ -52,6 +53,7 @@ class PeakDetailsView extends StatelessWidget {
       case PeakDetailsStateStatus.insertingMetadataSucceeded:
         context.read<DataRefreshService>().refresh();
         context.pop();
+        AppReview.requestAppReview();
       case _:
         break;
     }
