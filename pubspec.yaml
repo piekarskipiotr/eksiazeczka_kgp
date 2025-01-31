@@ -16,6 +16,7 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_3d_controller: ^2.1.0
+  flutter_animate: ^4.5.2
   flutter_bloc: ^8.1.6
   flutter_image_compress: ^2.4.0
   flutter_localizations:
