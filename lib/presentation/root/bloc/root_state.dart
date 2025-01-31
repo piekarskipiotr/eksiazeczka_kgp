@@ -1,8 +1,9 @@
 part of 'root_bloc.dart';
 
 class RootState extends Equatable {
-  const RootState({this.conqueredPeaksCount = 0, this.error});
+  const RootState({this.totalPeaks = 28, this.conqueredPeaksCount = 0, this.error});
 
+  final int totalPeaks;
   final int conqueredPeaksCount;
   final String? error;
 
@@ -11,11 +12,12 @@ class RootState extends Equatable {
     String? error,
   }) {
     return RootState(
+      totalPeaks: totalPeaks,
       conqueredPeaksCount: conqueredPeaksCount ?? this.conqueredPeaksCount,
       error: error,
     );
   }
 
   @override
-  List<Object?> get props => [conqueredPeaksCount, error];
+  List<Object?> get props => [totalPeaks, conqueredPeaksCount, error];
 }

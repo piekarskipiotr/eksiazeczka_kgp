@@ -7,6 +7,7 @@ environment:
   sdk: ^3.5.0
 
 dependencies:
+  animated_flip_counter: ^0.3.4
   bloc: ^8.1.4
   build_runner: ^2.4.14
   cached_network_image: ^3.4.1
@@ -29,6 +30,7 @@ dependencies:
   google_sign_in: ^6.2.2
   image_picker: ^1.1.2
   intl: ^0.19.0
+  lottie: ^3.3.1
   lukehog: ^0.4.5
   modal_bottom_sheet: ^3.0.0
   path: ^1.9.0
@@ -54,6 +56,7 @@ flutter:
   uses-material-design: true
   generate: true
   assets:
+    - assets/animations/
     - assets/googleFonts/
     - assets/images/icons/
     - assets/images/logos/
@@ -73,6 +76,9 @@ spider:
   use_references_list: false
   package: resources
   groups:
+    - path: assets/animations/
+      class_name: Animations
+      types: [ .json ]
     - path: assets/images/icons
       class_name: IconImages
       types: [ .svg ]

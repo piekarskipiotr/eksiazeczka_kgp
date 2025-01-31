@@ -4,19 +4,8 @@
   "medals": "Medals",
   "more": "More",
   "helloTraveler": "Hello traveler!",
-  "conqueredPeaks": "Conquered {count} of {total}",
-  "@conqueredPeaks": {
-    "placeholders": {
-      "count": {
-        "type": "int",
-        "example": "2"
-      },
-      "total": {
-        "type": "int",
-        "example": "28"
-      }
-    }
-  },
+  "conqueredPeaks": "Conquered ",
+  "conqueredPeaksOf": " of ",
   "peaksPageHeader": "What peak do you want\nto conquer today?",
   "all": "All",
   "conquered": "Conquered",
