@@ -110,6 +110,8 @@
   "cameraRationaleDescription": "The app needs access to your camera to capture photos. Go to the app settings and allow camera access.",
   "photosRationaleTitle": "Photos permissions",
   "photosRationaleDescription": "The app needs access to your photos to save your memorable photos. Go to the app settings and allow photo access.",
+  "photosOnboardingRationaleTitle": "Photos permissions",
+  "photosOnboardingRationaleDescription": "The app needs access to your photos to validate that you actually conquered that peak, also it will be saved as your memorable photo. Go to the app settings and allow photo access.",
   "memorablePhoto": "Memorable photo",
   "memorablePhotoDescription": "Your heroic peak conquest cannot go without a photo.",
   "medalsPageHeader": "Every medal is\na proof of your\nmastery!",

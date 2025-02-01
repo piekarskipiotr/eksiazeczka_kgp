@@ -3,10 +3,16 @@ import 'package:eksiazeczka_kp/presentation/peaksOnboarding/widgets/peakChip/vie
 import 'package:flutter/material.dart';
 
 class PeaksOnboardingList extends StatelessWidget {
-  const PeaksOnboardingList({required this.peaks, required this.onProcessingChange, super.key});
+  const PeaksOnboardingList({
+    required this.peaks,
+    required this.onProcessingChange,
+    required this.onPermissionsPermanentlyDenied,
+    super.key,
+  });
 
   final List<Peak> peaks;
   final void Function({required String peakId, required bool isProcessing}) onProcessingChange;
+  final VoidCallback onPermissionsPermanentlyDenied;
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +22,13 @@ class PeaksOnboardingList extends StatelessWidget {
         child: Wrap(
           spacing: 12,
           runSpacing: 12,
-          children: peaks.map((peak) => PeakChip(peak: peak, onProcessingChange: onProcessingChange)).toList(),
+          children: peaks.map((peak) {
+            return PeakChip(
+              peak: peak,
+              onProcessingChange: onProcessingChange,
+              onPermissionsPermanentlyDenied: onPermissionsPermanentlyDenied,
+            );
+          }).toList(),
         ),
       ),
     );
