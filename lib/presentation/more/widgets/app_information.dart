@@ -20,7 +20,7 @@ class AppInformation extends StatelessWidget {
     return Column(
       children: [
         Text('2025 Piotr Piekarski', style: textStyle),
-        Text(l10n.version('1.0.0+11'), style: textStyle),
+        Text(l10n.version('1.0.1+12'), style: textStyle),
         const SizedBox(height: 4),
         Row(
           spacing: 8,
