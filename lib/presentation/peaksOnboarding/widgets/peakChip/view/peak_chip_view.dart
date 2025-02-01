@@ -6,9 +6,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class PeakChipView extends StatelessWidget {
-  const PeakChipView({required this.onProcessingChange, super.key});
+  const PeakChipView({required this.onProcessingChange, required this.onPermissionsPermanentlyDenied, super.key});
 
   final void Function({required String peakId, required bool isProcessing}) onProcessingChange;
+  final VoidCallback onPermissionsPermanentlyDenied;
 
   void _handleStateStatus(BuildContext context, PeakChipState state) {
     final peak = state.peak;
@@ -21,6 +22,10 @@ class PeakChipView extends StatelessWidget {
     ];
     final isProcessing = isProcessingStatus.contains(status);
     onProcessingChange(peakId: peakId, isProcessing: isProcessing);
+
+    if (status == PeakChipStateStatus.addingGalleryPhotoPermissionsPermanentlyDenied) {
+      onPermissionsPermanentlyDenied();
+    }
   }
 
   void _onPeakChipPressed(BuildContext context) {

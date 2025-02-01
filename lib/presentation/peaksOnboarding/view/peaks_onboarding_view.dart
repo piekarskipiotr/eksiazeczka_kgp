@@ -1,3 +1,5 @@
+import 'package:eksiazeczka_kp/data/enums/enums.dart';
+import 'package:eksiazeczka_kp/designSystem/design_system.dart';
 import 'package:eksiazeczka_kp/presentation/peaksOnboarding/bloc/peaks_onboarding_bloc.dart';
 import 'package:eksiazeczka_kp/presentation/peaksOnboarding/widgets/widgets.dart';
 import 'package:eksiazeczka_kp/router/router.dart';
@@ -14,6 +16,10 @@ class PeaksOnboardingView extends StatelessWidget {
   void _onGoToAppPressed(BuildContext context) {
     context.read<PeaksOnboardingBloc>().add(const MarkOnboardingAsCompleted());
     context.read<AppRouter>().showPeaks();
+  }
+
+  void _onPermissionsPermanentlyDenied(BuildContext context) {
+    PermissionRationaleDialog.show(context, rationale: Rationale.photosOnboarding);
   }
 
   @override
@@ -39,6 +45,9 @@ class PeaksOnboardingView extends StatelessWidget {
                         peaks: peaks,
                         onProcessingChange: ({required String peakId, required bool isProcessing}) {
                           _onProcessingChange(context: context, peakId: peakId, isProcessing: isProcessing);
+                        },
+                        onPermissionsPermanentlyDenied: () {
+                          _onPermissionsPermanentlyDenied(context);
                         },
                       ),
                     ],
