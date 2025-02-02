@@ -27,6 +27,3 @@ final class MarkOnboardingAsCompleted extends PeaksOnboardingEvent {
   @override
   List<Object?> get props => [];
 }
-
-
-

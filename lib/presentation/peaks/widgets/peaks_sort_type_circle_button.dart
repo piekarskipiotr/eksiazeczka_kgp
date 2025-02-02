@@ -6,8 +6,12 @@ import 'package:eksiazeczka_kp/resources/resources.dart';
 import 'package:flutter/material.dart';
 
 class PeaksSortTypeCircleButton extends StatelessWidget {
-  const PeaksSortTypeCircleButton(
-      {required this.selectedFilter, required this.selectedSortType, required this.onSortTypePressed, super.key});
+  const PeaksSortTypeCircleButton({
+    required this.selectedFilter,
+    required this.selectedSortType,
+    required this.onSortTypePressed,
+    super.key,
+  });
 
   final PeaksFilters selectedFilter;
   final PeaksSortTypes selectedSortType;
