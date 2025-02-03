@@ -4,6 +4,7 @@ import 'package:eksiazeczka_kp/presentation/peaks/bloc/peaks_bloc.dart';
 import 'package:eksiazeczka_kp/presentation/peaks/widgets/widgets.dart';
 import 'package:eksiazeczka_kp/router/router.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class PeaksView extends StatefulWidget {
@@ -33,10 +34,12 @@ class _PeaksViewState extends State<PeaksView> {
   }
 
   void _onFilterPressed(BuildContext context, PeaksFilters filter) {
+    HapticFeedback.selectionClick();
     context.read<PeaksBloc>().add(ChangePeaksFilter(filter));
   }
 
   void _onSortTypePressed(BuildContext context, PeaksSortTypes sortType) {
+    HapticFeedback.selectionClick();
     context.read<PeaksBloc>().add(ChangePeaksSortType(sortType));
   }
 
