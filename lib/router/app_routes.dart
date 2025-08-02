@@ -6,7 +6,6 @@ class AppRoutes {
   static String more = 'more';
   static String darkModeSettings = 'darkModeSettings';
   static String appLanguageSettings = 'appLanguageSettings';
-  static String manageAccount = 'manageAccount';
   static String faq = 'faq';
   static String licenses = 'licenses';
   static String attributions = 'attributions';

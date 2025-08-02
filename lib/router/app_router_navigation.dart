@@ -5,7 +5,6 @@ import 'package:eksiazeczka_kp/router/app_routes.dart';
 import 'package:eksiazeczka_kp/router/transparent_fade_route.dart';
 import 'package:flutter/material.dart';
 import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
-import 'package:supabase_flutter/supabase_flutter.dart';
 
 extension AppRouterNavigation on AppRouter {
   void showPeaks() => instance.goNamed(AppRoutes.peaks);
@@ -19,8 +18,6 @@ extension AppRouterNavigation on AppRouter {
   void showDarkModeSettings() => instance.pushNamed(AppRoutes.darkModeSettings);
 
   void showAppLanguageSettings() => instance.pushNamed(AppRoutes.appLanguageSettings);
-
-  void showManageAccount({required User user}) => instance.pushNamed(AppRoutes.manageAccount, extra: user);
 
   void showFaq() => instance.pushNamed(AppRoutes.faq);
 

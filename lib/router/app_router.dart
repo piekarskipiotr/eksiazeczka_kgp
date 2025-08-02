@@ -5,7 +5,6 @@ import 'package:eksiazeczka_kp/presentation/darkModeSettings/view/dark_mode_sett
 import 'package:eksiazeczka_kp/presentation/faq/view/faq_page.dart';
 import 'package:eksiazeczka_kp/presentation/licenses/view/licenses_page.dart';
 import 'package:eksiazeczka_kp/presentation/medals/view/medals_page.dart';
-import 'package:eksiazeczka_kp/presentation/menageAccountSettings/view/menage_account_settings_page.dart';
 import 'package:eksiazeczka_kp/presentation/more/view/more_page.dart';
 import 'package:eksiazeczka_kp/presentation/peakDetails/view/peak_details_page.dart';
 import 'package:eksiazeczka_kp/presentation/peaks/view/peaks_page.dart';
@@ -15,7 +14,6 @@ import 'package:eksiazeczka_kp/router/app_routes.dart';
 import 'package:eksiazeczka_kp/services/services.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:supabase_flutter/supabase_flutter.dart';
 
 class AppRouter {
   AppRouter(this._userPreferencesService);
@@ -128,14 +126,6 @@ class AppRouter {
         path: '/${AppRoutes.attributions}',
         builder: (context, state) {
           return const AttributionsPage();
-        },
-      ),
-      GoRoute(
-        name: AppRoutes.manageAccount,
-        path: '/${AppRoutes.manageAccount}',
-        builder: (context, state) {
-          final user = state.extra! as User;
-          return MenageAccountSettingsPage(user: user);
         },
       ),
     ],
