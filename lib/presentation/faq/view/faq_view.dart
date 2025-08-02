@@ -44,14 +44,6 @@ class FaqView extends StatelessWidget {
                   label: l10n.appFunctionalityQuestion2,
                   text: l10n.appFunctionalityQuestion2Answer,
                 ),
-                MoreSectionItemExpandableText(
-                  label: l10n.appFunctionalityQuestion3,
-                  text: l10n.appFunctionalityQuestion3Answer,
-                ),
-                MoreSectionItemExpandableText(
-                  label: l10n.appFunctionalityQuestion4,
-                  text: l10n.appFunctionalityQuestion4Answer,
-                ),
               ],
             ),
           ],
