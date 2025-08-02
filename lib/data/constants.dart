@@ -1,5 +1,5 @@
-const termsOfUseUrl = 'https://piekarskipiotr.com/eksiazeczka%5fkp/#/terms_of_use';
-const privacyPolicyUrl = 'https://piekarskipiotr.com/eksiazeczka%5fkp/#/privacy_policy';
+const termsOfUseUrl = 'https://piekarskipiotr.github.io/piekarskipiotr-apps/eksiazeczka-kp/terms_of_use';
+const privacyPolicyUrl = 'https://piekarskipiotr.github.io/piekarskipiotr-apps/eksiazeczka-kp/privacy_policy';
 const appStoreId = '6740989198';
 const instagramUrl = 'https://www.instagram.com/eksiazeczka.kp';
 const supabaseUrl = String.fromEnvironment('SUPABASE_URL_KEY');
