@@ -61,44 +61,67 @@ Zastrzegamy sobie prawo do wprowadzania zmian w Polityce Prywatności. O wszelki
 
 W przypadku pytań lub wątpliwości dotyczących niniejszej Polityki Prywatności, prosimy o kontakt pod adresem e-mail: **[ppiekarski8@gmail.com](mailto:ppiekarski8@gmail.com)**.
 
-""";
-const termsOfUsePLText = """**Ostatnia aktualizacja: 01.02.2025**
+<br><br>
 
-eKsiążeczka - Korona Polski ("my," "nasza," "nas") zobowiązuje się do ochrony Twojej prywatności. Niniejsze Warunki Użytkowania regulują korzystanie z aplikacji mobilnej "eKsiążeczka - Korona Polski" i określają prawa oraz obowiązki użytkownika oraz dostawcy aplikacji.
+**Last Updated: 02.08.2025**
 
-## 1. Funkcjonalności aplikacji
+"eKsiążeczka - Korona Polski" ("we," "our," "us") is committed to protecting your privacy. This Privacy Policy outlines how we collect, use, and safeguard your data while using our mobile application "eKsiążeczka - Korona Polski," available in Europe.
 
-eKsiążeczka - Korona Polski oferuje następujące funkcjonalności:
+## 1. Information We Collect
 
-- **Odznaczanie szczytów**: Użytkownicy mogą rejestrować zdobycie popularnych szczytów górskich w Polsce.
-- **Dodawanie zdjęć**: Użytkownicy mogą dodawać zdjęcia potwierdzające zdobycie szczytu. Zdjęcia te przechowywane są lokalnie na urządzeniu.
-- **Weryfikacja lokalizacji**: Aplikacja sprawdza lokalizację użytkownika w celu potwierdzenia zdobycia szczytu.
-- **System osiągnięć**: Po zdobyciu odpowiedniej liczby szczytów użytkownicy odblokowują medale 3D.
+### 1.1 Information You Provide
 
-## 2. Prawa własności intelektualnej
+- **Photos Documenting Peaks**: You may add a photo to confirm the achievement of a peak. Photos are stored locally on your device.
 
-- **Logo i modele 3D**: Logo aplikacji oraz modele 3D odznaczeń i medali są własnością autora aplikacji i podlegają ochronie prawnej.
-- **Zdjęcia osób trzecich**: Niektóre zdjęcia wykorzystane w aplikacji są objęte licencjami osób trzecich. Szczegółowe informacje o tych zdjęciach oraz ich licencjach można znaleźć w aplikacji w sekcji "Więcej" -> "Atrybucje."
+### 1.2 Automatically Collected Information
 
-## 3. Obowiązki użytkownika
+- **Device Information**: We collect data about your device, such as the model, operating system, and device identifiers, to monitor application errors.
+- **Crash Data**: We use Sentry to monitor application crashes and errors. Information about your device and application usage may be shared with Sentry to troubleshoot and improve application performance.
+- **Analytics**: Interaction data (e.g., button clicks) is processed using the LukeHog analytics tool. This data is not associated with specific users.
 
-Korzystając z aplikacji, użytkownik zobowiązuje się do:
+## 2. Data Storage
 
-- Korzystania z aplikacji w sposób zgodny z prawem i zasadami współżycia społecznego.
-- Niepodejmowania działań mających na celu ingerencję w działanie aplikacji lub uzyskanie nieautoryzowanego dostępu do danych.
+- **Local Storage**: All user data, including photos and information about achieved peaks, is stored locally on your device.
+- **Crash Monitoring**: Information related to application errors is sent to Sentry to ensure smooth application operation.
 
-## 4. Ograniczenie odpowiedzialności
+## 3. How We Use Your Data
 
-Autor aplikacji nie ponosi odpowiedzialności za:
+We use your data to:
 
-- Błędy wynikające z nieprawidłowego działania urządzenia użytkownika.
-- Utratę danych wynikającą z awarii urządzenia lub usunięcia aplikacji.
+- Enable location verification and document achieved peaks.
+- Monitor application performance and improve functionalities based on analytics data.
+- Resolve technical issues and ensure application stability.
 
-## 5. Zmiany w Warunkach Użytkowania
+## 4. Sharing Your Data
 
-Zastrzegamy sobie prawo do wprowadzania zmian w niniejszych Warunkach Użytkowania. O wszelkich zmianach poinformujemy poprzez zaktualizowanie daty "Ostatnia aktualizacja" na górze tej strony.
+We do not sell or rent your personal data. Your data may be shared in the following cases:
 
-## 6. Kontakt
+- **Service Providers**: With trusted third parties, such as Sentry (application error monitoring).
+- **Legal Obligations**: When required to comply with applicable laws and regulations.
 
-W przypadku pytań lub wątpliwości dotyczących niniejszych Warunków Użytkowania, prosimy o kontakt pod adresem e-mail: **[ppiekarski8@gmail.com](mailto:ppiekarski8@gmail.com)**.
+## 5. Your Rights (GDPR and Other Regulations)
 
+If you reside in Europe, you have the following rights regarding your data:
+
+- **Right of Access**: You have the right to obtain a copy of the data we store about you.
+- **Right to Rectification**: You may request corrections to inaccurate or incomplete data.
+- **Right to Erasure**: You have the right to request the deletion of data we store about you, subject to legal obligations.
+- **Right to Restriction of Processing**: You may request restrictions on the processing of your data.
+
+To exercise these rights, contact us at: **[ppiekarski8@gmail.com](mailto:ppiekarski8@gmail.com)**.
+
+## 6. Data Security
+
+We implement advanced security measures to protect your data from unauthorized access, alteration, or loss. However, no method of data storage guarantees complete security.
+
+## 7. General Audience
+
+The "eKsiążeczka - Korona Polski" application is intended for a general audience and does not contain age restrictions.
+
+## 8. Changes to the Privacy Policy
+
+We reserve the right to make changes to the Privacy Policy. Any updates will be communicated by updating the "Last Updated" date at the top of this page.
+
+## 9. Contact
+
+For any questions or concerns regarding this Privacy Policy, please contact us at: **[ppiekarski8@gmail.com](mailto:ppiekarski8@gmail.com)**.
